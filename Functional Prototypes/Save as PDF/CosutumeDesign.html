@@ -1,0 +1,127 @@
+<!DOCTYPE html>	
+<html>
+<head>  
+	<link  rel="stylesheet" href="contacts.css" />	
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    
+    
+	<title>Costume Design </title>
+	
+</head>
+<body>
+
+<div class="container-fluid">
+	<ul id="for_ul">
+	<div class="row">
+		<div class="col-md-3"><li><a class="lia" href=""><i class="fa fa-home"></i> <strong>HOME </strong></a></li></div>
+		<div class="col-md-3"><li class="active" ><a class="lia" href=""><strong>Performer Info</strong> </a></li></div>
+		<div class="col-md-3"><li><a class="lia" href=""><strong>Dashboard</strong> </a></li></div>
+        <div class="col-md-3"><li><a class="lia" href=""><strong>Projects</strong> </a></li></div>
+    </div>
+    </ul>
+    <div class="row">
+     <div class="col-md-3"></div>
+    <div class="col-md-6" >
+        <div id="HTMLtoPDF">
+<form id="line">
+        <header> <h1 id="col"><strong>Performer Information</strong></h1></header><br>
+        <div>
+                
+                
+        <table >
+           
+        <tr>
+            <th id="temp1">S.No</th>
+            <th id="temp1"> Attribute</th>
+            <th id="temp1">Information</th>       
+        </tr>
+        <tr>
+            <td class="temp"> 1.</td>
+            <td id="temp1"> Name </td>
+            <td> <input type="text" name="credits1" id="textbox3" >  </td>
+        </tr>
+        <tr>
+                <td class="temp"> 2.</td>
+                <td id="temp1"> Character Name</td>
+                <td> <input type="text" name="credits2" id="textbox6" >  </td>
+        </tr>
+        <tr>
+                <td class="temp"> 3.</td>
+                <td id="temp1"> Age</td>
+                <td> <input type="text" name="credits2" id="textbox6" >  </td>
+        </tr>
+        <tr>
+            <td class="temp"> 4.</td>
+            <td id="temp1"> Mail ID</td>
+            <td> <input type="text" name="credits2" id="textbox6">  </td>
+    </tr>
+    <tr>
+        <td class="temp"> 5.</td>
+        <td id="temp1"> Address</td>
+        <td> <input type="text" name="credits2" id="textbox6" >  </td>
+</tr>
+<tr>
+    <td class="temp"> 6.</td>
+    <td id="temp1"> Contact Number</td>
+    <td> <input type="text" name="credits2" id="textbox6" >  </td>
+</tr>
+        </table> 
+        </div>
+    </div>
+        
+        <br><br>
+        <button type="button" onclick="reload()">Save</button><br><br>
+        <button type="button" onclick="HTMLtoPDF()">Download PDF</button>
+        
+        
+
+      </form> 
+    </div>
+    <div class="col-md-3"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row" >
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                        <p id="contact">Contact me @ </p>
+            </div>
+            <div class="col-md-4">
+            </div>	
+        </div>
+        
+
+    <div class="row" >
+    <div class="forlinks">
+    <div class="col-md-2">
+            <i class="fa fa-github"></i><a class="font" target="blanck" href="https://github.com/S530489">github</a>
+        </div>
+        <div class="col-md-3">
+            <i  class="fa fa-bitbucket"></i><a class="font" target="blanck" href="https://bitbucket.org/S530489/">bitbucket</a>
+        </div>
+        <div class="col-md-3">
+            <i class="fa fa-facebook"></i><a class="font" target="blanck" href="https://www.facebook.com/uppalasaikumar">Face book</a>
+        </div>
+        <div class="col-md-2">
+            <i  class="fa fa-linkedin"></i><a class="font" target="blanck" href=https://www.linkedin.com//>linkedin</a>
+        </div>
+        <div class="col-md-2">
+                <i  class="fa fa-envelope"></i><a class="font" href="mailto:S530489@nwmissouri.edu">Email Id</a>
+        </div>
+    </div>	
+    </div>
+    <script src="js/jspdf.js"></script>
+	<script src="js/jquery-2.1.3.js"></script>
+	<script src="js/pdfFromHTML.js"></script>
+</body>
+</html>
