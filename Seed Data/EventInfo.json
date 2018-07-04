@@ -1,0 +1,17 @@
+[{
+  "Event_Id":"E1",
+  "Name":"Love Story",
+  "Date":"07/10/2018",
+  "Organizers":["Kathy","Nathan"],
+  "Designers":["Stephie"],
+  "Performers":["p1","p2"]
+},
+{
+  "Event_Id":"E2",
+  "Name":"Comedy",
+  "Date":"09/15/2018",
+  "Organizers":["Kathy","Nathan"],
+  "Designers":["Stephie"],
+  "Performers":["p1","p2","p4","p7"]
+}
+]
