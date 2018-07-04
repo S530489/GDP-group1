@@ -1,0 +1,52 @@
+[{ 
+  "Performer_Id":"p1",
+  "Name":{
+    "First_Name":"Rohith",
+    "Last_Name":"Agiru"
+  },
+  "Phone":[6605280724,6605280528],
+  "Email":"agiru_rohith@gmail.com",
+  "Character_Name":"Romeo",
+  "Age":24,
+  "Address":{
+    "Address_line1":"1115 N College Drive",
+    "Address_line2":"",
+    "City":"Maryville",
+    "State":"Missouri",
+    "Zip":"64468",
+    "Country":"USA"
+    },
+    "Allergies":"",
+    "HairColor":"Black",
+    "EyeColor":"Black",
+    "EyeWare":"+1.2",
+    "Medications":"",
+    "Suggestions":""
+    
+},
+{ 
+  "Performer_Id":"p2",
+  "Name":{
+    "First_Name":"Sanjana",
+    "Last_Name":"Mutukula"
+  },
+  "Phone":[6605280724,6605280528],
+  "Email":"sanjana_mutukula@gmail.com",
+  "Character_Name":"Juliet",
+  "Age":24,
+  "Address":{
+    "Address_line1":"1115 N College Drive",
+    "Address_line2":"Apt:62",
+    "City":"Maryville",
+    "State":"Missouri",
+    "Zip":"64468",
+    "Country":"USA"
+    },
+    "Allergies":"Silk clothes",
+    "HairColor":"Black",
+    "EyeColor":"Black",
+    "EyeWare":"+1.2",
+    "Medications":"",
+    "Suggestions":""
+    
+}]
