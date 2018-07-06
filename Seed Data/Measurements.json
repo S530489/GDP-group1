@@ -1,0 +1,40 @@
+[
+  {
+    "Performer_Id": "p1",
+    "Form_id": "Fp1",
+    "Play_title": "Love Story",
+    "Role": "Romeo",
+    "Chest": 42,
+    "Waist": 42,
+    "Inseam": 31.3,
+    "Outseam": 25.4,
+    "Sleeve": 10,
+    "Hip": 34,
+    "ShoeSize": 10,
+    "Head Circumference": 26,
+    "Neck": 20,
+    "Armscye": 24,
+    "Center Back to Wrist": 29,
+    "Full Hip": 40,
+    "Half Girth": 33
+  },
+  {
+    "Performer_Id": "p2",
+    "Form_id": "Fp2",
+    "Play_title": "Love Story",
+    "Role": "Juliet",
+    "Chest": 40,
+    "Waist": 35,
+    "Inseam": 27,
+    "Outseam": 26,
+    "Sleeve": 10,
+    "Hip": 34,
+    "ShoeSize": 8,
+    "Head Circumference": 23,
+    "Neck": 20,
+    "Armscye": 24,
+    "Center Back to Wrist": 29,
+    "Full Hip": 36,
+    "Half Girth": 33
+  }
+]
