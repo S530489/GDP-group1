@@ -23,9 +23,13 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 // handle http GET requests (default)
 app.get("/", function (request, response) {
    
-    response.sendfile(path.join(__dirname +"/assets/homePage.html"));
+    response.sendfile(path.join(__dirname +"/views/homePage.html"));
 });
 
+app.get("/performer", function (request, response) {
+   
+  response.sendfile(path.join(__dirname +"/views/performerInfo.html"));
+});
 
 
 
