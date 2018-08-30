@@ -1,15 +1,77 @@
+
 <body>
     <h1>Actor Contact and Basic Info</h1>
-    <p>Please fill out the starred questions and submit this form BEFORE you come to the costume shop to have your measurements taken. You MUST have a copy of this form on file before the shop staff will measure you. 
+    <p>Please fill out the starred questions and submit this form BEFORE you come to the costume shop to have your measurements taken. 
+        You MUST have a copy of this form on file before the shop staff will measure you. 
         Please have your schedule of availability ready when you arrive for measurements.</p>
 
         <form id="contact-form" method="POST" action="/contact">
             <label for="namelf">Name(Last, First)</label>
-            <input type="text" name="namelf" value="<%= qs.actorName %>">
+            <input type="text" name="namelf" value="<%= qs.actorName %>"><br>
+            
             <label for="charName">Character Name</label>
-            <input type="text" name="charName" value="<%= qs.charName %>">
+            <input type="text" name="charName" value="<%= qs.charName %>"><br>
+            
             <label for="phone">Character Name</label>
-            <input type="text" name="phone" value="<%= qs.phone %>">
+            <input type="text" name="phone" value="<%= qs.phone %>"><br>
+            
+            <label for="textyou">May we text you?</label><br>
+            <input type="checkbox" name="textu" value="yes" checked="checked"> Yes<br>
+            <input type="checkbox" name="textu" value="no" > No<br>
+            
+            <label for="email">University email address</label>
+            <input type="email" name="email" value="<%= qs.email %>"><br>
+            <br>
+            
+            <p>"I understand that I must check my Northwest student email DAILY as requests for fitting appointments will be sent to that email. I will respond to a fitting request as soon as possible. I understand that failing to check my university email does not excuse me from missing a fitting appointment. Missed appointments will be rescheduled at the discretion of the Costume Shop." *</p>
+            <input type="checkbox" name="declare" value="yes" > Yes, I understand<br>
+            
+            <label for="Hand">Dominant Hand</label><br>
+            <input type="checkbox" name="hand" value="yes" checked="checked"> Yes<br>
+            <input type="checkbox" name="hand" value="no" > No<br>
+
+            <label for="weight">Estimated weight</label>
+            <p>Why? Your weight helps determine the right size for certain garments, such as dancewear and tights.</p>
+            <input type="text" name="weight" value="<%= qs.weight %>"><br>
+
+            <label for="eyeware">Corrective Eyeware</label>
+            <p>Please select all that apply</p>
+            <input type="checkbox" name="none" value="none" > None<br>
+            <input type="checkbox" name="glasses" value="glasses" > Glasses<br>
+            <input type="checkbox" name="contacts" value="contacts" > Contacts<br>
+            <input type="checkbox" name="fine" value="fine" > I wear glasses but can perform without them<br>
+
+            <label for="haircolor">Hair color and length</label>
+            <input type="text" name="haircolor" value="<%= qs.haircolor %>"><br>
+
+            <label for="facialHair">Facial Hair: color, length, and growth time</label>
+            <p>If you cannot grow facial hair, please answer "none"</p>
+            <input type="text" name="facialHair" value="<%= qs.facialHair %>"><br>
+
+            <p>I understand that I may not permanently change the color, length, or style of my hair between casting and performance without the express permission of both the Costume Designer and Artistic Director.</p>
+            <input type="checkbox" name="declare" value="yes" > Yes, I understand<br>
+             
+            <label for="piercings"> Do you have pierced ears?</label>
+            <input type="checkbox" name="ear" value="yes" checked="checked"> Yes <br>
+            <input type="checkbox" name="ear" value="no" > No <br>
+
+            <label for="otherPiercings">Do you have any other piercings? How many and where?</label>
+            <input type="text" name="piercing" value="<%= qs.piercing %>"><br>
+
+            <label for="tatto">Do you have any tattoos?</label>
+            <p>If yes, please briefly describe size, location, and color</p>
+            <input type="text" name="tatto" value="<%= qs.tatto %>"><br>
+
+            <p>"I understand that if I have tattos I must provide my own tattoo cover makeup if asked. I understand that if I have piercings I may be asked to remove them or provide my own clear spacer during performances. I understand that I am not allowed to permanently alter my body with additional tattoos, piercings, etc. between casting and performance."</p>
+            <input type="checkbox" name="declare" value="yes" > Yes, I understand<br>
+
+            <label>_______________________________COMMENTS ABOUT THE BODY (OR COSTUME) OF ANY PERFORMER (YOURSELF INCLUDED) WILL NOT BE TOLERATED FROM ANY PERFORMER OR MEMBER OF THE PRODUCTION STAFF.</label>
+            <p>From "Costume Related Questions for New Theatre Professionals" in the body of the Measurement Request email from Stage Management.</p>
+            <input type="text" name="conclude" value="<%= qs.conclude %>"><br>
+
+            
+
+
             <input type="submit" value="submit"/>
         </form>
 
