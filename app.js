@@ -7,7 +7,7 @@ var http = require('http').Server(app);  // inject app into the server
 
 
 // set up the view engine
-app.set("views", path.resolve(__dirname, "assets")); // path to views
+app.set("views", path.resolve(__dirname, "views")); // path to views
 app.set("view engine", "ejs"); // specify view engine
 app.use(express.static(__dirname + '/assets'));
 // create an array to manage entries
@@ -23,7 +23,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 // handle http GET requests (default)
 app.get("/", function (request, response) {
    
-    response.sendfile(path.join(__dirname +"/views/homePage.html"));
+    response.sendfile(path.join(__dirname +"/views/performerInfo.html"));
 });
 
 app.get("/performer", function (request, response) {
@@ -31,6 +31,9 @@ app.get("/performer", function (request, response) {
   response.sendfile(path.join(__dirname +"/views/performerInfo.html"));
 });
 
+app.get("/contact", function (request, response) {
+  response.render('contact');
+});
 
 
 
