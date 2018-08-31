@@ -24,9 +24,23 @@
     </div>
   </div>
 </nav>
-<div style="background-color:black;color:white;padding:20px;width: 25%">
-    <h2>Send form</h2>
-  </div> <br>
-  <div style="background-color:black;color:white;padding:20px;width: 25%">
-    <h2>Measurement(actual)</h2>
-  </div>
+<div class="container">
+<button class="button button-large button-primary">Send form</button>
+</div><br>
+
+<section id="send_form">
+    <div class="container">
+<form action="/send_form.php"></form>
+    First name:<br>
+    <input type="text" name="firstname" value="Micheal">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" value="jackson">
+    <br>
+    Email:<br>
+    <input type="email" placeholder="Enter email"><br></br>
+    <button type="submit" class="button_1">Submit</button>
+  </form>
+</div> 
+</section>
+
