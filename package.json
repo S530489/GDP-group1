@@ -7,7 +7,8 @@
         "express": "latest",
         "morgan": "latest",
         "body-parser": "latest",
-        "ejs": "latest"
+        "ejs": "latest",
+        "mailgun-js": "latest"
     },
     "license": "Apache-2.0"
 }
