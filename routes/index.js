@@ -4,12 +4,12 @@ const router = express.Router();
 
 router.get("/", function (request, response) {
    
-    response.render('performerInfo.ejs');
+    response.render('addPerformer.ejs');
 });
 
 router.get("/performer", function (request, response) {
    
-  response.sendfile("performerInfo.ejs");
+  response.render("performerInfo.ejs");
 });
 
 router.get("/contact", function (request, response) {
