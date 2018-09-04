@@ -15,47 +15,10 @@
 body {
     font-family: Arial;
     color: black;
-    margin-left: 20%;
-}
-
-.split {
-    height: 100%;
-    width: 60%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-.left {
-    left: 0;
-    background-color: white;
-}
-
-.right {
-    right: 0;
-    background-color: white;
-}
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.centered1 {
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    text-align: left;
 }
 
 input[type=text] {
-    width: 130px;
+    width: 150px;
     box-sizing: border-box;
     border: 2px solid black;
     border-radius: 4px;
@@ -68,10 +31,13 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+
+}
+
+.kill{
+    float: right;
 }
 
 input[type=text]:focus {
-    width: 100%;
+    width: 50%;
 }
