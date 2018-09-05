@@ -1,5 +1,5 @@
 <% include header %>
-<script src="./firebase.js"></script>
+
 <div class="info">
         <div class="centered1">
                 <form>
@@ -20,9 +20,9 @@
           <label for="inputlg">Character Name</label>
           <input class="form-control" id="charName" type="text">
         </div>
-        
+        <button type="button" onclick="submitToFirebase()">submit</button>      
 </form>
-<button type="button" onclick="submitToFirebase()">submit</button>
+
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -36,6 +36,7 @@
   };
   firebase.initializeApp(config);
 </script>
+<script src="./firebase.js"></script>
 
 
               
