@@ -1,12 +1,41 @@
 <% include header %>
-
-<body>
-        <div class="info">
-                <div class="centered1">
-                        <form>
-                           <input class="ki" type="text" name="search" placeholder="Search..."><a href="performer" class="button kill">Add Performer</a>
-                        </form>
+<script src="./firebase.js"></script>
+<div class="info">
+        <div class="centered1">
+                <form>
+                        <input class="ki" type="text" name="search" placeholder="Search..."><a href="performer" class="button kill">Add Performer</a>
+                </form>
                 
-                </div>
         </div>
+</div>
+
+<br><br>
+<p>ADD PERFORMER</p><br><br>
+<form>
+        <div class="form-group">
+          <label for="inputlg">Name (Last, First)</label>
+          <input class="form-control" id="name" type="text">
+        </div>
+        <div class="form-group">
+          <label for="inputlg">Character Name</label>
+          <input class="form-control" id="charName" type="text">
+        </div>
+        
+</form>
+<button type="button" onclick="submitToFirebase()">submit</button>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
               
