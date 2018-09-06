@@ -31,6 +31,16 @@ router.get("/sendform", function (request, response) {
   response.render("sendform.ejs");
 });
 
+router.get("/designer", function (request, response) {
+   
+  response.render("designerPullList.ejs");
+});
+
+router.get("/projects", function (request, response) {
+   
+  response.render("projects.ejs");
+});
+
 
 router.post("/sendform", function(request,response){
   console.log("checking mail")

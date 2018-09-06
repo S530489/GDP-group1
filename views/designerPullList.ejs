@@ -1,0 +1,60 @@
+<% include header %>
+
+<table>
+<tr>  
+    <th align="center">
+       <select  name="titles" onchange="getTitle()">
+            <option value="playTitle">Production/Play title</option>        
+            <option value="king">King Lear</option>
+            <option value="show">Senior Showcase</option>
+            <option value="romeo">Romeo Juliet</option>
+            <option value="night">The Nightmare</option>
+       </select>
+    </th>  
+    <th align="center">
+            <select name="names" onchange="getName()">
+                 <option value="performName">Performer Name</option>        
+                 <option value="kal">Kaleb</option>
+                 <option value="elen">Ellen</option>
+                 <option value="wat">Watson</option>
+                 <option value="kate">Kate</option>
+            </select>
+    </th> 
+    <th>Character Name</th>
+    <th>Clothing item</th>
+    <th>Color</th>
+    <th>Size</th> 
+    <th>Notes</th>   
+
+</tr>
+
+<tr>
+        <td><p id="showTitle"></p></td>
+        <td><p id="showName"></p></td>
+        <td contenteditable='true'></td>
+        <td contenteditable='true'></td>
+        <td contenteditable='true'></td>
+        <td contenteditable='true'></td>
+        <td contenteditable='true'></td>
+</tr>
+</table>
+
+<script>
+
+    function getTitle()
+    {
+        var s = document.getElementsByName('titles')[0];
+        var text = s.options[s.selectedIndex].text;
+        // alert(text);
+        document.getElementById("showTitle").innerHTML = text;
+    }
+
+    function getName()
+    {
+        var s = document.getElementsByName("names")[0];
+        var text = s.options[s.selectedIndex].text;
+        alert(text);
+        document.getElementById("showName").innerHTML = text;
+    }
+    
+</script>
