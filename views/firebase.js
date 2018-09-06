@@ -1,19 +1,21 @@
-var name  = document.getElementById("name");
-var charname  = document.getElementById("charName");
+var name  = document.getElementsByName("f1n")[0].value;
+var charname  = document.getElementById("charName1").value;
 
 function submitToFirebase() {
-
     /*firebase.database().ref('performers/').set({
         Name: name.value,
         CharName: charname.value
       });*/
-    
+      var name  = document.getElementsByName("f1n")[0].value;
+      var charname  = document.getElementById("charName1").value;
+    window.alert(name);
 
     var firebaseRef = firebase.database().ref();
-    // var nametext = name.value;
-    var nametext = "test";
-    window.alert(nametext);
-    console.log("nametext");
-    firebaseRef.child("performers").set(nametext);
+    
+   
+    
+    firebaseRef.child(name).set(charname);
+
+    window.alert("added to database");
 
 }
