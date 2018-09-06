@@ -7,6 +7,11 @@ router.get("/", function (request, response) {
     response.render('addPerformer.ejs');
 });
 
+router.get("/addPerformer", function (request, response) {
+   
+  response.render('addPerformer.ejs');
+});
+
 router.get("/performer", function (request, response) {
    
   response.render("performerInfo.ejs");
@@ -14,6 +19,11 @@ router.get("/performer", function (request, response) {
 
 router.get("/contact", function (request, response) {
   response.render('contact.ejs');
+});
+
+router.get("/contactPage", function (request, response) {
+   
+  response.render('contactPage.ejs');
 });
 
 router.get("/sendform", function (request, response) {

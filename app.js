@@ -12,6 +12,8 @@ var http = require('http').Server(app);  // inject app into the server
 app.set("views", path.resolve(__dirname, "views")); // path to views
 app.set("view engine", "ejs"); // specify view engine
 app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/assets'));
 // create an array to manage entries
 var entries = [];
 app.locals.entries = entries; 
