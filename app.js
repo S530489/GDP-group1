@@ -5,15 +5,17 @@ var logger = require("morgan");
 var bodyParser = require("body-parser"); // simplifies access to request body
 var app = express();  // make express app
 var http = require('http').Server(app);  // inject app into the server
-
-
+//var nStatic = require('node-static');
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
 // set up the view engine
 app.set("views", path.resolve(__dirname, "views")); // path to views
 app.set("view engine", "ejs"); // specify view engine
+//var publicDir = path.join(__dirname, '/public');
+//app.use(express.static(publicDir));
 app.use(express.static(__dirname + '/views'));
-app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/assets'));
+//app.use(express.static(__dirname + '/public/images'));
+//app.use(express.static(__dirname + '/assets'));
 // create an array to manage entries
 var entries = [];
 app.locals.entries = entries; 

@@ -8,7 +8,8 @@
         "morgan": "latest",
         "body-parser": "latest",
         "ejs": "latest",
-        "mailgun-js": "latest"
+        "mailgun-js": "latest",
+        "node-static": "latest"
     },
     "license": "Apache-2.0"
 }
