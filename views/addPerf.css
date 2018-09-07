@@ -32,12 +32,23 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
 
 }
 
 
 .kill{
     float: right;
+}
+
+a:hover
+{
+    color: white;
+}
+
+a:link
+{
+    color:white;
 }
 
 table, th, td {
