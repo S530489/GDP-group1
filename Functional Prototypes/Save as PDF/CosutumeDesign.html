@@ -47,7 +47,7 @@
         <tr>
             <td class="temp"> 1.</td>
             <td id="temp1"> Name </td>
-            <td id="temp2"> Rohith Agiru </td>
+            <td id="temp2"> <input type="text" name="fname"><br> </td>
         </tr>
         <tr>
                 <td class="temp"> 2.</td>
@@ -67,7 +67,7 @@
     <tr>
         <td class="temp"> 5.</td>
         <td id="temp1"> Address</td>
-        <td id="temp2"> 1115 N college drive, </br>Maryville, Missouri, 64468 </td>
+        <td id="temp2"> 1115 N college drive, <br/>Maryville, Missouri, 64468 </td>
 </tr>
 <tr>
     <td class="temp"> 6.</td>
@@ -80,7 +80,7 @@
         
         <br><br>
         <button type="button" onclick="reload()">Save</button><br><br>
-        <button type="button" onclick="HTMLtoPDF()">Download PDF</button>
+        <button type="button" onclick="html2pdf1()">Download PDF</button>
         
         
 
@@ -122,6 +122,15 @@
     </div>
     <script src="js/jspdf.js"></script>
 	<script src="js/jquery-2.1.3.js"></script>
-	<script src="js/pdfFromHTML.js"></script>
+    <script src="js/pdfFromHTML.js"></script>
+    <script>
+        function html2pdf1(){
+            var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById("HTMLtoPDF").innerHTML;
+            document.body.innerHTML = printcontent;
+            window.print();
+            document.body.innerHTML = restorepage;
+        }
+    </script>
 </body>
 </html>
