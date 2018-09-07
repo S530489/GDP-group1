@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-
+<style>
+#td1:hover{
+        cursor: pointer;
+        background-color: #ccc;
+      }
+</style>
 <html>
 <body>
  <% include header %>
@@ -12,8 +17,122 @@
                 
         </div>
 </div>
+<br/>
+<br/>
+<div class="container-fluid">
+        <div class="row">
+                <div class="col-md-3">
+                                <table style="width:100%" >
+                                                <tr >
+                                                  <th onclick="getInfo()">Performers</th>
+                                                </tr>
+                                                <tr id="td1">
+                                                  <td onclick="getInfo()">Jill</td>
+                                                </tr>
+                                                <tr id="td1">
+                                                  <td>Eve</td>
+                                                </tr>
+                                                <tr id="td1">
+                                                  <td>John</td>
+                                                </tr>
+                                </table>                                           
+                        
+                                              
+                </div>
+        
+        <div class="col-md-9">
+                <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"> <p id="headname"><b>Jill Information</b></p></div>
+                        <div class="col-md-4"></div>	
+                </div>
+                <br/>
+                <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-8"> 
+                                <table style="width:100%">
+                                                <tr>
+                                                  <td><p ><b>Name</b></p></td>
+                                                  <td id="headname"><p>Jill</p></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><p ><b>Age</b></p></td>
+                                                        <td id="age"><p>24</p></td>
+                                                 </tr>
+                                                 <tr>
+                                                        <td><p ><b>Email/b></p></td>
+                                                        <td id="ema"><p>Jilljing@gmail.com</p></td>
+                                                </tr>
+                                                 <tr>
+                                                        <td><p ><b>Phone Number</b></p></td>
+                                                        <td id="pno"><p>660-528-0724</p></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><p ><b>Address</b></p></td>
+                                                        <td id="add"><p>1115 N college Dr</p>
+                                                        <p>Maryville,Missouri,64468</p>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                  <td> <p>Character Name</p></td>
+                                                  <td><p id="cname">Romeo</p></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><p>Allergies</p></td>
+                                                        <td><p id="allergy">None</p></td>
+                                                </tr>
+                                                <tr>
+                                                  <td><p>Eye Color</p> </td>
+                                                  <td><p id="eye">Black</p></td>
+                                                </tr>
+                                                <tr>
+                                                        <td><p>Hair Color</p> </td>
+                                                        <td><p id="hair">Black</p></td>
+                                              </tr>
+                                              <tr>
+                                                        <td><p>Eye ware</p> </td>
+                                                        <td><p id="ware">+1.2</p></td>
+                                                 </tr>
+                                                              
+                                </table>  
 
-<br><br>
+                        </div>
+                        <div class="col-md-1"></div>	
+                </div>
+                        
+
+       
+                                                      
+        </div>
+        
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
 <p>ADD PERFORMER</p><br><br>
 <form>
         
@@ -26,6 +145,8 @@
     
         <button type="button" onclick="submitToFirebase()">submit</button>      
 </form>
+
+
 
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
