@@ -4,12 +4,13 @@
     "description": "fashion designing app",
     "main": "app.js",
     "dependencies": {
-        "express": "latest",
-        "morgan": "latest",
         "body-parser": "latest",
         "ejs": "latest",
+        "express": "latest",
         "mailgun-js": "latest",
-        "node-static": "latest"
+        "morgan": "latest",
+        "node-static": "latest",
+        "nodemailer": "^4.6.8"
     },
     "license": "Apache-2.0"
 }

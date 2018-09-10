@@ -41,6 +41,11 @@ router.get("/projects", function (request, response) {
   response.render("projects.ejs");
 });
 
+router.get("/login", function (request, response) {
+   
+  response.render("login.ejs");
+});
+
 
 router.post("/sendform", function(request,response){
   console.log("checking mail")
