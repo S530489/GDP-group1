@@ -1,4 +1,6 @@
-[{ 
+{"performers" : [{ 
+  "P1":{
+  "general":{
   "Performer_Id":"p1",
   "Name":{
     "First_Name":"Rohith",
@@ -22,9 +24,32 @@
     "EyeWare":"+1.2",
     "Medications":"",
     "Suggestions":""
-    
+  },
+  "measurements":{
+    "performer_id": "p1",
+    "form_id": "Fp1",
+    "name": "Rohith",
+    "play_title": "Love Story",
+    "role": "Romeo",
+    "chest": 42,
+    "waist": 42,
+    "inseam": 31.3,
+    "outseam": 25.4,
+    "sleeve": 10,
+    "hip": 34,
+    "shoeSize": 10,
+    "headCircumference": 26,
+    "neck": 20,
+    "armscye": 24,
+    "centerBackWrist": 29,
+    "fullHip": 40,
+    "halfGirth": 33
+  }
+}
 },
 { 
+  "p2":{
+    "general":{
   "Performer_Id":"p2",
   "Name":{
     "First_Name":"Sanjana",
@@ -48,5 +73,29 @@
     "EyeWare":"+1.2",
     "Medications":"",
     "Suggestions":""
+  },
+  "measurements" :{
+    "performer_id": "p2",
+    "form_id": "Fp2",
+    "name": "Sanjana",
+    "play_title": "Love Story",
+    "role": "Juliet",
+    "chest": 40,
+    "waist": 35,
+    "inseam": 27,
+    "outseam": 26,
+    "sleeve": 10,
+    "hip": 34,
+    "shoeSize": 8,
+    "headCircumference": 23,
+    "neck": 20,
+    "armscye": 24,
+    "centerBackWrist": 29,
+    "fullHip": 36,
+    "halfGirth": 33
+  }
     
-}]
+}
+}
+]
+}
