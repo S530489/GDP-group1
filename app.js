@@ -4,9 +4,21 @@ var express = require("express");
 var logger = require("morgan");
 var bodyParser = require("body-parser"); // simplifies access to request body
 var app = express();  // make express app
+var firebase = require("firebase");
 var http = require('http').Server(app);  // inject app into the server
 const nodemailer = require('nodemailer');
 
+var config = {
+  apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+  authDomain: "costume-designing-system.firebaseapp.com",
+  databaseURL: "https://costume-designing-system.firebaseio.com",
+  projectId: "costume-designing-system",
+  storageBucket: "costume-designing-system.appspot.com",
+  messagingSenderId: "923569045734"
+};
+firebase.initializeApp(config);
+
+var database = firebase.database();
 
 //var nStatic = require('node-static');
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
@@ -30,6 +42,17 @@ app.use(bodyParser.json());
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+app.get("/", function (request, response) {
+
+  var firebaseRef = firebase.database().ref().child("performers");
+    
+    firebaseRef.on('value', function(snapshot){
+        //console.log(snapshot.val());
+        //console.log("sai kumar");
+        //console.log(snapshot.val()[0].general.Name)
+        response.render('addPerformer.ejs',{ performers : snapshot.val()});
+      })
+});
 const routes = require('./routes/index.js');
 app.use('/', routes);
 

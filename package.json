@@ -10,7 +10,8 @@
         "mailgun-js": "latest",
         "morgan": "latest",
         "node-static": "latest",
-        "nodemailer": "^4.6.8"
+        "nodemailer": "^4.6.8",
+        "firebase": "latest"
     },
     "license": "Apache-2.0"
 }

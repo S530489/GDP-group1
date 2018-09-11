@@ -2,10 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get("/", function (request, response) {
-   
-    response.render('addPerformer.ejs');
-});
+
 
 router.get("/addPerformer", function (request, response) {
    

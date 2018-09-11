@@ -43,12 +43,18 @@
         <div class="row">
                 <div class="col-md-3">
                                 <table style="width:85%;border: 5px solid">
-                                                <tr >
-                                                  <th onclick="getInfo()"><h3>Performers</h3></th>
-                                                </tr>
-                                                <tr id="td1">
-                                                  <td onclick="getInfo()">Jill</td>
-                                                </tr>
+                                    <tr >
+                                        <th onclick="getInfo()"><h3>Performers</h3></th>
+                                      </tr>
+                                    <% var keys = Object.keys(performers) %>
+                                    <% keys.forEach(function(key){ %>
+                                      <tr>
+                                          <td onclick="getInfo(key)" id="td1"><%= performers[key].general.Name.First_Name%></td>
+                                        </tr>
+                                        <% }) %>
+
+                                               
+                                                
                                                 <tr id="td1">
                                                   <td>Eve</td>
                                                 </tr>
@@ -180,6 +186,7 @@
     messagingSenderId: "923569045734"
   };
   firebase.initializeApp(config);
+  
 </script>
 <script src="./firebase.js"></script>
 <script src="./performerinfo.js"></script>
