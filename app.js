@@ -7,7 +7,6 @@ var app = express();  // make express app
 var http = require('http').Server(app);  // inject app into the server
 const nodemailer = require('nodemailer');
 
-
 //var nStatic = require('node-static');
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
@@ -38,12 +37,11 @@ app.use('/', routes);
 
 app.post('/send', (req, res) => {
   const output = `
-    <p>You have a new contact request</p>
-    <h3>Contact Details</h3>
+    <h3>Actor contact and Basic Form. </h3>
     <ul>  
-      <li>Name: ${req.body.firstname}</li>
-      <li>Company: ${req.body.lastname}</li>
-      <li>Email: ${req.body.emailid}</li>
+      <p>Hi ${req.body.firstname},</p>
+      <p>Please fill the form provided in the below link. This must be completed
+      before you visit the office. <a href="http://127.0.0.1:8081/contact"> Click here </a></p>
     </ul>
   `;
 
@@ -71,6 +69,7 @@ app.post('/send', (req, res) => {
       }
       console.log('Message sent: %s', info.messageId);   
       console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+      res.send("Mail sent successfully");
     });
   });
 
