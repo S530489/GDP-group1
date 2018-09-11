@@ -1,17 +1,17 @@
 {
-    "name": "W07",
-    "version": "0.0.1",
-    "description": "fashion designing app",
-    "main": "app.js",
-    "dependencies": {
-        "body-parser": "latest",
-        "ejs": "latest",
-        "express": "latest",
-        "mailgun-js": "latest",
-        "morgan": "latest",
-        "node-static": "latest",
-        "nodemailer": "^4.6.8",
-        "firebase": "latest"
-    },
-    "license": "Apache-2.0"
+  "name": "W07",
+  "version": "0.0.1",
+  "description": "fashion designing app",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "latest",
+    "ejs": "^2.6.1",
+    "express": "latest",
+    "firebase": "latest",
+    "mailgun-js": "latest",
+    "morgan": "latest",
+    "node-static": "latest",
+    "nodemailer": "^4.6.8"
+  },
+  "license": "Apache-2.0"
 }

@@ -46,13 +46,14 @@
                                     <tr >
                                         <th onclick="getInfo()"><h3>Performers</h3></th>
                                       </tr>
-                                    <% var keys = Object.keys(performers)
-                                    keys.forEach(function(key){ 
-                                      var performer = performers[key]%>
+                                      <% var keys = Object.keys(performers)
+                                      keys.forEach(function(key){ 
+                                      var performer = performers[key]
+                                      var Name = performers[key].general.Name.First_Name %>
                                       <p><%= performer %></p>
                                       <tr>
-                                          <td onclick=getInfo(<%= key %>,<%= performer %>) id="td1" > <%= performers[key].general.Name.First_Name %></td>
-                                        </tr>
+                                        <td onclick= "getInfo('<%= key %>','<%= performer %>' )" id="td1"> <%= Name  %> </td>
+                                      </tr>
                                         <% }) %>
 
                                                
