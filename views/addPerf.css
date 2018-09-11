@@ -67,6 +67,23 @@ input[type=submit] {
 
 }
 
+input[type=password] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    background-position: left top;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+
+}
+
 
 .kill{
     float: right;
