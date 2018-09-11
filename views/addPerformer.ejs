@@ -46,10 +46,12 @@
                                     <tr >
                                         <th onclick="getInfo()"><h3>Performers</h3></th>
                                       </tr>
-                                    <% var keys = Object.keys(performers) %>
-                                    <% keys.forEach(function(key){ %>
+                                    <% var keys = Object.keys(performers)
+                                    keys.forEach(function(key){ 
+                                      var performer = performers[key]%>
+                                      <p><%= performer %></p>
                                       <tr>
-                                          <td onclick="getInfo(key)" id="td1"><%= performers[key].general.Name.First_Name%></td>
+                                          <td onclick=getInfo(<%= key %>,<%= performer %>) id="td1" > <%= performers[key].general.Name.First_Name %></td>
                                         </tr>
                                         <% }) %>
 
@@ -69,8 +71,9 @@
         <div class="col-md-9">
                 <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-4"> <p id="headname"><b>Jill Information</b></p></div>
-                        <div class="col-md-4"></div>	
+                        <div class="col-md-6"> <p id="heading"><b>Jill Information</b></p></div>
+                        <div class="col-md-2"> <a href="https://www.w3schools.com">Measurements</a></div>	
+                        <div class="col-md-1"> <a href="https://www.w3schools.com">Edit</a></div>	
                 </div>
                 <br/>
                 <div class="row">

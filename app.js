@@ -8,7 +8,6 @@ var firebase = require("firebase");
 var http = require('http').Server(app);  // inject app into the server
 const nodemailer = require('nodemailer');
 
-<<<<<<< HEAD
 var config = {
   apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
   authDomain: "costume-designing-system.firebaseapp.com",
@@ -21,8 +20,6 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-=======
->>>>>>> 78995246df9d03b81c3108098f92ad16a93cecb3
 //var nStatic = require('node-static');
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
