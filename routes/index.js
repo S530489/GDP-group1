@@ -17,6 +17,11 @@ router.get("/performer", function (request, response) {
   response.render("performerInfo.ejs");
 });
 
+router.get("/createaccount", function (request, response) {
+   
+  response.render("createaccount.ejs");
+});
+
 router.get("/contact", function (request, response) {
   response.render('contact.ejs');
 });
