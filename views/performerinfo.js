@@ -20,7 +20,7 @@ function edit(){
 function disable(){
     document.getElementById("measure").hidden = false
     document.getElementById("edit").hidden = false
-    document.getElementById('subBtn').style.visibility='visible'
+    document.getElementById('subBtn').style.visibility='hidden'
     for (i = 0; i < all_ids.length; i++){
         document.getElementById(all_ids[i]).contentEditable=false; 
     }
