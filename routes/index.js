@@ -1,12 +1,14 @@
 const express = require('express');
 const router = express.Router();
-
-
-
+var firebase = require("firebase");
 
 router.get("/addPerformer", function (request, response) {
-   
-  response.render('addPerformer.ejs');
+  var firebaseRef = firebase.database().ref().child("performers");
+    
+  firebaseRef.on('value', function(snapshot){
+      response.render('addPerformer.ejs',{ performers : snapshot.val()});
+    })
+ 
 });
 
 router.get("/performer", function (request, response) {

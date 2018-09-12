@@ -4,12 +4,19 @@
         cursor: pointer;
         background-color: #ccc;
       }
+#edit:hover{
+  cursor: pointer;
+  background-color: #ccc;
+}
  .marquee {
  height: 50px;	
  overflow: hidden;
  position: relative; 
  }
-
+ input { 
+   width:100%; 
+   height:100%;
+    }
  #scroll{
    color : blue;
  }     
@@ -76,8 +83,9 @@
                 <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6"> <p ><b id="heading">Performer's Information</b></p></div>
-                        <div class="col-md-2"> <a href="https://www.w3schools.com">Measurements</a></div>	
-                        <div class="col-md-1"> <a href="https://www.w3schools.com">Edit</a></div>	
+                        <div class="col-md-2"> <a id="measure" href="https://www.w3schools.com">Measurements</a></div>	
+                        <div class="col-md-1"> <a id="edit" onclick="edit()" >Edit</a></div>	
+                        
                 </div>
                 <br/>
                 <div class="row">
@@ -90,7 +98,7 @@
                                                 </tr>
                                                 <tr>
                                                         <td><p ><b>Age</b></p></td>
-                                                        <td ><p id="age"></p></td>
+                                                        <td><p id="age"></p></td>
                                                  </tr>
                                                  <tr>
                                                         <td><p ><b>Email</b></p></td>
@@ -132,9 +140,18 @@
 
                         </div>
                         <div class="col-md-1"></div>	
-                </div>
-                        
 
+                </div>
+                    <br/>   
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-6"> 
+                        <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="SubmitToFirebase()">Submit</button>
+                    </div>	
+                    <div class="col-md-1"> </div>	
+                    
+            </div>
        
                                                       
         </div>
@@ -143,45 +160,8 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br><br>
-<p>ADD PERFORMER</p><br><br>
-<form>
-        
-          <label for="inputlg">Name (Last, First)</label>
-          <input id="name1" name="f1n" type="text" value="manas">
-        
-      
-          <label for="inputlg">Character Name</label>
-          <input id="charName1" name="f2n" type="text" value="Dog">
-    
-        <button type="button" onclick="submitToFirebase()">submit</button>      
-</form>
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -196,9 +176,10 @@
   firebase.initializeApp(config);
   
 </script>
-<script src="./firebase.js"></script>
-<script src="./performerinfo.js"></script>
+
 
 </body>
+<script src="./firebase.js"></script>
+<script src="./performerinfo.js"></script>
         </html>
               

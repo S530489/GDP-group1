@@ -1,5 +1,5 @@
-var name  = document.getElementsByName("f1n")[0].value;
-var charname  = document.getElementById("charName1").value;
+//var name  = document.getElementsByName("f1n")[0].value;
+//var charname  = document.getElementById("charName1").value;
 
 
    
