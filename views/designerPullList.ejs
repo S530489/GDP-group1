@@ -1,9 +1,11 @@
 <% include header %>
 <script src="./print.js"></script>
 <script src="./html2canvas .js"></script>
+<script src="./designerPulllist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-<table id="dplist">
-<tr>  
+<table id="dplist">       
+<tr> 
+        
     <th align="center">
        <select  name="titles" onchange="getTitle()">
             <option value="playTitle">Production/Play title</option>        
@@ -23,8 +25,39 @@
             </select>
     </th> 
     <th>Character Name</th>
-    <th>Clothing item</th>
-    <th>Color</th>
+    <th>
+            <select name="clothing" onchange="getClothingitem()">
+                    <option value="clothing">Clothing item</option>        
+                    <option value="kal">Tunic</option>
+                    <option value="elen">Skirt</option>
+                    <option value="wat">Suit</option>
+                    <option value="kate">Trousers</option>
+               </select>
+    </th>
+    <th>
+            <select name="colors" onchange="getColor()">
+                    <option value="clothing">Color</option>        
+                    <option value="kal">black</option>
+                    <option value="elen">white</option>
+                    <option value="wat">cream</option>
+                    <option value="kate">tan</option>
+                    <option value="kate">brown</option>
+                    <option value="kate">grey</option>
+                    <option value="kate">red</option>
+                    <option value="kate">orange</option>
+                    <option value="kate">yellow</option>
+                    <option value="kate">green</option>
+                    <option value="kate">blue</option>
+                    <option value="kate">purple</option>
+                    <option value="kate">pink</option>
+                    <option value="kate">lavender</option>
+                    <option value="kate">dark</option>
+                    <option value="kate">light</option>
+                    <option value="kate">pale</option>
+                    <option value="kate">distressed</option>
+                    <option value="kate">old</option>
+               </select>
+    </th>
     <th>Size</th> 
     <th>Notes</th>   
 
@@ -33,32 +66,29 @@
 <tr>
         <td><p id="showTitle"></p></td>
         <td><p id="showName"></p></td>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
-        <td contenteditable='true'></td>
+        <td contenteditable='true'><p id="character"></p></td>
+        <td contenteditable='true'><p id="showclothing"></p></td>
+        <td contenteditable='true'><p id="showcolor"></p></td>
+        <td contenteditable='true'><p id="size"></p></td>
+        <td contenteditable='true'><p id="notes"></p></td>
 </tr>
+</table><br><br>
+<p>You will get the added performers in the table below</p>
+<table name="addHere">       
+        <tr> 
+                
+            <th align="center">Production/Play title</th>  
+            <th align="center">Performer Name</th> 
+            <th>Character Name</th>
+            <th>Clothing item</th>
+            <th>Color</th>
+            <th>Size</th> 
+            <th>Notes</th>   
+        
+        </tr>
+
 </table>
 
 <br/><br/>
-<button type="button" onclick="genPDF()" >Generate Shop Pull List</button>
-<script>
-
-    function getTitle()
-    {
-        var s = document.getElementsByName('titles')[0];
-        var text = s.options[s.selectedIndex].text;
-        // alert(text);
-        document.getElementById("showTitle").innerHTML = text;
-    }
-
-    function getName()
-    {
-        var s = document.getElementsByName("names")[0];
-        var text = s.options[s.selectedIndex].text;
-        // alert(text);
-        document.getElementById("showName").innerHTML = text;
-    }
-    
-</script>
+<button id="ro" class="button" onclick="addrow()"> Add</button> 
+<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
