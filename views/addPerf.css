@@ -51,20 +51,24 @@ input[type=email] {
 }
 
 input[type=submit] {
-    width: 300px;
+    width: 100px;
     box-sizing: border-box;
     border: 2px solid black;
     border-radius: 4px;
     font-size: 16px;
-    background-color: white;
-    color: black;
-    background-position: left top;
+    background-color: black;
+    color: white;
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin-left: 20px;
-
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 85px;
+    text-align:center;
+    margin-top: 10px;
+    float: right;
 }
 
 input[type=password] {
@@ -84,6 +88,11 @@ input[type=password] {
 
 }
 
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    margin-bottom: 15px;  
+}
 
 .kill{
     float: right;
@@ -106,3 +115,11 @@ table, th, td {
 th, td {
     padding: 15px;
 }
+
+
+.container {
+    border-radius: 5px;
+    background-color: rgba(212, 204, 204, 0.705);
+    padding: 20px;
+  }
+
