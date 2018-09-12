@@ -13,7 +13,7 @@ router.get("/addPerformer", function (request, response) {
 
 router.get("/performer", function (request, response) {
    
-  response.render("performerInfo.ejs");
+  response.render("measurementsInfo.ejs");
 });
 
 router.get("/contact", function (request, response) {
