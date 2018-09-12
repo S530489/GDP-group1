@@ -1,5 +1,4 @@
 {"performers" : [{ 
-  "P1":{
   "general":{
   "Performer_Id":"p1",
   "Name":{
@@ -45,10 +44,8 @@
     "fullHip": 40,
     "halfGirth": 33
   }
-}
 },
 { 
-  "p2":{
     "general":{
   "Performer_Id":"p2",
   "Name":{
@@ -95,7 +92,6 @@
     "halfGirth": 33
   }
     
-}
 }
 ]
 }

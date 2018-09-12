@@ -4,11 +4,27 @@
         cursor: pointer;
         background-color: #ccc;
       }
+#edit:hover{
+  cursor: pointer;
+  background-color: #ccc;
+}
+ .marquee {
+ height: 50px;	
+ overflow: hidden;
+ position: relative; 
+ }
+ input { 
+   width:100%; 
+   height:100%;
+    }
+ #scroll{
+   color : blue;
+ }     
 </style>
 <html>
 <body>
  <% include header %>
-<div class="info">
+<div id="userDiv" class="info">
         <div class="centered1">
                 
                         <input class="ki" type="text" name="search" placeholder="Search...">
@@ -39,22 +55,25 @@
 </div>
 <br/>
 <br/>
+<marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
+<br/>
+<br/>
 <div class="container-fluid">
         <div class="row">
                 <div class="col-md-3">
                                 <table style="width:85%;border: 5px solid">
-                                                <tr >
-                                                  <th onclick="getInfo()"><h3>Performers</h3></th>
-                                                </tr>
-                                                <tr id="td1">
-                                                  <td onclick="getInfo()">Jill</td>
-                                                </tr>
-                                                <tr id="td1">
-                                                  <td>Eve</td>
-                                                </tr>
-                                                <tr id="td1">
-                                                  <td>John</td>
-                                                </tr>
+                                    <tr >
+                                        <th onclick="getInfo()"><h3>Performers</h3></th>
+                                      </tr>
+                                      <% var keys = Object.keys(performers)
+                                      keys.forEach(function(key){ 
+                                      var performer = performers[key]
+                                      var Name = performers[key].general.Name.First_Name %>
+                                      <tr>
+                                        <td onclick= "getInfo('<%= key %>','<%= performer %>' )" id="td1"> <%= Name  %> </td>
+                                      </tr>
+                                        <% }) %>
+
                                 </table>                                           
                         
                                               
@@ -63,8 +82,10 @@
         <div class="col-md-9">
                 <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-4"> <p id="headname"><b>Jill Information</b></p></div>
-                        <div class="col-md-4"></div>	
+                        <div class="col-md-6"> <p ><b id="heading">Performer's Information</b></p></div>
+                        <div class="col-md-2"> <a id="measure" href="performer">Measurements</a></div>	
+                        <div class="col-md-1"> <a id="edit" onclick="edit()" >Edit</a></div>	
+                        
                 </div>
                 <br/>
                 <div class="row">
@@ -73,54 +94,64 @@
                                 <table style="width:85%;border: 5px solid ">
                                                 <tr>
                                                   <td><p ><b>Name</b></p></td>
-                                                  <td id="headname"><p>Jill</p></td>
+                                                  <td><p id="FullName"></p></td>
                                                 </tr>
                                                 <tr>
                                                         <td><p ><b>Age</b></p></td>
-                                                        <td id="age"><p>24</p></td>
+                                                        <td><p id="age"></p></td>
                                                  </tr>
                                                  <tr>
                                                         <td><p ><b>Email</b></p></td>
-                                                        <td id="ema"><p>Jilljing@gmail.com</p></td>
+                                                        <td ><p id="email"></p></td>
                                                 </tr>
                                                  <tr>
                                                         <td><p ><b>Phone Number</b></p></td>
-                                                        <td id="pno"><p>660-528-0724</p></td>
+                                                        <td ><p id="pno"></p></td>
                                                 </tr>
                                                 <tr>
                                                         <td><p ><b>Address</b></p></td>
-                                                        <td id="add"><p>1115 N college Dr</p>
-                                                        <p>Maryville,Missouri,64468</p>
+                                                        <td ><p id="add1"></p>
+                                                        <p id="add2"></p>
+                                                        <p id="add3"></p>
                                                         </td>
                                                 </tr>
                                                 <tr>
-                                                  <td> <p>Character Name</p></td>
-                                                  <td><p id="cname">Romeo</p></td>
+                                                  <td> <p><b>Character Name</b></p></td>
+                                                  <td><p id="cname"></p></td>
                                                 </tr>
                                                 <tr>
-                                                        <td><p>Allergies</p></td>
-                                                        <td><p id="allergy">None</p></td>
+                                                        <td><p><b>Allergies</b></p></td>
+                                                        <td><p id="allergy"></p></td>
                                                 </tr>
                                                 <tr>
-                                                  <td><p>Eye Color</p> </td>
-                                                  <td><p id="eye">Black</p></td>
+                                                  <td><p><b>Eye Color</b></p> </td>
+                                                  <td><p id="eye"></p></td>
                                                 </tr>
                                                 <tr>
-                                                        <td><p>Hair Color</p> </td>
-                                                        <td><p id="hair">Black</p></td>
+                                                        <td><p><b>Hair Color</b></p> </td>
+                                                        <td><p id="hair"></p></td>
                                               </tr>
                                               <tr>
-                                                        <td><p>Eye ware</p> </td>
-                                                        <td><p id="ware">+1.2</p></td>
+                                                        <td><p><b>Eye ware</b></p> </td>
+                                                        <td><p id="ware"></p></td>
                                                  </tr>
                                                               
                                 </table>  
 
                         </div>
                         <div class="col-md-1"></div>	
-                </div>
-                        
 
+                </div>
+                    <br/>   
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3"> </div>
+                    <div class="col-md-6"> 
+                        <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="SubmitToFirebase()">Submit</button>
+                    </div>	
+                    <div class="col-md-1"> </div>	
+                    
+            </div>
        
                                                       
         </div>
@@ -129,45 +160,8 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br><br><br><br><br>
-<p>ADD PERFORMER</p><br><br>
-<form>
-        
-          <label for="inputlg">Name (Last, First)</label>
-          <input id="name1" name="f1n" type="text" value="manas">
-        
-      
-          <label for="inputlg">Character Name</label>
-          <input id="charName1" name="f2n" type="text" value="Dog">
-    
-        <button type="button" onclick="submitToFirebase()">submit</button>      
-</form>
-
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -180,10 +174,12 @@
     messagingSenderId: "923569045734"
   };
   firebase.initializeApp(config);
+  
 </script>
-<script src="./firebase.js"></script>
-<script src="./performerinfo.js"></script>
+
 
 </body>
+<script src="./firebase.js"></script>
+<script src="./performerinfo.js"></script>
         </html>
               
