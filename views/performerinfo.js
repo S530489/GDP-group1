@@ -1,13 +1,68 @@
-var all_ids = ["heading","FullName","age","email","pno","add1","add2","add3","cname","allergy","eye","hair","ware"];
-document.getElementById("measure").hidden = true
-document.getElementById("edit").hidden = true
-document.getElementById('subBtn').style.visibility='hidden'
-document.getElementById("subBtn").hidden = true
+var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
+var global_key = 0;
+
+document.getElementById("measure").hidden = true;
+document.getElementById("edit").hidden = true;
+document.getElementById('subBtn').style.visibility='hidden';
+//document.getElementById("subBtn").hidden = true;
+document.getElementById('canBtn').style.visibility='hidden';;
+
+
+
 
 function SubmitToFirebase(){
-    document.getElementById('subBtn').style.visibility='hidden'
-    window.alert("comng heer")
+    document.getElementById('subBtn').style.visibility='hidden';
+    window.alert("comng heer");
+    var c_fname =  document.getElementById("First_name").innerHTML;
+    var c_lname =  document.getElementById("last_name").innerHTML;
+    var c_age =  document.getElementById("age").innerHTML;
+    var c_email =  document.getElementById("email").innerHTML;
+    var c_pno1 =  document.getElementById("pno1").innerHTML ;
+    var c_pno2 =  document.getElementById("pno2").innerHTML ;
+    var  c_add1 = document.getElementById("add1").innerHTML;
+    var c_add2  =  document.getElementById("add2").innerHTML;
+    var c_add3  =  document.getElementById("add3").innerHTML;
+    var c_cname= document.getElementById("cname").innerHTML;
+    var c_allergy = document.getElementById("allergy").innerHTML;
+    var c_eye =  document.getElementById("eye").innerHTML;
+    var c_hair = document.getElementById("hair").innerHTML;
+    var c_ware= document.getElementById("ware").innerHTML;
+    window.alert(c_ware);
+    firebase.database().ref().child("performers").child(global_key).child("general").set({
+        // username: name,
+        // email: email,
+        // profile_picture : imageUrl
+
+        
+            Performer_Id:"p"+global_key+1,
+            Name:{
+              First_Name: c_fname,
+              Last_Name:c_lname
+            },
+            Phone:[c_pno1,c_pno2],
+            Email:c_email,
+            Character_Name:c_cname,
+            Age:c_age,
+            Address:{
+              Address_line1:c_add1,
+              Address_line2:c_add2,
+              Country:c_add3
+              },
+              Allergies:c_allergy,
+              HairColor:c_hair,
+              EyeColor:c_eye,
+              EyeWare:c_eye,
+              Medications:"",
+              Suggestions:""
+            
+      });
 }
+
+function Cancel(){
+    document.getElementById('subBtn').style.visibility='hidden';
+    document.getElementById('canBtn').style.visibility='hidden';
+   
+    }
 
 
 function edit(){
@@ -18,9 +73,10 @@ function edit(){
 }
 
 function disable(){
-    document.getElementById("measure").hidden = false
-    document.getElementById("edit").hidden = false
-    document.getElementById('subBtn').style.visibility='hidden'
+    document.getElementById("measure").hidden = false;
+    document.getElementById("edit").hidden = false;
+    document.getElementById('subBtn').style.visibility='hidden';
+    document.getElementById('canBtn').style.visibility='hidden';
     for (i = 0; i < all_ids.length; i++){
         document.getElementById(all_ids[i]).contentEditable=false; 
     }
@@ -28,15 +84,17 @@ function disable(){
 
 function enable(){
     //document.getElementById("FullName").disabled = false;
-    document.getElementById('subBtn').style.visibility='visible'
+    document.getElementById('subBtn').style.visibility='visible';
+    document.getElementById('canBtn').style.visibility='visible';
     for (i = 0; i < all_ids.length; i++){
         document.getElementById(all_ids[i]).contentEditable=true; 
     }
   
    
 }
-function getInfo(key, performer ){
+function getInfo(key ){
     console.log(key);
+    var global_key = key;
     var database = firebase.database();
     var firebaseRef = firebase.database().ref().child("performers/"+key);
     firebaseRef.on('value', function(snapshot){
@@ -45,12 +103,14 @@ function getInfo(key, performer ){
         console.log(obj);
         
         document.getElementById("heading").innerHTML = obj.general.Name.First_Name + "'s "+"Information";
-        document.getElementById("FullName").innerHTML = obj.general.Name.First_Name + " "+ obj.general.Name.Last_Name;
+        document.getElementById("First_name").innerHTML = obj.general.Name.First_Name;
+        document.getElementById("last_name").innerHTML = obj.general.Name.Last_Name;
         document.getElementById("age").innerHTML = obj.general.Age;
         document.getElementById("email").innerHTML = obj.general.Email;
-        document.getElementById("pno").innerHTML = obj.general.Phone[0]+", "+obj.general.Phone[1];
-        document.getElementById("add1").innerHTML = obj.general.Address.Address_line1+ " " +obj.general.Address.Address_line2;
-        document.getElementById("add2").innerHTML = obj.general.Address.City+", "+obj.general.Address.State+", "+obj.general.Address.Zip;
+        document.getElementById("pno1").innerHTML = obj.general.Phone[0]+", ";
+        document.getElementById("pno2").innerHTML = obj.general.Phone[1];
+        document.getElementById("add1").innerHTML = obj.general.Address.Address_line1;
+        document.getElementById("add2").innerHTML = obj.general.Address.Address_line2;
         document.getElementById("add3").innerHTML = obj.general.Address.Country;
         document.getElementById("cname").innerHTML = obj.general.Character_Name;
         document.getElementById("allergy").innerHTML = obj.general.Allergies;

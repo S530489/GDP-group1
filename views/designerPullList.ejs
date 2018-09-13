@@ -1,8 +1,13 @@
+
+
 <% include header %>
+
 <script src="./print.js"></script>
 <script src="./html2canvas .js"></script>
 <script src="./designerPulllist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+<!-- Compiled and minified CSS -->
+    
 <table id="dplist">       
 <tr> 
         
@@ -71,6 +76,7 @@
         <td contenteditable='true'><p id="showcolor"></p></td>
         <td contenteditable='true'><p id="size"></p></td>
         <td contenteditable='true'><p id="notes"></p></td>
+        
 </tr>
 </table><br><br>
 <p>You will get the added performers in the table below</p>
@@ -83,7 +89,8 @@
             <th>Clothing item</th>
             <th>Color</th>
             <th>Size</th> 
-            <th>Notes</th>   
+            <th>Notes</th>  
+             
         
         </tr>
 
@@ -91,4 +98,5 @@
 
 <br/><br/>
 <button id="ro" class="button" onclick="addrow()"> Add</button> 
+<button id="ro" class="btn-floating btn-large waves-effect waves-light red" onclick="addrow()"><i class="material-icons">Add</i> </button> 
 <button class="button" onclick="genPDF()" >Generate Shop Pull List</button>

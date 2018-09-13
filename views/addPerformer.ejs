@@ -63,14 +63,14 @@
                 <div class="col-md-3">
                                 <table style="width:85%;border: 5px solid">
                                     <tr >
-                                        <th onclick="getInfo()"><h3>Performers</h3></th>
+                                        <th><h3>Performers</h3></th>
                                       </tr>
                                       <% var keys = Object.keys(performers)
                                       keys.forEach(function(key){ 
                                       var performer = performers[key]
                                       var Name = performers[key].general.Name.First_Name %>
                                       <tr>
-                                        <td onclick= "getInfo('<%= key %>','<%= performer %>' )" id="td1"> <%= Name  %> </td>
+                                        <td onclick= "getInfo('<%= key %>' )" id="td1"> <%= Name  %> </td>
                                       </tr>
                                         <% }) %>
 
@@ -94,7 +94,7 @@
                                 <table style="width:85%;border: 5px solid ">
                                                 <tr>
                                                   <td><p ><b>Name</b></p></td>
-                                                  <td><p id="FullName"></p></td>
+                                                  <td><span id="First_name"></span>&nbsp;<span id="last_name"></span><br/></td>
                                                 </tr>
                                                 <tr>
                                                         <td><p ><b>Age</b></p></td>
@@ -106,7 +106,7 @@
                                                 </tr>
                                                  <tr>
                                                         <td><p ><b>Phone Number</b></p></td>
-                                                        <td ><p id="pno"></p></td>
+                                                        <td ><span id="pno1"></span>&nbsp;<span id="pno2"></span></td>
                                                 </tr>
                                                 <tr>
                                                         <td><p ><b>Address</b></p></td>
@@ -144,9 +144,9 @@
                 </div>
                     <br/>   
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-3"> </div>
-                    <div class="col-md-6"> 
+                    <div class="col-md-4"></div>
+                    <div class="col-md-2"> <button type="button" class="btn btn-dark btn-lg" id="canBtn"  onclick="Cancel()">Cancel</button></div>
+                    <div class="col-md-4"> 
                         <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="SubmitToFirebase()">Submit</button>
                     </div>	
                     <div class="col-md-1"> </div>	
