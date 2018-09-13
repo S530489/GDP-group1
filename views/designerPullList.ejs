@@ -11,6 +11,7 @@
 <!-- Compiled and minified CSS -->
 
 <div class="row">
+        <div class="col-md-1"></div>
         <div class="col-md-9">
 <table id="dplist" >       
 <tr> 
@@ -98,8 +99,20 @@
 
 </div>
 <br><br>
-<p>You will get the added performers in the table below</p>
-<table name="addHere">       
+<marquee behavior="alternate" direction="left"> <b id="scroll">You will get the added performers in the table below </b></marquee>
+<br/>
+<div class="row">
+ <div class="col-md-1">  </div>
+ <div class="col-md-4">  
+<h1 style="color: teal; font-family: Great Vibes, cursive; font-size: 50px; line-height: 85px; font-weight: normal; margin-bottom: 0px; margin-top: 10px; text-shadow: 0 1px 1px #fff;">Shop Pull List</h1>
+</div>
+</div>
+<div class="row">
+ <div class="col-md-1">  </div>
+              
+<div class="col-md-8">
+
+<table name="addHere" id="dplist1">       
         <tr> 
                 
             <th align="center">Production/Play title</th>  
@@ -116,9 +129,15 @@
         </tr>
 
 </table>
-
+</div>
+</div>
 <br/><br/>
-<button id="ro" class="button" onclick="addrow()"> Add</button> 
-<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
 
-  
+
+<div class="row">
+ <div class="col-md-7">  </div>
+                             
+<div class="col-md-5">
+<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
+</div>
+</div>
