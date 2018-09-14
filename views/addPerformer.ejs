@@ -27,7 +27,7 @@
 <div id="userDiv" class="info">
         <div class="centered1">
                 
-                        <input class="ki" type="text" name="search" placeholder="Search...">
+                        <!-- <input class="ki" type="text" name="search" placeholder="Search..."> -->
                         <button type="button" class="button kill" data-toggle="modal" data-target="#myModal">Add Performer</button>
                         <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">
@@ -55,13 +55,16 @@
 </div>
 <br/>
 <br/>
-<marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
+<!-- <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
 <br/>
-<br/>
+<br/> -->
+
+
 <div class="container-fluid">
         <div class="row">
                 <div class="col-md-3">
-                                <table style="width:85%;border: 5px solid">
+                    <input style = " margin-left: 0px;" class="ki" type="text" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search...">
+                                <table  id="myTable" style="width:85%;border: 5px solid">
                                     <tr >
                                         <th><h3>Performers</h3></th>
                                       </tr>
@@ -80,6 +83,7 @@
                 </div>
         
         <div class="col-md-9">
+            <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
                 <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6"> <p ><b id="heading">Performer's Information</b></p></div>
