@@ -86,6 +86,96 @@
     "halfGirth": 33
   }
     
+},
+{ 
+  "general":{
+"Performer_Id":"p3",
+"Name":{
+  "First_Name":"Sunil",
+  "Last_Name":"Narine"
+},
+"Phone":[6605280724,6605280528],
+"Email":"Narine.sunil@gmail.com",
+"Character_Name":"Juliet",
+"Age":24,
+"Address":{
+  "Address_line1":"1115 N College Drive",
+  "Address_line2":"Maryville, Missouri, 64468",
+  "Country":"USA"
+  },
+  "Allergies":"Silk clothes",
+  "HairColor":"Black",
+  "EyeColor":"Black",
+  "EyeWare":"+1.2",
+  "Medications":"",
+  "Suggestions":""
+},
+"measurements" :{
+  "performer_id": "p3",
+  "form_id": "Fp3",
+  "name": "Sanjana",
+  "play_title": "Love Story",
+  "role": "Juliet",
+  "chest": 40,
+  "waist": 35,
+  "inseam": 27,
+  "outseam": 26,
+  "sleeve": 10,
+  "hip": 34,
+  "shoeSize": 8,
+  "headCircumference": 23,
+  "neck": 20,
+  "armscye": 24,
+  "centerBackWrist": 29,
+  "fullHip": 36,
+  "halfGirth": 33
+}
+  
+},
+{ 
+  "general":{
+"Performer_Id":"p4",
+"Name":{
+  "First_Name":"chris",
+  "Last_Name":"Gayle"
+},
+"Phone":[6605280724,6605280528],
+"Email":"gayle.chris@gmail.com",
+"Character_Name":"Juliet",
+"Age":24,
+"Address":{
+  "Address_line1":"1115 N College Drive",
+  "Address_line2":"Maryville, Missouri, 64468",
+  "Country":"USA"
+  },
+  "Allergies":"Silk clothes",
+  "HairColor":"Black",
+  "EyeColor":"Black",
+  "EyeWare":"+1.2",
+  "Medications":"",
+  "Suggestions":""
+},
+"measurements" :{
+  "performer_id": "p3",
+  "form_id": "Fp3",
+  "name": "Sanjana",
+  "play_title": "Love Story",
+  "role": "Juliet",
+  "chest": 40,
+  "waist": 35,
+  "inseam": 27,
+  "outseam": 26,
+  "sleeve": 10,
+  "hip": 34,
+  "shoeSize": 8,
+  "headCircumference": 23,
+  "neck": 20,
+  "armscye": 24,
+  "centerBackWrist": 29,
+  "fullHip": 36,
+  "halfGirth": 33
+}
+  
 }
 ]
 }

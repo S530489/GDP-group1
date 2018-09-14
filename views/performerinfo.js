@@ -1,5 +1,5 @@
 var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
-var global_key = 0;
+var global_key;
 
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
@@ -11,8 +11,9 @@ document.getElementById('canBtn').style.visibility='hidden';;
 
 
 function SubmitToFirebase(){
+    
     document.getElementById('subBtn').style.visibility='hidden';
-    window.alert("comng heer");
+   
     var c_fname =  document.getElementById("First_name").innerHTML;
     var c_lname =  document.getElementById("last_name").innerHTML;
     var c_age =  document.getElementById("age").innerHTML;
@@ -27,7 +28,7 @@ function SubmitToFirebase(){
     var c_eye =  document.getElementById("eye").innerHTML;
     var c_hair = document.getElementById("hair").innerHTML;
     var c_ware= document.getElementById("ware").innerHTML;
-    window.alert(c_ware);
+   
     firebase.database().ref().child("performers").child(global_key).child("general").set({
         // username: name,
         // email: email,
@@ -51,7 +52,7 @@ function SubmitToFirebase(){
               Allergies:c_allergy,
               HairColor:c_hair,
               EyeColor:c_eye,
-              EyeWare:c_eye,
+              EyeWare:c_ware,
               Medications:"",
               Suggestions:""
             
@@ -67,7 +68,7 @@ function Cancel(){
 
 function edit(){
 
-    window.alert("edit Now");
+   
     enable();
 
 }
@@ -94,7 +95,9 @@ function enable(){
 }
 function getInfo(key ){
     console.log(key);
-    var global_key = key;
+   
+     global_key = key;
+   
     var database = firebase.database();
     var firebaseRef = firebase.database().ref().child("performers/"+key);
     firebaseRef.on('value', function(snapshot){
