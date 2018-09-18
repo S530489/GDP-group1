@@ -11,6 +11,18 @@ router.get("/addPerformer", function (req, res) {
  
 });
 
+router.get("/designer", function (req, res) {
+
+  var firebaseRef = firebase.database().ref().child("Events");
+    
+  firebaseRef.on('value', function(snapshot){
+      console.log(snapshot.val());
+      res.render("designerPullList.ejs",{ Events : snapshot.val()});
+    })
+   
+  //response.render("designerPullList.ejs");
+});
+
 router.get("/performer", function (request, response) {
    
   response.render("measurementsInfo.ejs");
@@ -35,10 +47,7 @@ router.get("/sendform", function (request, response) {
   response.render("sendform.ejs");
 });
 
-router.get("/designer", function (request, response) {
-   
-  response.render("designerPullList.ejs");
-});
+
 
 router.get("/projects", function (request, response) {
    

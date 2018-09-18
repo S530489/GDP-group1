@@ -17,13 +17,20 @@
 <tr> 
         
     <th align="center">
-       <select  name="titles" onchange="getTitle()">
-            <option value="playTitle">Production/Play title</option>        
-            <option value="king">King Lear</option>
-            <option value="show">Senior Showcase</option>
-            <option value="romeo">Romeo Juliet</option>
-            <option value="night">The Nightmare</option>
-       </select>
+        <select  name="titles" onchange="getTitle()">
+                <option value="playTitle">Production/Play title</option>    
+                <% var keys = Object.keys(Events)
+                keys.forEach(function(key){ 
+                var Name = Events[key].Name %>
+                     
+                    <option value="playTitle"><%= Name  %> </option> 
+                    <% }) %>   
+                    <!-- <option value="king">King Lear</option>
+                    <option value="show">Senior Showcase</option>
+                    <option value="romeo">Romeo Juliet</option>
+                    <option value="night">The Nightmare</option> -->
+               </select>
+        
     </th>  
     <th align="center">
             <select name="names" onchange="getName()">

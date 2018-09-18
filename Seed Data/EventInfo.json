@@ -12,6 +12,14 @@
   "Date":"09/15/2018",
   "Organizers":["Kathy","Nathan"],
   "Designers":["Stephie"],
-  "Performers":["p1","p2","p4","p7"]
+  "Performers":["p1","p2"]
+},
+{
+  "Event_Id":"E3",
+  "Name":"King Lear",
+  "Date":"09/15/2018",
+  "Organizers":["Kathy","Nathan"],
+  "Designers":["Stephie"],
+  "Performers":["p1","p2","p3"]
 }
 ]
