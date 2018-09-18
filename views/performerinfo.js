@@ -114,7 +114,7 @@ function getInfo(key ){
    
      global_key = key;
    
-    var database = firebase.database();
+    
     var firebaseRef = firebase.database().ref().child("performers/"+key);
     firebaseRef.on('value', function(snapshot){
         //console.log(snapshot.val());

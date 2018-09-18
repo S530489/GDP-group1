@@ -70,7 +70,6 @@
                                       </tr>
                                       <% var keys = Object.keys(performers)
                                       keys.forEach(function(key){ 
-                                      var performer = performers[key]
                                       var Name = performers[key].general.Name.First_Name %>
                                       <tr>
                                         <td onclick= "getInfo('<%= key %>' )" id="td1"> <%= Name  %> </td>

@@ -13,11 +13,13 @@ router.get("/addPerformer", function (req, res) {
 
 router.get("/designer", function (req, res) {
 
-  var firebaseRef = firebase.database().ref().child("Events");
+  var firebaseRef = firebase.database().ref();
     
   firebaseRef.on('value', function(snapshot){
-      console.log(snapshot.val());
-      res.render("designerPullList.ejs",{ Events : snapshot.val()});
+      // console.log(snapshot.val().Events);
+      // console.log("testing");
+      // console.log(snapshot.val().performers);
+      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers});
     })
    
   //response.render("designerPullList.ejs");
