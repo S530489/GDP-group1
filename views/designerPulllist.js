@@ -6,6 +6,10 @@ function getTitle()
     return text;
 }
 
+function getPerfomers(Key){
+    
+}
+
 function getName()
 {
     var s = document.getElementsByName("names")[0];

@@ -23,7 +23,7 @@
                 keys.forEach(function(key){ 
                 var Name = Events[key].Name %>
                      
-                    <option value="playTitle"><%= Name  %> </option> 
+                    <option onclick= "getPerfomers('<%= key %>' )" id="td1"><%= Name  %> </option> 
                     <% }) %>   
                     <!-- <option value="king">King Lear</option>
                     <option value="show">Senior Showcase</option>
