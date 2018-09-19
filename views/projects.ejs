@@ -152,7 +152,11 @@ hr {
       <label for="Project">Project description</label><br>
     <textarea id="description" name="Project description" placeholder="Write something.." style="height:200px"></textarea>
       
-     
+     <form action="upload.php" method="post" enctype="multipart/form-data">
+      Select image to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload">
+      
+  </form>
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
