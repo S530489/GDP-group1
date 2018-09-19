@@ -34,6 +34,10 @@ router.get("/viewmeasurement", function (request, response) {
    
   response.render("viewmeasurement.ejs");
 });
+router.get("/registration", function (request, response) {
+   
+  response.render("registration.ejs");
+});
 
 router.get("/createaccount", function (request, response) {
    
