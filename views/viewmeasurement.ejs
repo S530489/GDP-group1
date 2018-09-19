@@ -1,0 +1,283 @@
+<% include header %>
+
+<body>
+<div class="w3-container">
+    <h2>Performer Measurement Form</h2>
+    <b>Note:</b> Please remove everything from your pockets. A costume shop staff member will complete the form for you.
+  </div>
+  <div class="col-md-1"> <a id="edit" onclick="edit()" >Edit</a></div>
+  <div class="col-md-3">
+  <form>
+      <div class="form-group">
+        <label for="inputlg">Name (Last, First)</label>
+        <input class="form-control" id="perf_name" type="text">
+      </div>
+      <div class="form-group">
+        <label for="inputlg">Character Name</label>
+        <input class="form-control" id="character_name" type="text">
+      </div>
+      <div class="form-group">
+        <label for="inputlg">Show Title</label>
+        <input class="form-control" id="show_title" type="text">
+      </div>
+      <div class="form-group" id="dominant_hand">
+        <label for="inputlg">Dominant Hand</label>
+      <div class="radio">
+        <label><input type="radio"  name="optradio">Left</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio">Right</label>
+      </div>
+      </div>
+  
+    </form>
+  
+  <div class="w3-content w3-display-container">
+      <b>Head and Neck Measurements: </b><br>
+  <div class="w3-display-container mySlides1">
+    
+    <img src="images/head.jpg" width="150dp" height="150dp">
+    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+        Head Circumference: <input type="text" name="firstname">
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides1">
+      
+    <img src="images/neck.jpg" width="150dp" height="150dp">
+    <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+        Neck: <input type="text" name="firstname"> 
+    </div>
+  </div>
+
+  <button class="w3-button w3-display-left w3-black" onclick="HNplusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="HNplusDivs(1)">&#10095;</button>
+  
+</div>
+
+<script>
+    var HNslideIndex = 1;
+    HNshowDivs(HNslideIndex);
+    
+    function HNplusDivs(n) {
+      HNshowDivs(HNslideIndex += n);
+    }
+    
+    function HNshowDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides1");
+      if (n > x.length) {HNslideIndex = 1}    
+      if (n < 1) {HNslideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[HNslideIndex-1].style.display = "block";  
+    }
+  
+  
+    </script>
+    <br/>
+<div class="w3-content w3-display-container">
+    <b>Arm Measurements: </b><br/><br/>
+  <div class="w3-display-container mySlides2">
+      
+    <img src="images/armscye.jpg" width="150dp" height="150dp">
+    <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+        Armscye: <input type="text" name="firstname">
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides2">
+      
+    <img src="images/cbw.jpg" width="150dp" height="150dp">
+    <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+        Center Back to Wrist: <input type="text" name="firstname">
+    </div>
+  </div>
+
+  <button class="w3-button w3-display-left w3-black" onclick="AplusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="AplusDivs(1)">&#10095;</button>
+  </div>
+
+  <script>
+      var AslideIndex = 1;
+      AshowDivs(AslideIndex);
+      
+      function AplusDivs(n) {
+        AshowDivs(AslideIndex += n);
+      }
+      
+      function AshowDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides2");
+        if (n > x.length) {AslideIndex = 1}    
+        if (n < 1) {AslideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
+        }
+        x[AslideIndex-1].style.display = "block";  
+      }
+    
+    
+      </script>
+      <br/>
+  <div class="w3-content w3-display-container">
+      <b>Torso Measurements: </b><br/><br/>
+  <div class="w3-display-container mySlides">
+     
+    <img src="images/chestrel.jpg" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Chest Relaxed: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+
+  <div class="w3-display-container mySlides">
+      
+    <img src="images/chestrel.jpg" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Chest Expanded: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+     
+    <img src="images/waist.png" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Waist Relaxed: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+      
+    <img src="images/waist.png" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Waist Expanded: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+      
+    <img src="images/hip.png" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Full Hip: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+     
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Half Girth: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+      
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Full Girth: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+         x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+  
+  
+    </script>
+    <br/>
+
+  <div class="w3-content w3-display-container">
+      <b>Leg Measurements: </b><br/><br/>
+  <div class="w3-display-container mySlides3">
+     
+    <img src="images/inseam.jpg" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Inseam to Ankle: <input type="text" name="firstname">
+      
+    </div>
+  </div>
+  <div class="w3-display-container mySlides3">
+     
+    <img src="./images/inseamfloor.png" width="150dp" height="150dp">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+        Inseam to Floor: <input type="text" name="firstname">  
+    </div>
+  </div>
+
+  
+  <button class="w3-button w3-display-left w3-black" onclick="LplusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="LplusDivs(1)">&#10095;</button>
+  
+  </div>
+  <script>
+  var LslideIndex = 1;
+  LshowDivs(LslideIndex);
+  
+  function LplusDivs(n) {
+    LshowDivs(LslideIndex += n);
+  }
+  
+  function LshowDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides3");
+    if (n > x.length) {LslideIndex = 1}    
+    if (n < 1) {LslideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[LslideIndex-1].style.display = "block";  
+  }
+
+
+  </script>
+  </div> 
+
+<br><br>
+  
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-2"> <button type="button" class="btn btn-dark btn-lg" id="canBtn"  onclick="Cancel()">Cancel</button></div>
+    <div class="col-md-4"> 
+        <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="submitTFirebase()">Submit</button>
+    </div>	
+    <div class="col-md-1"> </div>	
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+  
+</script>
+<script src="./firebase.js"></script>
+<!-- <script src="./performerinfo.js"></script> -->
+<script src="./measurements.js"></script>

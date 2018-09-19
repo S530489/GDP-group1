@@ -32,7 +32,7 @@ router.get("/performer", function (request, response) {
 
 router.get("/viewmeasurement", function (request, response) {
    
-  response.render("editmeasurement.ejs");
+  response.render("viewmeasurement.ejs");
 });
 
 router.get("/createaccount", function (request, response) {
