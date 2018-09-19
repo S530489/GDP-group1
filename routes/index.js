@@ -30,6 +30,11 @@ router.get("/performer", function (request, response) {
   response.render("measurementsInfo.ejs");
 });
 
+router.get("/viewmeasurement", function (request, response) {
+   
+  response.render("editmeasurement.ejs");
+});
+
 router.get("/createaccount", function (request, response) {
    
   response.render("createaccount.ejs");
