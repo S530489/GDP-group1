@@ -44,6 +44,9 @@ function SubmitToFirebase(){
     var c_eye =  document.getElementById("eye").innerHTML;
     var c_hair = document.getElementById("hair").innerHTML;
     var c_ware= document.getElementById("ware").innerHTML;
+
+    // var PerfId = parseInt(global_key)+1;
+    // window.alert(PerfId)
    
     firebase.database().ref().child("performers").child(global_key).child("general").set({
         // username: name,
@@ -51,7 +54,7 @@ function SubmitToFirebase(){
         // profile_picture : imageUrl
 
         
-            Performer_Id:"p"+global_key+1,
+            Performer_Id:"p"+global_key,
             Name:{
               First_Name: c_fname,
               Last_Name:c_lname

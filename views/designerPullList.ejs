@@ -17,13 +17,13 @@
 <tr> 
         
     <th align="center">
-        <select  name="titles" onchange="getTitle()">
+        <select  id="mySelect" name="titles" onchange="getPerfomers(this.options[this.selectedIndex])">
                 <option value="playTitle">Production/Play title</option>    
                 <% var keys = Object.keys(Events)
                 keys.forEach(function(key){ 
                 var Name = Events[key].Name %>
                      
-                    <option onclick= "getPerfomers('<%= key %>' )" id="td1"><%= Name  %> </option> 
+                    <option  value="<%= key %>" ><%= Name  %> </option> 
                     <% }) %>   
                     <!-- <option value="king">King Lear</option>
                     <option value="show">Senior Showcase</option>
@@ -148,3 +148,18 @@
 <button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
 </div>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+  
+</script>

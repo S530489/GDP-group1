@@ -1,13 +1,40 @@
-function getTitle()
-{
-    var s = document.getElementsByName('titles')[0];
-    var text = s.options[s.selectedIndex].text;
-    document.getElementById("showTitle").innerHTML = text;
-    return text;
-}
+// var performers = {};
+// carsAndModels['VO'] = ['V70', 'XC60', 'XC90'];
+// carsAndModels['VW'] = ['Golf', 'Polo', 'Scirocco', 'Touareg'];
+// carsAndModels['BMW'] = ['M6', 'X5', 'Z3'];
 
-function getPerfomers(Key){
+// function ChangeCarList() {
+//     var carList = document.getElementById("car");
+//     var modelList = document.getElementById("carmodel");
+//     var selCar = carList.options[carList.selectedIndex].value;
+//     while (modelList.options.length) {
+//         modelList.remove(0);
+//     }
+//     var cars = carsAndModels[selCar];
+//     if (cars) {
+//         var i;
+//         for (i = 0; i < cars.length; i++) {
+//             var car = new Option(cars[i], i);
+//             modelList.options.add(car);
+//         }
+//     }
+// } 
+
+
+function getPerfomers(ind){
+    key = document.getElementById("mySelect").value;
+    var firebaseRef = firebase.database().ref().child("Events/"+key);
+    firebaseRef.on('value', function(snapshot){
+        //console.log(snapshot.val());
+        var obj = snapshot.val();
+        console.log(obj);
+        for (i = 0; i < obj.Performers.length; i++) { 
+            window.alert(obj.Performers[i])
+        } 
+    })
     
+    
+    getTitle()
 }
 
 function getName()
@@ -60,4 +87,15 @@ function addrow()
     cell5.innerHTML=color;
     cell6.innerHTML=size;
     cell7.innerHTML=notes;
+}
+
+
+
+
+function getTitle()
+{ 
+    var s = document.getElementsByName('titles')[0];
+    var text = s.options[s.selectedIndex].text;
+    document.getElementById("showTitle").innerHTML = text;
+    return text;
 }
