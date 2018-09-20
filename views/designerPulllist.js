@@ -1,44 +1,24 @@
-var carsAndModels = {};
-carsAndModels['VO'] = ['V70', 'XC60', 'XC90'];
-carsAndModels['VW'] = ['Golf', 'Polo', 'Scirocco', 'Touareg'];
-carsAndModels['BMW'] = ['M6', 'X5', 'Z3'];
 
-function ChangeCarList() {
-    var carList = document.getElementById("car");
-    var modelList = document.getElementById("carmodel");
-    var selCar = carList.options[carList.selectedIndex].value;
-    while (modelList.options.length) {
-        modelList.remove(0);
-    }
-    var cars = carsAndModels[selCar];
-    if (cars) {
-        var i;
-        for (i = 0; i < cars.length; i++) {
-            var car = new Option(cars[i], i);
-            modelList.options.add(car);
-        }
-    }
-} 
+var performers = {}
 
 
 function getPerfomers(ind){
+    console.log(performers)
     key = document.getElementById("mySelect").value;
     var firebaseRef = firebase.database().ref().child("Events/"+key);
     firebaseRef.on('value', function(snapshot){
-        //console.log(snapshot.val());
+    
         var obj = snapshot.val();
-        console.log(obj);
         var EventPerformers = []
         var EventPerformersNames = []
         for (i = 0; i < obj.Performers.length; i++) { 
-            var firebaseRef1 = firebase.database().ref().child("performers/"+obj.Performers[i][1]);
-            firebaseRef1.on('value', function(snapshot){
-                EventPerformers.push(snapshot.val());
-                EventPerformersNames.push(snapshot.val().general.Name.First_Name)
-            })
+            console.log(obj.Performers[i][1])
+            var k = obj.Performers[i][1]
+            EventPerformers.push(performers[k])
+            EventPerformersNames.push(performers[k].general.Name.First_Name)
         }
-        console.log(EventPerformers)
-        console.log(EventPerformersNames) 
+        //  console.log(EventPerformers)
+        // console.log(EventPerformersNames) 
         var modelList = document.getElementById("perfoName");
         while (modelList.options.length - 1) {
              modelList.remove(1);
