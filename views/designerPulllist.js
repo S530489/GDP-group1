@@ -80,14 +80,16 @@ function addrow()
     var cell5=newrow.insertCell(4);
     var cell6=newrow.insertCell(5);
     var cell7=newrow.insertCell(6);
+    var cell8=newrow.insertCell(7);
 
-    cell1.innerHTML=title;
-    cell2.innerHTML=show;
-    cell3.innerHTML=charname;
-    cell4.innerHTML=clothing;
-    cell5.innerHTML=color;
-    cell6.innerHTML=size;
-    cell7.innerHTML=notes;
+    cell1.innerHTML=" ";
+    cell2.innerHTML=title;
+    cell3.innerHTML=show;
+    cell4.innerHTML=charname;
+    cell5.innerHTML=clothing;
+    cell6.innerHTML=color;
+    cell7.innerHTML=size;
+    cell8.innerHTML=notes;
 }
 
 
