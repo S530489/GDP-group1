@@ -70,6 +70,9 @@ router.get("/login", function (request, response) {
   response.render("login.ejs");
 });
 
+app.use(function (request, response) {
+  response.status(404).render('404.ejs');
+});
 
 router.post("/sendform", function(request,response){
   console.log("checking mail")
