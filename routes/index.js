@@ -70,7 +70,7 @@ router.get("/login", function (request, response) {
   response.render("login.ejs");
 });
 
-app.use(function (request, response) {
+router.use(function (request, response) {
   response.status(404).render('404.ejs');
 });
 
