@@ -81,6 +81,7 @@ function addrow()
     var cell6=newrow.insertCell(5);
     var cell7=newrow.insertCell(6);
     var cell8=newrow.insertCell(7);
+    var cell9=newrow.insertCell(8);
 
     cell1.innerHTML=" ";
     cell2.innerHTML=title;
@@ -90,6 +91,7 @@ function addrow()
     cell6.innerHTML=color;
     cell7.innerHTML=size;
     cell8.innerHTML=notes;
+    cell9.innerHTML="x"+remove();
 }
 
 
@@ -102,4 +104,22 @@ function getTitle()
     document.getElementById("showTitle").innerHTML = text;
     document.getElementById("mySelect").selectedIndex = "0";
     return text;
+}
+
+function remove()
+{
+var index, table = document.getElementById('dplist1');
+for(var i = 1; i < table.rows.length; i++)
+{
+    table.rows[i].cells[8].onclick = function()
+    {
+        var c = confirm("Are you sure, you want to delete this row?");
+        if(c === true)
+        {
+            index = this.parentElement.rowIndex;
+            table.deleteRow(index);
+        }   
+    };  
+}
+    return "";
 }

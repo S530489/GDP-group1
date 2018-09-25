@@ -130,6 +130,14 @@ th, td {
       font-size: 15px;
   }
  
-
+  table.dplist1 td:last-child
+  {
+      background-color:white;
+      color:red;
+      cursor: pointer;
+      font-weight: bold; 
+      border: 1px solid white;
+      font-size: 22px;
+  }
 
   
