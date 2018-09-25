@@ -1,6 +1,8 @@
 <% include header %>
-
+<script src="./login.js"></script>
 <body >
+
+  <p><b id = "loginMsg"> </b></p>
 <div id="loginDiv" class="info">
     <div class="centered1">
         <form>
@@ -15,12 +17,17 @@
         <label for="inputlg">Password:</label>
         <input class="form-control" id="userpwd" placeholder="Enter the password" type="password">
       </div> 
-<a href="forgotpassword" class="button">Forgot Password?</a><br>
-        <button onclick="loginFunction()" class="button" >Submit</button>                
+<!-- <a href="forgotpassword" class="button">Forgot Password?</a><br> -->
+              
 </form>
+
+<button onclick="loginFunction()" class="button" >Submit</button>   
+<button onclick="logout()" class="button" >Logout</button> 
             
     </div>
 </div>
+
+
 
 <br><br>
 

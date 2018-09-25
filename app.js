@@ -41,15 +41,7 @@ app.use(bodyParser.json());
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.get("/", function (request, response) {
-
-  var firebaseRef = firebase.database().ref().child("performers");
-    
-    firebaseRef.on('value', function(snapshot){
-        // console.log(snapshot.val());
-        //console.log("sai kumar");
-        //console.log(snapshot.val()[0].general.Name)
-        response.render('addPerformer.ejs',{ performers : snapshot.val()});
-      })
+     response.render('login.ejs');
 });
 const routes = require('./routes/index.js');
 app.use('/', routes);
