@@ -1,72 +1,10 @@
-
-
-<% include header %>
-
-    
+<%include header%>
+<html>
+<head>
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-* {box-sizing: border-box;}
-
-input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-}
-
-/* Add a background color when the inputs get focus */
-input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-/* Set a style for all buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-}
-
-button:hover {
-    opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-    padding: 16px;
-}
-
-/* The Modal (background) */
+    body{
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }  /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -76,143 +14,133 @@ button:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #474e5d;
-    padding-top: 50px;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
 }
 
 /* Modal Content/Box */
-
-
-/* Style the horizontal ruler */
-hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
- 
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #f1f1f1;
+.container {
+    padding: 16px;
 }
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
+.container{
+    background-color: white;
 }
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: auto;
+  border: black;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
-/* .row{
-  margin: 30px;
-} */
-.coloumn {
-    float: left;
-    
-    padding: 10px;
-    width: 33.33%;
-    margin: 30px auto;
-    padding: 5px;
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
 }
 
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .Add {
-       width: 50%;
-    }
-}
-</style>
-<body>
+.card button:hover {
+  opacity: 0.7;
+}</style>
+</head>
+<body><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>       
+        <div id="id01" class="modal">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <form class="modal-content" action="/action_page.php">
+            <div class="container">
+              <h1>Add Project</h1>
+              <p>Fill out the fields to add a Project</p>
+              <hr>
+              <label for="title"><b>Project Title</b></label>
+              <input type="text" placeholder="Title of the Project" name="title" required><br>
+        
+              <label for="Performers"><b>Performers</b></label><br>
+            <input type="text" name="Performers" placeholder="Juliet, Andrew, Janet,...." style="height:200px" required><br>
+        
+              <label for="Project"><b>Project description</b></label><br>
+            <input type="text" name="Project description" placeholder="Write something.." style="height:200px" required><br>
+              
+             <form action="upload.php" method="post" enctype="multipart/form-data">
+              <b>Select image to upload:</b>
+              <input type="file" name="fileToUpload" id="fileToUpload">
+              
+          </form>
+        <br>
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <button type="submit" class="Add">Add</button>
+              </div>
+            </div>
+          </form>
+        </div>
+<br>
+<div class="container"><div class="row">
+     
+     <div class="col-sm-6">
+        <div class="card">
+            <img src="images/sample.jpg" alt="The shoemakers Holiday" style="width:50%">
+            <h3><i>The shoemaker's Holiday</i></h3><br>
+            <p class="description">Elizabethan 
+              Costume Design Project</p><br>
+            <p><button>Read more..</button></p>
+          </div>
+        </div>
+   
+     <div class="col-sm-6">
+        <div class="card">
+            <img src="images/iris.jpg" alt="Still Life with Iris" style="width:50%">
+            <h3><i>Still Life with Iris</i></h3><br>
+            <p class="description">Theatre for Young Audiences Costume Design Project</p><br>
+            <p><button>Read more..</button></p>
+          </div>
+        </div>
+   </div>
+   <br>
 
-<h2>My Projects</h2>
-
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>
-
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Add Project</h1>
-      <p>Fill out the fields to add a Project</p>
-      <hr>
-      <label for="title"><b>Project Title</b></label>
-      <input type="text" placeholder="Title of the Project" name="title" required>
-
-      <label for="Performers">Performers</label><br>
-    <textarea id="Performers" name="Performers" placeholder="Juliet, Andrew, Janet,...." style="height:200px"></textarea><br>
-
-      <label for="Project">Project description</label><br>
-    <textarea id="description" name="Project description" placeholder="Write something.." style="height:200px"></textarea>
-      
-     <form action="upload.php" method="post" enctype="multipart/form-data">
-      Select image to upload:
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      
-  </form>
-
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="Add">Add</button>
+   <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+        <img src="images/sample3.jpg" alt="The Birds" style="width:50%">
+        <h3><i>The Birds</i></h3><br>
+        <p class="description">Greek/Mask 
+                Costume Design Project</p><br>
+        <p><button>Read more..</button></p>
+        </div>
+       
       </div>
-    </div>
-  </form>
-</div>
-<div class="w3-container">
- <div class="row">
-  
-  <div class="coloumn" style="width:50%">
-    <img src="images/sample.jpg" alt="Norway" style="widows: 50%">
-    <div class="w3-container w3-center">
-      <p><i> Shoemaker's Holiday</i></p>
-    
-  </div>
-</div>
-
-  <div class="coloumn" style="width:50%">
-    <img src="images/sample1.jpg" alt="Norway" style="widows: 50%">
-    <div class="w3-container w3-center">
-      <p><i> Life with Iris</i></p>
-    
-  </div>
-</div>
-<div class="coloumn">
-  <div class="w3-card-4" style="width:50%">
-    <img src="images/sample3.jpg" alt="Norway" style="widows: 50%">
-    <div class="w3-container w3-center">
-      <p><i>The Birds</i></p>
-    </div>
-  </div>
-</div>
-<div class="coloumn">
-  <div class="w3-card-4" style="width:50%">
-    <img src="images/sample4.jpg" alt="Norway" style="widows: 50%">
-    <div class="w3-container w3-center">
-      <p><i> Warren's Profession</i></p>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-</body>
-
-
+   
+   <div class="col-sm-6">
+    <div class="card">
+        <img src="images/sample4.jpg" alt="The shoemakers Holiday" style="width:50%">
+        <h3><i>Mrs. Warren's Profession</i></h3>
+        <p class="description">Designer Emulation Costume Design project</p><br>
+        <p><button>Read more..</button></p>
+      </div>
+     </div>
+   </div>
+   </div>
+   <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script></body>
+</html>
