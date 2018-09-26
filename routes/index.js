@@ -79,6 +79,43 @@ router.use(function (request, response) {
   response.status(404).render('404.ejs');
 });
 
+
+
+router.post('/sendToDesigner', (req, res) => {
+  const output = `
+    <h3>FeedBack and Queries Form </h3>
+  `;
+
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'projectteam01gdp02@gmail.com', // generated user
+        pass: 'project01team'  // generated password
+    }
+  });
+
+  // setup email data with unicode symbols
+  let mailOptions = {
+      from: "rka090@gmail.com", // sender address
+      to: req.body.emailid, // list of receivers
+      subject: 'Feedback from performer', // Subject line
+      html: output // html body
+  };
+
+  // send mail with defined transport object
+  transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+          return console.log(error);
+      }
+      console.log('Message sent: %s', info.messageId);   
+      console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+      res.send("Mail sent successfully");
+    });
+  });
+
+
+
 router.post("/sendform", function(request,response){
   console.log("checking mail")
   var api_key = 'key-770c3cc90056cea80af1cafa3f4079cb';
