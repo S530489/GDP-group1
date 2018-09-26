@@ -17,6 +17,7 @@ function loginFunction()
         window.alert("error:"+errorMessage);
       }).then(function(){
         initApp();
+        
       });
       
 }
@@ -41,6 +42,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
      document.getElementById("loginMsg").innerHTML = 'User Logged IN';
+     window.location.href = "http://127.0.0.1:8081/addPerformer"
 
 
     } else {

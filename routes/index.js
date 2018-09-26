@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 var firebase = require("firebase");
 
+
+
 router.get("/addPerformer", function (req, res) {
   var firebaseRef = firebase.database().ref().child("performers");
     
@@ -10,6 +12,9 @@ router.get("/addPerformer", function (req, res) {
     })
  
 });
+
+
+
 
 router.get("/designer", function (req, res) {
 
