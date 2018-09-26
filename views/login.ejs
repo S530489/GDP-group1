@@ -1,17 +1,21 @@
 
 <script src="./login.js"></script>
 <body >
-
-  <p><b id = "loginMsg"> </b></p>
-<div id="loginDiv" class="info">
+    <div class="col-md-10">
+    <p><b id = "loginMsg"> </b></p>
+    <div id="loginDiv" class="info">
     <div class="centered1">
+      <div class="col-md-4">
         <form>
-           <img src="images/fashion.png" >
-                    <a href="createNew" class="button">Create New</a>
+           <img src="images/fashion.jpg" height="400" width="600">
+          </div>
+      <div class="col-md-2">    
+      <a href="createaccount" class="button">Create New</a>
+      
       <div class="form-group">
         <label for="inputlg">Login id:</label>
         <input class="form-control" id="userlogin" placeholder="Enter the username" type="text">
-      </div>
+      </div><br><br>
 
       <div class="form-group">
         <label for="inputlg">Password:</label>
@@ -23,10 +27,11 @@
 
 <button onclick="loginFunction()" class="button" >Submit</button>   
 <button onclick="logout()" class="button" >Logout</button> 
-            
-    </div>
 </div>
-
+            
+</div>
+</div>
+</div>
 
 
 <br><br>
@@ -45,4 +50,75 @@
   firebase.initializeApp(config);
   
 </script>
+
+<style>
+  .button {
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+body {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color:black;
+    font-size: 16px;
+}
+
+input[type=text] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    background-position: left top;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+}
+
+input[type=email] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    background-position: left top;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+}
+
+input[type=password] {
+    width: 300px;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    background-position: left top;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+}
+
+</style>
 
