@@ -1,120 +1,51 @@
-* {box-sizing: border-box}
-
-
-  input[type=text], input[type=password] {
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color:black;
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+.container {
+  padding: 16px;
+  background-color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
-
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-
-button {
-  background-color: #4CAF50;
+.btn-group button {
+  background-color:black; 
+  border: 1px white; 
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
+  padding: 10px 24px; 
   cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+  float: left; 
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
-
-button:hover {
-  opacity:1;
-}
-
-
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-
-.cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
-}
-
-
-.container {
-  padding: 16px;
-}
-
-
-.clearfix::after {
+.btn-group:after {
   content: "";
   clear: both;
   display: table;
-}
-
-
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 100%;
-  }
-}
-
-.button {
-  background-color: black;
-  border: none;
-  color: white;
   font-family: "Comic Sans MS", cursive, sans-serif;
-  padding: 12px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+}
+.btn-group button:not(:last-child) {
+  border-right: none; 
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.btn-group button:hover {
+  background-color:rgb(99, 96, 96);
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  color:black;
-  font-size: 16px;
-}
-
-input[type=text] {
-  width: 300px;
-  box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  color: black;
-  background-position: left top;
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  margin-left: 20px;
-}
-
-input[type=email] {
-  width: 300px;
-  box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  color: black;
-  background-position: left top;
-  background-position: 10px 10px; 
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  margin-left: 20px;
-}
