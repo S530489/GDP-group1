@@ -87,8 +87,15 @@ function Cancel(){
 
 function edit(){
 
-   
-    enable();
+    if(document.getElementById("accesscode").value=="12345")
+    {
+     enable();
+     document.getElementById('id01').style.display='none'
+    }
+    else
+    {
+        alert("wrong password");
+    }
 
 }
 
