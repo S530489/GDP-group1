@@ -119,7 +119,7 @@ function enable(){
   
    
 }
-function getInfo(key ){
+function getInfo(key){
     console.log(key);
    
      global_key = key;
@@ -148,18 +148,46 @@ function getInfo(key ){
         document.getElementById("ware").innerHTML = obj.general.EyeWare;
         disable();
         //window.location.reload();
+        // getMeasurements(global_key);
     })
     /*
     .then(function(){
         window.location.reload();
     }) .catch(function(err){});
     
-*/
-
-
-
-   
     
+*/
+localStorage.setItem("storageName",global_key);
+}
 
+function getMeasurements()
+{
+    localKey=localStorage.getItem("storageName");
+    alert("gotcha"+localKey);
+    
+    var firebaseRef = firebase.database().ref().child("performers/"+localKey);
+   
+    firebaseRef.on('value', function(snapshot){
+        var obj = snapshot.val();
+        alert(obj.general.Name.First_Name);
+        document.getElementById("perf_name").value = obj.general.Name.Last_Name+", "+obj.general.Name.First_Name;
+        document.getElementById("character_name").value = obj.measurements.role;
+        document.getElementById("show_title").value = obj.measurements.play_title;
+        document.getElementById("head").value = obj.measurements.headCircumference;
+        document.getElementById("neck").value = obj.measurements.neck;
+        document.getElementById("armscye").value = obj.measurements.armscye;
+        document.getElementById("centerBack").value = obj.measurements.centerBackWrist;
+        document.getElementById("chest_relaxed").value = obj.measurements.chest;
+        document.getElementById("chest_expanded").value = obj.measurements.chest;
+        document.getElementById("waist_relaxed").value = obj.measurements.waist;
+        document.getElementById("waist_expanded").value = obj.measurements.waist;
+        document.getElementById("hip").value = obj.measurements.hip;
+        document.getElementById("half_girth").value = obj.measurements.halfGirth;
+        document.getElementById("full_girth").value = obj.measurements.fullHip;
+        document.getElementById("inseam_ankle").value = obj.measurements.inseam;
+        document.getElementById("inseam_floor").value = obj.measurements.outseam;
+        
+        disable();
+    })
 
 }

@@ -179,6 +179,11 @@ height:100%;
 color : blue;
 }
 
-#edit{
+#edit, veri{
 float: right;
-}  
+} 
+
+#ver
+{
+    font-size: 18px;
+}

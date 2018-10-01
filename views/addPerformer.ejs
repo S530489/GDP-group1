@@ -73,10 +73,11 @@
                               <div class="w3-modal-content">
                                 <div class="w3-container">
                                   <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                                  <h3>Access Code Verification</h3>
                                   <br>
-                                  <label>Enter the access code to edit the measurments</label>
-                                  <input type="password" id="accesscode" name="accesscode" required /><br>
-                                  <button class="button" onclick="edit()">Verify</button>
+                                  <label id="ver">Enter the access code to edit the measurments:</label><br>
+                                  <input type="password" id="accesscode" name="accesscode" required /><br><br>
+                                  <button id="veri" class="button" onclick="edit()">Verify</button>
                                 </div>
                               </div>
                             </div>
@@ -176,5 +177,4 @@
 </body>
 <script src="./firebase.js"></script>
 <script src="./performerinfo.js"></script>
-        </html>
               
