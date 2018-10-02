@@ -1,5 +1,22 @@
 
+function createAccount(){
+  var email=document.getElementById("new_emailid").value;
+  var password=document.getElementById("new_passw").value;
+  window.alert(email);
+  window.alert(password);
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  }).then(function(){
+    window.alert("entered")
+    
+  });
 
+  window.alert("notttt")
+  
+}
 function loginFunction()
 {
    
@@ -53,3 +70,4 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 }
+

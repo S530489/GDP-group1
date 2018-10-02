@@ -1,11 +1,11 @@
 
 <head>
-    <link type="text/css"
-    rel="stylesheet" href="createaccount.css"/>
+    <link type="text/css" rel="stylesheet" href="createaccount.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="./login.js"></script>
 </head>
 <body>
-<form action="" >
+<form>
     <div class="container">
       <h1>Create an account</h1>
       <p>Please fill in this form to create an account.</p>
@@ -19,11 +19,28 @@
   
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" id="new_repeatpassw" placeholder="Repeat Password" name="psw-repeat" required><br>
-  <hr>
+
   <div class="btn-group" style="width:100%">
-        <button  style="width:50%" type="submit"  onclick="createAccount()">Create account</button>
-        <button style="width:50%" type="button"  onclick="cancelFunction()">Cancel</button>
+        <button  style="width:25%"   onclick="createAccount()">Create account</button>
+        <button style="width:25%"  onclick="cancelFunction()">Cancel</button>
       </div>
     </div>
   </form>
+
+  
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+  
+</script>
+
 </body>
