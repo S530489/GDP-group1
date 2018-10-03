@@ -1,20 +1,52 @@
+document.getElementById('msgalert').style.display="none";
+function cancelFunction(){
+  window.alert("test")
+
+}
+function closeAlert(){
+  document.getElementById('msgalert').style.display="none";
+}
+
+function closeAlert1(){
+  document.getElementById('msgalert1').style.display="none";
+}
+
 
 function createAccount(){
   var email=document.getElementById("new_emailid").value;
   var password=document.getElementById("new_passw").value;
-  window.alert(email);
-  window.alert(password);
+  var repassword=document.getElementById("new_repeatpassw").value;
+  if(email.indexOf("@") == -1){
+    document.getElementById("msg").innerHTML = " WARNING!!!    Invalid Email Format"
+    document.getElementById('msgalert').style.backgroundColor="Tomato ";
+    document.getElementById('msgalert').style.display="block";
+    
+    document.getElementById("createUser").reset();
+  }
+  else if(password!=repassword){
+    document.getElementById("msg").innerHTML = " WARNING!!!    Password Missmatch Enter Again"
+    document.getElementById('msgalert').style.backgroundColor="Tomato  ";
+    document.getElementById('msgalert').style.display="block";
+    
+    document.getElementById("createUser").reset();
+  }
+  else{
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
   }).then(function(){
-    window.alert("entered")
+    document.getElementById("msg").innerHTML = " Success!!!  User has been created"
+    document.getElementById('msgalert').style.backgroundColor="LightGreen";
+    document.getElementById('msgalert').style.display="block";
+
+    document.getElementById("createUser").reset();
     
   });
 
-  window.alert("notttt")
+}
+
   
 }
 function loginFunction()
