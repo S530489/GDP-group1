@@ -76,6 +76,7 @@ function logout(){
     firebase.auth().signOut().then(function() {
         window.alert("user signed out")
         // Sign-out successful.
+
       }).catch(function(error) {
         // An error happened.
         var errorCode = error.code;
@@ -83,6 +84,8 @@ function logout(){
         // ...
 
         window.alert("error:"+errorMessage);
+        window.location.href = "login.ejs";
+
       });
 }
 

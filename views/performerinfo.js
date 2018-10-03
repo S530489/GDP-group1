@@ -1,12 +1,13 @@
 var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
 var global_key;
 
+
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
+document.getElementById("edit1").hidden = true;
 document.getElementById('subBtn').style.visibility='hidden';
 //document.getElementById("subBtn").hidden = true;
 document.getElementById('canBtn').style.visibility='hidden';;
-
 
 function myFunction() {
     var input, filter, table, tr, td, i;
@@ -107,6 +108,8 @@ function disable(){
     for (i = 0; i < all_ids.length; i++){
         document.getElementById(all_ids[i]).contentEditable=false; 
     }
+        
+    
 }
 
 function enable(){
@@ -117,7 +120,6 @@ function enable(){
         document.getElementById(all_ids[i]).contentEditable=true; 
     }
   
-   
 }
 function getInfo(key){
     console.log(key);
@@ -186,8 +188,110 @@ function getMeasurements()
         document.getElementById("full_girth").value = obj.measurements.fullHip;
         document.getElementById("inseam_ankle").value = obj.measurements.inseam;
         document.getElementById("inseam_floor").value = obj.measurements.outseam;
-        
-        disable();
-    })
 
+        noteditable_function();
+    })
+    
+}
+
+function noteditable_function()
+{
+    // document.getElementById("edit1").hidden = false;
+    document.getElementById('subBtn').style.visibility='hidden';
+    document.getElementById('canBtn').style.visibility='hidden';
+
+        document.getElementById("perf_name").readOnly=true;
+        document.getElementById("character_name").readOnly = true;
+        document.getElementById("show_title").readOnly = true;
+        document.getElementById("head").readOnly = true;
+        document.getElementById("neck").readOnly = true;
+        document.getElementById("armscye").readOnly = true;
+        document.getElementById("centerBack").readOnly = true;
+        document.getElementById("chest_relaxed").readOnly = true;
+        document.getElementById("chest_expanded").readOnly = true;
+        document.getElementById("waist_relaxed").readOnly = true;
+        document.getElementById("waist_expanded").readOnly = true;
+        document.getElementById("hip").readOnly = true;
+        document.getElementById("half_girth").readOnly = true;
+        document.getElementById("full_girth").readOnly = true;
+        document.getElementById("inseam_ankle").readOnly = true;
+        document.getElementById("inseam_floor").readOnly = true;
+}
+
+function editMeasurements(){
+
+    if(document.getElementById("accesscode").value=="12345")
+    {
+     enableediting();
+     document.getElementById('id02').style.display='none'
+    }
+    else
+    {
+        alert("wrong password");
+    }
+
+}
+
+function enableediting(){
+    document.getElementById('subBtn').style.visibility='visible';
+    document.getElementById('canBtn').style.visibility='visible';
+
+        document.getElementById("perf_name").readOnly=false;
+        document.getElementById("character_name").readOnly = false;
+        document.getElementById("show_title").readOnly = false;
+        document.getElementById("head").readOnly = false;
+        document.getElementById("neck").readOnly = false;
+        document.getElementById("armscye").readOnly = false;
+        document.getElementById("centerBack").readOnly = false;
+        document.getElementById("chest_relaxed").readOnly = false;
+        document.getElementById("chest_expanded").readOnly = false;
+        document.getElementById("waist_relaxed").readOnly = false;
+        document.getElementById("waist_expanded").readOnly = false;
+        document.getElementById("hip").readOnly = false;
+        document.getElementById("half_girth").readOnly = false;
+        document.getElementById("full_girth").readOnly = false;
+        document.getElementById("inseam_ankle").readOnly = false;
+        document.getElementById("inseam_floor").readOnly = false;
+}
+
+function submit_to_firebase(){
+    
+    // document.getElementById('subBtn').style.visibility='hidden';
+   
+    // var c_pname =  document.getElementById("perf_name").innerHTML;
+    // var c_charname =  document.getElementById("character_name").innerHTML;
+    // var c_showtitle =  document.getElementById("show_title").innerHTML;
+    // var c_head =  document.getElementById("head").innerHTML;
+    // var c_neck =  document.getElementById("neck").innerHTML ;
+    // var c_armscye =  document.getElementById("armscye").innerHTML ;
+    // var  c_cbw = document.getElementById("centerBack").innerHTML;
+    // var c_chestrel =  document.getElementById("chest_relaxed").innerHTML;
+    // var c_exp  =  document.getElementById("chest_expanded").innerHTML;
+    // var c_wrel= document.getElementById("waist_relaxed").innerHTML;
+    // var c_wexp = document.getElementById("waist_expanded").innerHTML;
+    // var c_hip =  document.getElementById("hip").innerHTML;
+    // var c_halfgirth = document.getElementById("half_girth").innerHTML;
+    // var c_fullgirth= document.getElementById("full_girth").innerHTML;
+    // var c_ankle= document.getElementById("inseam_ankle").innerHTML;
+    // var c_floor= document.getElementById("inseam_floor").innerHTML;
+
+   
+    // firebase.database().ref().child("performers").child(global_key).child("measurements").set({        
+    //         Performer_Id:"p"+global_key,
+    //         armscye:c_armscye,
+    //         centerBackWrist:c_cbw,
+    //         chest:c_chestrel,
+    //         fullHip:c_hip,
+    //         halfGirth:c_halfgirth,
+    //         headCircumference:c_head,
+    //         hip:c_hip,
+    //         inseam:c_ankle,
+    //         name:c_pname,
+    //         neck:c_neck,
+    //         outseam:c_floor,
+    //         play_title:c_showtitle,
+    //         role:c_charname,
+    //         waist:c_wexp
+            
+    //   });
 }
