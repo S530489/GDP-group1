@@ -86,7 +86,13 @@
         <br>
               <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="submit" class="Add">Add</button>
+                <button type="submit" class="Add" onclick=myFunction()>Add</button>
+                <script>
+                  function myFunction() {
+                  alert("Project added successfully");
+                    }
+                  </script>
+
               </div>
             </div>
           </form>
