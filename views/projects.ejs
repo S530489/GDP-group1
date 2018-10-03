@@ -74,10 +74,15 @@
             <input type="text" name="Project description" placeholder="Write something.." style="height:200px" required><br>
               
              <form action="upload.php" method="post" enctype="multipart/form-data">
-              <b>Select image to upload:</b>
+              <b>Select title image to upload:</b>
               <input type="file" name="fileToUpload" id="fileToUpload">
-              
           </form>
+
+          <form action="uploadmulti.php" method="post" enctype="multipart/form-data">
+            <b>Select multiple images to upload:</b>
+            <input type="file" name="upfile[]"multiple>
+            <input type="submit" value="Upload">
+        </form>
         <br>
               <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
