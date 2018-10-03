@@ -13,7 +13,7 @@ input[type=text], select, textarea {
     box-sizing: border-box; 
     margin-top: 6px; 
     margin-bottom: 16px; 
-    resize: vertical 
+    resize: vertical; 
 }
 
 input[type=submit] {
@@ -23,6 +23,7 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    float: left;
 }
 
 input[type=submit]:hover {

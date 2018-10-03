@@ -52,7 +52,7 @@ function logout(){
         // ...
 
         window.alert("error:"+errorMessage);
-        window.location.href = "login.ejs";
+       
 
       });
 }
