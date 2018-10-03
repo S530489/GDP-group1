@@ -1,19 +1,18 @@
 <% include header %>
-
 <body>
 <div class="w3-container">
     <h2>Performer Measurement Form</h2>
-    <b>Note:</b> Please remove everything from your pockets. A costume shop staff member will complete the form for you.
-  </div>
+    <button class="button" onclick="getMeasurements()">Get Measurements</button>
+</div>
 
-  <button onclick="getMeasurements()">Get Measurements</button>
+  
   <div class="row">
-  <div class="col-md-1"> <a id="edit" onclick="edit()">Edit</a></div>
-  <div class="col-md-3">
+    <div class="col-md-1"></div>
+  <div class="col-md-4">
 
       <div class="form-group">
         <label for="inputlg">Name (Last, First)</label>
-        <input class="form-control" id="perf_name" type="text">
+        <input class="form-control" id="perf_name" type="text" contenteditable="false">
       </div>
       <div class="form-group">
         <label for="inputlg">Character Name</label>
@@ -21,7 +20,7 @@
       </div>
       <div class="form-group">
         <label for="inputlg">Show Title</label>
-        <input class="form-control" id="show_title" type="text">
+        <input class="form-control" id="show_title" type="text" contenteditable="false">
       </div>
       <div class="form-group" id="dominant_hand">
         <label for="inputlg">Dominant Hand</label>
@@ -253,6 +252,25 @@
 
   </script>
   </div> 
+
+  <div class="col-md-3"> 
+    <div class="w3-container">
+      <button onclick="document.getElementById('id01').style.display='block'" class="button" id="edit1">Edit</button>
+    
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h3>Access Code Verification</h3>
+            <br>
+            <label id="ver">Enter the access code to edit the measurments:</label><br>
+            <input type="password" id="accesscode" name="accesscode" required /><br><br>
+            <button id="veri" class="button" onclick="edit()">Verify</button>
+          </div>
+        </div>
+      </div>
+    </div>	
+  </div>
 
 <br><br>
 </div>

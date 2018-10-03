@@ -1,12 +1,13 @@
 var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
 var global_key;
 
+var measurements_ids=["perf_name","character_name","show_title","head","neck","armscye","centerBack","chest_relaxed","chest_expanded","waist_relaxed","waist_expanded","hip","half_girth","full_girth","inseam_ankle","inseam_floor"];
+
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
 document.getElementById('subBtn').style.visibility='hidden';
 //document.getElementById("subBtn").hidden = true;
 document.getElementById('canBtn').style.visibility='hidden';;
-
 
 function myFunction() {
     var input, filter, table, tr, td, i;
@@ -107,6 +108,10 @@ function disable(){
     for (i = 0; i < all_ids.length; i++){
         document.getElementById(all_ids[i]).contentEditable=false; 
     }
+
+    for (i = 0; i < measurements_ids.length; i++){
+        document.getElementById(measurements_ids[i]).contentEditable=false; 
+    }
 }
 
 function enable(){
@@ -117,7 +122,9 @@ function enable(){
         document.getElementById(all_ids[i]).contentEditable=true; 
     }
   
-   
+    for (i = 0; i < measurements_ids.length; i++){
+        document.getElementById(measurements_ids[i]).contentEditable=true; 
+    }
 }
 function getInfo(key){
     console.log(key);
@@ -189,5 +196,5 @@ function getMeasurements()
         
         disable();
     })
-
+    
 }
