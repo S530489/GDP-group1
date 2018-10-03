@@ -32,6 +32,8 @@ input[type=text] {
     padding: 12px 20px 12px 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin-left: 20px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 input[type=email] {
@@ -232,4 +234,10 @@ float: right;
 #edit1
 {
     float: left;
+}
+
+input[type=radio] {
+    border: 5px;
+    width: 4%;
+    height: 1em;
 }

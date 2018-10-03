@@ -5,7 +5,6 @@
     <button class="button" onclick="getMeasurements()">Get Measurements</button>
 </div>
 
-  
   <div class="row">
     <div class="col-md-1"></div>
   <div class="col-md-4">
@@ -23,7 +22,7 @@
         <input class="form-control" id="show_title" type="text" contenteditable="false">
       </div>
       <div class="form-group" id="dominant_hand">
-        <label for="inputlg">Dominant Hand</label>
+        <label>Dominant Hand</label>
       <div class="radio">
         <label><input type="radio"  name="optradio">Left</label>
       </div>
@@ -255,17 +254,17 @@
 
   <div class="col-md-3"> 
     <div class="w3-container">
-      <button onclick="document.getElementById('id01').style.display='block'" class="button" id="edit1">Edit</button>
+      <button onclick="document.getElementById('id02').style.display='block'" class="button" id="edit1">Edit</button>
     
-      <div id="id01" class="w3-modal">
+      <div id="id02" class="w3-modal">
         <div class="w3-modal-content">
           <div class="w3-container">
-            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
             <h3>Access Code Verification</h3>
             <br>
             <label id="ver">Enter the access code to edit the measurments:</label><br>
             <input type="password" id="accesscode" name="accesscode" required /><br><br>
-            <button id="veri" class="button" onclick="edit()">Verify</button>
+            <button id="veri" class="button" onclick="editMeasurements()">Verify</button>
           </div>
         </div>
       </div>
@@ -277,9 +276,9 @@
   
 <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-2"> <button type="button" class="btn btn-dark btn-lg" id="canBtn"  onclick="Cancel()">Cancel</button></div>
+    <div class="col-md-2"> <button type="button" class="button" id="canBtn"  onclick="Cancel()">Cancel</button></div>
     <div class="col-md-4"> 
-        <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="SubmitToFirebase()">Submit</button>
+        <button type="button" class="button" id="subBtn"  onclick="submit_to_firebase()">Submit</button>
     </div>	
     <div class="col-md-1"> </div>	
 
