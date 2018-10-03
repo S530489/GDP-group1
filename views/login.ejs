@@ -1,20 +1,18 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="./login.js"></script>
+
 <body >
         <div class="container">
-                <div id="msgalert1" >
+                <div id="msgAlertLogin" >
                   <div class="row">
                       <div class="col-md-2"></div>
-                      <div class="col-md-5"><p><strong id="msg1"></strong></p></div>
-                      <div class="col-md-2"><a id="td1" onclick="closeAlert1()">&times;</a></div>
+                      <div class="col-md-5"><p><strong id="msgLogin"></strong></p></div>
+                      <div class="col-md-2"><a id="td1" onclick="closeAlert1()"></a></div>
                       <div class="col-md-3"></div>
                  </div>
                 </div>
               </div>
 
-    <div class="row">
 
-      </div>
       <br/> <br/>  <br/> <br/>  <br/> <br/>
   <div class="row">
       <div class="col-md-1"></div>
@@ -43,6 +41,7 @@
 </form>
 
 <button onclick="loginFunction()" class="button" >Submit</button>   
+<!-- <button onclick="logintest()" class="button" >test</button>   -->
 </div> 
 </div>
             
@@ -67,7 +66,7 @@
   firebase.initializeApp(config);
   
 </script>
-
+<script src="./login.js"></script>
 <style>
   .button {
     background-color: black;

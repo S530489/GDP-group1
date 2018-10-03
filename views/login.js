@@ -1,6 +1,15 @@
 document.getElementById('msgalert').style.display="none";
+
+
+function logintest(){
+        document.getElementById("msgLogin").innerHTML = " Success!!!  User Logged Out";
+        document.getElementById("td1").innerHTML = "&times;";
+        document.getElementById('msgAlertLogin').style.backgroundColor="LightGreen ";
+        document.getElementById('msgAlertLogin').style.display="block";
+
+}
 function cancelFunction(){
-  window.alert("test")
+  window.location.href = "http://127.0.0.1:8081/";
 
 }
 function closeAlert(){
@@ -8,7 +17,7 @@ function closeAlert(){
 }
 
 function closeAlert1(){
-  document.getElementById('msgalert1').style.display="none";
+  document.getElementById('msgAlertLogin').style.display="none";
 }
 
 
@@ -74,7 +83,6 @@ function loginFunction()
 function logout(){
     
     firebase.auth().signOut().then(function() {
-        window.alert("user signed out")
         // Sign-out successful.
 
       }).catch(function(error) {
@@ -84,9 +92,14 @@ function logout(){
         // ...
 
         window.alert("error:"+errorMessage);
-        window.location.href = "login.ejs";
 
+      }).then(function(){
+        
+        window.location.href = "http://127.0.0.1:8081/";
+        window.alert("User Successfully logged out")
+        logintest();    
       });
+      
 }
 
 function initApp(){
