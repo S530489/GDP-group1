@@ -92,10 +92,7 @@ function logout(){
         // ...
 
         window.alert("error:"+errorMessage);
-<<<<<<< HEAD
-=======
        
->>>>>>> 86fb69fdda0baf1bfc0174e7009dd0e82395cb00
 
       }).then(function(){
         
