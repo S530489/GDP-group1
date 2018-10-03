@@ -1,5 +1,4 @@
 var path = require("path");
-
 var express = require("express");
 var logger = require("morgan");
 var bodyParser = require("body-parser"); // simplifies access to request body

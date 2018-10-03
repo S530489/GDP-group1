@@ -1,6 +1,17 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="./login.js"></script>
 <body >
+        <div class="container">
+                <div id="msgalert1" >
+                  <div class="row">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-5"><p><strong id="msg1"></strong></p></div>
+                      <div class="col-md-2"><a id="td1" onclick="closeAlert1()">&times;</a></div>
+                      <div class="col-md-3"></div>
+                 </div>
+                </div>
+              </div>
+
     <div class="row">
 
       </div>
@@ -71,6 +82,11 @@
     margin: 4px 2px;
     cursor: pointer;
 }
+
+#td1:hover{
+    cursor: pointer;
+    background-color: #ccc;
+  }
 
 body {
     font-family: "Comic Sans MS", cursive, sans-serif;
