@@ -13,7 +13,7 @@ function getPerfomers(ind){
         var EventPerformers = []
         var EventPerformersNames = []
         for (i = 0; i < obj.Performers.length; i++) { 
-            console.log(obj.Performers[i][1])
+            console.log(obj.Performers[i])
             var k = obj.Performers[i][1]
             EventPerformers.push(performers[k])
             EventPerformersNames.push(performers[k].general.Name.First_Name)
@@ -103,7 +103,7 @@ function getTitle()
     document.getElementById("showName").innerHTML = "";
     var s = document.getElementsByName('titles')[0];
     var text = s.options[s.selectedIndex].text;
-    window.alert(text)
+    // window.alert(text)
     document.getElementById("showTitle").innerHTML = text;
     document.getElementById("mySelect").selectedIndex = "0";
     return text;

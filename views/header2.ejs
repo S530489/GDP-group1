@@ -19,36 +19,20 @@
     font-family: "Lobster", serif;
 }
 </style>
-<script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-        h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
-    </script>
+
 </head>
 
 <body onload="startTime()">
 
-  <div class="row">
+  <div class="row" onmouseover="startTime()">
     <div class="col-md-3"></div>
     <div class="col-md-7">
         <div class="w3-container w3-lobster">
-            <p  style = "font-family:cursive,Verdana,sans-serif;font-style:italic;margin-bottom: 0px; margin-top: 0px;font-size:48px">Stephi's Designing..</p>
+            <p  style = "font-family:cursive,Verdana,sans-serif;font-style:italic;margin-bottom: 0px; margin-top: 0px;font-size:48px" >Stephi's Designing..</p>
           </div>
       </div>
       <div class="col-md-2">
-          <div style = " font-size: 30px;font-family:Times New Roman, Times, serif;text-align: center;margin-bottom: 10px; margin-top: 14px;" id="txt"></div>   
+          <div style = " font-size: 30px;font-family:Times New Roman, Times, serif;text-align: center;margin-bottom: 10px; margin-top: 14px;" id="txt"  ></div>   
       </div>
   </div>
 
@@ -76,3 +60,20 @@
 <!-- <iframe scrolling="no" frameborder="no" clocktype="html5" style="overflow:hidden;border:0;margin:0;padding:0;width:80px;height:80px;"src="https://www.clocklink.com/html5embed.php?clock=013&timezone=CST&color=green&size=80&Title=&Message=&Target=&From=2018,1,1,0,0,0&Color=green"></iframe> -->
 <!-- <iframe scrolling="no" frameborder="no" clocktype="html5" align="right" style="overflow:hidden;border:0;margin:0;padding:0;width:150px;height:150px;"src="https://www.clocklink.com/html5embed.php?clock=013&timezone=CST&color=green&size=150&Title=&Message=&Target=&From=2018,1,1,0,0,0&Color=green"></iframe> -->
 </body>
+<script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('txt').innerHTML =
+            h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+            return i;
+        }
+        </script>
