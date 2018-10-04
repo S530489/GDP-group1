@@ -4,6 +4,7 @@ var performers = {}
 
 function getPerfomers(ind){
     console.log(performers)
+    
     key = document.getElementById("mySelect").value;
     var firebaseRef = firebase.database().ref().child("Events/"+key);
     firebaseRef.on('value', function(snapshot){
@@ -62,8 +63,8 @@ function getColor()
 
 function addrow()
 {
-    var title=getTitle();
-    var show=getName();
+    var title=document.getElementById("showTitle").innerHTML;
+    var show=document.getElementById("showName").innerHTML;
     var color=document.getElementById("showcolor").innerHTML;
     var clothing=document.getElementById("showclothing").innerHTML;
     var charname=document.getElementById("character").innerHTML;
@@ -98,9 +99,11 @@ function addrow()
 
 
 function getTitle()
-{ 
+{   
+    document.getElementById("showName").innerHTML = "";
     var s = document.getElementsByName('titles')[0];
     var text = s.options[s.selectedIndex].text;
+    window.alert(text)
     document.getElementById("showTitle").innerHTML = text;
     document.getElementById("mySelect").selectedIndex = "0";
     return text;
