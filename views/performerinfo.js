@@ -6,7 +6,6 @@ document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
 document.getElementById("edit1").hidden = true;
 document.getElementById('subBtn').style.visibility='hidden';
-//document.getElementById("subBtn").hidden = true;
 document.getElementById('canBtn').style.visibility='hidden';;
 
 function myFunction() {
@@ -82,7 +81,7 @@ function SubmitToFirebase(){
 function Cancel(){
     document.getElementById('subBtn').style.visibility='hidden';
     document.getElementById('canBtn').style.visibility='hidden';
-   
+    disable();
     }
 
 
@@ -295,3 +294,4 @@ function submit_to_firebase(){
             
     //   });
 }
+
