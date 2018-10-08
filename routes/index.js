@@ -48,6 +48,11 @@ router.get("/createaccount", function (request, response) {
    
   response.render("createaccount.ejs");
 });
+router.all("/projectdetails", function (request, response) {
+   
+  response.render("projectdetails");
+});
+
 
 router.get("/contact", function (request, response) {
   response.render('contact.ejs');
