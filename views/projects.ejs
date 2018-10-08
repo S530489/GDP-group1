@@ -65,8 +65,10 @@
     <button type="submit"  onclick=test()>TEST</button>
     <br/>
     <br/>
-    
-  
+    <button type="submit"  onclick=retreive()>getImage</button>  
+  <div id="retreiveImage">
+      <!-- <img  style="width:50%" id="testImage"> -->
+  </div>
   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>       
         <div id="id01" class="modal">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -113,7 +115,7 @@
      
      <div class="col-sm-6">
         <div class="card">
-            <img src="images/sample.jpg" alt="The shoemakers Holiday" style="width:50%">
+            <img alt="The shoemakers Holiday" style="width:100%" id="testImage">
             <h3><i>The shoemaker's Holiday</i></h3><br>
             <p class="description">Elizabethan 
               Costume Design Project</p><br>

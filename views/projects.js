@@ -1,5 +1,21 @@
 var selectedFile;
 
+
+
+
+
+function retreive(){
+    window.alert("come");
+    var storageRef = firebase.storage().ref('/testImages/' + 'Screenshot (40).png');
+    storageRef.getDownloadURL().then(function(url){
+        var img = document.getElementById('testImage');
+        img.src = url;
+        }).catch(function(error) {
+    });
+}
+
+
+
 document.getElementById("file123").addEventListener("change", funcTest);
 function funcTest(){
     selectedFile = event.target.files[0];
