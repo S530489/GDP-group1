@@ -4,7 +4,10 @@
   "Date":"07/10/2018",
   "Organizers":["Kathy","Nathan"],
   "Designers":["Stephie"],
-  "Performers":["p0","p1"]
+  "Performers":["p0","p1"],
+  "mainImage_Url":"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/testImages%2FIMG_0085.jpg?alt=media&token=ad46d2f6-dfcd-4382-8350-c96b8e865778",
+  "otherImages_Url":"",
+  "Description":"It is an Intresting love story"
 },
 {
   "Event_Id":"E2",
@@ -12,7 +15,10 @@
   "Date":"09/15/2018",
   "Organizers":["Kathy","Nathan"],
   "Designers":["Stephie"],
-  "Performers":["p0","p3"]
+  "Performers":["p0","p3"],
+  "mainImage_Url":"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/testImages%2FWhatsApp%20Image%202017-08-21%20at%2019.43.19.jpeg?alt=media&token=688217c1-01ad-4bdb-a67f-3a4261286f19",
+  "otherImages_Url":"",
+  "Description":"It is a Comedy Feild"
 },
 {
   "Event_Id":"E3",
@@ -20,6 +26,9 @@
   "Date":"09/15/2018",
   "Organizers":["Kathy","Nathan"],
   "Designers":["Stephie"],
-  "Performers":["p0","p1","p2"]
+  "Performers":["p0","p1","p2"],
+  "mainImage_Url":"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/testImages%2FScreenshot%20(40).png?alt=media&token=52e31199-9758-4786-bc97-afcac971fda1",
+  "otherImages_Url":"",
+  "Description":"It is an old King fisher story"
 }
 ]
