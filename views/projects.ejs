@@ -1,6 +1,7 @@
 <%include header3%>
 <html>
 <head>
+    
 <style>
     body{
         font-family: "Comic Sans MS", cursive, sans-serif;
@@ -56,7 +57,17 @@
   opacity: 0.7;
 }</style>
 </head>
-<body><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>       
+
+<body>
+  
+    <b>Select title image to upload:</b>
+    <input type="file" name="fileToUpload" id="file123">
+    <button type="submit"  onclick=test()>TEST</button>
+    <br/>
+    <br/>
+    
+  
+  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>       
         <div id="id01" class="modal">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
           <form class="modal-content" action="/action_page.php">
@@ -153,5 +164,21 @@
                 modal.style.display = "none";
             }
         }
-        </script></body>
+        </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+</script>        
+      <script src="projects.js"></script>
+</body>
 </html>
