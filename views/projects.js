@@ -13,6 +13,12 @@ $(document).ready(function(){
             var currentObject = obj[keys[i]];
             console.log(currentObject);
             if(i%2 == 0){
+                var break1 = document.createElement("br");
+                var break2 = document.createElement("br");
+                $("#EventHolder").append(break1);
+                $("#EventHolder").append(break2);
+                currentRow = document.createElement("div");
+                $(currentRow).addClass("row");
                 currentRow = document.createElement("div");
                 $(currentRow).addClass("row");
                 $("#EventHolder").append(currentRow);
@@ -27,19 +33,25 @@ $(document).ready(function(){
            // image.setAttribute("alt","Your text here");
            var header = document.createElement("h3");
            var msg = document.createElement("i");
-           var t = document.createTextNode(currentObject.Description);
+           var t = document.createTextNode(currentObject.Name);
            msg.appendChild(t);
            header.appendChild(msg);
+           var desc = document.createElement("p");
+           $(desc).addClass("description");
+           desc.innerHTML = currentObject.Description;
+           $(desc).addClass("description");
            var butn = document.createElement("button");
+           $(butn).attr('id', i);
            butn.innerHTML = "Read more..&rarr;";
+           var func = "getEventInformation("+i+")";
+           $(butn).attr('onClick', func);
            $(cards).append(image);
            $(cards).append(header);
+           $(cards).append(desc);
            $(cards).append(butn);
            $(col).append(cards);
            $(currentRow).append(col);
-
-
-            
+   
         }
        
         
@@ -48,6 +60,10 @@ $(document).ready(function(){
        
 })
 
+function getEventInformation(key){
+    window.alert(key);
+    window.location.href = "projectdetails?"+key
+}
 
 
 function retreive(){
