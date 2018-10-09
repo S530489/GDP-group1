@@ -48,9 +48,16 @@ router.get("/createaccount", function (request, response) {
    
   response.render("createaccount.ejs");
 });
-router.all("/projectdetails", function (request, response) {
+
+router.all("/projectdetails", function (req, res) {
+
    
-  response.render("projectdetails");
+  res.render("projectdetails");
+});
+
+router.all("/projectdetails/:id", function (req, res) {
+  console.log(req.params.id)
+  res.render("projectdetails");
 });
 
 

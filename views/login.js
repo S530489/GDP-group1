@@ -1,4 +1,4 @@
-document.getElementById('msgalert').style.display="none";
+//document.getElementById('msgalert').style.display="none";
 
 
 function logintest(){
