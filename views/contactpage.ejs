@@ -11,15 +11,36 @@
               <input type="text" id="fname" name="firstname" placeholder="Your name..">
           
               <label for="lname">Last Name</label>
-              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              <input type="text" id="lname" name="lastname" placeholder="Your last name.."><br>
           
               <label for="subject">Subject</label><br>
-              <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px " ></textarea>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:150px " ></textarea><br>
           
               <input type="submit" value="Submit">
           
             </form>
           </div>
+          <div id="map"></div>
+          <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        var uluru = {lat: 40.351180, lng: -94.887572};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+          </script>
+          <!--Load the API from the specified URL
+          * The async attribute allows the browser to render the page while the API loads
+          * The key parameter will contain your own API key (which is not needed for this tutorial)
+          * The callback parameter executes the initMap() function
+          -->
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPMl6rH1tWwJieVRm5FDO1PTccQ0EcU0&callback=initMap">
+          </script>
     <footer>
         <br>
         <h3>Address: Ron Houston center for the performing arts, Maryville, Missouri, 64468</h3><br>
