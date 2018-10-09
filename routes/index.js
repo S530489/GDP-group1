@@ -71,8 +71,17 @@ router.get("/sendform", function (request, response) {
 
 
 router.get("/projects", function (request, response) {
+
+  var firebaseRef = firebase.database().ref();
+    
+  firebaseRef.on('value', function(snapshot){
+      // console.log(snapshot.val().Events);
+      // console.log("testing");
+      // console.log(snapshot.val().performers);
+      response.render("projects.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers});
+    })
    
-  response.render("projects.ejs");
+  
 });
 
 router.get("/login", function (request, response) {

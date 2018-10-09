@@ -1,6 +1,52 @@
 var selectedFile;
 
+$(document).ready(function(){
+   // var firebaseRef = firebase.database().ref().child("Events/");
+    var firebaseRef = firebase.database().ref("Events/");
+    firebaseRef.on('value', function(snapshot){
+        var obj = snapshot.val();
+        console.log(obj);
+        var keys = Object.keys(obj);
+        console.log(keys);
+        var currentRow;
+        for(i=0;i<keys.length;i++){
+            var currentObject = obj[keys[i]];
+            console.log(currentObject);
+            if(i%2 == 0){
+                currentRow = document.createElement("div");
+                $(currentRow).addClass("row");
+                $("#EventHolder").append(currentRow);
+            }
+            var col = document.createElement("div");
+            $(col).addClass("col-md-6");
+            var cards = document.createElement("div");
+            $(cards).addClass("card");
+            var image = document.createElement("img");
+            image.src = currentObject.mainImage_Url;
+            $(image).css("width", "100%");
+           // image.setAttribute("alt","Your text here");
+           var header = document.createElement("h3");
+           var msg = document.createElement("i");
+           var t = document.createTextNode(currentObject.Description);
+           msg.appendChild(t);
+           header.appendChild(msg);
+           var butn = document.createElement("button");
+           butn.innerHTML = "Read more..&rarr;";
+           $(cards).append(image);
+           $(cards).append(header);
+           $(cards).append(butn);
+           $(col).append(cards);
+           $(currentRow).append(col);
 
+
+            
+        }
+       
+        
+    
+    });
+       
+})
 
 
 
