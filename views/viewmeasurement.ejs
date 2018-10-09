@@ -276,12 +276,15 @@
   
 <div class="row">
     <div class="col-md-4"></div>
-    <div class="col-md-2"> <button type="button" class="button" id="canBtn"  onclick="Cancel()">Cancel</button></div>
+    <div class="col-md-2"> <button type="button" class="button" id="canBtn"  onclick="cancelFunction()">Cancel</button></div>
     <div class="col-md-4"> 
         <button type="button" class="button" id="subBtn"  onclick="submit_to_firebase()">Submit</button>
     </div>	
     <div class="col-md-1"> </div>	
-
+    <script>
+        document.getElementById("subBtn").style.visibility='hidden';
+        document.getElementById("canBtn").style.visibility='hidden';
+    </script>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

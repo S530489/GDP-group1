@@ -5,8 +5,7 @@ var global_key;
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
 document.getElementById("edit1").hidden = true;
-document.getElementById('subBtn').style.visibility='hidden';
-document.getElementById('canBtn').style.visibility='hidden';;
+
 
 function myFunction() {
     var input, filter, table, tr, td, i;
@@ -112,7 +111,6 @@ function disable(){
 }
 
 function enable(){
-    //document.getElementById("FullName").disabled = false;
     document.getElementById('subBtn').style.visibility='visible';
     document.getElementById('canBtn').style.visibility='visible';
     for (i = 0; i < all_ids.length; i++){
@@ -195,7 +193,6 @@ function getMeasurements()
 
 function noteditable_function()
 {
-    // document.getElementById("edit1").hidden = false;
     document.getElementById('subBtn').style.visibility='hidden';
     document.getElementById('canBtn').style.visibility='hidden';
 
@@ -293,5 +290,28 @@ function submit_to_firebase(){
     //         waist:c_wexp
             
     //   });
+}
+
+function cancelFunction()
+{
+    document.getElementById('subBtn').style.visibility='hidden';
+    document.getElementById('canBtn').style.visibility='hidden';
+
+        document.getElementById("perf_name").readOnly=true;
+        document.getElementById("character_name").readOnly = true;
+        document.getElementById("show_title").readOnly = true;
+        document.getElementById("head").readOnly = true;
+        document.getElementById("neck").readOnly = true;
+        document.getElementById("armscye").readOnly = true;
+        document.getElementById("centerBack").readOnly = true;
+        document.getElementById("chest_relaxed").readOnly = true;
+        document.getElementById("chest_expanded").readOnly = true;
+        document.getElementById("waist_relaxed").readOnly = true;
+        document.getElementById("waist_expanded").readOnly = true;
+        document.getElementById("hip").readOnly = true;
+        document.getElementById("half_girth").readOnly = true;
+        document.getElementById("full_girth").readOnly = true;
+        document.getElementById("inseam_ankle").readOnly = true;
+        document.getElementById("inseam_floor").readOnly = true;
 }
 
