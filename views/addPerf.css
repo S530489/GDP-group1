@@ -258,3 +258,40 @@ tr{
 {
     font-size: 20px;
 }
+
+optgroup[label="Top"]
+{
+background-color:#E6E6FA;
+}
+
+optgroup[label="Bottom"]
+{
+background-color: #FFF0F5;
+}
+optgroup[label="Under"]
+{
+background-color: #B0E0E6;
+}
+optgroup[label="Shoes"]
+{
+background-color: #EEE8AA;
+}
+optgroup[label="No Size"]
+{
+background-color: #BC8F8F;
+}
+optgroup[label="Hat"]
+{
+background-color: #F0F8FF	;
+}
+optgroup[label="Set"]
+{
+background-color: rgb(167, 203, 233);
+}
+
+.bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a span.check-mark{
+    position: absolute;
+    display: inline-block;
+    left: 5px; 
+    margin-top: 5px;
+}

@@ -71,10 +71,125 @@
     <th>
             <select name="clothing" onchange="getClothingitem()">
                     <option value="clothing">Clothing item</option>        
-                    <option value="kal">Tunic</option>
-                    <option value="elen">Skirt</option>
-                    <option value="wat">Suit</option>
-                    <option value="kate">Trousers</option>
+                    <optgroup label="Top">
+                    <option value="dress_male">Dress shirt: Male fit</option>
+                    <option value="blouse_female">Blouse: Female fit</option>
+                    <option value="blazer_men">Blazer: men's fit</option>
+                    <option value="blazer_women">Blazer: men's fit</option>
+                    <option value="winter_coat">Winter Coat</option>
+                    <option value="trench_coat">Trench coat</option>
+                    <option value="blazer_men">Blazer: men's fit</option>
+                    <option value="tunic">Tunic</option>
+                    <option value="vest_men">Vest: men's fit</option>
+                    <option value="vest_women">Vest: women's fit</option>
+                    <option value="sweater_crew">Sweater: crew neck</option>
+                    <option value="sweater_vneck">Sweater: v-neck</option>
+                    <option value="sweater_cardigan">Sweater: cardigan</option>
+                    <option value="tshirt_plain">Tshirt: Plain</option>
+                    <option value="tshirt_screen">Tshirt: screen print</option>
+                    <option value="knit_short">Knit top: short sleeve</option>
+                    <option value="tank_top">Tank top</option>
+                    <option value="knit_long">Knit top: long sleeve</option>
+                    <option value="knit_casual">Knit top: casual</option>
+                    <option value="knit_dressy">Knit top: dressy</option>
+                    <option value="thermal">Thermal shirt</option>
+                    <option value="western">Western shirt</option>
+                    <option value="flannel">Flannel shirt</option>
+                    <option value="smoking">Smoking jacket</option>
+                   </optgroup>
+                   <optgroup label="Bottom">     
+                    <option value="jeans_female">Jeans: Female fit</option>
+                    <option value="jeans_male">Jeans: Male fit</option>
+                    <option value="khakis_female">Khakis: Female fit</option>
+                    <option value="khakis_male">Khakis: Male fit</option>
+                    <option value="slacks_female">Dress Slacks: Female fit</option>
+                    <option value="slacks_male">Dress Slacks: Male fit</option>
+                    <option value="pants_other">Pants: Other style</option>
+                    <option value="skirt_short">Skirt: short</option>
+                    <option value="skirt_knee">Skirt: knee-length</option>
+                    <option value="skirt_long">Skirt: long</option>
+                    <option value="skirt">Skirt</option>
+                    <option value="shorts_men">Shorts: men's fit</option>
+                    <option value="shorts_women">Shorts: women's fit</option>
+                    <option value="leggings">Leggings</option>
+                    <option value="track_pants">Track Pants</option>
+                    <option value="stretch_pants">Stretch Pants</option>
+               </optgroup>
+               
+               <optgroup label="Set">     
+                   <option value="tuxedo_jacket">Tuxedo jacket</option>
+                   <option value="tuxedo_shirt">Tuxedo shirt</option>
+                   <option value="tuxedo_pants">Tuxedo pants</option>
+                   <option value="dress_long">Dress: long</option>
+                   <option value="dress_mid">Dress: mid-length</option>
+                   <option value="dress_short">Dress: short</option>
+                   <option value="nightgown">Nightgown</option>
+                   <option value="suit_2">Suit: 2 piece</option>
+                   <option value="suit_3">Suit: 3 piece</option>
+              </optgroup>
+           
+              <optgroup label="Under">     
+               <option value="under_vneck">Undershirt: Vneck Tshirt</option>
+               <option value="under_tank">Undershirt: Tank top</option>
+               <option value="tights">Tights</option>
+               <option value="pantyhouse">Pantyhouse</option>
+               <option value="leotard">Leotard</option>
+               <option value="unitard">Unitard</option>
+               <option value="dress_socks">Socks: dress socks</option>
+               <option value="athletic_socks">Socks: athletic socks</option>
+               <option value="short_socks">Socks: short socks</option>
+               <option value="socks_tall">Socks: tall socks</option>
+               <option value="socks_patterned">Socks: patterned socks</option>
+               <option value="underg_full">Undergarment: Full slip</option>
+               <option value="underg_half">Undergarment: Half slip</option>
+               <option value="socks_knee">Socks: knee socks</option>
+               <option value="socks_trouser">Socks: trouser socks</option>
+           </optgroup>
+           
+           <optgroup label="Shoes">     
+               <option value="shoe">Shoes: dress shoes men's fit</option>
+               <option value="shoe">Shoes: dress shoes women's fit</option>
+               <option value="shoe">Shoes: athletic shoes men's fit</option>
+               <option value="shoe">Shoes: athletic shoes women's fit</option>
+               <option value="shoe">Shoes: flats</option>
+               <option value="shoe">Shoes: heels</option>
+               <option value="shoe">Shoes: dress boots</option>
+               <option value="shoe">Shoes: western boots</option>
+               <option value="shoe">Shoes: western boots</option>
+               <option value="shoe">Shoes: work boots</option>
+               <option value="shoe">Shoes: casual men's fit</option>
+               <option value="shoe">Shoes: casual women's fit</option>
+               <option value="shoe">Slippers: men's fit</option>
+               <option value="shoe">Slippers: women's fit</option>
+               <option value="shoe">Dance shoes: character shoes women's fit</option>
+               <option value="shoe">Dance shoes: character shoes men's fit</option>
+               <option value="shoe">Dance shoes: jazz slippers</option>
+               <option value="shoe">Dance shoes: ballet slippers</option>
+               <option value="shoe">Dance shoes: tap shoes men's fit</option>
+               <option value="shoe">Dance shoes: tap shoes women's fit</option>
+               <option value="shoe">Dance shoes: dance sandals</option>
+               <option value="shoe">Shoes: china flats</option>
+               <option value="shoe">Shoes: sandals</option> 
+           </optgroup>
+           
+           <optgroup label="Hat">
+                   <option value="hat">Hat: winter</option>
+                   <option value="hat">Hat: dress</option>
+                   <option value="hat">Hat: baseball cap</option>
+                   <option value="hat">Hat: newsboy</option>
+                   <option value="hat">Hat: other</option>
+           </optgroup>
+           
+           <optgroup label="No Size">
+                   <option value="noSize">Tie: bow tie</option>
+                   <option value="noSize">Tie: straight tie</option>
+                   <option value="noSize">Bathrobe</option>
+                   <option value="noSize">Cape: long</option>
+                   <option value="noSize">Cape: short</option>
+                   <option value="noSize">Gloves: winter</option>
+                   <option value="noSize">Gloves: work</option>
+                   <option value="noSize">Gloves: dress</option>
+           </optgroup>
                </select>
     </th>
     <th>
