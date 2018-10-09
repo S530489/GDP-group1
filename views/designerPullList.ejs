@@ -1,7 +1,4 @@
 
-
-
-
 <% include header2 %>
 
 <script src="./print.js"></script>
@@ -30,14 +27,11 @@
  })
  }
   </script>
-
-<html>
-        <body >
 <!-- Compiled and minified CSS -->
 <div class="container-fluid">
 <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-9">
+        <div class="col-md-6">
 <table id="dplist">       
 <tr> 
         
@@ -50,21 +44,15 @@
                      
                     <option  value="<%= key %>" ><%= Name  %> </option> 
                     <% }) %>   
-                    <!-- <option value="king">King Lear</option>
-                    <option value="show">Senior Showcase</option>
-                    <option value="romeo">Romeo Juliet</option>
-                    <option value="night">The Nightmare</option> -->
+
                </select>
         
     </th>  
-    <!-- <select name="names" id="perfoName" onchange="getName()"></select> -->
+
     <th align="center">
             <select name="names" id="perfoName" onchange="getName()">
                  <option value="performName">Performer Name</option>        
-                 <!-- <option value="kal">Kaleb</option>
-                 <option value="elen">Ellen</option>
-                 <option value="wat">Watson</option>
-                 <option value="kate">Kate</option> -->
+
             </select>
     </th> 
     <th>Character Name</th>
@@ -243,8 +231,7 @@
 </div>
 </table>
 </div>
-
-<div class="col-md-2"></div>
+<div class="col-md-1"></div>
 </div>
 <br><br>
 <marquee behavior="alternate" direction="left"> <b id="scroll">You will get the added performers in the table below </b></marquee>
@@ -271,12 +258,13 @@
             <th>Color</th>
             <th>Size</th> 
             <th>Notes</th>  
-
+            
         </tr>
 
 </table>
 </div>
-<div class="col-md-2">  </div>
+<div class="col-md-1"> <a id="rem" onclick="removerows()">remove</a>  </div>
+<div class="col-md-1"></div>
 </div>
 <br/><br/>
 
@@ -288,6 +276,10 @@
 <button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
 </div>
 </div>
+<!-- 
+<script>
+document.getElementById("rem").style.visibility="hidden";
+</script> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <script>

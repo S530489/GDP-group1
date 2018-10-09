@@ -169,6 +169,7 @@ th, td {
 cursor: pointer;
 background-color: #ccc;
 }
+
 .marquee {
 height: 50px;	
 overflow: hidden;

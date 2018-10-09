@@ -1,6 +1,6 @@
 
 var performers = {}
-
+var cell9;
 
 function getPerfomers(ind){
     console.log(performers)
@@ -82,7 +82,7 @@ function addrow()
     var cell6=newrow.insertCell(5);
     var cell7=newrow.insertCell(6);
     var cell8=newrow.insertCell(7);
-    var cell9=newrow.insertCell(8);
+    cell9=newrow.insertCell(8);
 
     cell1.innerHTML=" ";
     cell2.innerHTML=title;
@@ -93,6 +93,7 @@ function addrow()
     cell7.innerHTML=size;
     cell8.innerHTML=notes;
     cell9.innerHTML="x"+remove();
+    cell9.style.visibility="hidden";
 }
 
 
@@ -103,7 +104,6 @@ function getTitle()
     document.getElementById("showName").innerHTML = "";
     var s = document.getElementsByName('titles')[0];
     var text = s.options[s.selectedIndex].text;
-    // window.alert(text)
     document.getElementById("showTitle").innerHTML = text;
     document.getElementById("mySelect").selectedIndex = "0";
     return text;
@@ -125,4 +125,9 @@ for(var i = 1; i < table.rows.length; i++)
     };  
 }
     return "";
+}
+
+function removerows()
+{
+    cell9.style.visibility="visible";
 }
