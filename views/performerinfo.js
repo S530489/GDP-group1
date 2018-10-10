@@ -170,6 +170,7 @@ function getMeasurements()
     firebaseRef.on('value', function(snapshot){
         var obj = snapshot.val();
         alert(obj.general.Name.First_Name);
+        document.getElementById("pname").innerHTML=obj.general.Name.First_Name;
         document.getElementById("perf_name").value = obj.general.Name.Last_Name+", "+obj.general.Name.First_Name;
         document.getElementById("character_name").value = obj.measurements.role;
         document.getElementById("show_title").value = obj.measurements.play_title;

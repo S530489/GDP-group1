@@ -1,14 +1,13 @@
 <% include header %>
-<body>
-<div class="w3-container">
-    <h2>Performer Measurement Form</h2>
+<div class="ptitle">
+    <h2><span id="pname">Performer</span>'s Measurement Form</h2>
     <button class="button" onclick="getMeasurements()">Get Measurements</button>
 </div>
-
+<br><br>
   <div class="row">
-    <div class="col-md-1"></div>
-  <div class="col-md-4">
-
+    <div class="col-md-2"></div>
+<div class="container">
+  <div class="col-md-6">
       <div class="form-group">
         <label for="inputlg">Name (Last, First)</label>
         <input class="form-control" id="perf_name" type="text" contenteditable="false">
@@ -250,11 +249,11 @@
 
 
   </script>
-  </div> 
-
+   
+  </div>
   <div class="col-md-3"> 
     <div class="w3-container">
-      <button onclick="document.getElementById('id02').style.display='block'" class="button" id="edit1">Edit</button>
+      <a onclick="document.getElementById('id02').style.display='block'" id="edit1">Edit</a>
     
       <div id="id02" class="w3-modal">
         <div class="w3-modal-content">
@@ -268,10 +267,12 @@
           </div>
         </div>
       </div>
-    </div>	
-  </div>
+    </div>
+    </div> 	
 
+  
 <br><br>
+</div>
 </div>
   
 <div class="row">

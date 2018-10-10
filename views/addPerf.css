@@ -235,7 +235,7 @@ float: right;
 
 #edit1
 {
-    float: left;
+    float: right;
 }
 
 input[type=radio] {
@@ -295,4 +295,14 @@ background-color: rgb(167, 203, 233);
     display: inline-block;
     left: 5px; 
     margin-top: 5px;
+}
+
+.container{
+    max-width: 750px;
+    background: #F5F5DC;
+}
+
+.ptitle
+{
+    margin-left: 35px;
 }
