@@ -46,12 +46,14 @@
                                 <table name="perf" id="myTable" class="myTable" style="width:85%;border: 5px solid">
                                     <tr>
                                         <th><h3>Performers</h3></th>
+                                        <th>Remove</th>
                                       </tr>
                                       <% var keys = Object.keys(performers)
                                       keys.forEach(function(key){ 
                                       var Name = performers[key].general.Name.First_Name %>
                                       <tr>
                                         <td onclick= "getInfo('<%= key %>' )" id="td1"> <%= Name  %> </td>
+                                        <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><a onclick="remove()">x</a></td>
                                       </tr>
                                         <% }) %>
                                 </table>                                                                

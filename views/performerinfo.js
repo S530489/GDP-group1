@@ -315,3 +315,36 @@ function cancelFunction()
         document.getElementById("inseam_ankle").readOnly = true;
         document.getElementById("inseam_floor").readOnly = true;
 }
+
+function remove()
+{
+var index, table = document.getElementById('myTable');
+for(var i = 1; i < table.rows.length; i++)
+{
+    table.rows[i].cells[1].onclick = function()
+    {
+        var c = confirm("Are you sure, you want to delete this row?");
+        if(c === true)
+        {
+            index = this.parentElement.rowIndex;
+            table.deleteRow(index);
+        }   
+    };  
+}
+
+        document.getElementById("heading").innerHTML = "Performer's "+"Information";
+        document.getElementById("First_name").innerHTML = "";
+        document.getElementById("last_name").innerHTML = "";
+        document.getElementById("age").innerHTML = "";
+        document.getElementById("email").innerHTML = "";
+        document.getElementById("pno1").innerHTML = "";
+        document.getElementById("pno2").innerHTML = "";
+        document.getElementById("add1").innerHTML = "";
+        document.getElementById("add2").innerHTML = "";
+        document.getElementById("add3").innerHTML = "";
+        document.getElementById("cname").innerHTML = "";
+        document.getElementById("allergy").innerHTML = "";
+        document.getElementById("eye").innerHTML = "";
+        document.getElementById("hair").innerHTML = "";
+        document.getElementById("ware").innerHTML = "";
+}
