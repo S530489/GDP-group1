@@ -131,3 +131,16 @@ function removerows()
 {
     cell9.style.visibility="visible";
 }
+function savelist(){
+    var filename = table;
+    var storageRef = firebase.storage().ref('/shoppulllistfiles/' + filename);
+    var uploadTask = storageRef.put(table);
+    uploadTask.on('state changed', function(snapshot){
+
+    }, function(error){
+
+    }, function(){
+
+    });
+   
+}
