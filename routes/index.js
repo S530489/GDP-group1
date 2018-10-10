@@ -70,6 +70,10 @@ router.get("/contactPage", function (request, response) {
   response.render('contactPage.ejs');
 });
 
+router.all("/forgotpassword", function (request, response) {
+   
+  response.render('forgotpassword.ejs');
+});
 router.get("/sendform", function (request, response) {
    
   response.render("sendform.ejs");
@@ -99,6 +103,9 @@ router.get("/login", function (request, response) {
 router.use(function (request, response) {
   response.status(404).render('404.ejs');
 });
+
+
+
 
 
 
@@ -165,3 +172,7 @@ router.post("/sendform", function(request,response){
 });
 
 module.exports = router
+function newFunction() {
+  return "forgotpassword.ejs";
+}
+
