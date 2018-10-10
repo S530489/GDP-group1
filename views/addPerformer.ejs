@@ -43,8 +43,8 @@
         <div class="row">
                 <div class="col-md-3">
                     <input style = "padding: 11px;border:1px solid #ddd; margin-left: 0px;"  size="10" class="ki" type="text" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search...">
-                                <table  id="myTable" class="myTable" style="width:85%;border: 5px solid">
-                                    <tr >
+                                <table name="perf" id="myTable" class="myTable" style="width:85%;border: 5px solid">
+                                    <tr>
                                         <th><h3>Performers</h3></th>
                                       </tr>
                                       <% var keys = Object.keys(performers)
@@ -54,12 +54,9 @@
                                         <td onclick= "getInfo('<%= key %>' )" id="td1"> <%= Name  %> </td>
                                       </tr>
                                         <% }) %>
-
-                                </table>                                           
-                        
-                                              
+                                </table>                                                                
                 </div>
-        
+      
         <div class="col-md-9">
             <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
                 <div class="row">
