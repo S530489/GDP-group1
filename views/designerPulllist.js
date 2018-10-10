@@ -71,6 +71,7 @@ function addrow()
     // var charname=$('#my-contenteditable-div').html();;
     var size=document.getElementById("size").innerHTML;
     var notes=document.getElementById("notes").innerHTML;
+    submit_to_firebase(title,show,color,clothing,charname,size,notes);
 
     var table=document.getElementsByName("addHere")[0];
     var newrow = table.insertRow(1);
@@ -131,16 +132,18 @@ function removerows()
 {
     cell9.style.visibility="visible";
 }
-function savelist(){
-    var filename = table;
-    var storageRef = firebase.storage().ref('/shoppulllistfiles/' + filename);
-    var uploadTask = storageRef.put(table);
-    uploadTask.on('state changed', function(snapshot){
+function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
+    
+   window.alert("submiting")
+    firebase.database().ref().child("ShopPullList").child(0).set({
 
-    }, function(error){
-
-    }, function(){
-
-    });
-   
-}
+            Play_title : title,
+            Performer_Name : show,
+            Character_Name : charname,
+            clothing_Item : clothing,
+            color_selected : color,
+            Size:size,
+            Add_Notes:notes
+            
+      })
+    }
