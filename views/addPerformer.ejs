@@ -67,7 +67,7 @@
                         <div class="col-md-6"> <p ><b id="heading">Performer's Information</b></p></div>
                         <div class="col-md-2"> <a id="measure" href="viewmeasurement">Measurements</a></div>
                         <div class="col-md-1 w3-container">
-                            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black" id="edit">Edit</button>
+                            <a id="edit" onclick="document.getElementById('id01').style.display='block'">Edit</a>
                           
                             <div id="id01" class="w3-modal">
                               <div class="w3-modal-content">
@@ -158,7 +158,10 @@
     </div>
     <div class="col-md-3"></div>	
   </div>
-
+<script>
+document.getElementById("subBtn").style.visibility='hidden';
+document.getElementById("canBtn").style.visibility='hidden';
+</script>
 
 <br><br><br><br><br>
 
