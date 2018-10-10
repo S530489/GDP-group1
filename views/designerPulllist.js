@@ -145,5 +145,5 @@ function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
             Size:size,
             Add_Notes:notes
             
-      })
+      });
     }
