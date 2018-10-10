@@ -130,7 +130,12 @@ for(var i = 1; i < table.rows.length; i++)
 
 function removerows()
 {
-    cell9.style.visibility="visible";
+    var count = $('#dplist1 tr').length;
+    // cell9.style.visibility="visible";
+    for(var i=1;i<count;i++){
+    // alert(document.getElementById("dplist1").rows[i].cells[8].innerHTML);
+    document.getElementById("dplist1").rows[i].cells[8].style.visibility="visible";
+    }
 }
 function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
     
