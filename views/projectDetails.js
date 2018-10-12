@@ -1,8 +1,13 @@
 
 $(document).ready(function(){
     var x = location.search;
+    var performerObj = {}
     console.log(x[1]);
     var firebaseRef = firebase.database().ref();
+    firebaseRefperf = firebaseRef.child("performers");
+    firebaseRefperf.on('value', function(snapshot){
+        performerObj = snapshot.val();
+    })
     firebaseRefEvents = firebaseRef.child("Events/"+x[1]);
     firebaseRefEvents.on('value', function(snapshot){
     var currentObject = snapshot.val();
@@ -43,6 +48,22 @@ $(document).ready(function(){
         $(col1).append(image1);
         $("#roleImages").append(col1);
     }
+    document.getElementById("EventName").innerHTML = currentObject.Name;
+    document.getElementById("Eventdesc").innerHTML = currentObject.Description;
+    document.getElementById("EventCrew").innerHTML = "Designer: " + currentObject.Designers +
+                                                    "<br/>"+"Organizers: " + currentObject.Organizers+ "<br/>"+
+                                                    "Date: " + currentObject.Date;
+    document.getElementById("date").innerHTML = currentObject.Date;
+    document.getElementById("Address").innerHTML = currentObject.PlayLocation;
+     for (i = 0; i < currentObject.Performers.length; i++) { 
+            console.log(performerObj[i]);
+            var k = currentObject.Performers[i][1];
+            console.log(k)
+            console.log(performerObj[k].general.Name.First_Name)
+            document.getElementById("perfNames").innerHTML += performerObj[k].general.Name.First_Name+"<br/>"
+        }
     
     });
+
+
 });
