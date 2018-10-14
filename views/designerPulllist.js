@@ -250,9 +250,195 @@ function getSizes(text)
         case "Smoking jacket":
                     res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
                                         +performers[k].measurements.centerBackWrist;
-                    break;                
+                    break;  
+                    
+        //Botttom measurements
+
+        case "Jeans: Female fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Jeans: Male fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Khakis: Female fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Khakis: Male fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Dress Slacks: Female fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Dress Slacks: Male fit":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Pants: Other style":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Skirt: short":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Skirt: knee-length":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Skirt: long":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Skirt":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Shorts: men's fit":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Shorts: women's fit":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Leggings":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Track Pants":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+        case "Stretch Pants":
+                    res="Waist: "+performers[k].measurements.waist;
+                    break;
+
+        // Set measurements
+
+        case "Tuxedo jacket":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Tuxedo shirt":
+                    res="Waist: "+performers[k].measurements.waist+
+                            "Chest: "+performers[k].measurements.chest+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Tuxedo pants":
+                    res="Waist: "+performers[k].measurements.waist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Dress: long":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip;
+                    break;
+        case "Dress: mid-length":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip;
+                    break;
+        case "Dress: short":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Hip: "
+                                        +performers[k].measurements.hip;
+                    break;
+        case "Nightgown":
+                    res="Chest: "+performers[k].measurements.chest+"\n";
+                    break;
+        case "Suit: 2 piece":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Suit: 3 piece":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Inseam: "
+                                        +performers[k].measurements.inseam;
+                    break;
+        case "Suit: skirt suit":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist+"\n";
+                    break;
+
+        // Under measurements
+        case "Undershirt: Vneck Tshirt":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break; 
+        case "Undershirt: Tank top":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Tights":
+                    res="Waist: "+performers[k].measurements.waist+
+                            "Full girth: "+performers[k].measurements.fullGirth+"\n"+"Height: "
+                                        +performers[k].measurements.height+"\n"+"Weight: "
+                                        +performers[k].measurements.weight;
+                    break;
+        case "Pantyhouse":
+                    res="Waist: "+performers[k].measurements.waist+
+                            "Full girth: "+performers[k].measurements.fullGirth+"\n"+"Height: "
+                                        +performers[k].measurements.height+"\n"+"Weight: "
+                                        +performers[k].measurements.weight;
+                    break;
+        case "Leotard":
+                    res="Waist: "+performers[k].measurements.waist+
+                            "Full girth: "+performers[k].measurements.fullGirth+"\n"+"Height: "
+                                        +performers[k].measurements.height+"\n"+"Weight: "
+                                        +performers[k].measurements.weight;
+                    break; 
+        case "Unitard":
+                    res="Waist: "+performers[k].measurements.waist+
+                            "Full girth: "+performers[k].measurements.fullGirth+"\n"+"Height: "
+                                        +performers[k].measurements.height+"\n"+"Weight: "
+                                        +performers[k].measurements.weight;
+                    break;
+        case "Undergarment: Full slip":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.waist;
+                    break;
+        case "Undergarment: Half slip":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.waist;
+                    break;
+        
+        //Shoe sizes
+        case "Shoes: dress shoes men's fit":
+        case "Shoes: dress shoes women's fit":
+        case "Shoes: athletic shoes men's fit":
+        case "Shoes: athletic shoes women's fit":
+        case "Shoes: flats":
+        case "Shoes: heels":
+        case "Shoes: dress boots":
+        case "Shoes: western boots":
+        case "Shoes: work boots":
+        case "Shoes: casual men's fit":
+        case "Shoes: casual women's fit":
+        case "Slippers: men's fit":
+        case "Slippers: women's fit":
+        case "Dance shoes: character shoes women's fit":
+        case "Dance shoes: character shoes men's fit":
+        case "Dance shoes: jazz slippers":
+        case "Dance shoes: ballet slippers":
+        case "Dance shoes: tap shoes men's fit":
+        case "Dance shoes: tap shoes women's fit":
+        case "Dance shoes: dance sandals":
+        case "Shoes: china flats":
+        case "Shoes: sandals":
+                    res="Actor shoe size: "+performers[k].measurements.shoeSize+"\n";
+                    break;
+
+        //Hat measurments
+
+        case "Hat: winter":
+        case "Hat: dress":
+        case "Hat: baseball cap":
+        case "Hat: newsboy":
+        case "Hat: other":
+                    res="Head Circumference: "+performers[k].measurements.headCircumference+"\n";                           +performers[k].measurements.waist;
+                    break;
+
     }
 
-    return res;
 
+    return res;
 }
