@@ -19,7 +19,8 @@
     "EyeColor":"Black",
     "EyeWare":"+1.2",
     "Medications":"",
-    "Suggestions":""
+    "Suggestions":"",
+    "shirtSize":"L"
   },
   "measurements":{
     "performer_id": "p0",
@@ -63,7 +64,8 @@
     "EyeColor":"Black",
     "EyeWare":"+1.2",
     "Medications":"",
-    "Suggestions":""
+    "Suggestions":"",
+    "shirtSize":"XL"
   },
   "measurements" :{
     "performer_id": "p1",
@@ -108,7 +110,8 @@
   "EyeColor":"Black",
   "EyeWare":"+1.2",
   "Medications":"",
-  "Suggestions":""
+  "Suggestions":"",
+  "shirtSize":"M"
 },
 "measurements" :{
   "performer_id": "p2",
@@ -153,7 +156,8 @@
   "EyeColor":"Black",
   "EyeWare":"+1.2",
   "Medications":"",
-  "Suggestions":""
+  "Suggestions":"",
+  "shirtSize":"L"
 },
 "measurements" :{
   "performer_id": "p3",

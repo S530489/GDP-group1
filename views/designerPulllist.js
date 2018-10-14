@@ -1,6 +1,8 @@
 
 var performers = {}
 var cell9;
+var k;
+var tex="";
 
 function getPerfomers(ind){
     console.log(performers)
@@ -10,11 +12,13 @@ function getPerfomers(ind){
     firebaseRef.on('value', function(snapshot){
     
         var obj = snapshot.val();
+
         var EventPerformers = []
         var EventPerformersNames = []
+
         for (i = 0; i < obj.Performers.length; i++) { 
             console.log(obj.Performers[i])
-            var k = obj.Performers[i][1]
+            k = obj.Performers[i][1]
             EventPerformers.push(performers[k])
             EventPerformersNames.push(performers[k].general.Name.First_Name)
         }
@@ -46,13 +50,7 @@ function getName()
     document.getElementById("perfoName").selectedIndex = "0";
 }
 
-function getClothingitem()
-{
-    var s = document.getElementsByName("clothing")[0];
-    var text = s.options[s.selectedIndex].text;
-    document.getElementById("showclothing").innerHTML = text;
 
-}
 
 function getColor()
 {
@@ -152,3 +150,109 @@ function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
             
       });
     }
+
+    function getClothingitem()
+    {
+        var s = document.getElementsByName("clothing")[0];
+        var text = s.options[s.selectedIndex].text;
+        tex=getSizes(text);
+        document.getElementById("showclothing").innerHTML = text;
+        document.getElementById("size").innerHTML = tex;
+    }
+function getSizes(text)
+{
+    var res="";
+    // if(text=="Dress shirt: Male fit")
+    // {
+    //     res="Neck: "+performers[k].measurements.neck+"\n"+"CB to wrist: "+performers[k].measurements.centerBackWrist;
+    // }
+
+    switch(text)
+    {
+        //Top measurements
+        case "Dress shirt: Male fit":
+                    res="Neck: "+performers[k].measurements.neck+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Blouse: Female fit":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Blazer: men's fit":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Blazer: women's fit":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist+"\n"+"Waist: "
+                                            +performers[k].measurements.waist;
+                    break;
+        case "Winter Coat":
+                    res="Chest: "+performers[k].measurements.chest;
+                    break; 
+        case "Trench coat":
+                    res="Chest: "+performers[k].measurements.chest;
+                    break; 
+        case "Tunic":
+                    res="Chest: "+performers[k].measurements.chest;
+                    break; 
+        case "Vest: men's fit":
+                    res="Chest: "+performers[k].measurements.chest;
+                    break; 
+        case "Vest: women's fit":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.waist;
+                    break; 
+        case "Sweater: crew neck":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
+                                        +performers[k].measurements.shirtSize;
+                    break;
+        case "Sweater: v-neck":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
+                                        +performers[k].measurements.shirtSize;
+                    break;
+        case "Sweater: cardigan":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
+                                        +performers[k].measurements.shirtSize;
+                    break;
+        case "Tshirt: Plain":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Tshirt: screen print":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Knit top: short sleeve":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Tank top":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Knit top: long sleeve":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Knit top: casual":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Knit top: dressy":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Thermal shirt":
+                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    break;
+        case "Western shirt":
+                    res="Neck: "+performers[k].measurements.neck+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Flannel shirt":
+                    res="Neck: "+performers[k].measurements.neck+"\n"+"CB to wrist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;
+        case "Smoking jacket":
+                    res="Chest: "+performers[k].measurements.chest+"\n"+"Waist: "
+                                        +performers[k].measurements.centerBackWrist;
+                    break;                
+    }
+
+    return res;
+
+}
