@@ -2,6 +2,7 @@
 <head>
         <link type="text/css"
         rel="stylesheet" href="contactpage.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Container (Contact Section) -->
@@ -19,30 +20,22 @@
       <p><span class="glyphicon glyphicon-envelope"></span> stephi@nwmissouri.edu</p>
       <p><span class="glyphicon glyphicon-home"></span> Office hours: Monday to Friday<br>8:00 am - 5:00 pm</p>
     </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
+    <div class="col-sm-6">
             <label for="name">Name *</label>
           <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
+        
             <label for="email">Email *</label>
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
+      
       <label for="message">Message *</label>
       <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
+  
+          <button class="btn btn-default pull-left" type="submit">Send</button>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
+<div class="row">
 <!-- Add Google Maps -->
-<div id="googleMap" style="height:400px;width:25%;"></div>
+<div id="googleMap" class="col-sm-7" style="height:400px;width:25%;"></div>
 <script>
 function myMap() {
 var myCenter = new google.maps.LatLng(40.35,-94.88);
@@ -64,14 +57,13 @@ var marker = new google.maps.Marker({position:myCenter});
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 -->
-
-<footer class="container-fluid text-center">
+</div>
+<footer class="container-fluid text-left">
   <div id="fsocials" class="socials">
-    <a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="icon-facebook"></i></a> &nbsp;
-    <a href="https://www.instagram.com/8pm_official/" target="_blank"><i class="icon-instagram"></i></a> &nbsp;
-    <a href="https://it.pinterest.com/8pm_official/" target="_blank"><i class="icon-pinterest"></i></a>
-  </div>  
-</footer>
+    <p style="color: white">Find us at</p>
+    <a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="fa fa-facebook"></i></a> &nbsp;
+    <a href="http://www.stephaniemjorandby.com/" target="_blank"><i class="fa fa-user"></i></a>
+    </footer>
 <!--<img src="images/jorandby.jpg" alt="stephie">
     <div class="container">
             <form action="post" method="/sendToDesigner">
