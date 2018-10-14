@@ -3,7 +3,76 @@
         <link type="text/css"
         rel="stylesheet" href="contactpage.css"/>
 </head>
-    <img src="images/jorandby.jpg" alt="stephie">
+<body>
+    <!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">Drop us a line</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Northwest Missouri State University<br>
+        800 University Drive<br>
+        104 Fine Arts<br>
+        Maryville, MO 64468-6001<br>
+       </p>
+      <p><span class="glyphicon glyphicon-phone"></span> +1 660.562.1326</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> stephi@nwmissouri.edu</p>
+      <p><span class="glyphicon glyphicon-home"></span> Office hours: Monday to Friday<br>8:00 am - 5:00 pm</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+            <label for="name">Name *</label>
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+            <label for="email">Email *</label>
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <label for="message">Message *</label>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px;width:25%;"></div>
+<script>
+function myMap() {
+var myCenter = new google.maps.LatLng(40.35,-94.88);
+var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+  google.maps.event.addListener(marker,'click',function() {
+    var infowindow = new google.maps.InfoWindow({
+      content:"Ron Houston center for the performing arts, Maryville, Missouri, 64468"
+    });
+  infowindow.open(map,marker);
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPMl6rH1tWwJieVRm5FDO1PTccQ0EcU0&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+<footer class="container-fluid text-center">
+  <div id="fsocials" class="socials">
+    <a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="icon-facebook"></i></a> &nbsp;
+    <a href="https://www.instagram.com/8pm_official/" target="_blank"><i class="icon-instagram"></i></a> &nbsp;
+    <a href="https://it.pinterest.com/8pm_official/" target="_blank"><i class="icon-pinterest"></i></a>
+  </div>  
+</footer>
+<!--<img src="images/jorandby.jpg" alt="stephie">
     <div class="container">
             <form action="post" method="/sendToDesigner">
           
@@ -43,6 +112,6 @@ function myMap() {
     <footer>
         <br>
         <h3>Address: Ron Houston center for the performing arts, Maryville, Missouri, 64468</h3><br>
-    </footer>
+    </footer>-->
 </body>
 
