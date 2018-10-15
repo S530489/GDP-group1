@@ -69,19 +69,35 @@
   <div id="retreiveImage">
       <!-- <img  style="width:50%" id="testImage"> -->
   </div>
-  <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Add Project</button>       
+  <button onclick="addProject()" style="width:auto;">Add Project</button>       
         <div id="id01" class="modal">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <form class="modal-content" action="/action_page.php">
+          <form class="modal-content">
             <div class="container">
               <h1>Add Project</h1>
               <p>Fill out the fields to add a Project</p>
               <hr>
               <label for="title"><b>Project Title</b></label>
               <input type="text" placeholder="Title of the Project" name="title" required><br>
-        
+
+             
               <label for="Performers"><b>Performers</b></label><br>
-            <input type="text" name="Performers" placeholder="Juliet, Andrew, Janet,...." style="height:200px" required><br>
+              <table>
+              <tr>
+                <td style="border-right-color: azure; border-left-color: azure;border-bottom-color: azure;border-top-color: azure;">
+                  <select name="names" id="perfoName">
+                    <option value="performName">Performer Name</option>                  
+                  </select>
+                </td>
+                <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
+              </table>
+             
+              <br/><br/>
+              <table name="addHere" id="dplist1" class="dplist1">         
+                    <th align="center">Performers</th> 
+              </table>
+
+            <input type="text" id="getFromFunc"name="Performers" placeholder="Juliet, Andrew, Janet,...." style="height:200px" ><br>
         
               <label for="Project"><b>Project description</b></label><br>
             <input type="text" name="Project description" placeholder="Write something.." style="height:200px" required><br>

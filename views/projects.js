@@ -1,9 +1,87 @@
 var selectedFile;
+var performers;
+var performersNames = []
+var performerIds = []
+var selectedperformerIds = []
+var selectedperformerNames = []
+
+function addProject(){
+    document.getElementById('id01').style.display='block';
+    console.log(performers)
+
+    for (i = 0; i < performers.length; i++) { 
+        performersNames.push(performers[i].general.Name.First_Name)
+        performerIds.push(performers[i].general.Performer_Id)
+    
+     }
+     console.log(performersNames)
+     console.log(performerIds)
+     getPerformers();
+    
+}
+
+function getPerformers(){
+
+    var modelList = document.getElementById("perfoName");
+    while (modelList.options.length - 1) {
+        modelList.remove(1);
+   }
+    if (performersNames) {
+        var i;
+        for (i = 0; i < performersNames.length; i++) {
+            var perf = new Option(performersNames[i], i);
+            modelList.options.add(perf);
+    }
+   }
+}
+
+function addrow(){
+    
+    var s = document.getElementsByName("names")[0];
+    if (s.selectedIndex > 0){
+    var text = s.options[s.selectedIndex].text;
+    console.log(s.selectedIndex)
+    selectedperformerIds.push(performerIds[s.selectedIndex-1]);
+    selectedperformerNames.push(performersNames[s.selectedIndex-1]);
+
+    for(i=s.selectedIndex-1;i<performerIds.length-1;i++){
+        performerIds[i] = performerIds[i+1];
+        performersNames[i] = performersNames[i+1];
+    }
+    performerIds.pop();
+    performersNames.pop();
+    console.log(selectedperformerIds);
+    console.log(selectedperformerNames);
+    console.log(performerIds)
+    var table=document.getElementsByName("addHere")[0];
+    var newrow = table.insertRow(1);
+    var cell1=newrow.insertCell(0);
+    cell1.innerHTML=text;
+    document.getElementById("perfoName").selectedIndex = "0";
+    getPerformers();
+
+}
+else{
+    window.alert("select performer")
+}
+}
+
+
+
+
+
+
+
 
 $(document).ready(function(){
    // var firebaseRef = firebase.database().ref().child("Events/");
-    var firebaseRef = firebase.database().ref("Events/");
-    firebaseRef.on('value', function(snapshot){
+   var firebaseRef = firebase.database().ref();
+   firebaseRefperf = firebaseRef.child("performers");
+   firebaseRefperf.on('value', function(snapshot){
+    performers = snapshot.val();
+   })
+   firebaseRefEvents = firebase.database().ref("Events/");
+   firebaseRefEvents.on('value', function(snapshot){
         var obj = snapshot.val();
         console.log(obj);
         var keys = Object.keys(obj);
