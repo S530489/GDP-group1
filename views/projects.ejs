@@ -79,8 +79,10 @@
               <hr>
               <label for="title"><b>Project Title</b></label>
               <input type="text" placeholder="Title of the Project" name="title" required><br>
+              <label for="date"><b> Date</b></label>
+               <input type="date" id="myDate">
+             <br>
 
-             
               <label for="Performers"><b>Performers</b></label><br>
               <table>
               <tr>
@@ -90,18 +92,27 @@
                   </select>
                 </td>
                 <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
+              </tr>
               </table>
              
-              <br/><br/>
+              <br/>
               <table name="addHere" id="dplist1" class="dplist1">         
-                    <th align="center">Performers</th> 
+                    <tr><th align="center">Performers</th> </tr>
               </table>
+              
+              <label for="organisers"><b>Project Title</b></label>
+              <input type="text" placeholder="organisers of the project" id="organisers"><br>
 
-            <input type="text" id="getFromFunc"name="Performers" placeholder="Juliet, Andrew, Janet,...." style="height:200px" ><br>
-        
+              <label for="designer"><b>Designer</b></label>
+              <input type="text" placeholder="designer of the project" id="designers"><br>
+
+
               <label for="Project"><b>Project description</b></label><br>
             <input type="text" name="Project description" placeholder="Write something.." style="height:200px" required><br>
               
+            <label for="location"><b>Play Location</b></label>
+              <input type="text" placeholder="Play Location" id="location"><br>
+
              <form action="upload.php" method="post" enctype="multipart/form-data">
               <b>Select title image to upload:</b>
               <input type="file" name="fileToUpload" id="fileToUpload">
@@ -127,6 +138,8 @@
           </form>
         </div>
 <br>
+
+
 <div class="container" id="EventHolder">
 
 </div>

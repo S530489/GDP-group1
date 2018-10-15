@@ -5,73 +5,6 @@ var performerIds = []
 var selectedperformerIds = []
 var selectedperformerNames = []
 
-function addProject(){
-    document.getElementById('id01').style.display='block';
-    console.log(performers)
-
-    for (i = 0; i < performers.length; i++) { 
-        performersNames.push(performers[i].general.Name.First_Name)
-        performerIds.push(performers[i].general.Performer_Id)
-    
-     }
-     console.log(performersNames)
-     console.log(performerIds)
-     getPerformers();
-    
-}
-
-function getPerformers(){
-
-    var modelList = document.getElementById("perfoName");
-    while (modelList.options.length - 1) {
-        modelList.remove(1);
-   }
-    if (performersNames) {
-        var i;
-        for (i = 0; i < performersNames.length; i++) {
-            var perf = new Option(performersNames[i], i);
-            modelList.options.add(perf);
-    }
-   }
-}
-
-function addrow(){
-    
-    var s = document.getElementsByName("names")[0];
-    if (s.selectedIndex > 0){
-    var text = s.options[s.selectedIndex].text;
-    console.log(s.selectedIndex)
-    selectedperformerIds.push(performerIds[s.selectedIndex-1]);
-    selectedperformerNames.push(performersNames[s.selectedIndex-1]);
-
-    for(i=s.selectedIndex-1;i<performerIds.length-1;i++){
-        performerIds[i] = performerIds[i+1];
-        performersNames[i] = performersNames[i+1];
-    }
-    performerIds.pop();
-    performersNames.pop();
-    console.log(selectedperformerIds);
-    console.log(selectedperformerNames);
-    console.log(performerIds)
-    var table=document.getElementsByName("addHere")[0];
-    var newrow = table.insertRow(1);
-    var cell1=newrow.insertCell(0);
-    cell1.innerHTML=text;
-    document.getElementById("perfoName").selectedIndex = "0";
-    getPerformers();
-
-}
-else{
-    window.alert("select performer")
-}
-}
-
-
-
-
-
-
-
 
 $(document).ready(function(){
    // var firebaseRef = firebase.database().ref().child("Events/");
@@ -153,6 +86,100 @@ function retreive(){
         }).catch(function(error) {
     });
 }
+
+function addProject(){
+    document.getElementById('id01').style.display='block';
+
+    for (i = 0; i < performers.length; i++) { 
+        performersNames.push(performers[i].general.Name.First_Name)
+        performerIds.push(performers[i].general.Performer_Id)
+    
+     }
+    //  console.log(performersNames)
+    //  console.log(performerIds)
+     getPerformers();
+    
+}
+
+
+function getPerformers(){
+    var modelList = document.getElementById("perfoName");
+    while (modelList.options.length - 1) {
+        modelList.remove(1);
+   }
+    if (performersNames) {
+        var i;
+        for (i = 0; i < performersNames.length; i++) {
+            var perf = new Option(performersNames[i], i);
+            modelList.options.add(perf);
+    }
+   }
+}
+
+function addrow(){
+    
+    var s = document.getElementsByName("names")[0];
+    if (s.selectedIndex > 0){
+    var text = s.options[s.selectedIndex].text;
+    console.log(s.selectedIndex)
+    selectedperformerIds.unshift(performerIds[s.selectedIndex-1]);
+    selectedperformerNames.unshift(performersNames[s.selectedIndex-1]);
+
+    for(i=s.selectedIndex-1;i<performerIds.length-1;i++){
+        performerIds[i] = performerIds[i+1];
+        performersNames[i] = performersNames[i+1];
+    }
+    performerIds.pop();
+    performersNames.pop();
+    // console.log(selectedperformerIds);
+    // console.log(selectedperformerNames);
+    var table=document.getElementsByName("addHere")[0];
+    var newrow = table.insertRow(1);
+    var cell1=newrow.insertCell(0);
+    var cell2=newrow.insertCell(1);
+    cell1.innerHTML=text;
+    cell2.innerHTML = "x"+remove();
+    document.getElementById("perfoName").selectedIndex = "0";
+    getPerformers();
+
+}
+else{
+    window.alert("select performer")
+}
+}
+
+
+function remove(){
+    var index, table = document.getElementById('dplist1');
+for(var i = 1; i < table.rows.length; i++)
+{
+    table.rows[i].cells[1].onclick = function()
+    {
+            index = this.parentElement.rowIndex;
+            console.log(index)
+            table.deleteRow(index);
+            performersNames.push(selectedperformerNames[index-1]);
+            performerIds.push(selectedperformerIds[index-1]);
+            console.log(performerIds);
+            console.log(performersNames);
+            for(i=index-1;i<selectedperformerIds.length-1;i++){
+                selectedperformerIds[i] = selectedperformerIds[i+1];
+                selectedperformerNames[i] = selectedperformerNames[i+1];
+            }
+            selectedperformerIds.pop();
+            selectedperformerNames.pop();
+
+    // console.log(selectedperformerIds);
+    // console.log(selectedperformerNames);
+    getPerformers();
+          
+    };  
+}
+
+    
+    return "";
+}
+
 
 
 
