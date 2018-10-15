@@ -1,6 +1,7 @@
 
 var performers = {}
 var cell9;
+var pArray = [];
 var k;
 var tex="";
 
@@ -18,12 +19,14 @@ function getPerfomers(ind){
 
         for (i = 0; i < obj.Performers.length; i++) { 
             console.log(obj.Performers[i])
-            k = obj.Performers[i][1]
-            EventPerformers.push(performers[k])
-            EventPerformersNames.push(performers[k].general.Name.First_Name)
+            j = obj.Performers[i][1]
+            pArray.push(j);
+            EventPerformers.push(performers[j])
+            EventPerformersNames.push(performers[j].general.Name.First_Name)
         }
         //  console.log(EventPerformers)
         // console.log(EventPerformersNames) 
+        console.log(pArray)
         var modelList = document.getElementById("perfoName");
         while (modelList.options.length - 1) {
              modelList.remove(1);
@@ -46,6 +49,9 @@ function getName()
 {
     var s = document.getElementsByName("names")[0];
     var text = s.options[s.selectedIndex].text;
+    console.log(s.selectedIndex)
+    k=s.selectedIndex - 1;
+    console.log(k)
     document.getElementById("showName").innerHTML = text;
     document.getElementById("perfoName").selectedIndex = "0";
 }
