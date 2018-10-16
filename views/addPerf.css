@@ -348,3 +348,27 @@ i {
     margin: 4px 2px;
     cursor: pointer;
 }
+
+table.myTable td:last-child
+{
+    background-color:white;
+    cursor: pointer;
+    font-weight: bold; 
+    border: 1px solid white;
+    font-size: 22px;
+}
+
+#myTable td:nth-child(odd){border: 2px solid;}
+#myTable th:nth-child(odd) {border: 2px solid;}
+#myTable th:nth-child(even) {border: 1px solid white;}
+
+#removePerf
+{
+    color: red;
+}
+
+#remP:hover
+{
+    color:red;
+}
+

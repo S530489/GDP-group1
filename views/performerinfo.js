@@ -352,3 +352,11 @@ for(var i = 1; i < table.rows.length; i++)
         document.getElementById("hair").innerHTML = "";
         document.getElementById("ware").innerHTML = "";
 }
+
+function removeVisiblity()
+{
+    var count = $('#myTable tr').length;
+                    for(var i=1;i<count;i++){
+                    document.getElementById("myTable").rows[i].cells[1].style.visibility="visible";
+                    }
+}
