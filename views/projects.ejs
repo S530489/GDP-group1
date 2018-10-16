@@ -55,7 +55,29 @@
 
 .card button:hover {
   opacity: 0.7;
-}</style>
+}
+
+progress {
+  border: none;
+  width: 100%;
+  height: 30px;
+  background: white;
+  text-align: center
+  
+}
+
+progress {
+  color: lightblue;
+}
+progress:before {
+  content: attr(data-content);
+}
+
+progress::-webkit-progress-value {
+  background: green;
+}
+
+</style>
 </head>
 
 <body>
@@ -105,16 +127,30 @@
             <label for="location"><b>Play Location</b></label>
               <input type="text" placeholder="Play Location" id="location"><br>
 
-            
               <b>Select title image to upload:</b>
+              <div class="row">
+                <div class="col-md-4">
+              
               <input type="file" name="fileToUpload" id="file1" >
                <button type="submit"  onclick=uploadTitleImage()>upload</button>
-         
+              </div>
+              <div class="col-md-8">
+                <progress value="0" max="100"  id="uploadeBar" style = "color: black" data-content="Click on upload">0%</progress>
+                
+              </div>
+              </div>
                <br>  <br>
           
             <b>Select multiple images to upload:</b>
+            <div class="row">
+                <div class="col-md-4">
             <input type="file" name="filesToUpload" id="file123" multiple>
             <button type="submit"  onclick=callUploadImage()>upload</button>
+            </div>
+            <div class="col-md-8">
+                <progress value="0" max="100"  id="uploadeMulBar" style = "color: black" data-content="Click on upload" >0%</progress>
+              </div>
+            </div>
        
         <br>   <br>   <br>
               <div class="clearfix">

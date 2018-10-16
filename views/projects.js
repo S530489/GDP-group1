@@ -228,7 +228,8 @@ function funcTest1(){
 
 function uploadTitleImage(){
     
-    
+    var uploader = document.getElementById("uploadeBar");
+    //document.getElementById("uploadeBar").innerHTML = "Ready to Upload"
     var fileName = selectedFile[0].name;
     var storageRef = firebase.storage().ref('/testImages/' + fileName);
     var uploadTask = storageRef.put(selectedFile[0]);
@@ -241,6 +242,9 @@ function uploadTitleImage(){
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    uploader.value = progress;
+    uploader.setAttribute('data-content', 'Successfully Uploaded : ' +'  '+ progress +"%");
+    //uploader.text = progress+"%";
     switch (snapshot.state) {
       case firebase.storage.TaskState.PAUSED: // or 'paused'
         console.log('Upload is paused');
@@ -254,6 +258,7 @@ function uploadTitleImage(){
   }, function() {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+   
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
       console.log('File available at', downloadURL);
       MainImageURL = downloadURL
@@ -284,7 +289,7 @@ function callUploadImage(){
 
 function uploadMulImage(){
     
-  
+    var uploader = document.getElementById("uploadeMulBar");
     var fileName = selectedMulFiles[i].name;
     console.log(fileName)
     var storageRef = firebase.storage().ref('/testImages/' + fileName);
@@ -298,6 +303,9 @@ function uploadMulImage(){
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    uploader.value = progress;
+    uploader.setAttribute('data-content', 'Successfully Uploaded : ' +'  '+ progress +"%");
+   // uploader.text = progress+"%";
     switch (snapshot.state) {
       case firebase.storage.TaskState.PAUSED: // or 'paused'
         console.log('Upload is paused');
