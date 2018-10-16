@@ -129,9 +129,23 @@
                                               <tr>
                                                         <td><p><b>Eye ware</b></p> </td>
                                                         <td><p id="ware"></p></td>
-                                                 </tr>
+                                              </tr>
+                                              <tr id="ht">
+                                                <td><p><b>Height</b></p> </td>
+                                                <td><p id="height"></p></td>
+                                              </tr>
+                                              <tr id="wt">
+                                              <td><p><b>Weight</b></p> </td>
+                                              <td><p id="weight"></p></td>
+                                              </tr>
+                                              <tr id="shrt">
+                                              <td><p><b>Actor shirt size</b></p> </td>
+                                              <td><p id="shirtSize"></p></td>
+                                              </tr>
                                                               
-                                </table>  
+                                </table>
+                                <button onclick="getMore()" id="getMore">View More &nbsp <i class="arrow down"></i></button> 
+                                <button onclick="getLess()" id="getLess">View Less &nbsp <i class="arrow up"></i></button>  
 
                         </div>
                         <div class="col-md-1"></div>	
@@ -147,6 +161,26 @@
         
         </div>
 </div>
+
+<script>
+  document.getElementById("ht").style.visibility="hidden";
+  document.getElementById("wt").style.visibility="hidden";
+  document.getElementById("shrt").style.visibility="hidden";
+
+  function getMore()
+  {
+    document.getElementById("ht").style.visibility="visible";
+    document.getElementById("wt").style.visibility="visible";
+    document.getElementById("shrt").style.visibility="visible";  
+  }
+
+  function getLess()
+  {
+    document.getElementById("ht").style.visibility="hidden";
+    document.getElementById("wt").style.visibility="hidden";
+    document.getElementById("shrt").style.visibility="hidden";
+  }
+  </script>
 
 <div class="row">
      <div class="col-md-5"></div>
