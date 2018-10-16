@@ -163,22 +163,22 @@
 </div>
 
 <script>
-  document.getElementById("ht").style.visibility="hidden";
-  document.getElementById("wt").style.visibility="hidden";
-  document.getElementById("shrt").style.visibility="hidden";
+  document.getElementById("ht").hidden=true;
+  document.getElementById("wt").hidden=true;
+  document.getElementById("shrt").hidden=true;
 
   function getMore()
   {
-    document.getElementById("ht").style.visibility="visible";
-    document.getElementById("wt").style.visibility="visible";
-    document.getElementById("shrt").style.visibility="visible";  
+    document.getElementById("ht").hidden=false;
+  document.getElementById("wt").hidden=false;
+  document.getElementById("shrt").hidden=false;  
   }
 
   function getLess()
   {
-    document.getElementById("ht").style.visibility="hidden";
-    document.getElementById("wt").style.visibility="hidden";
-    document.getElementById("shrt").style.visibility="hidden";
+    document.getElementById("ht").hidden=true;
+  document.getElementById("wt").hidden=true;
+  document.getElementById("shrt").hidden=true;
   }
   </script>
 
