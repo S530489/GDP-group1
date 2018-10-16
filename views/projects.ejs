@@ -61,7 +61,7 @@
 <body>
   
     <b>Select title image to upload:</b>
-    <input type="file" name="fileToUpload" id="file123">
+    <input type="file" name="fildseToUpload" id="file1234" multiple>
     <button type="submit"  onclick=test()>TEST</button>
     <br/>
     <br/>
@@ -113,20 +113,21 @@
             <label for="location"><b>Play Location</b></label>
               <input type="text" placeholder="Play Location" id="location"><br>
 
-             <form action="upload.php" method="post" enctype="multipart/form-data">
+            
               <b>Select title image to upload:</b>
-              <input type="file" name="fileToUpload" id="fileToUpload">
-          </form>
-
-          <form action="uploadmulti.php" method="post" enctype="multipart/form-data">
+              <input type="file" name="fileToUpload" id="file1" >
+               <button type="submit"  onclick=uploadTitleImage()>upload</button>
+         
+               <br>  <br>
+          
             <b>Select multiple images to upload:</b>
-            <input type="file" name="upfile[]"multiple>
-            <input type="submit" value="Upload">
-        </form>
-        <br>
+            <input type="file" name="filesToUpload" id="file123" multiple>
+            <button type="submit"  onclick=uploadMulImage()>upload</button>
+       
+        <br>   <br>   <br>
               <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="submit" class="Add" onclick=myFunction()>Add</button>
+                <button type="submit" class="Add" onclick=AddEventToFirebase()>Add</button>
                 <script>
                   function myFunction() {
                   alert("Project added successfully");

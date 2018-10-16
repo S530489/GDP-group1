@@ -1,9 +1,12 @@
+var selectedMulFiles;
 var selectedFile;
 var performers;
 var performersNames = []
 var performerIds = []
 var selectedperformerIds = []
 var selectedperformerNames = []
+var MainImageURL ;
+var MulImageURLS = [];
 
 
 $(document).ready(function(){
@@ -181,31 +184,25 @@ for(var i = 1; i < table.rows.length; i++)
 }
 
 
-
-
-document.getElementById("file123").addEventListener("change", funcTest);
-function funcTest(){
-    selectedFile = event.target.files[0];
+document.getElementById("file1").addEventListener("change", funcTest1);
+function funcTest1(){
+    selectedFile = event.target.files;
     console.log(selectedFile);
    console.log(selectedFile.name);
 }
-// $("#file1").on("change", function(event){
-//     selectedFile = event.target.files[0];
-//     console.log(selectedFile);
-//     console.log(selectedFile.name);
 
-// })
 
-function test(){
-    window.alert("sai");
-    var fileName = selectedFile.name;
+function uploadTitleImage(){
+    
+    
+    var fileName = selectedFile[0].name;
     var storageRef = firebase.storage().ref('/testImages/' + fileName);
-    var uploadTask = storageRef.put(selectedFile);
+    var uploadTask = storageRef.put(selectedFile[0]);
     // Register three observers:
     // 1. 'state_changed' observer, called any time the state changes
     // 2. Error observer, called on failure
     // 3. Completion observer, called on successful completion
-uploadTask.on('state_changed', function(snapshot){
+    uploadTask.on('state_changed', function(snapshot){
     // Observe state change events such as progress, pause, and resume
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -225,6 +222,60 @@ uploadTask.on('state_changed', function(snapshot){
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
       console.log('File available at', downloadURL);
+      MainImageURL = downloadURL
     });
   });
+  console.log(MainImageURL)
+}
+
+
+
+
+
+
+
+
+document.getElementById("file123").addEventListener("change", funcTest123);
+function funcTest123(){
+    selectedMulFiles = event.target.files;
+    console.log(selectedMulFiles);
+   console.log(selectedMulFiles.name);
+}
+
+
+function uploadMulImage(){
+    
+    for (i=0;i<selectedMulFiles.length;i++){
+    var fileName = selectedMulFiles[i].name;
+    var storageRef = firebase.storage().ref('/testImages/' + fileName);
+    var uploadTask = storageRef.put(selectedMulFiles[i]);
+    // Register three observers:
+    // 1. 'state_changed' observer, called any time the state changes
+    // 2. Error observer, called on failure
+    // 3. Completion observer, called on successful completion
+    uploadTask.on('state_changed', function(snapshot){
+    // Observe state change events such as progress, pause, and resume
+    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+    console.log('Upload is ' + progress + '% done');
+    switch (snapshot.state) {
+      case firebase.storage.TaskState.PAUSED: // or 'paused'
+        console.log('Upload is paused');
+        break;
+      case firebase.storage.TaskState.RUNNING: // or 'running'
+        console.log('Upload is running');
+        break;
+    }
+  }, function(error) {
+    // Handle unsuccessful uploads
+  }, function() {
+    // Handle successful uploads on complete
+    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+      console.log('File available at', downloadURL);
+      MulImageURLS.push(downloadURL);
+    });
+  });
+}
+console.log(MulImageURLS)
 }
