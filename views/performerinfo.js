@@ -145,6 +145,9 @@ function getInfo(key){
         document.getElementById("eye").innerHTML = obj.general.EyeColor;
         document.getElementById("hair").innerHTML = obj.general.HairColor;
         document.getElementById("ware").innerHTML = obj.general.EyeWare;
+        document.getElementById("height").innerHTML = obj.general.height;
+        document.getElementById("weight").innerHTML = obj.general.weight;
+        document.getElementById("shirtSize").innerHTML = obj.general.shirtSize;
         disable();
 
         appendColumn();
