@@ -1,6 +1,7 @@
 var selectedMulFiles;
 var selectedFile;
 var performers;
+var events;
 var performersNames = []
 var performerIds = []
 var selectedperformerIds = []
@@ -8,6 +9,38 @@ var selectedperformerNames = []
 var MainImageURL ;
 var MulImageURLS = [];
 
+function AddEventToFirebase(){
+    
+    projectName = document.getElementById("projName").value;
+    date =  document.getElementById("myDate").value;
+    projectOrganisers = document.getElementById("organisers").value;
+    projectDesigners = document.getElementById("designers").value;
+    projectDescription = document.getElementById("desc").value;
+    projectLocation = document.getElementById("location").value
+
+    length1 = events.length+1
+    events.push(
+        {        
+            Event_Id:"E"+length1,
+            Name: projectName,
+            Date: date,
+            Organizers: projectOrganisers,
+            Designers: projectDesigners,
+            Performers: selectedperformerIds,
+            mainImage_Url:MainImageURL,
+            otherImages_Url:MulImageURLS,
+            Description: projectDescription,
+            PlayLocation: projectLocation
+            
+      }
+    )
+   
+    console.log(events);
+    firebase.database().ref().child("Events/").set(events).then(function(){
+        document.getElementById('id01').style.display='none';
+       location.reload();
+    });
+}
 
 $(document).ready(function(){
    // var firebaseRef = firebase.database().ref().child("Events/");
@@ -19,6 +52,7 @@ $(document).ready(function(){
    firebaseRefEvents = firebase.database().ref("Events/");
    firebaseRefEvents.on('value', function(snapshot){
         var obj = snapshot.val();
+        events = snapshot.val();
         console.log(obj);
         var keys = Object.keys(obj);
         console.log(keys);
@@ -242,11 +276,17 @@ function funcTest123(){
    console.log(selectedMulFiles.name);
 }
 
+function callUploadImage(){
+    for (i=0;i<selectedMulFiles.length;i++){
+        uploadMulImage(i);
+    }
+}
 
 function uploadMulImage(){
     
-    for (i=0;i<selectedMulFiles.length;i++){
+  
     var fileName = selectedMulFiles[i].name;
+    console.log(fileName)
     var storageRef = firebase.storage().ref('/testImages/' + fileName);
     var uploadTask = storageRef.put(selectedMulFiles[i]);
     // Register three observers:
@@ -276,6 +316,4 @@ function uploadMulImage(){
       MulImageURLS.push(downloadURL);
     });
   });
-}
-console.log(MulImageURLS)
 }

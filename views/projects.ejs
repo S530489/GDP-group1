@@ -60,25 +60,17 @@
 
 <body>
   
-    <b>Select title image to upload:</b>
-    <input type="file" name="fildseToUpload" id="file1234" multiple>
-    <button type="submit"  onclick=test()>TEST</button>
-    <br/>
-    <br/>
-    <button type="submit"  onclick=retreive()>getImage</button>  
-  <div id="retreiveImage">
-      <!-- <img  style="width:50%" id="testImage"> -->
-  </div>
+
   <button onclick="addProject()" style="width:auto;">Add Project</button>       
         <div id="id01" class="modal">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <form class="modal-content">
+          <div class="modal-content">
             <div class="container">
               <h1>Add Project</h1>
               <p>Fill out the fields to add a Project</p>
               <hr>
               <label for="title"><b>Project Title</b></label>
-              <input type="text" placeholder="Title of the Project" name="title" required><br>
+              <input type="text" placeholder="Title of the Project"  id="projName" required><br>
               <label for="date"><b> Date</b></label>
                <input type="date" id="myDate">
              <br>
@@ -100,7 +92,7 @@
                     <tr><th align="center">Performers</th> </tr>
               </table>
               
-              <label for="organisers"><b>Project Title</b></label>
+              <label for="organisers"><b>Organisers</b></label>
               <input type="text" placeholder="organisers of the project" id="organisers"><br>
 
               <label for="designer"><b>Designer</b></label>
@@ -108,7 +100,7 @@
 
 
               <label for="Project"><b>Project description</b></label><br>
-            <input type="text" name="Project description" placeholder="Write something.." style="height:200px" required><br>
+            <input type="text" id = "desc" name="Project description" placeholder="Write something.." style="height:200px" required><br>
               
             <label for="location"><b>Play Location</b></label>
               <input type="text" placeholder="Play Location" id="location"><br>
@@ -122,21 +114,16 @@
           
             <b>Select multiple images to upload:</b>
             <input type="file" name="filesToUpload" id="file123" multiple>
-            <button type="submit"  onclick=uploadMulImage()>upload</button>
+            <button type="submit"  onclick=callUploadImage()>upload</button>
        
         <br>   <br>   <br>
               <div class="clearfix">
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <button type="submit" class="Add" onclick=AddEventToFirebase()>Add</button>
-                <script>
-                  function myFunction() {
-                  alert("Project added successfully");
-                    }
-                  </script>
 
               </div>
             </div>
-          </form>
+          </div>
         </div>
 <br>
 
