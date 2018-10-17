@@ -126,7 +126,7 @@ router.post('/sendToDesigner', (req, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
       from: "rka090@gmail.com", // sender address
-      to: req.body.emailid, // list of receivers
+      to: req.body.email, // list of receivers
       subject: 'Feedback from performer', // Subject line
       html: output // html body
   };
