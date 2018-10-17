@@ -118,7 +118,7 @@ router.post('/sendToDesigner', (req, res) => {
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'projectteam01gdp02@gmail.com', // generated user
+        user: 'hemachoudary.p@gmail.com@gmail.com', // generated user
         pass: 'project01team'  // generated password
     }
   });
