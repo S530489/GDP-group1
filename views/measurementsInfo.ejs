@@ -7,9 +7,19 @@
   </div>
   
   <form>
+      <table>
+          <tr>
+            <td style="border-right-color: azure; border-left-color: azure;border-bottom-color: azure;border-top-color: azure;">
+              <select name="names" id="perfoName">
+                <option value="performName">Performer Name</option>                  
+              </select>
+            </td>
+            <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" type="button" onclick="addrow()">+</button></td>
+          </tr>
+          </table>
       <div class="form-group">
         <label for="inputlg">Name (Last, First)</label>
-        <input class="form-control" id="input-lg" type="text">
+        <input class="form-control" id="inputName" type="text" readonly="true">
       </div>
       <div class="form-group">
         <label for="inputlg">Character Name</label>
@@ -255,4 +265,18 @@
   <input type="submit" value="submit"/>
 
 </body>
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+    authDomain: "costume-designing-system.firebaseapp.com",
+    databaseURL: "https://costume-designing-system.firebaseio.com",
+    projectId: "costume-designing-system",
+    storageBucket: "costume-designing-system.appspot.com",
+    messagingSenderId: "923569045734"
+  };
+  firebase.initializeApp(config);
+</script>
 </html>
+<script src="./measurementinfo.js"></script>
