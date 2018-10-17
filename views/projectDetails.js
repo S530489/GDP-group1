@@ -8,9 +8,47 @@ var startperformersNames = []
 var startperformerIds = []
 var performers;
 var table=document.getElementsByName("addHere")[0];
+var key;
+var MainImageURL;
+var MulImageURLS = [];
+var projectLocation;
+
+function AddEventToFirebase(){
+    
+    projectName = document.getElementById("EventName").innerHTML;
+    date =  document.getElementById("EventDate").innerHTML;
+    projectOrganisers = document.getElementById("EventOrganisers").innerHTML;
+    projectDesigners = document.getElementById("EventDesigner").innerHTML;
+    projectDescription = document.getElementById("Eventdesc").innerHTML;
+    //projectLocation = document.getElementById("location")
+    console.log(projectName);
+    
+
+    length1 = key+1
+    console.log(key);
+    firebase.database().ref().child("Events").child(key).set({
+        Event_Id:"E"+length1,
+        Name: projectName,
+        Date: date,
+        Organizers: projectOrganisers,
+        Designers: projectDesigners,
+        Performers: selectedperformerIds,
+        mainImage_Url:MainImageURL,
+        otherImages_Url:MulImageURLS,
+        Description: projectDescription,
+        PlayLocation: projectLocation
+
+    }).then(function(){
+       location.reload();
+    });
+}
+
+
+
 $(document).ready(function(){
     var x = location.search;
     var performerObj = {}
+    key = x[1];
     console.log(x[1]);
     var firebaseRef = firebase.database().ref();
     firebaseRefperf = firebaseRef.child("performers");
@@ -29,6 +67,8 @@ $(document).ready(function(){
     firebaseRefEvents.on('value', function(snapshot){
     var currentObject = snapshot.val();
     console.log(currentObject);
+    projectLocation = currentObject.PlayLocation;
+    MainImageURL = currentObject.mainImage_Url;
     var currentRow;
     var lie = document.createElement("li");
     $(lie).attr('data-target', "#myCarousel");
@@ -37,6 +77,7 @@ $(document).ready(function(){
     $("#indicators").append(lie);
     for(i=0;i<currentObject.otherImages_Url.length;i++){
         console.log(currentObject.otherImages_Url[i]);
+        MulImageURLS[i] = currentObject.otherImages_Url[i];
         var lie1 = document.createElement("li");
         $(lie1).attr('data-target', "#myCarousel");
         $(lie1).attr('data-slide-to', i+1);
@@ -80,8 +121,6 @@ $(document).ready(function(){
             //document.getElementById("perfNames").innerHTML += performerObj[k].general.Name.First_Name+"<br/>"
         }
 
-        console.log(selectedperformerIds);
-        console.log(selectedperformerNames);
         for (i=selectedperformerIds.length-1;i>=0;i--){
             var newrow = table.insertRow(1);
             var cell1=newrow.insertCell(0);
@@ -90,9 +129,9 @@ $(document).ready(function(){
             cell2.innerHTML = "x"+remove();
         }
 
-       
-        console.log(selectedperformerIds);
-        console.log(selectedperformerNames)
+        console.log(projectLocation);
+        console.log(MainImageURL);
+        console.log(MulImageURLS)
         fixPerformers();
         
     
