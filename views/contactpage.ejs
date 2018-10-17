@@ -1,76 +1,103 @@
 <% include header %>
+
 <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <!-- Container (Contact Section) -->
-    <div class="header">
-      <div id="fsocials" class="socials">
-        <p style="color: black">Find us at &nbsp;<a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="fa fa-facebook"></i></a> &nbsp;
+  <!-- Container (Contact Section) -->
+  <div class="header">
+    <div id="fsocials" class="socials">
+      <p style="color: black">Find us at &nbsp;<a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="fa fa-facebook"></i></a>
+        &nbsp;
         <a href="http://www.stephaniemjorandby.com/" target="_blank"><i class="fa fa-user"></i></a></p>
     </div>
-<div id="contact" class="container-fluid bg-grey">
- 
-  <div class="row">
-   <div class="col-sm-5">
-     <h1>Meet the designer</h1><a href="https://www.nwmissouri.edu/finearts/directory/jorandby.htm">
-      <img border="0" alt="stephi" src="images/jorandby.jpg" width="200" height="200">
-      </a><br>Stephanie Jorandby <br>Assistant Professor<br>Costume Design<br>stephi@nwmissouri.edu
-    
-   </div>
-    <div class="col-sm-6">
-         <div class="contact">
-            <form id="contactform"  method="post" action="/sendToDesigner">
-                <h1 class="text-center">Drop us a line</h1>
-            <label for="name">Name *</label>
-          <input class="form-control" id="name" name="name" placeholder="John Smith" type="text" required>
-        
-          <label for="email">Email *</label>
-          <input class="form-control" id="email" name="email" placeholder="johnsmith@gmail.com" type="email" required>
-      
-          <label for="message">Message *</label>
-          <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="4" cols="4"></textarea><br>
-  
-          <button class="btn btn-default pull-left" type="submit" >Send</button>
-        </form>
-        </div>
-        </div>
-      </div>
-<div class="row">
-    <div class="col-sm-7">
-        <p>Contact us and we'll get back to you within 24 hours.</p>
-        <p><span class="glyphicon glyphicon-map-marker"></span>Northwest Missouri State University<br>
-          800 University Drive<br>
-          104 Fine Arts<br>
-          Maryville, MO 64468-6001<br>
-         </p>
-        <p><span class="glyphicon glyphicon-phone"></span> +1 660.562.1326</p>
-        <p><span class="glyphicon glyphicon-envelope"></span> stephi@nwmissouri.edu</p>
-        <p><span class="glyphicon glyphicon-home"></span> Office hours: Monday to Friday<br>8:00 am - 5:00 pm</p>
-      </div>
-<!-- Add Google Maps -->
-<div id="googleMap" class="col-sm-8" style="height:400px;width:25%;"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(40.35,-94.88);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    <div id="contact" class="container-fluid bg-grey">
 
-var marker = new google.maps.Marker({position:myCenter});
-  marker.setMap(map);
-  google.maps.event.addListener(marker,'click',function() {
-    var infowindow = new google.maps.InfoWindow({
-      content:"Ron Houston center for the performing arts, Maryville, Missouri, 64468"
-    });
-  infowindow.open(map,marker);
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPMl6rH1tWwJieVRm5FDO1PTccQ0EcU0&callback=myMap"></script>
-<!--
+      <div class="row">
+        <div class="col-sm-5">
+          <h1>Meet the designer</h1><a href="https://www.nwmissouri.edu/finearts/directory/jorandby.htm">
+            <img border="0" alt="stephi" src="images/jorandby.jpg" width="200" height="200">
+          </a><br>Stephanie Jorandby <br>Assistant Professor<br>Costume Design<br><u>stephi@nwmissouri.edu</u>
+
+        </div>
+        <div class="col-sm-6">
+          <div class="contact">
+            <form id="contactform" method="post" action="/sendToDesigner">
+              <h1 class="text-center">Drop us a line</h1>
+              <label for="name">Name *</label>
+              <input class="form-control" id="name" name="name" placeholder="John Smith" type="text" required>
+
+              <label for="email">Email *</label>
+              <input class="form-control" id="email" name="email" placeholder="johnsmith@gmail.com" type="email"
+                required>
+
+              <label for="message">Message *</label>
+              <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="4" cols="4"></textarea><br>
+
+              <button class="btn btn-default pull-left" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-7">
+          <p>Contact us and we'll get back to you within 24 hours.</p>
+          <p><span class="glyphicon glyphicon-map-marker"></span>Northwest Missouri State University<br>
+            800 University Drive<br>
+            104 Fine Arts<br>
+            Maryville, MO 64468-6001<br>
+          </p>
+          <p><span class="glyphicon glyphicon-phone"></span> +1 660.562.1503</p>
+          <p><span class="glyphicon glyphicon-print"></span> 660.562.1346 (fax)</p>
+          <p><span class="glyphicon glyphicon-envelope"></span> stephi@nwmissouri.edu</p>
+          <p><span class="glyphicon glyphicon-home"></span> Office hours: Monday to Friday<br>8:00 am - 5:00 pm</p>
+          <p><span class="glyphicon glyphicon-picture"></span> <u data-toggle="modal" data-target="#myModal">Directions
+                to get into stephie office</u></p>
+          <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Instructions to get into stephie's office</h4>
+                </div>
+                <div class="modal-body">
+                  <img src="images/direct.jpg" style="height:200px;width:50%;">
+                  <img src="images/office.jpg" style="height:200px;width:50%;">
+                </div>
+                <div class="modal-footer">
+
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Add Google Maps -->
+        <div id="googleMap" class="col-sm-8" style="height:400px;width:40%;"></div>
+        <script>
+          function myMap() {
+            var myCenter = new google.maps.LatLng(40.35, -94.88);
+            var mapProp = { center: myCenter, zoom: 12, scrollwheel: false, draggable: false, mapTypeId: google.maps.MapTypeId.ROADMAP };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({ position: myCenter });
+            marker.setMap(map);
+            google.maps.event.addListener(marker, 'click', function () {
+              var infowindow = new google.maps.InfoWindow({
+                content: "Ron Houston center for the performing arts, Maryville, Missouri, 64468"
+              });
+              infowindow.open(map, marker);
+            });
+          }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPPMl6rH1tWwJieVRm5FDO1PTccQ0EcU0&callback=myMap"></script>
+        <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 -->
-</div>
+      </div>
 </body>
-
