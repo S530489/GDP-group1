@@ -15,7 +15,10 @@ input[type=text], select, textarea {
     margin-bottom: 16px; 
     resize: vertical; 
 }
-
+googleMap{
+    border-color: black;
+    border: 1px solid #ccc; 
+}
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -25,8 +28,8 @@ input[type=submit] {
     cursor: pointer;
     float: left;
 }
-u{
-    text-color: blue;
+.p{
+ 
 }
 input[type=submit]:hover {
     background-color: #45a049;
