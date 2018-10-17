@@ -148,6 +148,19 @@ function saveMessage(head,neck,armscye,cbw,chestrel,chestexp,waistrel,waistexp,h
 }
 ).then(function(){
     document.getElementById('measurementform').reset();
+    document.getElementById("head").innerHTML="";
+    document.getElementById("neck").innerHTML="";
+    document.getElementById("armscye").innerHTML="";
+    document.getElementById("cbw").innerHTML="";
+    document.getElementById("chestrel").innerHTML="";
+    document.getElementById("chestexp").innerHTML="";
+    document.getElementById("waistrel").innerHTML="";
+    document.getElementById("waistexp").innerHTML="";
+    document.getElementById("fullGirth").innerHTML="";
+    document.getElementById("halfGirth").innerHTML="";
+    document.getElementById("inseam_a").innerHTML="";
+    document.getElementById("inseam_f").innerHTML="";
+
     console.log("submitted")
 });
  }
