@@ -109,7 +109,7 @@ $(document).ready(function(){
 })
 
 function getEventInformation(key){
-    window.alert(key);
+    //window.alert(key);
     window.location.href = "projectdetails?"+key
 }
 

@@ -64,23 +64,40 @@
 </div>
   
 <div class="container text-center">    
-  <h3 id="EventName"></h3><br>
+  <h3 id="EventName" contentEditable=true></h3><br>
   
     <div class="col-sm-16">
       <div class="well">
-       <p id="Eventdesc"></p>
+       <p id="Eventdesc" contentEditable=true></p>
       </div>
       </div>
       <div class="col-sm-6">
       <div class="well">
-       <p class="text-left" id="EventCrew"></p>
+       <p class="text-left" > Designer : <span id="EventDesigner" contentEditable=true></span></p>
+       <p class="text-left"> Organizers : <span  id="EventOrganisers" contentEditable=true></span></p>
+       <p class="text-left"> Date : <span  id="EventDate" contentEditable=true></span></p>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-6">
         <div class="well">
-         <p>Performers</p>
-         <p class="text-left" id="perfNames">
-         </p>
+            <label for="Performers"><b>Performers</b></label>
+            <table>
+            <tr>
+              <td style="border-right-color: azure; border-left-color: azure;border-bottom-color: azure;border-top-color: azure;">
+                <select name="names" id="perfoName">
+                  <option value="performName">Performer Name</option>                  
+                </select>
+              </td>
+              <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
+            </tr>
+            </table>
+            <br/>
+            <table name="addHere" id="dplist1" class="dplist1">         
+                <tr><th  align="center" style="border-right-color: azure;border-left-color: azure;border-top-color: azure;"></th> </tr>
+          </table>
+         <!-- <p>Performers</p>
+         <p class="text-left" id="perfNames" contentEditable=true>
+         </p> -->
         </div>
         </div>
     </div>
