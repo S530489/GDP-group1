@@ -143,7 +143,7 @@ function removerows()
 }
 function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
     
-   window.alert("submiting")
+//    window.alert("submiting")
     firebase.database().ref().child("ShopPullList").child(0).set({
 
             Play_title : title,

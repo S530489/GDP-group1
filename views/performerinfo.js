@@ -4,7 +4,6 @@ var global_key;
 
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
-document.getElementById("edit1").hidden = true;
 
 
 function myFunction() {
@@ -166,13 +165,13 @@ localStorage.setItem("storageName",global_key);
 function getMeasurements()
 {
     localKey=localStorage.getItem("storageName");
-    alert("gotcha"+localKey);
+    // alert("gotcha"+localKey);
     
     var firebaseRef = firebase.database().ref().child("performers/"+localKey);
    
     firebaseRef.on('value', function(snapshot){
         var obj = snapshot.val();
-        alert(obj.general.Name.First_Name);
+        // alert(obj.general.Name.First_Name);
         document.getElementById("pname").innerHTML=obj.general.Name.First_Name;
         document.getElementById("perf_name").value = obj.general.Name.Last_Name+", "+obj.general.Name.First_Name;
         document.getElementById("character_name").value = obj.measurements.role;
