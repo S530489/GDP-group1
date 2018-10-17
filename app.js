@@ -39,18 +39,19 @@ app.use(bodyParser.json());
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
-app.get("/", function (request, response) {
+
+
+app.all("/", function (request, response) {
      response.render('login.ejs');
 });
-const routes = require('./routes/index.js');
-app.use('/', routes);
 
 
 
 
 // handle http GET requests (default)
 
-app.post('/send', (req, res) => {
+app.post("/sendabc", function(req, res){
+  console.log("dauifkasi")
   const output = `
     <h3>Actor contact and Basic Form. </h3>
     <ul>  
@@ -89,8 +90,12 @@ app.post('/send', (req, res) => {
   });
 
 
+  const routes = require('./routes/index.js');
+  app.use('/', routes);
 
   http.listen(8081, function () {
     console.log('App is listening on http://127.0.0.1:8081/');
 
   });
+
+  
