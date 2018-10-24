@@ -2,12 +2,109 @@
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 </head>
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
 <body>
   <!-- Container (Contact Section) -->
   <div class="header">
-    <div id="fsocials" class="socials">
+    <div id="fsocials" class="socials" style="float:right;">
       <p style="color: black">Find us at &nbsp;<a href="https://www.facebook.com/smjorandby/" target="_blank"><i class="fa fa-facebook"></i></a>
         &nbsp;
         <a href="http://www.stephaniemjorandby.com/" target="_blank"><i class="fa fa-user"></i></a></p>
@@ -16,10 +113,10 @@
 
       <div class="row">
         <div class="col-sm-5">
-          <h1>Meet the designer</h1><a href="https://www.nwmissouri.edu/finearts/directory/jorandby.htm">
+          <h1 style="color:green">Meet the designer</h1><a href="https://www.nwmissouri.edu/finearts/directory/jorandby.htm">
             <img border="0" alt="stephi" src="images/jorandby.jpg" width="200" height="200">
-          </a><br>Stephanie Jorandby <br>Assistant Professor<br>Costume Design<br><u>stephi@nwmissouri.edu</u>
-
+          </a><br>Stephanie Jorandby <br>Assistant Professor<br>Costume Design<br><a href="mailto:stephi@nwmissouri.edu?Subject=Hello%20again" target="_top">
+            stephi@nwmissouri.edu</a>
         </div>
         <div class="col-sm-6">
           <div class="contact">
@@ -33,7 +130,8 @@
                 required>
 
               <label for="message">Message *</label>
-              <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="4" cols="4"></textarea><br>
+              <textarea style="border-color: black" class="form-control" id="comments" name="comments" placeholder="Comment"
+                rows="4" cols="4"></textarea><br>
 
               <button class="btn btn-default pull-left" type="submit">Send</button>
             </form>
@@ -52,32 +150,95 @@
           <p><span class="glyphicon glyphicon-print"></span> 660.562.1346 (fax)</p>
           <p><span class="glyphicon glyphicon-envelope"></span> stephi@nwmissouri.edu</p>
           <p><span class="glyphicon glyphicon-home"></span> Office hours: Monday to Friday<br>8:00 am - 5:00 pm</p>
-          <p><span class="glyphicon glyphicon-picture"></span> <u data-toggle="modal" data-target="#myModal">Directions
-                to get into stephie office</u></p>
+          <p><span class="glyphicon glyphicon-picture"></span> <u style="color: blue" data-toggle="modal" data-target="#myModal">Directions
+              to get into stephie office</u></p>
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
-
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Instructions to get into stephie's office</h4>
-                </div>
                 <div class="modal-body">
-                  <img src="images/direct.jpg" style="height:200px;width:50%;">
-                  <img src="images/office.jpg" style="height:200px;width:50%;">
+                  <div class="container">
+                    <div class="mySlides">
+                      <div class="numbertext">1 / 6</div>
+                      <img src="images/direct.jpg" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <div class="numbertext">2 / 6</div>
+                      <img src="images/performingArts.jpg" style="width:100%">
+                    </div>
+                  
+                    <div class="mySlides">
+                      <div class="numbertext">3 / 6</div>
+                      <img src="images/performingArts.jpg" style="width:100%">
+                    </div>
+                      
+                    <div class="mySlides">
+                      <div class="numbertext">4 / 6</div>
+                      <img src="images/chestrel.jpg" style="width:100%">
+                    </div>
+                      
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                  
+                    <div class="caption-container">
+                      <p id="caption"></p>
+                    </div>
+                  
+                    <div class="row">
+                      <div class="column">
+                        <img class="demo cursor" src="images/direct.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="images/performingArts.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="images/performingArts.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                      </div>
+                      <div class="column">
+                        <img class="demo cursor" src="images/chestrel.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+                  <script>
+                  var slideIndex = 1;
+                  showSlides(slideIndex);
+                  
+                  function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                  }
+                  
+                  function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                  }
+                  
+                  function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("demo");
+                    var captionText = document.getElementById("caption");
+                    if (n > slides.length) {slideIndex = 1}
+                    if (n < 1) {slideIndex = slides.length}
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";
+                    dots[slideIndex-1].className += " active";
+                    captionText.innerHTML = dots[slideIndex-1].alt;
+                  }
+                  </script>
                 </div>
-                <div class="modal-footer">
-
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
         <!-- Add Google Maps -->
         <div id="googleMap" class="col-sm-8" style="height:400px;width:40%;"></div>
+          <button class="round-button" style="float:right;"><a href="https://www.google.com/maps/place/Ron+Houston+Center+for+the+Performing+Arts/@40.356471,-94.8860316,15z/data=!4m19!1m13!4m12!1m4!2m2!1d-94.883194!2d40.3517532!4e1!1m6!1m2!1s0x87eac55ddb2a8a47:0xf07bce67f09965cd!2sgoogle+maps+ron+houston+center!2m2!1d-94.8875642!2d40.35024!3m4!1s0x87eac55ddb2a8a47:0xf07bce67f09965cd!8m2!3d40.35024!4d-94.8875642"
+              target="_blank">Directions</a></button>
+        
         <script>
           function myMap() {
             var myCenter = new google.maps.LatLng(40.35, -94.88);
