@@ -2,262 +2,312 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <body>
- <% include header %>
-<div id="userDiv" class="info">
-        <div class="centered1">
-                
-                        <!-- <input class="ki" type="text" name="search" placeholder="Search..."> -->
-                        <button type="button" class="button kill" data-toggle="modal" data-target="#myModal">Add Performer</button>
-                        <div class="modal fade" id="myModal" role="dialog">
-                                <div class="modal-dialog">
-                                
-                                  <!-- Modal content-->
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                      <h4 class="modal-title">Choose any one of the following to send the measurement form or to store 
-                                              the measurements of the performer</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                                <button type="button" style="text-decoration: none;" class="button kill1"><a  href="sendform">Send Form</a></button><br><br>
-                                                <button  type="button" style="text-decoration: none;" class="button kill1"><a href="performer">Take Measurements</a></button>
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="button" data-dismiss="modal">Close</button>
-                                    </div>
-                                  </div>
-                                  
-                                </div>
-                              </div>
-                
+  <% include header %>
+  <div id="userDiv" class="info">
+    <div class="centered1">
+
+      <!-- <input class="ki" type="text" name="search" placeholder="Search..."> -->
+      <button type="button" class="button kill" data-toggle="modal" data-target="#myModal">Add Performer</button>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Choose any one of the following to send the measurement form or to store
+                the measurements of the performer</h4>
+            </div>
+            <div class="modal-body">
+              <button type="button" style="text-decoration: none;" class="button kill1"><a href="sendform">Send Form</a></button><br><br>
+              <button type="button" style="text-decoration: none;" class="button kill1"><a href="performer">Take
+                  Measurements</a></button>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
         </div>
-</div>
-<br/>
-<br/>
-<!-- <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
+      </div>
+
+    </div>
+  </div>
+  <br />
+  <br />
+  <!-- <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
 <br/>
 <br/> -->
 
 
-<div class="container-fluid">
-        <div class="row">
-                <div class="col-md-3">
-                    <input style = "padding: 11px;border:1px solid #ddd; margin-left: 0px;"  size="10" class="ki" type="text" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search...">
-                                <table name="perf" id="myTable" class="myTable" style="width:85%;">
-                                    <tr>
-                                        <th><h3>Performers</h3></th>
-                                        <th><a  id="remP" style="text-decoration: none;" onclick="removeVisiblity()">remove</a></th>
-                                      </tr>
-                                      <% var keys = Object.keys(performers)
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3">
+        <input style="padding: 11px;border:1px solid #ddd; margin-left: 0px;" size="10" class="ki" type="text" id="myInput"
+          onkeyup="myFunction()" name="search" placeholder="Search...">
+        <table name="perf" id="myTable" class="myTable" style="width:85%;">
+          <tr>
+            <th>
+              <h3>Performers</h3>
+            </th>
+            <th><a id="remP" style="text-decoration: none;" onclick="removeVisiblity()">remove</a></th>
+          </tr>
+          <% var keys = Object.keys(performers)
                                       keys.forEach(function(key){ 
                                       var Name = performers[key].general.Name.First_Name %>
-                                      <tr>
-                                        <td onclick= "getInfo('<%= key %>' )" id="td1"> <%= Name  %> </td>
-                                        <td id="hide"><a id="removePerf" style="text-decoration: none;" onclick="remove()">x</a></td>
-                                      </tr>
-                                        <% }) %>
-                                </table>                                                                
-                </div>
+          <tr>
+            <td onclick="getInfo('<%= key %>' )" id="td1">
+              <%= Name  %>
+            </td>
+            <td id="hide"><a id="removePerf" style="text-decoration: none;" onclick="remove()">x</a></td>
+          </tr>
+          <% }) %>
+        </table>
+      </div>
 
-                <script>
-                  var count = $('#myTable tr').length;
-                    for(var i=1;i<count;i++){
-                    document.getElementById("myTable").rows[i].cells[1].style.visibility="hidden";
-                    }
-                  </script>
-      
-        <div class="col-md-9">
-            <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
-                <div class="row">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-6"> <p ><b id="heading">Performer's Information</b></p></div>
-                        <div class="col-md-2"> <a id="measure" href="viewmeasurement">Measurements</a></div>
-                        <div class="col-md-1 w3-container">
-                            <a id="edit" onclick="document.getElementById('id01').style.display='block'">Edit</a>
-                          
-                            <div id="id01" class="w3-modal">
-                              <div class="w3-modal-content">
-                                <div class="w3-container">
-                                  <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-                                  <h3>Access Code Verification</h3>
-                                  <br>
-                                  <label id="ver">Enter the access code to edit the measurments:</label><br>
-                                  <input type="password" id="accesscode" name="accesscode" required /><br><br>
-                                  <button id="veri" class="button" onclick="edit()">Verify</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>	
-                </div>
-                <br/>
-                <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-8"> 
-                                <table style="width:85%;border: 5px solid ">
-                                                <tr>
-                                                  <td><p ><b>Name</b></p></td>
-                                                  <td><span id="First_name"></span>&nbsp;<span id="last_name"></span><br/></td>
-                                                </tr>
-                                                <tr>
-                                                        <td><p ><b>Age</b></p></td>
-                                                        <td><p id="age"></p></td>
-                                                 </tr>
-                                                 <tr>
-                                                        <td><p ><b>Email</b></p></td>
-                                                        <td ><p id="email"></p></td>
-                                                </tr>
-                                                 <tr>
-                                                        <td><p ><b>Phone Number</b></p></td>
-                                                        <td ><span id="pno1"></span>&nbsp;<span id="pno2"></span></td>
-                                                </tr>
-                                                <tr>
-                                                        <td><p ><b>Address</b></p></td>
-                                                        <td ><p id="add1"></p>
-                                                        <p id="add2"></p>
-                                                        <p id="add3"></p>
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                  <td> <p><b>Character Name</b></p></td>
-                                                  <td><p id="cname"></p></td>
-                                                </tr>
-                                                <tr>
-                                                        <td><p><b>Allergies</b></p></td>
-                                                        <td><p id="allergy"></p></td>
-                                                </tr>
-                                                <tr>
-                                                  <td><p><b>Eye Color</b></p> </td>
-                                                  <td><p id="eye"></p></td>
-                                                </tr>
-                                                <tr>
-                                                        <td><p><b>Hair Color</b></p> </td>
-                                                        <td><p id="hair"></p></td>
-                                              </tr>
-                                              <tr>
-                                                        <td><p><b>Eye ware</b></p> </td>
-                                                        <td><p id="ware"></p></td>
-                                              </tr>
-                                              <tr id="ht">
-                                                <td><p><b>Height</b></p> </td>
-                                                <td><p id="height"></p></td>
-                                              </tr>
-                                              <tr id="wt">
-                                              <td><p><b>Weight</b></p> </td>
-                                              <td><p id="weight"></p></td>
-                                              </tr>
-                                              <tr id="shrt">
-                                              <td><p><b>Actor shirt size</b></p> </td>
-                                              <td><p id="shirtSize"></p></td>
-                                              </tr>
-                                                              
-                                </table>
-                                <button onclick="getMore()" id="getMore">View More &nbsp <i class="arrow down"></i></button> 
-                                <button onclick="getLess()" id="getLess">View Less &nbsp <i class="arrow up"></i></button>  
+      <script>
+        var count = $('#myTable tr').length;
+        for (var i = 1; i < count; i++) {
+          document.getElementById("myTable").rows[i].cells[1].style.visibility = "hidden";
+        }
+      </script>
 
-                        </div>
-                        <div class="col-md-1"></div>	
+      <div class="col-md-9">
+        <marquee behavior="alternate" direction="left"> <b id="scroll">Click on performers to see their Information </b></marquee>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <p><b id="heading">Performer's Information</b></p>
+          </div>
+          <div class="col-md-2"> <a id="measure" href="viewmeasurement">Measurements</a></div>
+          <div class="col-md-1 w3-container">
+            <a id="edit" onclick="document.getElementById('id01').style.display='block'">Edit</a>
 
+            <div id="id01" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                  <h3>Access Code Verification</h3>
+                  <br>
+                  <label id="ver">Enter the access code to edit the measurments:</label><br>
+                  <input type="password" id="accesscode" name="accesscode" required /><br><br>
+                  <button id="veri" class="button" onclick="edit()">Verify</button>
                 </div>
-                    <br/>   
-            
-                    
+              </div>
             </div>
-       
-                                                      
+          </div>
         </div>
-        
+        <br />
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-8">
+            <table style="width:85%;border: 5px solid ">
+              <tr>
+                <td>
+                  <p><b>Name</b></p>
+                </td>
+                <td><span id="First_name"></span>&nbsp;<span id="last_name"></span><br /></td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Age</b></p>
+                </td>
+                <td>
+                  <p id="age"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Email</b></p>
+                </td>
+                <td>
+                  <p id="email"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Phone Number</b></p>
+                </td>
+                <td><span id="pno1"></span>&nbsp;<span id="pno2"></span></td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Address</b></p>
+                </td>
+                <td>
+                  <p id="add1"></p>
+                  <p id="add2"></p>
+                  <p id="add3"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Character Name</b></p>
+                </td>
+                <td>
+                  <p id="cname"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Allergies</b></p>
+                </td>
+                <td>
+                  <p id="allergy"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Eye Color</b></p>
+                </td>
+                <td>
+                  <p id="eye"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Hair Color</b></p>
+                </td>
+                <td>
+                  <p id="hair"></p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b>Eye ware</b></p>
+                </td>
+                <td>
+                  <p id="ware"></p>
+                </td>
+              </tr>
+              <tr id="ht">
+                <td>
+                  <p><b>Height</b></p>
+                </td>
+                <td>
+                  <p id="height"></p>
+                </td>
+              </tr>
+              <tr id="wt">
+                <td>
+                  <p><b>Weight</b></p>
+                </td>
+                <td>
+                  <p id="weight"></p>
+                </td>
+              </tr>
+              <tr id="shrt">
+                <td>
+                  <p><b>Actor shirt size</b></p>
+                </td>
+                <td>
+                  <p id="shirtSize"></p>
+                </td>
+              </tr>
+
+            </table>
+            <button onclick="getMore()" id="getMore">View More &nbsp <i class="arrow down"></i></button>
+            <button onclick="getLess()" id="getLess">View Less &nbsp <i class="arrow up"></i></button>
+
+          </div>
+          <div class="col-md-1"></div>
+
         </div>
-</div>
+        <br />
 
-<script>
-  document.getElementById("ht").hidden=true;
-  document.getElementById("wt").hidden=true;
-  document.getElementById("shrt").hidden=true;
 
-  function getMore()
-  {
-    document.getElementById("ht").hidden=false;
-  document.getElementById("wt").hidden=false;
-  document.getElementById("shrt").hidden=false;  
-  }
+      </div>
 
-  function getLess()
-  {
-    document.getElementById("ht").hidden=true;
-  document.getElementById("wt").hidden=true;
-  document.getElementById("shrt").hidden=true;
-  }
-  </script>
 
-<div class="row">
-     <div class="col-md-5"></div>
-              
-    <div class="col-md-2"> <button type="button" class="btn btn-dark btn-lg" id="canBtn"  onclick="Cancel()">Cancel</button></div>
-    <div class="col-md-2"> 
-        <button type="button" class="btn btn-dark btn-lg" id="subBtn"  onclick="SubmitToFirebase()">Submit</button>
     </div>
-    <div class="col-md-3"></div>	
+
   </div>
-<script>
-document.getElementById("subBtn").style.visibility='hidden';
-document.getElementById("canBtn").style.visibility='hidden';
-</script>
+  </div>
 
-<br><br><br><br><br>
+  <script>
+    document.getElementById("ht").hidden = true;
+    document.getElementById("wt").hidden = true;
+    document.getElementById("shrt").hidden = true;
 
-<script>
-  function selectedRow(){
-                
-                var index,
-                    table = document.getElementById("myTable");
-            
-                for(var i = 1; i < table.rows.length; i++)
-                {
-                    table.rows[i].onclick = function()
-                    {
-                         // remove the background from the previous selected row
-                        if(typeof index !== "undefined"){
-                           table.rows[index].classList.toggle("selected");
-                        }
-                        console.log(typeof index);
-                        // get the selected row index
-                        index = this.rowIndex;
-                        // add class selected to the row
-                        this.classList.toggle("selected");
-                        console.log(typeof index);
-                     };
-                }
-                
-            }
-            selectedRow();
-  </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
-    authDomain: "costume-designing-system.firebaseapp.com",
-    databaseURL: "https://costume-designing-system.firebaseio.com",
-    projectId: "costume-designing-system",
-    storageBucket: "costume-designing-system.appspot.com",
-    messagingSenderId: "923569045734"
-  };
-  firebase.initializeApp(config);
-
-  var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    function getMore() {
+      document.getElementById("ht").hidden = false;
+      document.getElementById("wt").hidden = false;
+      document.getElementById("shrt").hidden = false;
     }
-}
-  
-</script>
+
+    function getLess() {
+      document.getElementById("ht").hidden = true;
+      document.getElementById("wt").hidden = true;
+      document.getElementById("shrt").hidden = true;
+    }
+  </script>
+
+  <div class="row">
+    <div class="col-md-5"></div>
+
+    <div class="col-md-2"> <button type="button" class="btn btn-dark btn-lg" id="canBtn" onclick="Cancel()">Cancel</button></div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-dark btn-lg" id="subBtn" onclick="SubmitToFirebase()">Submit</button>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <script>
+    document.getElementById("subBtn").style.visibility = 'hidden';
+    document.getElementById("canBtn").style.visibility = 'hidden';
+  </script>
+
+  <br><br><br><br><br>
+
+  <script>
+    function selectedRow() {
+
+      var index,
+        table = document.getElementById("myTable");
+
+      for (var i = 1; i < table.rows.length; i++) {
+        table.rows[i].onclick = function () {
+          // remove the background from the previous selected row
+          if (typeof index !== "undefined") {
+            table.rows[index].classList.toggle("selected");
+          }
+          console.log(typeof index);
+          // get the selected row index
+          index = this.rowIndex;
+          // add class selected to the row
+          this.classList.toggle("selected");
+          console.log(typeof index);
+        };
+      }
+
+    }
+    selectedRow();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+      authDomain: "costume-designing-system.firebaseapp.com",
+      databaseURL: "https://costume-designing-system.firebaseio.com",
+      projectId: "costume-designing-system",
+      storageBucket: "costume-designing-system.appspot.com",
+      messagingSenderId: "923569045734"
+    };
+    firebase.initializeApp(config);
+
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+  </script>
 
 
 </body>
 <script src="./firebase.js"></script>
 <script src="./performerinfo.js"></script>
-              
