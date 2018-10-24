@@ -1,179 +1,230 @@
 <% include header %>
+
 <body>
-        <h1>Actor Contact and Basic Info</h1>
-        <p id="con">Please fill out the starred questions and submit this form BEFORE you come to the costume shop to have your measurements taken. 
-            You MUST have a copy of this form on file before the shop staff will measure you. 
-            Please have your schedule of availability ready when you arrive for measurements.</p>
+    <h1>Actor Contact and Basic Info</h1>
+    <p id="con">Please fill out the starred questions and submit this form BEFORE you come to the costume shop to have
+        your measurements taken.
+        You MUST have a copy of this form on file before the shop staff will measure you.
+        Please have your schedule of availability ready when you arrive for measurements.</p>
 
-            <div class="container">
-    
-            <form id="contactForm">
-                <label for="namelf">Name(Last)</label>
-                <input type="text" name="namef" id="namel" value="" required><br>
+    <div class="container">
 
-                <label for="namelf">Name(First)</label>
-                <input type="text" name="namef" id="namef" value="" required><br>
+        <form id="contactForm">
+            <label for="namelf">Name(Last)</label>
+            <input type="text" name="namef" id="namel" value="" required><br>
+
+            <label for="namelf">Name(First)</label>
+            <input type="text" name="namef" id="namef" value="" required><br>
+
+            <label for="charName">Character Name: </label>
+            <input type="text" name="charName" id="charName" value="" required><br>
+
+            <label for="phone">Phone number:</label>
+            <input type="text" name="phone" id="phone" value="" required><br>
+
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" value="" required><br>
+
+            <label for="addr1">Address Line 1:</label>
+            <input type="text" name="age" id="addr1" value="" required><br>
+
+            <label for="addr2">Address Line 2:</label>
+            <input type="text" name="age" id="addr2" value="" required><br>
+
+            <label for="country">Country:</label>
+            <input type="text" name="age" id="country" value="" required><br>
+
+            <label for="textyou">May we text you? </label><br>
+            <input type="radio" name="textu" id="textu_y" value=""> Yes<br>
+            <input type="radio" name="textu" id="textu_n" value=""> No<br><br>
+
+            <label for="email">University email address</label>
+            <input type="email" name="email" id="email" value="" required><br>
+
+            <p>"I understand that I must check my Northwest student email DAILY as requests for fitting appointments
+                will be sent to that email. I will respond to a fitting request as soon as possible. I understand that
+                failing to check my university email does not excuse me from missing a fitting appointment. Missed
+                appointments will be rescheduled at the discretion of the Costume Shop." *</p>
+            <input type="checkbox" name="declare" id="declare" value="yes"> Yes, I understand<br><br>
+
+            <label for="Hand">Dominant Hand</label><br>
+            <input type="radio" name="hand" value="" id="right_hand"> Right<br>
+            <input type="radio" name="hand" value="" id="left_hand"> Left <br>
+
+            <label for="weight">Estimated weight</label>
+            <p>Why? Your weight helps determine the right size for certain garments, such as dancewear and tights.</p>
+            <input type="text" name="weight" id="weight" value="" required><br><br>
+
+            <label for="height">Estimated height</label>
+            <p>Why? Your height helps determine the length for certain garments.</p>
+            <input type="text" name="height" id="height" value="" required><br><br>
+
+            <label for="eyeware">Corrective Eyeware</label>
+            <p>Please select all that apply</p>
+            <input type="checkbox" class="eyeware" name="none" id="none" value="none"> None<br>
+            <input type="checkbox" class="eyeware" name="glasses" id="glasses" value="glasses"> Glasses<br>
+            <input type="checkbox" class="eyeware" name="contacts" id="contacts" value="contacts"> Contacts<br>
+            <input type="checkbox" class="eyeware" name="fine" id="fine" value="fine"> I wear glasses but can perform
+            without them<br>
+
+            <label for="haircolor">Hair color and length</label>
+            <input type="text" name="haircolor" id="haircolor" value=""><br><br>
+
+            <label for="haircolor">Eye color</label>
+            <input type="text" name="eyecolor" id="eyecolor" value="" required><br><br>
+
+            <label for="facialHair">Facial Hair: color, length, and growth time</label>
+            <p>If you cannot grow facial hair, please answer "none"</p>
+            <input type="text" name="facialHair" id="facialHair" value="" required><br>
+
+            <p>I understand that I may not permanently change the color, length, or style of my hair between casting
+                and performance without the express permission of both the Costume Designer and Artistic Director.</p>
+            <input type="checkbox" name="declare" id="declare_change" value="yes" required> Yes, I understand<br><br>
+
+            <label for="piercings"> Do you have pierced ears?</label><br>
+            <input type="radio" name="ear" id="pierce_yes" value="yes"> Yes <br>
+            <input type="radio" name="ear" id="pierce_no" value="no"> No <br>
+
+            <label for="otherPiercings">Do you have any other piercings? How many and where?</label>
+            <input type="text" name="piercing" id="piercing" value="" required><br>
+
+            <label for="tatto">Do you have any tattoos?</label>
+            <p>If yes, please briefly describe size, location, and color</p>
+            <input type="text" name="tatto" id="tatto" value="" required><br>
+
+            <p>"I understand that if I have tattos I must provide my own tattoo cover makeup if asked. I understand
+                that if I have piercings I may be asked to remove them or provide my own clear spacer during
+                performances. I understand that I am not allowed to permanently alter my body with additional tattoos,
+                piercings, etc. between casting and performance."</p>
+            <input type="checkbox" name="declare" name="tatto_yes" value="yes" required> Yes, I understand<br>
+
+            <label>_______________________________COMMENTS ABOUT THE BODY (OR COSTUME) OF ANY PERFORMER (YOURSELF
+                INCLUDED) WILL NOT BE TOLERATED FROM ANY PERFORMER OR MEMBER OF THE PRODUCTION STAFF.</label>
+            <p>From "Costume Related Questions for New Theatre Professionals" in the body of the Measurement Request
+                email from Stage Management.</p>
+            <input type="text" name="conclude" id="conclude" value="" required><br>
+
+            <h2>Commercial Sizes</h2>
+
+            <label for="shoes">Shoes</label>
+            <input type="text" name="shoes" id="shoes" value="" required><br><br>
+
+            <label for="dshoes">Dance Shoes: Size and Type</label>
+            <input type="text" name="dshoes" id="dshoes" value="" required><br><br>
+
+            <label for="shirt">Shirt</label>
+            <p>If you know your men's dress shirt size (i.e. 15/34-35) please indicate in "other"</p>
+            <input class="shirtsize" type="checkbox" id="xs" value="xs"> XS <br>
+            <input class="shirtsize" type="checkbox" id="s" value="s"> S <br>
+            <input class="shirtsize" type="checkbox" id="m" value="m"> M <br>
+            <input class="shirtsize" type="checkbox" id="l" value="l"> L <br>
+            <input class="shirtsize" type="checkbox" id="xl" value="xl"> XL <br>
+            <input class="shirtsize" type="checkbox" id="xxl" value="xxl"> XXL <br>
+            <input class="shirtsize" type="checkbox" id="xxxl" value="xxxl"> XXXL <br>
+            <input class="shirtsize" type="checkbox" id="xxxxl" value="xxxxl"> XXXXL <br>
+            <input class="shirtsize" type="checkbox" id="other" value="other"> Other <br>
+
+            <label for="pants">Pants</label>
+            <p>e.g. 8 (women) or 34x32 (waist by inseam for men)</p>
+            <input type="text" name="pants" id="pants" value="" required><br>
+
+            <label for="bsize">Bra Size</label><br>
+            <input type="text" name="bsize" id="bsize" value=""><br>
+
+            <label for="ring">Ring</label><br>
+            <input type="text" name="ring" id="ring" value="" required><br>
+
+            <label>Are you allergic to any of the following?</label><br>
+            <input class="allergy" type="checkbox" name="fabric" id="fabric" value="fabric"> Fabric/Fibre <br>
+            <input class="allergy" type="checkbox" name="detergent" id="detergent" value="detergent"> Detergent <br>
+            <input class="allergy" type="checkbox" name="environmental" id="environmental" value="environmental">
+            Environmental <br>
+            <input class="allergy" type="checkbox" name="fragrance" id="fragrance" value="fragrance"> Fragrance <br>
+            <input class="allergy" type="checkbox" name="metal" id="metal" value="metal"> Metal <br>
+            <input class="allergy" type="checkbox" name="noall" id="noall" value="noall"> No Allergies <br>
+            <input class="allergy" type="checkbox" name="other" id="other" value="other"> Other <br>
+
+            <label>If you have allergies, please give specific details here.</label>
+            <input type="text" name="anyall" id="anyall" value="" required><br><br>
+
+            <label>Medications:</label>
+            <input type="text" name="anyall" id="medi" value="" required><br><br>
+
+            <label>Suggestions:</label>
+            <input type="text" name="anyall" id="sugg" value="" required><br><br>
+            <p>Upload an image (Please save the image with your first and last name)</p>
+            <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+
+            <p id="demo"></p>
                 
-                <label for="charName">Character Name:  </label>
-                <input type="text" name="charName" id="charName" value="" required><br>
-                
-                <label for="phone">Phone number:</label>
-                <input type="text" name="phone" id="phone" value="" required><br>
-
-                <label for="age">Age:</label>
-                <input type="text" name="age" id="age" value="" required><br>
-
-                <label for="addr1">Address Line 1:</label>
-                <input type="text" name="age" id="addr1" value="" required><br>
-
-                <label for="addr2">Address Line 2:</label>
-                <input type="text" name="age" id="addr2" value=""required><br>
-
-                <label for="country">Country:</label>
-                <input type="text" name="age" id="country" value=""required><br>
-                
-                <label for="textyou">May we text you? </label><br>
-                <input type="radio" name="textu" id="textu_y" value="" > Yes<br>
-                <input type="radio" name="textu" id="textu_n" value="" > No<br><br>
-                
-                <label for="email">University email address</label>
-                <input type="email" name="email" id="email" value="" required><br>
-                
-                <p>"I understand that I must check my Northwest student email DAILY as requests for fitting appointments will be sent to that email. I will respond to a fitting request as soon as possible. I understand that failing to check my university email does not excuse me from missing a fitting appointment. Missed appointments will be rescheduled at the discretion of the Costume Shop." *</p>
-                <input type="checkbox" name="declare" id="declare" value="yes" > Yes, I understand<br><br>
-                
-                <label for="Hand">Dominant Hand</label><br>
-                <input type="radio" name="hand" value="" id="right_hand"> Right<br>
-                <input type="radio" name="hand" value="" id="left_hand"> Left <br>
-    
-                <label for="weight">Estimated weight</label>
-                <p>Why? Your weight helps determine the right size for certain garments, such as dancewear and tights.</p>
-                <input type="text" name="weight" id="weight" value="" required><br><br>
-
-                <label for="height">Estimated height</label>
-                <p>Why? Your height helps determine the length for certain garments.</p>
-                <input type="text" name="height" id="height" value="" required><br><br>
-    
-                <label for="eyeware">Corrective Eyeware</label>
-                <p>Please select all that apply</p>
-                <input type="checkbox" class="eyeware" name="none" id="none" value="none" > None<br>
-                <input type="checkbox" class="eyeware" name="glasses" id="glasses" value="glasses" > Glasses<br>
-                <input type="checkbox" class="eyeware" name="contacts" id="contacts" value="contacts" > Contacts<br>
-                <input type="checkbox" class="eyeware" name="fine" id="fine" value="fine" > I wear glasses but can perform without them<br>
-    
-                <label for="haircolor">Hair color and length</label>
-                <input type="text" name="haircolor" id="haircolor" value=""><br><br>
-
-                <label for="haircolor">Eye color</label>
-                <input type="text" name="eyecolor" id="eyecolor" value="" required><br><br>
-    
-                <label for="facialHair">Facial Hair: color, length, and growth time</label>
-                <p>If you cannot grow facial hair, please answer "none"</p>
-                <input type="text" name="facialHair" id="facialHair" value="" required><br>
-    
-                <p>I understand that I may not permanently change the color, length, or style of my hair between casting and performance without the express permission of both the Costume Designer and Artistic Director.</p>
-                <input type="checkbox" name="declare" id="declare_change" value="yes" required> Yes, I understand<br><br>
-                 
-                <label for="piercings"> Do you have pierced ears?</label><br>
-                <input type="radio" name="ear" id="pierce_yes" value="yes"> Yes <br>
-                <input type="radio" name="ear" id="pierce_no" value="no" > No <br>
-    
-                <label for="otherPiercings">Do you have any other piercings? How many and where?</label>
-                <input type="text" name="piercing" id="piercing" value="" required><br>
-    
-                <label for="tatto">Do you have any tattoos?</label>
-                <p>If yes, please briefly describe size, location, and color</p>
-                <input type="text" name="tatto" id="tatto" value="" required><br>
-    
-                <p>"I understand that if I have tattos I must provide my own tattoo cover makeup if asked. I understand that if I have piercings I may be asked to remove them or provide my own clear spacer during performances. I understand that I am not allowed to permanently alter my body with additional tattoos, piercings, etc. between casting and performance."</p>
-                <input type="checkbox" name="declare" name="tatto_yes" value="yes" required> Yes, I understand<br>
-    
-                <label>_______________________________COMMENTS ABOUT THE BODY (OR COSTUME) OF ANY PERFORMER (YOURSELF INCLUDED) WILL NOT BE TOLERATED FROM ANY PERFORMER OR MEMBER OF THE PRODUCTION STAFF.</label>
-                <p>From "Costume Related Questions for New Theatre Professionals" in the body of the Measurement Request email from Stage Management.</p>
-                <input type="text" name="conclude" id="conclude" value="" required><br>
-    
-                <h2>Commercial Sizes</h2>
-    
-                <label for="shoes">Shoes</label>
-                <input type="text" name="shoes" id="shoes" value="" required><br><br>
-    
-                <label for="dshoes">Dance Shoes: Size and Type</label>
-                <input type="text" name="dshoes" id="dshoes" value="" required><br><br>
-    
-                <label for="shirt">Shirt</label>
-                <p>If you know your men's dress shirt size (i.e. 15/34-35) please indicate in "other"</p>
-                <input class="shirtsize" type="checkbox" id="xs" value="xs" > XS <br>
-                <input class="shirtsize" type="checkbox" id="s" value="s" > S <br>
-                <input class="shirtsize" type="checkbox" id="m" value="m" > M <br>
-                <input class="shirtsize" type="checkbox" id="l" value="l" > L <br>
-                <input class="shirtsize" type="checkbox" id="xl" value="xl" > XL <br>
-                <input class="shirtsize" type="checkbox" id="xxl" value="xxl" > XXL <br>
-                <input class="shirtsize" type="checkbox" id="xxxl" value="xxxl" > XXXL <br>
-                <input class="shirtsize" type="checkbox" id="xxxxl" value="xxxxl" > XXXXL <br>
-                <input class="shirtsize" type="checkbox" id="other" value="other" > Other <br>
-    
-                <label for="pants">Pants</label>
-                <p>e.g. 8 (women) or 34x32 (waist by inseam for men)</p>
-                <input type="text" name="pants" id="pants" value="" required><br>
-                
-                <label for="bsize">Bra Size</label><br>
-                <input type="text" name="bsize" id="bsize" value="" ><br>
-    
-                <label for="ring">Ring</label><br>
-                <input type="text" name="ring" id="ring" value="" required><br>
-    
-                <label>Are you allergic to any of the following?</label><br>
-                <input class="allergy" type="checkbox" name="fabric" id="fabric" value="fabric" > Fabric/Fibre <br>
-                <input class="allergy" type="checkbox" name="detergent" id="detergent" value="detergent" > Detergent <br>
-                <input class="allergy" type="checkbox" name="environmental" id="environmental" value="environmental" > Environmental <br>
-                <input class="allergy" type="checkbox" name="fragrance" id="fragrance" value="fragrance" > Fragrance <br>
-                <input class="allergy" type="checkbox" name="metal" id="metal" value="metal" > Metal <br>
-                <input class="allergy" type="checkbox" name="noall" id="noall" value="noall" > No Allergies <br>
-                <input class="allergy" type="checkbox" name="other" id="other" value="other" > Other <br>
-    
-                <label>If you have allergies, please give specific details here.</label>
-                <input type="text" name="anyall" id="anyall" value="" required><br><br>
-
-                <label>Medications:</label>
-                <input type="text" name="anyall" id="medi" value="" required><br><br>
-
-                <label>Suggestions:</label>
-                <input type="text" name="anyall" id="sugg" value="" required><br><br>
-    
-                <h2>Physical limitations</h2>
-                <p>If you have any illness, injury, prosthesis, or physical limitation that might affect the comfort or fit of your costume, please discuss this privately with the costume designer. Some examples:<br>
-                        - knee brace<br>
-                        - scoliosis<br>
-                        - asymmetry (one limb significantly longer or larger than the other)<br>
-                        - arthritis/dexterity problems<br>
-                        - need specific undergarments for comfort or modesty<br>
-                        - prefer compression tights<br>
-                        - use of prosthesis<br>
-                        - use of mobility aid<br> 
-                        - unable to sweat/regulate body temperature<br>
-                        - need sweatguards<br>
-                        - specific shoe style needed<br>
-                        Please only disclose as much information as you are comfortable with and is relevant to the fit and comfort of your costume. This will insure that the costume designer can make you look your best!</p><br>
-
-            </div>
-
-            <input type="submit" value="Submit"/>
+            <script>
+            function myFunction(){
+                var x = document.getElementById("myFile");
+                var txt = "";
+                if ('files' in x) {
+                    if (x.files.length == 0) {
+                        txt = "Select one or more files.";
+                    } else {
+                        for (var i = 0; i < x.files.length; i++) {
+                            txt += "<br><strong>" + (i+1) + ". file</strong><br>";
+                            var file = x.files[i];
+                            if ('name' in file) {
+                                txt += "name: " + file.name + "<br>";
+                            }
+                            if ('size' in file) {
+                                txt += "size: " + file.size + " bytes <br>";
+                            }
+                        }
+                    }
+                } 
+                else {
+                    if (x.value == "") {
+                        txt += "Select one or more files.";
+                    } else {
+                        txt += "The files property is not supported by your browser!";
+                        txt  += "<br>The path of the selected file: " + x.value; // If the browser does not support the files property, it will return the path of the selected file instead. 
+                    }
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+            </script>
             
-        </form>
-    
+            <h2>Physical limitations</h2>
+            <p>If you have any illness, injury, prosthesis, or physical limitation that might affect the comfort or fit
+                of your costume, please discuss this privately with the costume designer. Some examples:<br>
+                - knee brace<br>
+                - scoliosis<br>
+                - asymmetry (one limb significantly longer or larger than the other)<br>
+                - arthritis/dexterity problems<br>
+                - need specific undergarments for comfort or modesty<br>
+                - prefer compression tights<br>
+                - use of prosthesis<br>
+                - use of mobility aid<br>
+                - unable to sweat/regulate body temperature<br>
+                - need sweatguards<br>
+                - specific shoe style needed<br>
+                Please only disclose as much information as you are comfortable with and is relevant to the fit and
+                comfort of your costume. This will insure that the costume designer can make you look your best!</p><br>
+
+    </div>
+
+    <input type="submit" value="Submit" />
+
+    </form>
+
     <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 
     <script>
-         // Initialize Firebase
-    var config = {
-    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
-    authDomain: "costume-designing-system.firebaseapp.com",
-    databaseURL: "https://costume-designing-system.firebaseio.com",
-    projectId: "costume-designing-system",
-    storageBucket: "costume-designing-system.appspot.com",
-    messagingSenderId: "923569045734"
-  };
-  firebase.initializeApp(config);
-  </script>
-  <script src="getDetails.js"></script>
-    </body>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+            authDomain: "costume-designing-system.firebaseapp.com",
+            databaseURL: "https://costume-designing-system.firebaseio.com",
+            projectId: "costume-designing-system",
+            storageBucket: "costume-designing-system.appspot.com",
+            messagingSenderId: "923569045734"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="getDetails.js"></script>
+</body>
