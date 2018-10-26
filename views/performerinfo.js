@@ -2,10 +2,14 @@ var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","a
 var global_key;
 
 
+
+$(document).ready(function(){
+   
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
-
-
+document.getElementById('profileImage').style.visibility='hidden';
+//document.getElementById("profileImage").hidden = true; 
+});
 function myFunction() {
     var input, filter, table, tr, td, i;
     input = document.getElementById("myInput");
@@ -100,6 +104,8 @@ function edit(){
 function disable(){
     document.getElementById("measure").hidden = false;
     document.getElementById("edit").hidden = false;
+    document.getElementById('profileImage').style.visibility='visible';
+    //document.getElementById("profileImage").hidden = false;
     document.getElementById('subBtn').style.visibility='hidden';
     document.getElementById('canBtn').style.visibility='hidden';
     for (i = 0; i < all_ids.length; i++){
@@ -122,13 +128,14 @@ function getInfo(key){
    
      global_key = key;
    
-    
+     document.getElementById("profileImage").src = "";
     var firebaseRef = firebase.database().ref().child("performers/"+key);
     firebaseRef.on('value', function(snapshot){
         //console.log(snapshot.val());
         var obj = snapshot.val();
         console.log(obj);
         
+        document.getElementById("profileImage").src = obj.general.ProfileImageUrl; 
         document.getElementById("heading").innerHTML = obj.general.Name.First_Name + "'s "+"Information";
         document.getElementById("First_name").innerHTML = obj.general.Name.First_Name;
         document.getElementById("last_name").innerHTML = obj.general.Name.Last_Name;
