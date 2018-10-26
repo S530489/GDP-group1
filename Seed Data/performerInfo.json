@@ -22,7 +22,8 @@
     "Suggestions":"",
     "shirtSize":"L",
     "height":"5'8",
-    "weight":"150"
+    "weight":"150",
+    "ProfileImageUrl" : "https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/ProfileImages%2Fpawan-kalyan-close-up.jpg?alt=media&token=f6d614ca-6d21-4b24-bd91-fdae83ccd61d"
   },
   "measurements":{
     "performer_id": "p0",
@@ -69,7 +70,8 @@
     "Suggestions":"",
     "shirtSize":"XL",
     "height":"5'4",
-    "weight":"140"
+    "weight":"140",
+    "ProfileImageUrl" :"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/ProfileImages%2Fpooja-hegde-dj-heroine4.jpg?alt=media&token=2120d555-849e-4cba-82ae-423bf96bff02"
   },
   "measurements" :{
     "performer_id": "p1",
@@ -117,7 +119,8 @@
   "Suggestions":"",
   "shirtSize":"M",
   "height":"6'2",
-  "weight":"185"
+  "weight":"185",
+  "ProfileImageUrl" :"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/ProfileImages%2Fsunil_narine.jpg?alt=media&token=e7ee94d0-cce7-4b2a-8ce2-874233403aba"
 },
 "measurements" :{
   "performer_id": "p2",
@@ -165,7 +168,8 @@
   "Suggestions":"",
   "shirtSize":"L",
   "height":"5'9",
-  "weight":"170"
+  "weight":"170",
+  "ProfileImageUrl" :"https://firebasestorage.googleapis.com/v0/b/costume-designing-system.appspot.com/o/ProfileImages%2Fchris_gayle.jpg?alt=media&token=5829de72-efd1-4a93-b6ab-1efdb4b06721"
 },
 "measurements" :{
   "performer_id": "p3",

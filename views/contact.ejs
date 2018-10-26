@@ -153,7 +153,44 @@
             <label>Suggestions:</label>
             <input type="text" name="anyall" id="sugg" value="" required><br><br>
             <p>Upload an image (Please save the image with your first and last name)</p>
-            <input type="file" id="myFile" multiple size="50" onchange="myFunction()">
+            <!-- <input type="file" id="myFile" multiple size="50" onchange="myFunction()"> -->
+
+            <style>
+                
+progress {
+  border: none;
+  width: 100%;
+  height: 30px;
+  background: white;
+  text-align: center
+  
+}
+
+progress {
+  color: lightblue;
+}
+progress:before {
+  content: attr(data-content);
+}
+
+progress::-webkit-progress-value {
+  background: green;
+}
+
+            
+            </style>
+            <div class="row">
+                <div class="col-md-4">
+              
+              <input type="file" name="fileToUpload" id="file1" >
+               <button type="button"  onclick=uploadTitleImage()>upload</button>
+              </div>
+              <div class="col-md-8">
+                <progress value="0" max="100"  id="uploadeBar" style = "color: black" data-content="Click on upload">0%</progress>
+                
+              </div>
+              </div>
+               <br> 
 
             <p id="demo"></p>
                 
