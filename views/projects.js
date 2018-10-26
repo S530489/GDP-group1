@@ -9,6 +9,9 @@ var selectedperformerNames = []
 var MainImageURL ;
 var MulImageURLS = [];
 
+  
+
+
 function AddEventToFirebase(){
     
     projectName = document.getElementById("projName").value;
@@ -43,6 +46,13 @@ function AddEventToFirebase(){
 }
 
 $(document).ready(function(){
+
+    $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#EventHolder div").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
    // var firebaseRef = firebase.database().ref().child("Events/");
    var firebaseRef = firebase.database().ref();
    firebaseRefperf = firebaseRef.child("performers");
