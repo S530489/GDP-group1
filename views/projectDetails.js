@@ -42,7 +42,13 @@ function AddEventToFirebase(){
         PlayLocation: projectLocation
 
     }).then(function(){
-       location.reload();
+        try{
+            location.reload();
+        }
+        catch(err){
+            window.location.href = "projects";
+        }
+      
     });
 }
 

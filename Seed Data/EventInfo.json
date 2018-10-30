@@ -16,7 +16,7 @@
 {
   "Event_Id":"E2",
   "Name":"Comedy",
-  "Date":"09/15/2018",
+  "Date":"09/18/2017",
   "Organizers":"Kathy, Nathan",
   "Designers":"Stephie",
   "Performers":["p0","p3"],
@@ -30,7 +30,7 @@
 {
   "Event_Id":"E3",
   "Name":"King Lear",
-  "Date":"09/15/2018",
+  "Date":"09/15/2019",
   "Organizers":"Kathy, Nathan",
   "Designers":"Stephie",
   "Performers":["p0","p1","p2"],
@@ -45,7 +45,7 @@
 {
   "Event_Id":"E4",
   "Name":"Arvinda Sametha",
-  "Date":"09/15/2018",
+  "Date":"2/1/2019",
   "Organizers":"Kathy, Nathan",
   "Designers":"Stephie",
   "Performers":["p0"],
