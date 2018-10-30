@@ -13,6 +13,9 @@ var MainImageURL;
 var MulImageURLS = [];
 var projectLocation;
 
+document.getElementById("saveButton").hidden=true;
+document.getElementById("cancelButton").hidden=true;
+
 function AddEventToFirebase(){
     
     projectName = document.getElementById("EventName").innerHTML;
@@ -236,5 +239,45 @@ for(var i = 1; i < table.rows.length; i++)
 
     
     return "";
+}
+
+function editProject()
+{
+
+    document.getElementById("editProj").hidden=true;
+    document.getElementById("saveButton").hidden=false;
+    document.getElementById("cancelButton").hidden=false;
+
+    document.getElementById("EventName").contentEditable=true;
+    document.getElementById("EventName").style.background = "#BC8F8F";
+    document.getElementById("Eventdesc").contentEditable=true;
+    document.getElementById("Eventdesc").style.background = "#BC8F8F";
+    document.getElementById("EventDesigner").contentEditable=true;
+    document.getElementById("EventDesigner").style.background = "#BC8F8F";
+    document.getElementById("EventOrganisers").contentEditable=true;
+    document.getElementById("EventOrganisers").style.background = "#BC8F8F";
+    document.getElementById("EventDate").contentEditable=true;
+    document.getElementById("EventDate").style.background = "#BC8F8F";
+    
+}
+
+function cancelFunction()
+{
+
+    document.getElementById("editProj").hidden=false;
+    document.getElementById("saveButton").hidden=true;
+    document.getElementById("cancelButton").hidden=true;
+
+    document.getElementById("EventName").contentEditable=false;
+    document.getElementById("EventName").style.background = "#F5F5DC";
+    document.getElementById("Eventdesc").contentEditable=false;
+    document.getElementById("Eventdesc").style.background = "#F5F5DC";
+    document.getElementById("EventDesigner").contentEditable=false;
+    document.getElementById("EventDesigner").style.background = "#F5F5DC";
+    document.getElementById("EventOrganisers").contentEditable=false;
+    document.getElementById("EventOrganisers").style.background = "#F5F5DC";
+    document.getElementById("EventDate").contentEditable=false;
+    document.getElementById("EventDate").style.background = "#F5F5DC";
+    
 }
 
