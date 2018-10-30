@@ -126,7 +126,8 @@ function pageLoad(){
             var butn = document.createElement("button");
             $(butn).attr('id', i);
             butn.innerHTML = "Read more..&rarr;";
-            var func = "getEventInformation("+i+")";
+            var event_Id = "\""+currentObject.Event_Id+"\"";
+            var func = "getEventInformation("+event_Id+")";
             $(butn).attr('onClick', func);
             $(cards).append(image);
             $(cards).append(header);

@@ -51,8 +51,7 @@ function AddEventToFirebase(){
 $(document).ready(function(){
     var x = location.search;
     var performerObj = {}
-    key = x[1];
-    console.log(x[1]);
+    key = x.slice(1);
     var firebaseRef = firebase.database().ref();
     firebaseRefperf = firebaseRef.child("performers");
     firebaseRefperf.on('value', function(snapshot){
@@ -66,9 +65,19 @@ $(document).ready(function(){
          }
          
     })
-    firebaseRefEvents = firebaseRef.child("Events/"+x[1]);
+    firebaseRefEvents = firebaseRef.child("Events/");
     firebaseRefEvents.on('value', function(snapshot){
-    var currentObject = snapshot.val();
+        var currentObject;
+        var obj = snapshot.val()
+        for(i=0;i<obj.length;i++){
+            console.log(obj[i].Event_Id)
+            if(obj[i].Event_Id === key){
+                currentObject = obj[i];
+                break;
+            }
+        }
+
+    // var currentObject = snapshot.val();
     console.log(currentObject);
     projectLocation = currentObject.PlayLocation;
     MainImageURL = currentObject.mainImage_Url;
