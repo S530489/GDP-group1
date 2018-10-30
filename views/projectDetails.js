@@ -9,6 +9,7 @@ var startperformerIds = []
 var performers;
 var table=document.getElementsByName("addHere")[0];
 var key;
+var keyIndex;
 var MainImageURL;
 var MulImageURLS = [];
 var projectLocation;
@@ -27,10 +28,9 @@ function AddEventToFirebase(){
     console.log(projectName);
     
 
-    length1 = key+1
-    console.log(key);
-    firebase.database().ref().child("Events").child(key).set({
-        Event_Id:"E"+length1,
+    console.log(keyIndex);
+    firebase.database().ref().child("Events").child(keyIndex).set({
+        Event_Id:key,
         Name: projectName,
         Date: date,
         Organizers: projectOrganisers,
@@ -72,11 +72,12 @@ $(document).ready(function(){
         for(i=0;i<obj.length;i++){
             console.log(obj[i].Event_Id)
             if(obj[i].Event_Id === key){
+                keyIndex = i;
                 currentObject = obj[i];
                 break;
             }
         }
-
+    console.log(keyIndex);
     // var currentObject = snapshot.val();
     console.log(currentObject);
     projectLocation = currentObject.PlayLocation;
