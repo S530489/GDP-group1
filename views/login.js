@@ -1,5 +1,13 @@
 //document.getElementById('msgalert').style.display="none";
-
+function recoverPassword(){
+ var resetEmail = document.getElementById("resetEmail").value;
+ window.alert(resetEmail)
+ firebase.auth().sendPasswordResetEmail(resetEmail).then(function() {
+   window.alert("Check inbox for email");
+}).catch(function(error) {
+  window.alert("something went wrong");
+});
+}
 
 function logintest(){
         document.getElementById("msgLogin").innerHTML = " Success!!!  User Logged Out";
