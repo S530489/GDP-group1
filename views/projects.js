@@ -8,6 +8,7 @@ var selectedperformerIds = []
 var selectedperformerNames = []
 var MainImageURL ;
 var MulImageURLS = [];
+var sortByDate;
 
   
 
@@ -54,69 +55,93 @@ $(document).ready(function(){
         });
       });
    // var firebaseRef = firebase.database().ref().child("Events/");
-   var firebaseRef = firebase.database().ref();
-   firebaseRefperf = firebaseRef.child("performers");
-   firebaseRefperf.on('value', function(snapshot){
-    performers = snapshot.val();
-   })
-   firebaseRefEvents = firebase.database().ref("Events/");
-   firebaseRefEvents.on('value', function(snapshot){
-        var obj = snapshot.val();
-        events = snapshot.val();
-        console.log(obj);
-        var keys = Object.keys(obj);
-        console.log(keys);
-        var currentRow;
-        for(i=0;i<keys.length;i++){
-            var currentObject = obj[keys[i]];
-            console.log(currentObject);
-            if(i%2 == 0){
-                var break1 = document.createElement("br");
-                var break2 = document.createElement("br");
-                $("#EventHolder").append(break1);
-                $("#EventHolder").append(break2);
-                currentRow = document.createElement("div");
-                $(currentRow).addClass("row");
-                currentRow = document.createElement("div");
-                $(currentRow).addClass("row");
-                $("#EventHolder").append(currentRow);
-            }
-            var col = document.createElement("div");
-            $(col).addClass("col-md-6");
-            var cards = document.createElement("div");
-            $(cards).addClass("card");
-            var image = document.createElement("img");
-            image.src = currentObject.mainImage_Url;
-            $(image).css("width", "100%");
-           // image.setAttribute("alt","Your text here");
-           var header = document.createElement("h3");
-           var msg = document.createElement("i");
-           var t = document.createTextNode(currentObject.Name);
-           msg.appendChild(t);
-           header.appendChild(msg);
-           var desc = document.createElement("p");
-           $(desc).addClass("description");
-           desc.innerHTML = currentObject.Description;
-           $(desc).addClass("description");
-           var butn = document.createElement("button");
-           $(butn).attr('id', i);
-           butn.innerHTML = "Read more..&rarr;";
-           var func = "getEventInformation("+i+")";
-           $(butn).attr('onClick', func);
-           $(cards).append(image);
-           $(cards).append(header);
-           $(cards).append(desc);
-           $(cards).append(butn);
-           $(col).append(cards);
-           $(currentRow).append(col);
-   
-        }
-       
-        
-    
-    });
+   pageLoad();
        
 })
+
+function getOption(){
+    var s = document.getElementsByName("sorting")[0];
+    var text = s.options[s.selectedIndex].text;
+    console.log(text);
+    console.log(s.selectedIndex);
+    sortByDate = s.selectedIndex;
+    pageLoad();
+}
+
+function pageLoad(){
+    var firebaseRef = firebase.database().ref();
+    firebaseRefperf = firebaseRef.child("performers");
+    firebaseRefperf.on('value', function(snapshot){
+     performers = snapshot.val();
+    })
+    firebaseRefEvents = firebase.database().ref("Events/");
+    firebaseRefEvents.on('value', function(snapshot){
+         var obj = snapshot.val();
+         events = snapshot.val();
+         if(sortByDate==1){
+            obj.sort(function(a,b){
+                // Turn your strings into dates, and then subtract them
+                // to get a value that is either negative, positive, or zero.
+                //return new Date(b.date) - new Date(a.date);
+                console.log(new Date(b.Date));
+                return new Date(a.Date) - new Date(b.Date);
+              });
+         }
+         $("#EventHolder").empty();
+         console.log(obj);
+         var keys = Object.keys(obj);
+         console.log(keys);
+         var currentRow;
+         for(i=0;i<keys.length;i++){
+             var currentObject = obj[keys[i]];
+             console.log(currentObject);
+             if(i%2 == 0){
+                 var break1 = document.createElement("br");
+                 var break2 = document.createElement("br");
+                 $("#EventHolder").append(break1);
+                 $("#EventHolder").append(break2);
+                 currentRow = document.createElement("div");
+                 $(currentRow).addClass("row");
+                 currentRow = document.createElement("div");
+                 $(currentRow).addClass("row");
+                 $("#EventHolder").append(currentRow);
+             }
+             var col = document.createElement("div");
+             $(col).addClass("col-md-6");
+             var cards = document.createElement("div");
+             $(cards).addClass("card");
+             var image = document.createElement("img");
+             image.src = currentObject.mainImage_Url;
+             $(image).css("width", "100%");
+            // image.setAttribute("alt","Your text here");
+            var header = document.createElement("h3");
+            var msg = document.createElement("i");
+            var t = document.createTextNode(currentObject.Name);
+            msg.appendChild(t);
+            header.appendChild(msg);
+            var desc = document.createElement("p");
+            $(desc).addClass("description");
+            desc.innerHTML = currentObject.Description;
+            $(desc).addClass("description");
+            var butn = document.createElement("button");
+            $(butn).attr('id', i);
+            butn.innerHTML = "Read more..&rarr;";
+            var func = "getEventInformation("+i+")";
+            $(butn).attr('onClick', func);
+            $(cards).append(image);
+            $(cards).append(header);
+            $(cards).append(desc);
+            $(cards).append(butn);
+            $(col).append(cards);
+            $(currentRow).append(col);
+    
+         }
+        
+         
+     
+     });
+   
+}
 
 function getEventInformation(key){
     //window.alert(key);
