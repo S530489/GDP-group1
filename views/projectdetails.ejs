@@ -64,18 +64,22 @@
 </div>
   
 <div class="container text-center">    
-  <h3 id="EventName" contentEditable=true></h3><br>
-  
+  <h3 id="EventName" contentEditable=false></h3><br>
+    
     <div class="col-sm-16">
       <div class="well">
-       <p id="Eventdesc" contentEditable=true></p>
+       <p id="Eventdesc" contentEditable=false></p>
       </div>
+
+      <button id="editProj" onclick="editProject()">Edit</button>
+
       </div>
+      <br><br>
       <div class="col-sm-6">
       <div class="well">
-       <p class="text-left" > Designer : <span id="EventDesigner" contentEditable=true></span></p>
-       <p class="text-left"> Organizers : <span  id="EventOrganisers" contentEditable=true></span></p>
-       <p class="text-left"> Date : <span  id="EventDate" contentEditable=true></span></p>
+       <p class="text-left" > Designer : <span id="EventDesigner" contentEditable=false></span></p>
+       <p class="text-left"> Organizers : <span  id="EventOrganisers" contentEditable=false></span></p>
+       <p class="text-left"> Date : <span  id="EventDate" contentEditable=false></span></p>
       </div>
     </div>
     <div class="col-sm-6">
@@ -100,9 +104,11 @@
          </p> -->
         </div>
         </div>
+        <button id="cancelButton" onclick="cancelFunction()" style="width:40%;height: 30px;">Cancel</button>
     </div>
     <div class="row">
       <div class="col-md-8"></div>
+      
     <div class="col-md-2"> <button id="saveButton" onclick="AddEventToFirebase()" style="width:40%;height: 30px;">Save</button> </div>
     <div class="col-md-2"></div>
   </div>
