@@ -264,43 +264,71 @@ function enableediting(){
 function submit_to_firebase(){
     
     document.getElementById('subBtn').style.visibility='hidden';
-   
-    var c_pname =  document.getElementById("perf_name").innerHTML;
-    var c_charname =  document.getElementById("character_name").innerHTML;
-    var c_showtitle =  document.getElementById("show_title").innerHTML;
-    var c_head =  document.getElementById("head").innerHTML;
-    var c_neck =  document.getElementById("neck").innerHTML ;
-    var c_armscye =  document.getElementById("armscye").innerHTML ;
-    var  c_cbw = document.getElementById("centerBack").innerHTML;
-    var c_chestrel =  document.getElementById("chest_relaxed").innerHTML;
-    var c_exp  =  document.getElementById("chest_expanded").innerHTML;
-    var c_wrel= document.getElementById("waist_relaxed").innerHTML;
-    var c_wexp = document.getElementById("waist_expanded").innerHTML;
-    var c_hip =  document.getElementById("hip").innerHTML;
-    var c_halfgirth = document.getElementById("half_girth").innerHTML;
-    var c_fullgirth= document.getElementById("full_girth").innerHTML;
-    var c_ankle= document.getElementById("inseam_ankle").innerHTML;
-    var c_floor= document.getElementById("inseam_floor").innerHTML;
+    document.getElementById('canBtn').style.visibility='hidden';
 
+    var c_pname =  document.getElementById("perf_name").value;
+    var c_charname =  document.getElementById("character_name").value;
+    var c_showtitle =  document.getElementById("show_title").value;
+    var c_head =  document.getElementById("head").value;
+    var c_neck =  document.getElementById("neck").value ;
+    var c_armscye =  document.getElementById("armscye").value ;
+    // alert(c_armscye);
+    var c_cbw = document.getElementById("centerBack").value;
+    var c_chestrel =  document.getElementById("chest_relaxed").value;
+    var c_exp  =  document.getElementById("chest_expanded").value;
+    var c_wrel= document.getElementById("waist_relaxed").value;
+    var c_wexp = document.getElementById("waist_expanded").value;
+    var c_hip =  document.getElementById("hip").value;
+    var c_halfgirth = document.getElementById("half_girth").value;
+    var c_fullgirth= document.getElementById("full_girth").value;
+    var c_ankle= document.getElementById("inseam_ankle").value;
+    var c_floor= document.getElementById("inseam_floor").value;
+
+    localKey=localStorage.getItem("storageName");
+
+    // alert(localKey);
    
-    firebase.database().ref().child("performers").child(global_key).child("measurements").set({        
-            Performer_Id:"p"+global_key,
-            armscye:c_armscye,
-            centerBackWrist:c_cbw,
-            chest:c_chestrel,
-            fullHip:c_hip,
-            halfGirth:c_halfgirth,
-            headCircumference:c_head,
-            hip:c_hip,
-            inseam:c_ankle,
-            name:c_pname,
-            neck:c_neck,
-            outseam:c_floor,
-            play_title:c_showtitle,
-            role:c_charname,
-            waist:c_wexp
+    firebase.database().ref().child("performers").child(localKey).child("measurements").set({        
+        performer_id: "p"+global_key,
+        form_id: "Fp1",
+        name: c_pname,
+        play_title: c_showtitle,
+        role: c_charname,
+        chest: c_chestrel,
+        chestexp: c_exp,
+        waist: c_wexp,
+        waistrel: c_wrel,
+        inseam: c_ankle,
+        outseam: c_floor,
+        sleeve: 10,
+        hip: c_hip,
+        shoeSize: 10,
+        headCircumference: c_head,
+        neck: c_neck,
+        armscye: c_armscye,
+        centerBackWrist: c_cbw,
+        fullGirth: c_fullgirth,
+        halfGirth: c_halfgirth
             
       });
+
+
+        document.getElementById("perf_name").readOnly=true;
+        document.getElementById("character_name").readOnly = true;
+        document.getElementById("show_title").readOnly = true;
+        document.getElementById("head").readOnly = true;
+        document.getElementById("neck").readOnly = true;
+        document.getElementById("armscye").readOnly = true;
+        document.getElementById("centerBack").readOnly = true;
+        document.getElementById("chest_relaxed").readOnly = true;
+        document.getElementById("chest_expanded").readOnly = true;
+        document.getElementById("waist_relaxed").readOnly = true;
+        document.getElementById("waist_expanded").readOnly = true;
+        document.getElementById("hip").readOnly = true;
+        document.getElementById("half_girth").readOnly = true;
+        document.getElementById("full_girth").readOnly = true;
+        document.getElementById("inseam_ankle").readOnly = true;
+        document.getElementById("inseam_floor").readOnly = true;
 }
 
 function cancelFunction()
@@ -324,6 +352,8 @@ function cancelFunction()
         document.getElementById("full_girth").readOnly = true;
         document.getElementById("inseam_ankle").readOnly = true;
         document.getElementById("inseam_floor").readOnly = true;
+
+        getMeasurements();
 }
 
 function remove()
