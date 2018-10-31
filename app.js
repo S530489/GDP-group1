@@ -52,7 +52,12 @@ app.all("/", function (request, response) {
 
 
 
+app.use(function(req, res, next) {
+  console.log("in req.next")
+  console.log(typeof req.next);
 
+  next();
+});
 // handle http GET requests (default)
 
 app.post("/sendabc", function(req, res){
