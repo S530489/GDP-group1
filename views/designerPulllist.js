@@ -4,6 +4,8 @@ var cell9;
 var pArray = [];
 var k;
 var tex="";
+const design_key=0;
+var pulllistrows;
 
 function getPerfomers(ind){
     console.log(performers)
@@ -75,7 +77,7 @@ function addrow()
     // var charname=$('#my-contenteditable-div').html();;
     var size=document.getElementById("size").innerHTML;
     var notes=document.getElementById("notes").innerHTML;
-    submit_to_firebase(title,show,color,clothing,charname,size,notes);
+    
 
     var table=document.getElementsByName("addHere")[0];
     var newrow = table.insertRow(1);
@@ -99,6 +101,8 @@ function addrow()
     cell8.innerHTML=notes;
     cell9.innerHTML="x"+remove();
     cell9.style.visibility="hidden";
+
+    submit_to_firebase(title,show,color,clothing,charname,size,notes);
 }
 
 
@@ -144,8 +148,12 @@ function removerows()
 function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
     
 //    window.alert("submiting")
-    firebase.database().ref().child("ShopPullList").child(0).set({
 
+    //alert(design_key);
+    pulllistrows1=pulllistrows.length+1;
+    pulllistrows.push({
+
+            row_id:"dp"+pulllistrows1,
             Play_title : title,
             Performer_Name : show,
             Character_Name : charname,
@@ -154,7 +162,13 @@ function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
             Size:size,
             Add_Notes:notes
             
-      });
+      })
+      alert(pulllistrows);
+      firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function(){   
+      location.reload();
+    });
+
+      design_key++;
     }
 
     function getClothingitem()
