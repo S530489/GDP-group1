@@ -5,7 +5,13 @@ var pArray = [];
 var k;
 var tex="";
 const design_key=0;
-var pulllistrows;
+var pulllistrows = [];
+
+$(document).ready(function(){
+
+   pageLoad();
+       
+})
 
 function getPerfomers(ind){
     console.log(performers)
@@ -149,7 +155,7 @@ function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
     
 //    window.alert("submiting")
 
-    //alert(design_key);
+    //alert(design_key)
     pulllistrows1=pulllistrows.length+1;
     pulllistrows.push({
 
@@ -165,10 +171,17 @@ function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
       })
       alert(pulllistrows);
       firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function(){   
-      location.reload();
     });
+    // pageLoad();
+    }
 
-      design_key++;
+    function pageLoad(){
+        var firebaseRef = firebase.database().ref();
+        firebaseRefEvents = firebase.database().ref("ShopPullList/");
+        firebaseRefEvents.on('value', function(snapshot){
+             var obj = snapshot.val();
+             pulllistrows = snapshot.val();
+         })   
     }
 
     function getClothingitem()
