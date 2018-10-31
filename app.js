@@ -39,7 +39,12 @@ app.use(bodyParser.json());
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+app.use(function(req, res, next) {
+  console.log("in req.next")
+  console.log(typeof req.next);
 
+  next();
+});
 
 app.all("/", function (request, response) {
      response.render('login.ejs');
