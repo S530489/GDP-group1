@@ -20,6 +20,10 @@ function cancelFunction(){
   window.location.href = "http://127.0.0.1:8081/";
 
 }
+function backtologin(){
+  window.location.href = "http://127.0.0.1:8081/";
+
+}
 function closeAlert(){
   document.getElementById('msgalert').style.display="none";
 }
