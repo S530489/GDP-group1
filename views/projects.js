@@ -77,6 +77,7 @@ function pageLoad(){
     firebaseRefEvents = firebase.database().ref("Events/");
     firebaseRefEvents.on('value', function(snapshot){
          var obj = snapshot.val();
+         console.log(obj);
          events = snapshot.val();
          if(sortByDate==1){
             obj.sort(function(a,b){

@@ -7,7 +7,7 @@ var firebase = require("firebase");
 router.get("/addPerformer", function (req, res) {
   var firebaseRef = firebase.database().ref().child("performers");
     
-  firebaseRef.on('value', function(snapshot){
+  firebaseRef.once('value', function(snapshot){
       res.render('addPerformer.ejs',{ performers : snapshot.val()});
     })
  
@@ -20,7 +20,7 @@ router.get("/designer", function (req, res) {
 
   var firebaseRef = firebase.database().ref();
     
-  firebaseRef.on('value', function(snapshot){
+  firebaseRef.once('value', function(snapshot){
       // console.log(snapshot.val().Events);
       // console.log("testing");
       // console.log(snapshot.val().performers);
@@ -85,13 +85,14 @@ router.get("/projects", function (request, response) {
 
   var firebaseRef = firebase.database().ref();
     
-  firebaseRef.on('value', function(snapshot){
+  firebaseRef.once('value', function(snapshot){
       // console.log(snapshot.val().Events);
       // console.log("testing");
       // console.log(snapshot.val().performers);
       response.render("projects.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers});
     })
    
+
   
 });
 
