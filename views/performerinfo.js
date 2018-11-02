@@ -1,5 +1,6 @@
 var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
 var global_key;
+var cnt=0;
 
 
 
@@ -391,8 +392,22 @@ for(var i = 1; i < table.rows.length; i++)
 
 function removeVisiblity()
 {
+    cnt=parseInt(cnt)+parseInt(1);
     var count = $('#myTable tr').length;
-                    for(var i=1;i<count;i++){
-                    document.getElementById("myTable").rows[i].cells[1].style.visibility="visible";
-                    }
+    if(cnt % 2 == 0)
+    {
+            for(var i=1;i<count;i++){
+                document.getElementById("myTable").rows[i].cells[1].style.visibility="hidden";
+            }
+    }
+    else{
+        for(var i=1;i<count;i++){
+            document.getElementById("myTable").rows[i].cells[1].style.visibility="visible";
+        }
+    }
+
+    if(cnt == 3 ||  cnt == 4)
+    {
+        cnt=1;
+    }
 }
