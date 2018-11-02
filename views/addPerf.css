@@ -133,7 +133,7 @@ th, td {
       font-size: 15px;
   }
  
-  table.dplist1 td:last-child
+  /* table.dplist1 td:last-child
   {
       background-color:white;
       color:red;
@@ -141,6 +141,16 @@ th, td {
       font-weight: bold; 
       border: 1px solid white;
       font-size: 22px;
+  } */
+
+  table.dplist1 td:first-child+td+td+td+td+td+td+td+td
+  {
+    background-color:white;
+    color:red;
+    cursor: pointer;
+    font-weight: bold; 
+    border: 1px solid white;
+    font-size: 22px;
   }
 
 #accesscode
@@ -349,14 +359,14 @@ i {
     cursor: pointer;
 }
 
-table.myTable td:last-child
+/* table.myTable td:last-child
 {
     background-color:white;
     cursor: pointer;
     font-weight: bold; 
     border: 1px solid white;
     font-size: 22px;
-}
+} */
 
 #myTable td:nth-child(odd){border: 2px solid;}
 #myTable th:nth-child(odd) {border: 2px solid;}

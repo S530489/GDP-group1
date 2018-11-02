@@ -254,6 +254,41 @@
             <th>Notes</th>     
         </tr>
 
+        <% var keys = Object.keys(ShopPullList)
+                                      keys.forEach(function(key){ 
+                                      var playTitle = ShopPullList[key].Play_title,
+                                      performerName =  ShopPullList[key].Performer_Name,
+                                      characterName = ShopPullList[key].Character_Name,
+                                      clothingItem = ShopPullList[key].clothing_Item,
+                                      colorSelected = ShopPullList[key].color_selected,
+                                      size = ShopPullList[key].Size,
+                                      notes = ShopPullList[key].Add_Notes %>
+          <tr>
+                <td> </td>
+                <td>
+                        <%= playTitle  %>
+                </td>
+                <td>
+                        <%= performerName  %>
+                </td>
+                <td>
+                        <%= characterName  %>
+                </td>
+                <td>
+                        <%= clothingItem  %>
+                </td>
+                <td>
+                        <%= colorSelected  %>
+                </td>
+                <td>
+                        <%= size  %>
+                </td>
+                <td>
+                        <%= notes  %>
+                </td>
+          </tr>
+          <% }) %>
+
 </table>
 </div>
 <div class="col-md-1"> <a id="rem" onclick="removerows()">remove</a>  </div>
@@ -266,8 +301,7 @@
  <div class="col-md-7">  </div>
                              
 <div class="col-md-5">
-<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>&nbsp;&nbsp;
-<button class="button" onclick="SubmitToFirebase()">Save</button>
+<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>;
 </div>
 </div>
 <!-- 

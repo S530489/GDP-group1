@@ -24,7 +24,7 @@ router.get("/designer", function (req, res) {
       // console.log(snapshot.val().Events);
       // console.log("testing");
       // console.log(snapshot.val().performers);
-      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers});
+      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers, ShopPullList : snapshot.val().ShopPullList});
     })
    
   //response.render("designerPullList.ejs");
