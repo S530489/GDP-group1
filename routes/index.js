@@ -35,6 +35,11 @@ router.get("/performer", function (request, response) {
   response.render("measurementsInfo.ejs");
 });
 
+router.get("/accesscode", function (request, response) {
+   
+  response.render("accesscode.ejs");
+});
+
 router.get("/viewmeasurement", function (request, response) {
    
   response.render("viewmeasurement.ejs");
