@@ -1,0 +1,29 @@
+<% include header %>        
+
+<h2 style="text-align:center">Reset the Access code</h2>
+        
+        <div class="card" id="accesscard">
+          <img src="images/access.png" alt="access code" style="width:100%">
+            Access code: <input type="password" id="existing" name="accesscode" required><br><br>
+            Reset Access code: <input type="password" id="newaccess" name="newaccesscode" required><br><br>
+            Confirm Access code: <input type="password" id="confirmnew" name="newaccesscode" required><br><br>
+          <p><button onclick="resetAccessCode()">Reset</button></p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+            authDomain: "costume-designing-system.firebaseapp.com",
+            databaseURL: "https://costume-designing-system.firebaseio.com",
+            projectId: "costume-designing-system",
+            storageBucket: "costume-designing-system.appspot.com",
+            messagingSenderId: "923569045734"
+          };
+          firebase.initializeApp(config);
+        </script>        
+        <script src="./accesscode.js"></script>
+        </body>
+        </html>
