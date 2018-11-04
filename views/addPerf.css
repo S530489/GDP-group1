@@ -372,12 +372,24 @@ i {
 #myTable th:nth-child(odd) {border: 2px solid;}
 #myTable th:nth-child(even) {border: 1px solid white;}
 
+#dplist1 th:last-child {border: 1px solid white;}
+
 #removePerf
 {
     color: red;
 }
 
 #remP:hover
+{
+    color:red;
+}
+
+#removeRow
+{
+    color: red;
+}
+
+#remR:hover
 {
     color:red;
 }

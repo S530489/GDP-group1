@@ -240,7 +240,7 @@
 <div class="row">
  <div class="col-md-1">  </div>
               
-<div class="col-md-9">
+<div class="col-md-10">
 
 <table name="addHere" id="dplist1" class="dplist1">       
         <tr> 
@@ -251,7 +251,8 @@
             <th>Clothing item</th>
             <th>Color</th>
             <th>Size</th> 
-            <th>Notes</th>     
+            <th>Notes</th>
+            <th><a id="remR" style="text-decoration: none;" onclick="removeVisiblity()">remove</a></th>     
         </tr>
 
         <% var keys = Object.keys(ShopPullList)
@@ -286,12 +287,20 @@
                 <td>
                         <%= notes  %>
                 </td>
+                <td id="hideRow"><a id="removeRow" style="text-decoration: none;" onclick="remove()">x</a></td>
           </tr>
           <% }) %>
 
 </table>
+
+        <script>
+                var count = $('#dplist1 tr').length;
+                for (var i = 1; i < count; i++) {
+                  document.getElementById("dplist1").rows[i].cells[8].style.visibility = "hidden";
+                }
+        </script>
+
 </div>
-<div class="col-md-1"> <a id="rem" onclick="removerows()">remove</a>  </div>
 <div class="col-md-1"></div>
 </div>
 <br/><br/>
@@ -301,7 +310,7 @@
  <div class="col-md-7">  </div>
                              
 <div class="col-md-5">
-<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>;
+<button class="button" onclick="genPDF()" >Generate Shop Pull List</button>
 </div>
 </div>
 <!-- 

@@ -105,8 +105,6 @@ function addrow()
     cell6.innerHTML=color;
     cell7.innerHTML=size;
     cell8.innerHTML=notes;
-    cell9.innerHTML="x"+remove();
-    cell9.style.visibility="hidden";
 
     submit_to_firebase(title,show,color,clothing,charname,size,notes);
 }
@@ -142,15 +140,31 @@ for(var i = 1; i < table.rows.length; i++)
     return "";
 }
 
-function removerows()
+
+var cnt=0;
+
+function removeVisiblity()
 {
+    cnt=parseInt(cnt)+parseInt(1);
     var count = $('#dplist1 tr').length;
-    // cell9.style.visibility="visible";
-    for(var i=1;i<count;i++){
-    // alert(document.getElementById("dplist1").rows[i].cells[8].innerHTML);
-    document.getElementById("dplist1").rows[i].cells[8].style.visibility="visible";
+    if(cnt % 2 == 0)
+    {
+            for(var i=1;i<count;i++){
+                document.getElementById("dplist1").rows[i].cells[8].style.visibility="hidden";
+            }
+    }
+    else{
+        for(var i=1;i<count;i++){
+            document.getElementById("dplist1").rows[i].cells[8].style.visibility="visible";
+        }
+    }
+
+    if(cnt == 3 ||  cnt == 4)
+    {
+        cnt=1;
     }
 }
+
 function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
     
 //    window.alert("submiting")
