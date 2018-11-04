@@ -122,18 +122,25 @@ function getTitle()
     return text;
 }
 
-function remove()
+var globalKey;
+
+function remove(rowkey)
 {
+    globalKey=rowkey;
+    
 var index, table = document.getElementById('dplist1');
 for(var i = 1; i < table.rows.length; i++)
 {
     table.rows[i].cells[8].onclick = function()
     {
+        alert(firebase.database().ref().child("ShopPullList/"+rowkey));
+        // alert(rowkey);
         var c = confirm("Are you sure, you want to delete this row?");
         if(c === true)
         {
             index = this.parentElement.rowIndex;
             table.deleteRow(index);
+            firebase.database().ref().child("ShopPullList/"+rowkey).remove();
         }   
     };  
 }
