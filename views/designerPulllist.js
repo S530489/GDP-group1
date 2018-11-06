@@ -71,6 +71,7 @@ function getColor()
     var s = document.getElementsByName("colors")[0];
     var text = s.options[s.selectedIndex].text;
     document.getElementById("showcolor").innerHTML = text;
+    document.getElementById("showcolor").selectedIndex = "0";
 }
 
 function addrow()
@@ -84,9 +85,9 @@ function addrow()
     var size=document.getElementById("size").innerHTML;
     var notes=document.getElementById("notes").innerHTML;
     
-
+    var c=$('#dplist1 tr').length;
     var table=document.getElementsByName("addHere")[0];
-    var newrow = table.insertRow(1);
+    var newrow = table.insertRow(c);
     var cell1=newrow.insertCell(0);
     var cell2=newrow.insertCell(1);
     var cell3=newrow.insertCell(2);
@@ -112,7 +113,8 @@ function addrow()
         cell6.innerHTML=color;
         cell7.innerHTML=size;
         cell8.innerHTML=notes;
-    submit_to_firebase(title,show,color,clothing,charname,size,notes);
+        submit_to_firebase(title,show,color,clothing,charname,size,notes);
+        location.reload();        
     }
 }
 
@@ -142,7 +144,7 @@ for(var i = 1; i < table.rows.length; i++)
     {
         alert(firebase.database().ref().child("ShopPullList/"+rowkey));
         // alert(rowkey);
-        var c = confirm("Are you sure, you want to delete this row?");
+        var c = confirm("Are you sure, you want to delete this row from the shop pull list?");
         if(c === true)
         {
             index = this.parentElement.rowIndex;
