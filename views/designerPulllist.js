@@ -97,16 +97,23 @@ function addrow()
     var cell8=newrow.insertCell(7);
     cell9=newrow.insertCell(8);
 
-    cell1.innerHTML=" ";
-    cell2.innerHTML=title;
-    cell3.innerHTML=show;
-    cell4.innerHTML=charname;
-    cell5.innerHTML=clothing;
-    cell6.innerHTML=color;
-    cell7.innerHTML=size;
-    cell8.innerHTML=notes;
 
+    if(title==""||show==""||clothing==""||charname==""||size==""||notes=="")
+    {
+        alert("Please fill all the fields");
+    }
+
+    else{
+        cell1.innerHTML=" ";
+        cell2.innerHTML=title;
+        cell3.innerHTML=show;
+        cell4.innerHTML=charname;
+        cell5.innerHTML=clothing;
+        cell6.innerHTML=color;
+        cell7.innerHTML=size;
+        cell8.innerHTML=notes;
     submit_to_firebase(title,show,color,clothing,charname,size,notes);
+    }
 }
 
 
