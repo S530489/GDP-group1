@@ -47,6 +47,10 @@ for(var i = 1; i < table.rows.length; i++)
                 performers[j]=performers[j+1];
             }
            performers.pop();
+           firebase.database().ref().child("performers/").set(performers).then(function(){
+           location.reload();
+        });
+
            
             
 
