@@ -1,7 +1,7 @@
 var all_ids = ["heading","First_name","last_name","age","email","pno1","pno2","add1","add2","add3","cname","allergy","eye","hair","ware"];
 var global_key;
 var cnt=0;
-
+var performers = [];
 
 
 $(document).ready(function(){
@@ -9,8 +9,92 @@ $(document).ready(function(){
 document.getElementById("measure").hidden = true;
 document.getElementById("edit").hidden = true;
 document.getElementById('profileImage').style.visibility='hidden';
-//document.getElementById("profileImage").hidden = true; 
+
+var firebaseRef = firebase.database().ref();
+firebaseRefperf = firebaseRef.child("performers");
+firebaseRefperf.on('value', function(snapshot){
+    performers = snapshot.val();
+    console.log(performers);
 });
+
+
+
+//document.getElementById("profileImage").hidden = true; 
+
+
+});
+
+
+
+function remove(rowKey)
+{
+    console.log(rowKey);
+var index, table = document.getElementById('myTable');
+for(var i = 1; i < table.rows.length; i++)
+{
+    table.rows[i].cells[1].onclick = function()
+    {
+        var c = confirm("Are you sure, you want to delete this row?");
+        if(c === true)
+        {
+            index = this.parentElement.rowIndex;
+            console.log("index is "+index)
+            table.deleteRow(index);
+            console.log("rowkey is " +rowKey);
+            console.log("performers are ");
+            console.log(performers);
+            for( j =parseInt(rowKey);j<performers.length-1;j++ ){
+                performers[j]=performers[j+1];
+            }
+           performers.pop();
+           
+            
+
+        }   
+    };  
+}
+
+        // document.getElementById("heading").innerHTML = "Performer's "+"Information";
+        // document.getElementById("First_name").innerHTML = "";
+        // document.getElementById("last_name").innerHTML = "";
+        // document.getElementById("age").innerHTML = "";
+        // document.getElementById("email").innerHTML = "";
+        // document.getElementById("pno1").innerHTML = "";
+        // document.getElementById("pno2").innerHTML = "";
+        // document.getElementById("add1").innerHTML = "";
+        // document.getElementById("add2").innerHTML = "";
+        // document.getElementById("add3").innerHTML = "";
+        // document.getElementById("cname").innerHTML = "";
+        // document.getElementById("allergy").innerHTML = "";
+        // document.getElementById("eye").innerHTML = "";
+        // document.getElementById("hair").innerHTML = "";
+        // document.getElementById("ware").innerHTML = "";
+}
+
+function removeVisiblity()
+{
+    cnt=parseInt(cnt)+parseInt(1);
+    var count = $('#myTable tr').length;
+    if(cnt % 2 == 0)
+    {
+            for(var i=1;i<count;i++){
+                document.getElementById("myTable").rows[i].cells[1].style.visibility="hidden";
+            }
+    }
+    else{
+        for(var i=1;i<count;i++){
+            document.getElementById("myTable").rows[i].cells[1].style.visibility="visible";
+        }
+    }
+
+    if(cnt == 3 ||  cnt == 4)
+    {
+        cnt=1;
+    }
+}
+
+
+
 function myFunction() {
     var input, filter, table, tr, td, i;
     input = document.getElementById("myInput");
@@ -157,7 +241,7 @@ function getInfo(key){
         document.getElementById("shirtSize").innerHTML = obj.general.shirtSize;
         disable();
 
-        appendColumn();
+       // appendColumn();
         
     })
     /*
@@ -355,59 +439,4 @@ function cancelFunction()
         document.getElementById("inseam_floor").readOnly = true;
 
         getMeasurements();
-}
-
-function remove()
-{
-var index, table = document.getElementById('myTable');
-for(var i = 1; i < table.rows.length; i++)
-{
-    table.rows[i].cells[1].onclick = function()
-    {
-        var c = confirm("Are you sure, you want to delete this row?");
-        if(c === true)
-        {
-            index = this.parentElement.rowIndex;
-            table.deleteRow(index);
-        }   
-    };  
-}
-
-        document.getElementById("heading").innerHTML = "Performer's "+"Information";
-        document.getElementById("First_name").innerHTML = "";
-        document.getElementById("last_name").innerHTML = "";
-        document.getElementById("age").innerHTML = "";
-        document.getElementById("email").innerHTML = "";
-        document.getElementById("pno1").innerHTML = "";
-        document.getElementById("pno2").innerHTML = "";
-        document.getElementById("add1").innerHTML = "";
-        document.getElementById("add2").innerHTML = "";
-        document.getElementById("add3").innerHTML = "";
-        document.getElementById("cname").innerHTML = "";
-        document.getElementById("allergy").innerHTML = "";
-        document.getElementById("eye").innerHTML = "";
-        document.getElementById("hair").innerHTML = "";
-        document.getElementById("ware").innerHTML = "";
-}
-
-function removeVisiblity()
-{
-    cnt=parseInt(cnt)+parseInt(1);
-    var count = $('#myTable tr').length;
-    if(cnt % 2 == 0)
-    {
-            for(var i=1;i<count;i++){
-                document.getElementById("myTable").rows[i].cells[1].style.visibility="hidden";
-            }
-    }
-    else{
-        for(var i=1;i<count;i++){
-            document.getElementById("myTable").rows[i].cells[1].style.visibility="visible";
-        }
-    }
-
-    if(cnt == 3 ||  cnt == 4)
-    {
-        cnt=1;
-    }
 }
