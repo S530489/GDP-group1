@@ -2,9 +2,10 @@
 
 var newKey;
 var selectedFile;
-var ProfileImageUrl;
+var profileImageUrl;
 
 document.getElementById('contactForm').addEventListener('submit', submitForm);
+
 var perCount = firebase.database().ref().child("perfCount");
 perCount.on('value', function(snapshot){
     console.log(snapshot.val());
@@ -56,10 +57,10 @@ function uploadTitleImage(){
    
     uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
       console.log('File available at', downloadURL);
-      ProfileImageUrl = downloadURL
+      profileImageUrl = downloadURL
     });
   });
-  console.log(ProfileImageUrl)
+  console.log(profileImageUrl)
 }
 
 
@@ -193,7 +194,8 @@ function saveMessage(namef,namel, character, textu,addr1,addr2,country, phone,em
         },
         EyeColor:eyecolor, 
         Medications:medi,
-        Suggestions:sugg
+        Suggestions:sugg,
+        ProfileImageUrl:profileImageUrl
     },
     measurements:""
     
@@ -201,6 +203,7 @@ function saveMessage(namef,namel, character, textu,addr1,addr2,country, phone,em
 ).then(function(){
     perCount.set(newKey);
     document.getElementById('contactForm').reset();
+    document.getElementById("uploadeBar").value = 0;
 });
  }
 
