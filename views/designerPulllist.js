@@ -6,12 +6,38 @@ var k;
 var tex="";
 const design_key=0;
 var pulllistrows = [];
+var pullListRowCount;
+var c;
+var globalKey;
 
 $(document).ready(function(){
 
    pageLoad();
        
 })
+
+function pageLoad(){
+    var firebaseRef = firebase.database().ref();
+    firebaseRefEvents = firebase.database().ref("ShopPullList/");
+    firebaseRefEvents.on('value', function(snapshot){
+         var obj = snapshot.val();
+         var shoplist;
+      if(snapshot.val()== null){
+        console.log("obj is null")
+        shoplist = [];
+      }
+      else{
+        shoplist = snapshot.val();
+      }
+         pulllistrows = shoplist;
+     })   
+
+     firebaseRefListCount =  firebase.database().ref("pullListCount/");
+     firebaseRefListCount.on('value', function(snapshot){
+        pullListRowCount = snapshot.val();
+     })
+}
+
 
 function getPerfomers(ind){
     console.log(performers)
@@ -85,7 +111,7 @@ function addrow()
     var size=document.getElementById("size").innerHTML;
     var notes=document.getElementById("notes").innerHTML;
     
-    var c=$('#dplist1 tr').length;
+     c=$('#dplist1 tr').length;
     var table=document.getElementsByName("addHere")[0];
     var newrow = table.insertRow(c);
     var cell1=newrow.insertCell(0);
@@ -113,12 +139,40 @@ function addrow()
         cell6.innerHTML=color;
         cell7.innerHTML=size;
         cell8.innerHTML=notes;
+        //cell9.setAttribute('onclick', 'remove(' + myvalue + ');');
         submit_to_firebase(title,show,color,clothing,charname,size,notes);
-        location.reload();        
+                
     }
 }
 
 
+function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
+    
+    
+        pullListRowCount=parseInt(pullListRowCount)+1;
+        pulllistrows.push({
+    
+                row_id:"dp"+pullListRowCount,
+                Play_title : title,
+                Performer_Name : show,
+                Character_Name : charname,
+                clothing_Item : clothing,
+                color_selected : color,
+                Size:size,
+                Add_Notes:notes
+                
+          })
+         
+          firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function(){ 
+              firebase.database().ref().child("pullListCount/").set(pullListRowCount).then(function(){
+                console.log("Added to database");
+                location.reload();
+              });
+           
+        });
+        }
+    
+    
 
 
 function getTitle()
@@ -131,25 +185,34 @@ function getTitle()
     return text;
 }
 
-var globalKey;
+
 
 function remove(rowkey)
 {
-    globalKey=rowkey;
+    globalKey=parseInt(rowkey);
+    console.log(rowkey);
     
 var index, table = document.getElementById('dplist1');
 for(var i = 1; i < table.rows.length; i++)
 {
     table.rows[i].cells[8].onclick = function()
     {
-        alert(firebase.database().ref().child("ShopPullList/"+rowkey));
+       
         // alert(rowkey);
         var c = confirm("Are you sure, you want to delete this row from the shop pull list?");
         if(c === true)
         {
             index = this.parentElement.rowIndex;
             table.deleteRow(index);
-            firebase.database().ref().child("ShopPullList/"+rowkey).remove();
+            console.log("key is " +globalKey);
+            for (j = globalKey; j < pulllistrows.length - 1; j++) {
+                pulllistrows[j] = pulllistrows[j + 1];
+            }
+            pulllistrows.pop();
+
+            firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function () {
+                location.reload();
+            });
         }   
     };  
 }
@@ -181,40 +244,7 @@ function removeVisiblity()
     }
 }
 
-function  submit_to_firebase(title,show,color,clothing,charname,size,notes){
-    
-//    window.alert("submiting")
-
-    //alert(design_key)
-    pulllistrows1=pulllistrows.length+1;
-    pulllistrows.push({
-
-            row_id:"dp"+pulllistrows1,
-            Play_title : title,
-            Performer_Name : show,
-            Character_Name : charname,
-            clothing_Item : clothing,
-            color_selected : color,
-            Size:size,
-            Add_Notes:notes
-            
-      })
-      alert(pulllistrows);
-      firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function(){   
-    });
-    // pageLoad();
-    }
-
-    function pageLoad(){
-        var firebaseRef = firebase.database().ref();
-        firebaseRefEvents = firebase.database().ref("ShopPullList/");
-        firebaseRefEvents.on('value', function(snapshot){
-             var obj = snapshot.val();
-             pulllistrows = snapshot.val();
-         })   
-    }
-
-    function getClothingitem()
+function getClothingitem()
     {
         var s = document.getElementsByName("clothing")[0];
         var text = s.options[s.selectedIndex].text;

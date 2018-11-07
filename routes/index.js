@@ -13,9 +13,6 @@ router.get("/addPerformer", function (req, res) {
  
 });
 
-
-
-
 router.get("/designer", function (req, res) {
 
   var firebaseRef = firebase.database().ref();
@@ -24,11 +21,21 @@ router.get("/designer", function (req, res) {
       // console.log(snapshot.val().Events);
       // console.log("testing");
       // console.log(snapshot.val().performers);
-      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers, ShopPullList : snapshot.val().ShopPullList});
+     // var size = Object.keys(snapshot.val().ShopPullList).length;
+      var shoplist;
+      if(snapshot.val().ShopPullList == null){
+        console.log("obj is null")
+        shoplist = {};
+      }
+      else{
+        shoplist = snapshot.val().ShopPullList;
+      }
+      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers, ShopPullList : shoplist });
     })
    
   //response.render("designerPullList.ejs");
 });
+
 
 router.get("/performer", function (request, response) {
    
