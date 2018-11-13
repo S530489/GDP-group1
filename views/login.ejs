@@ -1,145 +1,146 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<body >
-        <div class="container">
-                <div id="msgAlertLogin" >
-                  <div class="row">
-                      <div class="col-md-2"></div>
-                      <div class="col-md-5"><p><strong id="msgLogin"></strong></p></div>
-                      <div class="col-md-2"><a id="td1" onclick="closeAlert1()"></a></div>
-                      <div class="col-md-3"></div>
-                 </div>
-                </div>
-              </div>
-
-
-      <br/> <br/>  <br/> <br/>  <br/> <br/>
-  <div class="row">
-      <div class="col-md-1"></div>
-    <div class="col-md-5">
-        <img src="images/fashion.jpg" height="400" width="600">
+<body>
+  <div class="container">
+    <div id="msgAlertLogin">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <p><strong id="msgLogin"></strong></p>
         </div>
-        <div class="col-md-1"></div>
-    <div class="col-md-5">   
-    <p><b id = "loginMsg"> </b></p>
-    <div id="loginDiv" class="info">
-    <div class="centered1">
-        <form> 
-      <a href="createaccount" class="button">Create New</a>
-      
-      <div class="form-group">
-        <label for="inputlg">Login id:</label>
-        <input class="form-control" id="userlogin" placeholder="Enter the username" type="text">
-      </div><br>
-
-      <div class="form-group">
-        <label for="inputlg">Password:</label>
-        <input class="form-control" id="userpwd" placeholder="Enter the password" type="password">
-      </div> 
-<!-- <a href="forgotpassword" class="button">Forgot Password?</a><br> -->
-              
-</form>
-
-<button onclick="loginFunction()" class="button" >Submit</button>   
-<button  class="button"  onclick="window.location.href='/forgotpassword'" >Forgot Password?</button>  
-</div> 
-</div>
-            
-</div>
-</div>
+        <div class="col-md-2"><a id="td1" onclick="closeAlert1()"></a></div>
+        <div class="col-md-3"></div>
+      </div>
+    </div>
+  </div>
 
 
+  <br /> <br /> <br /> <br /> <br /> <br />
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <img src="images/fashion.jpg" height="400" width="600">
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <p><b id="loginMsg"> </b></p>
+      <div id="loginDiv" class="info">
+        <div class="centered1">
+          <form method="post" action="/performersInfo">
+            <a href="createaccount" class="button">Create New</a>
 
-<br><br>
+            <div class="form-group">
+              <label for="inputlg">Login id:</label>
+              <input class="form-control" name="UserId" id="userlogin" placeholder="Enter the username" type="text">
+            </div><br>
 
-<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
-    authDomain: "costume-designing-system.firebaseapp.com",
-    databaseURL: "https://costume-designing-system.firebaseio.com",
-    projectId: "costume-designing-system",
-    storageBucket: "costume-designing-system.appspot.com",
-    messagingSenderId: "923569045734"
-  };
-  firebase.initializeApp(config);
-  
-</script>
-<script src="./login.js"></script>
-<style>
-  .button {
-    background-color: black;
-    border: none;
-    color: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    padding: 12px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+            <div class="form-group">
+              <label for="inputlg">Password:</label>
+              <input class="form-control" name="UserPassword" id="userpwd" placeholder="Enter the password" type="password">
+            </div>
+            <button class="button"  type="submit">Submit</button>
+            <!-- <a href="forgotpassword" class="button">Forgot Password?</a><br> -->
 
-#td1:hover{
-    cursor: pointer;
-    background-color: #ccc;
-  }
+          </form>
 
-body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    color:black;
-    font-size: 16px;
-}
+          <!-- <button onclick="loginFunction()" class="button" >Submit</button>    -->
+          <button class="button" onclick="window.location.href='/forgotpassword'">Forgot Password?</button>
+        </div>
+      </div>
 
-input[type=text] {
-    width: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    color: black;
-    background-position: left top;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    margin-left: 20px;
-}
+    </div>
+  </div>
 
-input[type=email] {
-    width: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    color: black;
-    background-position: left top;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    margin-left: 20px;
-}
 
-input[type=password] {
-    width: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    color: black;
-    background-position: left top;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    margin-left: 20px;
-}
 
-</style>
+  <br><br>
 
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+      authDomain: "costume-designing-system.firebaseapp.com",
+      databaseURL: "https://costume-designing-system.firebaseio.com",
+      projectId: "costume-designing-system",
+      storageBucket: "costume-designing-system.appspot.com",
+      messagingSenderId: "923569045734"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+  <script src="./login.js"></script>
+  <style>
+    .button {
+      background-color: black;
+      border: none;
+      color: white;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      padding: 12px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    #td1:hover {
+      cursor: pointer;
+      background-color: #ccc;
+    }
+
+    body {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      color: black;
+      font-size: 16px;
+    }
+
+    input[type=text] {
+      width: 300px;
+      box-sizing: border-box;
+      border: 2px solid black;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      color: black;
+      background-position: left top;
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-left: 20px;
+    }
+
+    input[type=email] {
+      width: 300px;
+      box-sizing: border-box;
+      border: 2px solid black;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      color: black;
+      background-position: left top;
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-left: 20px;
+    }
+
+    input[type=password] {
+      width: 300px;
+      box-sizing: border-box;
+      border: 2px solid black;
+      border-radius: 4px;
+      font-size: 16px;
+      background-color: white;
+      color: black;
+      background-position: left top;
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      margin-left: 20px;
+    }
+  </style>
