@@ -5,13 +5,15 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "latest",
+    "chromedriver": "^2.43.1",
     "ejs": "^2.6.1",
     "express": "latest",
     "firebase": "latest",
     "mailgun-js": "latest",
     "morgan": "latest",
     "node-static": "latest",
-    "nodemailer": "^4.6.8"
+    "nodemailer": "^4.6.8",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   },
   "license": "Apache-2.0",
   "devDependencies": {

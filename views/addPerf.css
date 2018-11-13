@@ -431,3 +431,50 @@ i {
   {
       padding: 10px;
   }
+
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: white;
+    outline: none;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  .btn-group button {
+    background-color:black; 
+    border: 1px white; 
+    color: white;
+    padding: 10px 24px; 
+    cursor: pointer;
+    float: left; 
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  .btn-lgn{
+    background-color:black; 
+    border: 1px white; 
+    color: white;
+    padding: 10px 24px; 
+    cursor: pointer;
+    float: right; 
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  .btn-group button:not(:last-child) {
+    border-right: none; 
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }
+  .btn-group button:hover {
+    background-color:rgb(99, 96, 96);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+  }

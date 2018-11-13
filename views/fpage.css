@@ -1,3 +1,30 @@
 .form-gap {
     padding-top: 70px;
 }
+
+p, .text-center
+{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: black;
+}
+
+input[type=button] {
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 85px;
+    text-align:center;
+    margin-top: 10px;
+    float: right;
+}
