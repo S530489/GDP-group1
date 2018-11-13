@@ -107,13 +107,17 @@ function pageLoad(){
                  $(currentRow).addClass("row");
                  $("#EventHolder").append(currentRow);
              }
+
              var col = document.createElement("div");
              $(col).addClass("col-md-6");
+             var cent =  document.createElement("center");
              var cards = document.createElement("div");
              $(cards).addClass("card");
              var image = document.createElement("img");
              image.src = currentObject.mainImage_Url;
-             $(image).css("width", "100%");
+            // $(image).css("width", "100%");
+             image.setAttribute("width","100%");
+             image.setAttribute("height","245");
             // image.setAttribute("alt","Your text here");
             var header = document.createElement("h3");
             var msg = document.createElement("i");
