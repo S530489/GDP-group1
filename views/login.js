@@ -78,19 +78,39 @@ function loginFunction()
 
     // window.alert(userid);
     // window.alert(userpass);
-    firebase.auth().signInWithEmailAndPassword(userid, userpass).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-
-        window.alert("error:"+errorMessage);
-      }).then(function(){
-        initApp();
-        
-      });
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  .then(function() {
+    // Existing and future Auth states are now persisted in the current
+    // session only. Closing the window would clear any existing state even
+    // if a user forgets to sign out.
+    // ...
+    // New sign-in will be persisted with session persistence.
+    return firebase.auth().signInWithEmailAndPassword(userid, userpass);
+  })
+  .catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    window.alert("error:"+errorMessage);
+  }).then(function(){
+    initApp();
+    
+  });
       
 }
+// firebase.auth().signInWithEmailAndPassword(userid, userpass).catch(function(error) {
+//   // Handle Errors here.
+//   var errorCode = error.code;
+//   var errorMessage = error.message;
+//   // ...
+
+//   window.alert("error:"+errorMessage);
+// }).then(function(){
+//   initApp();
+  
+// });
+
+
 
 function logout(){
     
@@ -134,6 +154,7 @@ function initApp(){
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      window.alert(user);
      document.getElementById("loginMsg").innerHTML = 'User Logged IN';
      window.location.href = "http://127.0.0.1:8081/addPerformer"
 

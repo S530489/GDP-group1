@@ -5,116 +5,333 @@ var firebase = require("firebase");
 
 
 router.get("/addPerformer", function (req, res) {
-  var firebaseRef = firebase.database().ref().child("performers");
-    
-  firebaseRef.once('value', function(snapshot){
-      res.render('addPerformer.ejs',{ performers : snapshot.val()});
+  console.log("user is " + firebase.auth().currentUser);
+  var user = firebase.auth().currentUser;
+  if (user) {
+    var firebaseRef = firebase.database().ref().child("performers");
+
+    firebaseRef.once('value', function (snapshot) {
+      res.render('addPerformer.ejs', { performers: snapshot.val() });
     })
- 
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
 });
 
 router.get("/designer", function (req, res) {
 
-  var firebaseRef = firebase.database().ref();
-    
-  firebaseRef.once('value', function(snapshot){
-      // console.log(snapshot.val().Events);
-      // console.log("testing");
-      // console.log(snapshot.val().performers);
-     // var size = Object.keys(snapshot.val().ShopPullList).length;
-      var shoplist;
-      if(snapshot.val().ShopPullList == null){
-        console.log("obj is null")
-        shoplist = {};
-      }
-      else{
-        shoplist = snapshot.val().ShopPullList;
-      }
-      res.render("designerPullList.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers, ShopPullList : shoplist });
-    })
-   
-  //response.render("designerPullList.ejs");
+  var user = firebase.auth().currentUser;
+  if (user) {
+    var firebaseRef = firebase.database().ref();
+
+  firebaseRef.once('value', function (snapshot) {
+    // console.log(snapshot.val().Events);
+    // console.log("testing");
+    // console.log(snapshot.val().performers);
+    // var size = Object.keys(snapshot.val().ShopPullList).length;
+    var shoplist;
+    if (snapshot.val().ShopPullList == null) {
+      console.log("obj is null")
+      shoplist = {};
+    }
+    else {
+      shoplist = snapshot.val().ShopPullList;
+    }
+    res.render("designerPullList.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers, ShopPullList: shoplist });
+  })
+
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+  
+  //res.render("designerPullList.ejs");
 });
 
 
-router.get("/performer", function (request, response) {
-   
-  response.render("measurementsInfo.ejs");
-});
+router.get("/performer", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("measurementsInfo.ejs");
+    user = null;
+  }
+  else {
 
-router.get("/accesscode", function (request, response) {
-   
-  response.render("accesscode.ejs");
-});
+    console.log(user);
+    res.render("login.ejs");
 
-router.get("/viewmeasurement", function (request, response) {
-   
-  response.render("viewmeasurement.ejs");
-});
-router.get("/registration", function (request, response) {
-   
-  response.render("registration.ejs");
-});
-
-router.get("/createaccount", function (request, response) {
-   
-  response.render("createaccount.ejs");
-});
-
-router.all("/projectdetails", function (req, res) {
-
-   
-  res.render("projectdetails");
-});
-
-router.all("/projectdetails/:id", function (req, res) {
-  console.log(req.params.id)
-  res.render("projectdetails");
-});
-
-
-router.get("/contact", function (request, response) {
-  response.render('contact.ejs');
-});
-
-router.get("/contactPage", function (request, response) {
-   
-  response.render('contactPage.ejs');
-});
-
-router.all("/forgotpassword", function (request, response) {
-   
-  response.render('forgotpassword.ejs');
-});
-router.get("/sendform", function (request, response) {
-   
-  response.render("sendform.ejs");
-});
-
-
-
-router.get("/projects", function (request, response) {
-
-  var firebaseRef = firebase.database().ref();
-    
-  firebaseRef.once('value', function(snapshot){
-      // console.log(snapshot.val().Events);
-      // console.log("testing");
-      // console.log(snapshot.val().performers);
-      response.render("projects.ejs",{ Events : snapshot.val().Events,performers : snapshot.val().performers});
-    })
-   
+  }
 
   
 });
 
-router.get("/login", function (request, response) {
-   
-  response.render("login.ejs");
+router.get("/accesscode", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("accesscode.ejs");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+  
 });
 
-router.use(function (request, response) {
-  response.status(404).render('404.ejs');
+router.get("/viewmeasurement", function (req, res) {
+
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("viewmeasurement.ejs");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+ 
+});
+router.get("/registration", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("registration.ejs");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+
+});
+
+
+router.get("/createaccount", function (req, res) {
+
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("createaccount.ejs");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+  
+});
+
+router.all("/projectdetails", function (req, res) {
+
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("projectdetails");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+  
+});
+
+router.all("/projectdetails/:id", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    console.log(req.params.id)
+    res.render("projectdetails");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+  
+});
+
+
+router.get("/contact", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render('contact.ejs');
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+ 
+});
+
+router.get("/contactPage", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render('contactPage.ejs');
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+ 
+});
+
+router.all("/forgotpassword", function (req, res) {
+  
+
+  res.render('forgotpassword.ejs');
+});
+router.get("/sendform", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    res.render("sendform.ejs");
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+
+ 
+});
+
+
+
+router.get("/projects", function (req, res) {
+  var user = firebase.auth().currentUser;
+  if (user) {
+    var firebaseRef = firebase.database().ref();
+
+  firebaseRef.once('value', function (snapshot) {
+    // console.log(snapshot.val().Events);
+    // console.log("testing");
+    // console.log(snapshot.val().performers);
+    res.render("projects.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers });
+  })
+    user = null;
+  }
+  else {
+
+    console.log(user);
+    res.render("login.ejs");
+
+  }
+});
+
+
+router.post("/performersInfo", function (req, res) {
+  
+  console.log("came here")
+  var userid = req.body.UserId;
+  var userpass = req.body.UserPassword;
+  console.log(userid + " " + userpass);
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("logged in");
+      var firebaseRef = firebase.database().ref().child("performers");
+
+      firebaseRef.once('value', function (snapshot) {
+        res.render('addPerformer.ejs', { performers: snapshot.val() });
+      });
+    } else {
+
+    }
+  });
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
+    .then(function () {
+      // Existing and future Auth states are now persisted in the current
+      // session only. Closing the window would clear any existing state even
+      // if a user forgets to sign out.
+      // ...
+      // New sign-in will be persisted with session persistence.
+      return firebase.auth().signInWithEmailAndPassword(userid, userpass);
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log("error:" + errorMessage);
+    })
+
+})
+// firebase.auth().onAuthStateChanged(function(user) {
+//     if (user) {
+//       // User is signed in.
+//       //window.alert(user);
+
+//      //window.location.href = "http://127.0.0.1:8081/addPerformer"
+
+
+//     } else {
+//       // No user is signed in.
+
+
+
+//     }
+//   });
+
+router.all("/logout", function(req,res){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+
+  }).catch(function(error) {
+    // An error happened.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+
+    console.log("error:"+errorMessage);
+   
+
+  }).then(function(){
+    
+    res.render('login.ejs');
+   console.log("User Successfully logged out")
+        
+  });
+})
+
+router.get("/login", function (req, res) {
+
+  res.render("login.ejs");
+});
+
+router.use(function (req, res) {
+  res.status(404).render('404.ejs');
 });
 
 
@@ -126,48 +343,48 @@ router.post('/sendToDesigner', (req, res) => {
   console.log("sending mail")
   var api_key = 'key-770c3cc90056cea80af1cafa3f4079cb';
   var domain = 'sandbox520a2a03c8ae42dcb83afd7b3e7ffdad.mailgun.org';
-  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-   
+  var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
+
   var data = {
-    from: request.body.email,
+    from: req.body.email,
     to: 'S530747@nwmissouri.edu',
     subject: "Mail to Stephie Costume Desinger",
-    text :request.body.comments
+    text: req.body.comments
   };
-   
+
   mailgun.messages().send(data, function (error, body) {
     console.log(body);
-    if(!error)
-      response.send("mail sent sucessfully");
+    if (!error)
+      res.send("mail sent sucessfully");
     else
-      response.send("mail not sent");
+      res.send("mail not sent");
 
   });
 });
 
-router.post("/sendform", function(request,response){
+router.post("/sendform", function (req, res) {
   console.log("checking mail")
   var api_key = 'key-770c3cc90056cea80af1cafa3f4079cb';
   var domain = 'sandbox520a2a03c8ae42dcb83afd7b3e7ffdad.mailgun.org';
-  var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-   
+  var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
+
   var data = {
     from: 'Mail Gun <postmaster@sandbox520a2a03c8ae42dcb83afd7b3e7ffdad.mailgun.org>',
     to: 'S530489@nwmissouri.edu',
     subject: "Mail from Stephie Costume Desinger",
 
-    text : "Hi " +request.body.firstname+" "+request.body.lastname+"\n"
-    +"please click the below link and fill the measurement form"+"\n\n"+
+    text: "Hi " + req.body.firstname + " " + req.body.lastname + "\n"
+      + "please click the below link and fill the measurement form" + "\n\n" +
 
-    "http://firebase/fillmeasurementform.html"
+      "http://firebase/fillmeasurementform.html"
   };
-   
+
   mailgun.messages().send(data, function (error, body) {
     console.log(body);
-    if(!error)
-      response.send("mail sent sucessfully");
+    if (!error)
+      res.send("mail sent sucessfully");
     else
-      response.send("mail not sent");
+      res.send("mail not sent");
 
   });
 });
