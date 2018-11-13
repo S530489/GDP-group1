@@ -9,7 +9,7 @@ var selectedperformerNames = []
 var MainImageURL ;
 var MulImageURLS = [];
 var sortByDate;
-
+var countCross = 1;
   
 
 
@@ -89,6 +89,7 @@ function pageLoad(){
               });
          }
          $("#EventHolder").empty();
+         countCross =1;
          console.log(obj);
          var keys = Object.keys(obj);
          console.log(keys);
@@ -109,7 +110,7 @@ function pageLoad(){
              }
 
              var col = document.createElement("div");
-             $(col).addClass("col-md-6");
+             $(col).addClass("col-md-5");
              var cent =  document.createElement("center");
              var cards = document.createElement("div");
              $(cards).addClass("card");
@@ -139,7 +140,24 @@ function pageLoad(){
             $(cards).append(desc);
             $(cards).append(butn);
             $(col).append(cards);
-            $(currentRow).append(col);
+            
+            var col1 = document.createElement("div");
+             $(col1).addClass("col-md-1");
+             var para = document.createElement("p")
+             para.innerHTML = "X";
+             var func1 = "removeProject("+event_Id+")";
+             $(para).attr('onClick',func1);
+             var pp = "cross"+countCross;
+             $(para).attr('id', pp);
+             countCross+=1;
+             para.style.visibility = "hidden";
+             para.style.color = "red";
+             para.style.cursor = "pointer";
+             para.style.fontWeight = "bold";
+             $(col1).append(para);
+
+             $(currentRow).append(col);
+             $(currentRow).append(col1);
     
          }
         
@@ -148,6 +166,18 @@ function pageLoad(){
      });
    
 }
+
+function removeProject(key){
+    window.alert(key);
+
+}
+function removeVisiblity(){
+    for(i=1;i<countCross;i++){
+        var pp = "cross"+i;
+        document.getElementById(pp).style.visibility = "visible";
+    }
+}
+
 
 function getEventInformation(key){
     //window.alert(key);
