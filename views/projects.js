@@ -1,7 +1,7 @@
 var selectedMulFiles;
 var selectedFile;
 var performers;
-var events;
+var events = [];
 var performersNames = []
 var performerIds = []
 var selectedperformerIds = []
@@ -10,6 +10,7 @@ var MainImageURL ;
 var MulImageURLS = [];
 var sortByDate;
 var countCross = 1;
+var obj = [];
   
 
 
@@ -76,7 +77,7 @@ function pageLoad(){
     })
     firebaseRefEvents = firebase.database().ref("Events/");
     firebaseRefEvents.on('value', function(snapshot){
-         var obj = snapshot.val();
+         obj = snapshot.val();
          console.log(obj);
          events = snapshot.val();
          if(sortByDate==1){
@@ -118,7 +119,7 @@ function pageLoad(){
              image.src = currentObject.mainImage_Url;
             // $(image).css("width", "100%");
              image.setAttribute("width","100%");
-             image.setAttribute("height","245");
+             image.setAttribute("height","200");
             // image.setAttribute("alt","Your text here");
             var header = document.createElement("h3");
             var msg = document.createElement("i");
@@ -168,7 +169,19 @@ function pageLoad(){
 }
 
 function removeProject(key){
-    window.alert(key);
+    for(i=0;i<events.length;i++){
+        if(events[i].Event_Id == key){
+            for(j=i;j<events.length-1;j++){
+                events[j]=events[j+1];
+            }
+            break;
+        }
+    }
+    events.pop();
+    console.log(events);
+    firebase.database().ref().child("Events/").set(events).then(function () {
+        location.reload();
+    });
 
 }
 function removeVisiblity(){
