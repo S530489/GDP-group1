@@ -30,21 +30,21 @@ router.get("/designer", function (req, res) {
   if (user) {
     var firebaseRef = firebase.database().ref();
 
-  firebaseRef.once('value', function (snapshot) {
-    // console.log(snapshot.val().Events);
-    // console.log("testing");
-    // console.log(snapshot.val().performers);
-    // var size = Object.keys(snapshot.val().ShopPullList).length;
-    var shoplist;
-    if (snapshot.val().ShopPullList == null) {
-      console.log("obj is null")
-      shoplist = {};
-    }
-    else {
-      shoplist = snapshot.val().ShopPullList;
-    }
-    res.render("designerPullList.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers, ShopPullList: shoplist });
-  })
+    firebaseRef.once('value', function (snapshot) {
+      // console.log(snapshot.val().Events);
+      // console.log("testing");
+      // console.log(snapshot.val().performers);
+      // var size = Object.keys(snapshot.val().ShopPullList).length;
+      var shoplist;
+      if (snapshot.val().ShopPullList == null) {
+        console.log("obj is null")
+        shoplist = {};
+      }
+      else {
+        shoplist = snapshot.val().ShopPullList;
+      }
+      res.render("designerPullList.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers, ShopPullList: shoplist });
+    })
 
     user = null;
   }
@@ -55,7 +55,7 @@ router.get("/designer", function (req, res) {
 
   }
 
-  
+
   //res.render("designerPullList.ejs");
 });
 
@@ -73,7 +73,7 @@ router.get("/performer", function (req, res) {
 
   }
 
-  
+
 });
 
 router.get("/accesscode", function (req, res) {
@@ -89,7 +89,7 @@ router.get("/accesscode", function (req, res) {
 
   }
 
-  
+
 });
 
 router.get("/viewmeasurement", function (req, res) {
@@ -106,7 +106,7 @@ router.get("/viewmeasurement", function (req, res) {
 
   }
 
- 
+
 });
 router.get("/registration", function (req, res) {
   var user = firebase.auth().currentUser;
@@ -139,7 +139,7 @@ router.get("/createaccount", function (req, res) {
 
   }
 
-  
+
 });
 
 router.all("/projectdetails", function (req, res) {
@@ -155,7 +155,7 @@ router.all("/projectdetails", function (req, res) {
     res.render("login.ejs");
 
   }
-  
+
 });
 
 router.all("/projectdetails/:id", function (req, res) {
@@ -172,7 +172,7 @@ router.all("/projectdetails/:id", function (req, res) {
 
   }
 
-  
+
 });
 
 
@@ -189,7 +189,7 @@ router.get("/contact", function (req, res) {
 
   }
 
- 
+
 });
 
 router.get("/contactPage", function (req, res) {
@@ -205,11 +205,11 @@ router.get("/contactPage", function (req, res) {
 
   }
 
- 
+
 });
 
 router.all("/forgotpassword", function (req, res) {
-  
+
 
   res.render('forgotpassword.ejs');
 });
@@ -226,7 +226,7 @@ router.get("/sendform", function (req, res) {
 
   }
 
- 
+
 });
 
 
@@ -236,12 +236,12 @@ router.get("/projects", function (req, res) {
   if (user) {
     var firebaseRef = firebase.database().ref();
 
-  firebaseRef.once('value', function (snapshot) {
-    // console.log(snapshot.val().Events);
-    // console.log("testing");
-    // console.log(snapshot.val().performers);
-    res.render("projects.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers });
-  })
+    firebaseRef.once('value', function (snapshot) {
+      // console.log(snapshot.val().Events);
+      // console.log("testing");
+      // console.log(snapshot.val().performers);
+      res.render("projects.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers });
+    })
     user = null;
   }
   else {
@@ -254,21 +254,26 @@ router.get("/projects", function (req, res) {
 
 
 router.post("/performersInfo", function (req, res) {
-  
+
   console.log("came here")
   var userid = req.body.UserId;
   var userpass = req.body.UserPassword;
   console.log(userid + " " + userpass);
+  var count = 0;
+ 
   firebase.auth().onAuthStateChanged(function (user) {
+    console.log("user is "+user);
     if (user) {
-      console.log("logged in");
-      var firebaseRef = firebase.database().ref().child("performers");
+      if (count == 0) {
+        console.log("logged in");
+        count = 1;
+        var firebaseRef = firebase.database().ref().child("performers");
 
-      firebaseRef.once('value', function (snapshot) {
-        res.render('addPerformer.ejs', { performers: snapshot.val() });
-      });
-    } else {
-
+        firebaseRef.once('value', function (snapshot) {
+          res.render('addPerformer.ejs', { performers: snapshot.val() });
+        });
+        console.log(count);
+      }
     }
   });
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE)
@@ -288,40 +293,25 @@ router.post("/performersInfo", function (req, res) {
     })
 
 })
-// firebase.auth().onAuthStateChanged(function(user) {
-//     if (user) {
-//       // User is signed in.
-//       //window.alert(user);
 
-//      //window.location.href = "http://127.0.0.1:8081/addPerformer"
-
-
-//     } else {
-//       // No user is signed in.
-
-
-
-//     }
-//   });
-
-router.all("/logout", function(req,res){
-  firebase.auth().signOut().then(function() {
+router.all("/logout", function (req, res) {
+  firebase.auth().signOut().then(function () {
     // Sign-out successful.
 
-  }).catch(function(error) {
+  }).catch(function (error) {
     // An error happened.
     var errorCode = error.code;
     var errorMessage = error.message;
     // ...
 
-    console.log("error:"+errorMessage);
-   
+    console.log("error:" + errorMessage);
 
-  }).then(function(){
-    
+
+  }).then(function () {
+
     res.render('login.ejs');
-   console.log("User Successfully logged out")
-        
+    console.log("User Successfully logged out")
+
   });
 })
 
