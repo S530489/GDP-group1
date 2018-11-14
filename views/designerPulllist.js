@@ -127,7 +127,8 @@ function addrow()
 
     if(title==""||show==""||clothing==""||charname==""||size==""||notes=="")
     {
-        alert("Please fill all the fields");
+        // alert("Please fill all the fields");
+        swal("Fill all the fields", "Make sure the title, cloth, clothing, character name ,size fields and notes are filled");
     }
 
     else{
@@ -199,21 +200,50 @@ for(var i = 1; i < table.rows.length; i++)
     {
        
         // alert(rowkey);
-        var c = confirm("Are you sure, you want to delete this row from the shop pull list?");
-        if(c === true)
-        {
-            index = this.parentElement.rowIndex;
-            table.deleteRow(index);
-            console.log("key is " +globalKey);
-            for (j = globalKey; j < pulllistrows.length - 1; j++) {
-                pulllistrows[j] = pulllistrows[j + 1];
-            }
-            pulllistrows.pop();
+        // swal("Hello world!");
+        // var c = confirm("Are you sure, you want to delete this row from the shop pull list?");
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this row!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
 
-            firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function () {
-                location.reload();
-            });
-        }   
+          .then((willDelete) => {
+            if (willDelete) {
+                    index = this.parentElement.rowIndex;
+                    table.deleteRow(index);
+                    console.log("key is " +globalKey);
+                    for (j = globalKey; j < pulllistrows.length - 1; j++) {
+                        pulllistrows[j] = pulllistrows[j + 1];
+                    }
+                    pulllistrows.pop();
+
+                    firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function () {
+                        location.reload();
+                    });
+              swal("The row has been deleted!", {
+                timer: 3000,
+                icon: "success",
+              });
+            } 
+          });
+
+        // if(c === true)
+        // {
+        //     index = this.parentElement.rowIndex;
+        //     table.deleteRow(index);
+        //     console.log("key is " +globalKey);
+        //     for (j = globalKey; j < pulllistrows.length - 1; j++) {
+        //         pulllistrows[j] = pulllistrows[j + 1];
+        //     }
+        //     pulllistrows.pop();
+
+        //     firebase.database().ref().child("ShopPullList/").set(pulllistrows).then(function () {
+        //         location.reload();
+        //     });
+        // }   
     };  
 }
     return "";
