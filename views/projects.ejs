@@ -24,13 +24,12 @@
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
 }
-.container {
-    padding: 16px;
-}
+
 .container{
     background-color: white;
+    padding: 5px;
 }
 .card {
   box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
@@ -40,30 +39,17 @@
   text-align: center;
   font-family: "Comic Sans MS", cursive, sans-serif;
 }
-.card button {
-  border: none;
-  outline: 0;
-  padding: 12px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
 
-/* .card button:hover {
+.card button:hover {
   opacity: 0.7;
-} */
+}
 
 progress {
   border: none;
   width: 100%;
   height: 30px;
   background: white;
-  text-align: center
-  
+  text-align: center 
 }
 
 progress {
@@ -87,7 +73,9 @@ progress::-webkit-progress-value {
         <input style="padding: 11px;border:1px solid #ddd; margin-left: 0px;" size="10" class="ki" type="text" id="myInput"
         name="search" placeholder="Search...">
     </div>
-    <div class="col-md-2"> <button onclick="addProject()" style="width:80%;height: 50px;">Add Project</button> </div>
+    <div class="col-md-2"> 
+      <button id="addProj" onclick="addProject()">Add Project</button> 
+    </div>
   </div>
 
         <div id="id01" class="modal">
@@ -105,20 +93,20 @@ progress::-webkit-progress-value {
              <br>
 
               <label for="Performers"><b>Performers</b></label><br>
-              <table>
+              <table id="projPerf">
               <tr>
-                <td style="border-right-color: azure; border-left-color: azure;border-bottom-color: azure;border-top-color: azure;">
+                <td>
                   <select name="names" id="perfoName">
                     <option value="performName">Performer Name</option>                  
                   </select>
                 </td>
-                <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
+                <td onclick="addrow()" title="add performer">+</button></td>
               </tr>
               </table>
              
               <br/>
-              <table name="addHere" id="dplist1" class="dplist1">         
-                    <tr><th align="center">Performers</th> </tr>
+              <table name="addHere" id="perfProj1" class="perfProj1">         
+                    <tr><th align="center">The selected performers for this play are:</th> </tr>
               </table>
               
               <label for="organisers"><b>Organisers</b></label>
@@ -132,14 +120,14 @@ progress::-webkit-progress-value {
             <input type="text" id = "desc" name="Project description" placeholder="Write something.." style="height:200px" required><br>
               
             <label for="location"><b>Play Location</b></label>
-              <input type="text" placeholder="Play Location" id="location"><br>
+              <input type="text" placeholder="Play Location" id="location" ><br>
 
               <b>Select title image to upload:</b>
               <div class="row">
                 <div class="col-md-4">
               
-              <input type="file" name="fileToUpload" id="file1" >
-               <button type="submit"  onclick=uploadTitleImage()>upload</button>
+              <input type="file" name="fileToUpload" id="file1"><br>
+               <button type="submit" id="projButton" onclick=uploadTitleImage()>upload</button>
               </div>
               <div class="col-md-8">
                 <progress value="0" max="100"  id="uploadeBar" style = "color: black" data-content="Click on upload">0%</progress>
@@ -151,8 +139,8 @@ progress::-webkit-progress-value {
             <b>Select multiple images to upload:</b>
             <div class="row">
                 <div class="col-md-4">
-            <input type="file" name="filesToUpload" id="file123" multiple>
-            <button type="submit"  onclick=callUploadImage()>upload</button>
+            <input type="file" name="filesToUpload" id="file123" multiple> <br>
+            <button type="submit" id="projButton" onclick=callUploadImage()>upload</button>
             </div>
             <div class="col-md-8">
                 <progress value="0" max="100"  id="uploadeMulBar" style = "color: black" data-content="Click on upload" >0%</progress>
@@ -161,8 +149,14 @@ progress::-webkit-progress-value {
        
         <br>   <br>   <br>
               <div class="clearfix">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <button type="submit" class="Add" onclick=AddEventToFirebase()>Add</button>
+                  <div class="row">
+                      <div class="col-md-7">
+                      <button type="button" id="projButton1" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                      </div>
+                      <div class="col-md-5">
+                      <button type="submit" id="projButton1" class="Add" onclick=AddEventToFirebase()>Add</button>
+                      </div>
+                  </div>
 
               </div>
             </div>

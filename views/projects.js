@@ -341,13 +341,14 @@ function addrow() {
 
     }
     else {
-        window.alert("select performer")
+        // window.alert("select performer")
+        swal("Please select the performer to be added in the play!");
     }
 }
 
 
 function remove() {
-    var index, table = document.getElementById('dplist1');
+    var index, table = document.getElementById('perfProj1');
     for (var i = 1; i < table.rows.length; i++) {
         table.rows[i].cells[1].onclick = function () {
             index = this.parentElement.rowIndex;
