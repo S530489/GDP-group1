@@ -224,7 +224,7 @@ for(var i = 1; i < table.rows.length; i++)
                         location.reload();
                     });
               swal("The row has been deleted!", {
-                timer: 3000,
+                timer: 5000,
                 icon: "success",
               });
             } 
@@ -328,39 +328,39 @@ function getSizes(text)
                     break; 
         case "Sweater: crew neck":
                     res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
-                                        +performers[k].measurements.shirtSize;
+                                        +performers[k].general.shirtSize;
                     break;
         case "Sweater: v-neck":
                     res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
-                                        +performers[k].measurements.shirtSize;
+                                        +performers[k].general.shirtSize;
                     break;
         case "Sweater: cardigan":
                     res="Chest: "+performers[k].measurements.chest+"\n"+"Actual shirt size: "
-                                        +performers[k].measurements.shirtSize;
+                                        +performers[k].general.shirtSize;
                     break;
         case "Tshirt: Plain":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Tshirt: screen print":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Knit top: short sleeve":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Tank top":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Knit top: long sleeve":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Knit top: casual":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Knit top: dressy":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Thermal shirt":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Western shirt":
                     res="Neck: "+performers[k].measurements.neck+"\n"+"CB to wrist: "
@@ -486,10 +486,10 @@ function getSizes(text)
 
         // Under measurements
         case "Undershirt: Vneck Tshirt":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break; 
         case "Undershirt: Tank top":
-                    res="Actual shirt size: "+performers[k].measurements.shirtSize;
+                    res="Actual shirt size: "+performers[k].general.shirtSize;
                     break;
         case "Tights":
                     res="Waist: "+performers[k].measurements.waist+

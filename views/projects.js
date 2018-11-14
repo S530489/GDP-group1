@@ -171,25 +171,57 @@ function pageLoad() {
 
 function removeProject(key) {
 
-    var c = confirm("Are you sure you want to delete this project?");
+    // var c = confirm("Are you sure you want to delete this project?");
 
-    if(c === true)
-    {
-        for (i = 0; i < events.length; i++) {
-            if (events[i].Event_Id == key) {
-                removesStorage(i);
-                for (j = i; j < events.length - 1; j++) {
-                    events[j] = events[j + 1];
+    // if(c === true)
+    // {
+    //     for (i = 0; i < events.length; i++) {
+    //         if (events[i].Event_Id == key) {
+    //             removesStorage(i);
+    //             for (j = i; j < events.length - 1; j++) {
+    //                 events[j] = events[j + 1];
+    //             }
+    //             break;
+    //         }
+    //     }
+    //     events.pop();
+    // }
+    // console.log(events);
+    // firebase.database().ref().child("Events/").set(events).then(function () {
+    //     // location.reload();
+    // });
+
+    swal({
+        title: "Are you sure?",
+        text: "you want to delete this project! Once deleted, you will not be able to recover",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+
+      .then((willDelete) => {
+        if (willDelete) {
+            for (i = 0; i < events.length; i++) {
+                if (events[i].Event_Id == key) {
+                    removesStorage(i);
+                    for (j = i; j < events.length - 1; j++) {
+                        events[j] = events[j + 1];
+                    }
+                    break;
                 }
-                break;
             }
-        }
-        events.pop();
-    }
-    console.log(events);
-    firebase.database().ref().child("Events/").set(events).then(function () {
-        // location.reload();
-    });
+            events.pop();
+
+            console.log(events);
+            firebase.database().ref().child("Events/").set(events).then(function () {
+                // location.reload();
+            });
+            swal("The project has been deleted!", {
+            timer: 2000,
+            icon: "success",
+          });
+        } 
+      });
 
 }
 

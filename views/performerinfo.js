@@ -46,53 +46,75 @@ function CanRemove(rowkey) {
 }
 
 function remove(rowKey) {
-    console.log(rowKey);
+    // console.log(rowKey);
+    // if (CanRemove(rowKey)) {
+    //     var index, table = document.getElementById('myTable');
+    //     for (var i = 1; i < table.rows.length; i++) {
+    //         table.rows[i].cells[1].onclick = function () {
+    //             var c = confirm("Are you sure, you want to delete this row?");
+    //             if (c === true) {
+    //                 index = this.parentElement.rowIndex;
+    //                 console.log("index is " + index)
+    //                 table.deleteRow(index);
+    //                 console.log("rowkey is " + rowKey);
+    //                 console.log("performers are ");
+    //                 console.log(performers);
+    //                 for (j = parseInt(rowKey); j < performers.length - 1; j++) {
+    //                     performers[j] = performers[j + 1];
+    //                 }
+    //                 performers.pop();
+    //                 firebase.database().ref().child("performers/").set(performers).then(function () {
+    //                     location.reload();
+    //                 });
+    //             }
+    //         };
+    //     }
+    // }
+    // else{
+    //     window.alert("Cannot Delete: performer is acting in"+ event_names);
+    // }
+
     if (CanRemove(rowKey)) {
-        var index, table = document.getElementById('myTable');
-        for (var i = 1; i < table.rows.length; i++) {
-            table.rows[i].cells[1].onclick = function () {
-                var c = confirm("Are you sure, you want to delete this row?");
-                if (c === true) {
-                    index = this.parentElement.rowIndex;
-                    console.log("index is " + index)
-                    table.deleteRow(index);
-                    console.log("rowkey is " + rowKey);
-                    console.log("performers are ");
-                    console.log(performers);
-                    for (j = parseInt(rowKey); j < performers.length - 1; j++) {
-                        performers[j] = performers[j + 1];
-                    }
-                    performers.pop();
-                    firebase.database().ref().child("performers/").set(performers).then(function () {
-                        location.reload();
-                    });
+            var index, table = document.getElementById('myTable');
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].cells[1].onclick = function () {
+                    swal({
+                        title: "Are you sure?",
+                        text: "Once deleted, you will not be able to recover this performer!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                      })
+                      .then((willDelete) => {
+                        if (willDelete) {
 
-
-
-
+                            index = this.parentElement.rowIndex;
+                            console.log("index is " + index)
+                            table.deleteRow(index);
+                            console.log("rowkey is " + rowKey);
+                            console.log("performers are ");
+                            console.log(performers);
+                            for (j = parseInt(rowKey); j < performers.length - 1; j++) {
+                                performers[j] = performers[j + 1];
+                            }
+                            performers.pop();
+                            firebase.database().ref().child("performers/").set(performers).then(function () {
+                                location.reload();
+                            });
+                          swal("The selected performer has been deleted!", {
+                            icon: "success",
+                          });
+                        }
+                      });
+                    };
                 }
-            };
-        }
-    }
-    else{
-        window.alert("Cannot Delete: performer is acting in"+ event_names);
-    }
+            }
 
-    // document.getElementById("heading").innerHTML = "Performer's "+"Information";
-    // document.getElementById("First_name").innerHTML = "";
-    // document.getElementById("last_name").innerHTML = "";
-    // document.getElementById("age").innerHTML = "";
-    // document.getElementById("email").innerHTML = "";
-    // document.getElementById("pno1").innerHTML = "";
-    // document.getElementById("pno2").innerHTML = "";
-    // document.getElementById("add1").innerHTML = "";
-    // document.getElementById("add2").innerHTML = "";
-    // document.getElementById("add3").innerHTML = "";
-    // document.getElementById("cname").innerHTML = "";
-    // document.getElementById("allergy").innerHTML = "";
-    // document.getElementById("eye").innerHTML = "";
-    // document.getElementById("hair").innerHTML = "";
-    // document.getElementById("ware").innerHTML = "";
+            else
+            {
+                swal("Cannot delete!!", "Because the performer is acting in the palys: "+event_names);
+            }
+
 }
 
 function removeVisiblity() {
