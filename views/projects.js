@@ -155,6 +155,7 @@ function pageLoad() {
             para.style.color = "red";
             para.style.cursor = "pointer";
             para.style.fontWeight = "bold";
+            para.style.fontSize = "20px";
             $(col1).append(para);
 
             $(currentRow).append(col);
@@ -201,11 +202,31 @@ function removesStorage(index) {
     }
 }
 
+var cnt=0;
+
 function removeVisiblity() {
-    for (i = 1; i < countCross; i++) {
-        var pp = "cross" + i;
-        document.getElementById(pp).style.visibility = "visible";
+
+    cnt=parseInt(cnt)+parseInt(1);
+
+    if(cnt % 2 == 0)
+    {
+        for (i = 1; i < countCross; i++) {
+            var pp = "cross" + i;
+            document.getElementById(pp).style.visibility = "hidden";
     }
+    }
+    else
+    {
+        for (i = 1; i < countCross; i++) {
+            var pp = "cross" + i;
+            document.getElementById(pp).style.visibility = "visible";
+    }
+    }
+    if(cnt == 3 ||  cnt == 4)
+    {
+        cnt=1;
+    }
+
 }
 
 
