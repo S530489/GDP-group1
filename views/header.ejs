@@ -36,6 +36,13 @@
         if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
         return i;
     }
+
+    // For making the selected tab in the nav bar active
+
+    $(document).ready(function() {
+	var pathname = window.location.pathname;
+	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+})
     </script>
 </head>
 
@@ -60,8 +67,8 @@
     <div class="navbar-header">
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/addPerformer">Performer Information</a></li>
-      <li  ><a href="/designer">Designer Pull list</a></li>
+      <li><a href="/addPerformer">Performer Information</a></li>
+      <li><a href="/designer">Designer Pull list</a></li>
       <li><a href="/projects">Projects</a></li>
       <li><a href="/accesscode">Reset Access code</a></li>
       <li><a href="/contactpage">Contact</a></li>
@@ -73,4 +80,3 @@
         </div>
   </div>
 </nav>
-</body>
