@@ -13,6 +13,7 @@ var keyIndex;
 var MainImageURL;
 var MulImageURLS = [];
 var projectLocation;
+var cell2;
 
 document.getElementById("saveButton").hidden=true;
 document.getElementById("cancelButton").hidden=true;
@@ -143,9 +144,10 @@ $(document).ready(function(){
         for (i=selectedperformerIds.length-1;i>=0;i--){
             var newrow = table.insertRow(1);
             var cell1=newrow.insertCell(0);
-            var cell2=newrow.insertCell(1);
+            cell2=newrow.insertCell(1);
             cell1.innerHTML=selectedperformerNames[i];
             cell2.innerHTML = "x"+remove();
+            cell2.style.visibility="hidden";
         }
 
         console.log(projectLocation);
@@ -213,21 +215,22 @@ function addrow(){
     var table=document.getElementsByName("addHere")[0];
     var newrow = table.insertRow(1);
     var cell1=newrow.insertCell(0);
-    var cell2=newrow.insertCell(1);
+    cell2=newrow.insertCell(1);
     cell1.innerHTML=text;
     cell2.innerHTML = "x"+remove();
+    cell2.style.visibility="hidden";
     document.getElementById("perfoName").selectedIndex = "0";
     getPerformers();
 
 }
 else{
-    window.alert("select performer")
+    swal("Select performer to be added in the play");
 }
 }
 
 
 function remove(){
-    var index, table = document.getElementById('dplist1');
+    var index, table = document.getElementById('perfProj2');
 for(var i = 1; i < table.rows.length; i++)
 {
     table.rows[i].cells[1].onclick = function()
@@ -264,6 +267,23 @@ function editProject()
     document.getElementById("saveButton").hidden=false;
     document.getElementById("cancelButton").hidden=false;
 
+    var sav = document.getElementById("saveButton");
+    var can = document.getElementById("cancelButton");
+
+    sav.style.backgroundColor="black";
+    sav.style.color="white";
+    sav.style.width="100px";
+    sav.style.border="none";
+    sav.style.padding="5px";
+    sav.style.margin="5px";
+
+    can.style.backgroundColor="black";
+    can.style.color="white";
+    can.style.width="100px";
+    can.style.border="none";
+    can.style.padding="5px";
+    can.style.margin="5px";
+
     document.getElementById("EventName").contentEditable=true;
     document.getElementById("EventName").style.background = "#BC8F8F";
     document.getElementById("Eventdesc").contentEditable=true;
@@ -274,6 +294,12 @@ function editProject()
     document.getElementById("EventOrganisers").style.background = "#BC8F8F";
     document.getElementById("EventDate").contentEditable=true;
     document.getElementById("EventDate").style.background = "#BC8F8F";
+
+    cell2.style.visibility="visible";
+    var count = $('#perfProj2 tr').length;
+    for(var i=1;i<count;i++){
+    document.getElementById("perfProj2").rows[i].cells[1].style.visibility="visible";
+    }
     
 }
 
@@ -294,6 +320,12 @@ function cancelFunction()
     document.getElementById("EventOrganisers").style.background = "#F5F5DC";
     document.getElementById("EventDate").contentEditable=false;
     document.getElementById("EventDate").style.background = "#F5F5DC";
+
+    cell2.style.visibility="hidden";
+    var count = $('#perfProj2 tr').length;
+    for(var i=1;i<count;i++){
+    document.getElementById("perfProj2").rows[i].cells[1].style.visibility="hidden";
+    }
     
 }
 

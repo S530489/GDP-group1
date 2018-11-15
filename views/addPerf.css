@@ -12,6 +12,8 @@
     cursor: pointer;
 }
 
+
+
 body {
     font-family: "Comic Sans MS", cursive, sans-serif;
     color:black;
@@ -545,6 +547,7 @@ i {
     border: 1px solid white;
  }
 
+
  #projButton
  {
     border: none;
@@ -587,7 +590,7 @@ i {
     font-family: "Comic Sans MS", cursive, sans-serif;
   }
 
-#projName, #perfoName, #organisers, #designers, #desc, #location, #myDate
+#projName, #organisers, #designers, #desc, #location, #myDate
 {
     width: 300px;
     box-sizing: border-box;
@@ -602,3 +605,55 @@ i {
     padding: 10px;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
+#editProj
+{
+    background-color: black;
+    width: 100px;
+    border: none;
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+#perfProj2 td:nth-child(odd)
+{
+    border: 1px solid #f2f2f2;
+    text-align: left;
+}
+#perfProj2 td:nth-child(even)
+{
+    border: 1px solid #f2f2f2;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: red;
+    text-align: left;
+}
+#perfProj2 th:nth-child(odd) 
+{
+    border: 1px solid #f2f2f2;
+    padding: 0px;
+}
+#perfProj2 th:nth-child(even)
+ {
+    border: 1px solid #f2f2f2;
+ }
+
+ #perfoTab td:nth-child(odd)
+{
+    border: 1px solid #f2f2f2;
+    text-align: left;
+}
+#perfoTab td:nth-child(even)
+{
+    border: 1px solid #f2f2f2;
+    text-align: left;
+}
+

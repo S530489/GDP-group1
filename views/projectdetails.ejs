@@ -1,7 +1,4 @@
 <%include header%>
-
-<html lang="en">
-<head>
   
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -85,23 +82,20 @@
     <div class="col-sm-6">
         <div class="well">
             <label for="Performers"><b>Performers</b></label>
-            <table>
+            <table id="perfoTab">
             <tr>
-              <td style="border-right-color: azure; border-left-color: azure;border-bottom-color: azure;border-top-color: azure;">
+              <td>
                 <select name="names" id="perfoName">
                   <option value="performName">Performer Name</option>                  
                 </select>
               </td>
-              <td style="border-right-color: azure; border-bottom-color: azure;border-top-color: azure;"><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
+              <td><button id="ro" class="w3-button w3-xlarge w3-circle w3-teal" onclick="addrow()">+</button></td>
             </tr>
             </table>
             <br/>
-            <table name="addHere" id="dplist1" class="dplist1">         
-                <tr><th  align="center" style="border-right-color: azure;border-left-color: azure;border-top-color: azure;"></th> </tr>
+            <table name="addHere" id="perfProj2" class="perfProj2">         
+                <tr><th> </th></tr>
           </table>
-         <!-- <p>Performers</p>
-         <p class="text-left" id="perfNames" contentEditable=true>
-         </p> -->
         </div>
         </div>
         <button id="cancelButton" onclick="cancelFunction()" style="width:40%;height: 30px;">Cancel</button>
