@@ -171,7 +171,7 @@
                   <p id="hair"></p>
                 </td>
               </tr>
-              <tr>
+              <tr id="eyew">
                 <td>
                   <p><b>Eye ware</b></p>
                 </td>
@@ -203,6 +203,22 @@
                   <p id="shirtSize"></p>
                 </td>
               </tr>
+              <tr id="med">
+                <td>
+                  <p><b>Medications</b></p>
+                </td>
+                <td>
+                  <p id="medi"></p>
+                </td>
+              </tr>
+              <tr id="sugg">
+                <td>
+                  <p><b>Suggestions</b></p>
+                </td>
+                <td>
+                  <p id="sugges"></p>
+                </td>
+              </tr>
 
             </table>
             <button onclick="getMore()" id="getMore">View More &nbsp <i class="arrow down"></i></button>
@@ -230,17 +246,26 @@
     document.getElementById("ht").hidden = true;
     document.getElementById("wt").hidden = true;
     document.getElementById("shrt").hidden = true;
+    document.getElementById("med").hidden = true;
+    document.getElementById("sugg").hidden = true;
+    document.getElementById("eyew").hidden = true;
 
     function getMore() {
       document.getElementById("ht").hidden = false;
       document.getElementById("wt").hidden = false;
       document.getElementById("shrt").hidden = false;
+      document.getElementById("med").hidden = false;
+      document.getElementById("sugg").hidden = false;
+      document.getElementById("eyew").hidden = false;
     }
 
     function getLess() {
       document.getElementById("ht").hidden = true;
       document.getElementById("wt").hidden = true;
       document.getElementById("shrt").hidden = true;
+      document.getElementById("med").hidden = true;
+      document.getElementById("sugg").hidden = true;
+      document.getElementById("eyew").hidden = true;
     }
   </script>
 

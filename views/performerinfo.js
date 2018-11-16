@@ -174,6 +174,8 @@ function SubmitToFirebase() {
     var c_eye = document.getElementById("eye").innerHTML;
     var c_hair = document.getElementById("hair").innerHTML;
     var c_ware = document.getElementById("ware").innerHTML;
+    var sugg = document.getElementById("sugges").innerHTML;
+    var medi = document.getElementById("medi").innerHTML;
 
     // var PerfId = parseInt(global_key)+1;
     // window.alert(PerfId)
@@ -202,8 +204,8 @@ function SubmitToFirebase() {
         HairColor: c_hair,
         EyeColor: c_eye,
         EyeWare: c_ware,
-        Medications: "",
-        Suggestions: ""
+        Medications: medi,
+        Suggestions: sugg
 
     });
 }
@@ -280,6 +282,8 @@ function getInfo(key) {
         document.getElementById("height").innerHTML = obj.general.height;
         document.getElementById("weight").innerHTML = obj.general.weight;
         document.getElementById("shirtSize").innerHTML = obj.general.shirtSize;
+        document.getElementById("sugges").innerHTML = obj.general.Suggestions;
+        document.getElementById("medi").innerHTML = obj.general.Medications;
         disable();
 
         // appendColumn();
