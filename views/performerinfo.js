@@ -245,7 +245,7 @@ function edit() {
         document.getElementById('id01').style.display = 'none'
     }
     else {
-        alert("wrong password");
+        swal("wrong password");
     }
 
 }
@@ -391,7 +391,7 @@ function editMeasurements() {
         document.getElementById('id02').style.display = 'none'
     }
     else {
-        alert("wrong password");
+        swal("wrong password");
     }
 
 }

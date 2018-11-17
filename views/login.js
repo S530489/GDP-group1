@@ -1,11 +1,11 @@
 //document.getElementById('msgalert').style.display="none";
 function recoverPassword(){
  var resetEmail = document.getElementById("resetEmail").value;
- window.alert(resetEmail)
+ swal(resetEmail)
  firebase.auth().sendPasswordResetEmail(resetEmail).then(function() {
-   window.alert("Check inbox for email");
+   swal("Check inbox for email");
 }).catch(function(error) {
-  window.alert("something went wrong");
+  swal("something went wrong");
 });
 }
 
@@ -123,13 +123,13 @@ function logout(){
         var errorMessage = error.message;
         // ...
 
-        window.alert("error:"+errorMessage);
+        swal("error:"+errorMessage);
        
 
       }).then(function(){
         
         window.location.href = "http://127.0.0.1:8081/";
-        window.alert("User Successfully logged out")
+        swal("User Successfully logged out")
         logintest();    
       });
       
@@ -154,7 +154,7 @@ function initApp(){
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      window.alert(user);
+      swal(user);
      document.getElementById("loginMsg").innerHTML = 'User Logged IN';
      window.location.href = "http://127.0.0.1:8081/addPerformer"
 

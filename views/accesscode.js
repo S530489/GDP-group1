@@ -16,25 +16,30 @@ function resetAccessCode()
     
     if(exi!="" || newacc!="" || confacc!="")
     {
-    if(exi!=obj)
-    {
-        alert("access code doesnot match the existing one matches");
-    }
+        if(exi!=obj)
+        {
+            swal("Access code doesnot match the existing one matches");
+        }
 
-    if(newacc!=confacc)
-    {
-        alert("the new access code and confirm access code doesn't match");
-    }
-    }
+        if(newacc!=confacc)
+        {
+            swal("The new access code and confirm access code doesn't match");
+        }
 
-    if(exi == obj && newacc == confacc && newacc!="")
-    {
-        firebase.database().ref().child("AccessCode").set(newacc);
-        document.getElementById("existing").value="";
-        document.getElementById("newaccess").value="";
-        document.getElementById("confirmnew").value="";
+        if(exi == obj && newacc == confacc && newacc!="")
+        {
+            firebase.database().ref().child("AccessCode").set(newacc);
+            swal("Your access code has been changed");
+            document.getElementById("existing").value="";
+            document.getElementById("newaccess").value="";
+            document.getElementById("confirmnew").value="";
+        }
     }
-
+    
+    else
+    {
+        swal("Please fill all the fields");
+    }
 });
 
 }
