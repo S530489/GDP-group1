@@ -657,3 +657,10 @@ i {
     text-align: left;
 }
 
+#head, #neck, #armscye, #cbw, #chestrel, #chestexp, #waistexp, #waistrel, #hip, #fullGirth, #halfGirth, 
+#inseam_a, #inseam_f
+{
+    width: 300px;
+}
+
+

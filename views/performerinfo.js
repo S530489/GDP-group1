@@ -176,6 +176,16 @@ function SubmitToFirebase() {
     var c_ware = document.getElementById("ware").innerHTML;
     var sugg = document.getElementById("sugges").innerHTML;
     var medi = document.getElementById("medi").innerHTML;
+    var hand = document.getElementById("han").innerHTML;
+    var shoe = document.getElementById("shoeSize").innerHTML;
+    var dshoe = document.getElementById("dshoeSize").innerHTML;
+    var faci = document.getElementById("fhair").innerHTML;
+    var pier = document.getElementById("pier").innerHTML;
+    var opier = document.getElementById("opier").innerHTML;
+    var pant = document.getElementById("pants").innerHTML;
+    var ring = document.getElementById("ringS").innerHTML;
+    var tatt = document.getElementById("tat").innerHTML;
+    var tx = document.getElementById("txtu").innerHTML;
 
     // var PerfId = parseInt(global_key)+1;
     // window.alert(PerfId)
@@ -205,7 +215,18 @@ function SubmitToFirebase() {
         EyeColor: c_eye,
         EyeWare: c_ware,
         Medications: medi,
-        Suggestions: sugg
+        Suggestions: sugg,
+        hand: hand,
+        shoeSize: shoe,
+        danceshoeSize: dshoe,
+        facialhair: faci,
+        pierce: pier,
+        otherpiercing: opier,
+        pants: pant,
+        ring: ring,
+        tatto: tatt,
+        txtu: tx
+
 
     });
 }
@@ -284,6 +305,16 @@ function getInfo(key) {
         document.getElementById("shirtSize").innerHTML = obj.general.shirtSize;
         document.getElementById("sugges").innerHTML = obj.general.Suggestions;
         document.getElementById("medi").innerHTML = obj.general.Medications;
+        document.getElementById("han").innerHTML = obj.general.hand;
+        document.getElementById("shoeSize").innerHTML = obj.general.shoeSize;
+        document.getElementById("dshoeSize").innerHTML = obj.general.danceshoeSize;
+        document.getElementById("fhair").innerHTML = obj.general.facialhair;
+        document.getElementById("pier").innerHTML = obj.general.pierce;
+        document.getElementById("opier").innerHTML = obj.general.otherpiercing;
+        document.getElementById("pants").innerHTML = obj.general.pants;
+        document.getElementById("ringS").innerHTML = obj.general.ring;
+        document.getElementById("tat").innerHTML = obj.general.tatto;
+        document.getElementById("txtu").innerHTML = obj.general.txtu;
         disable();
 
         // appendColumn();
