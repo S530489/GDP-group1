@@ -63,10 +63,20 @@ progress::-webkit-progress-value {
   background: green;
 }
 
+#load{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:9999;
+    background:url("images/preld.gif") no-repeat center center white
+}
 </style>
 </head>
 
 <body>
+
+    <div id="load"></div>
+    <div id="contents">
   
   <div class="row">
     <div class="col-md-3"> 
@@ -182,6 +192,8 @@ progress::-webkit-progress-value {
 </div>
 
 <div class="container" id="EventHolder">
+
+</div>
 
 </div>
 
