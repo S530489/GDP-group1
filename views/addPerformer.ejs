@@ -78,9 +78,9 @@
           <div class="col-md-6">
             <p><b id="heading">Performer's Information</b></p>
           </div>
-          <div class="col-md-2"> <a id="measure" href="viewmeasurement">Measurements</a></div>
+          <div class="col-md-2" > <a id="measure" class="kill1" href="viewmeasurement">Measurements</a></div>
           <div class="col-md-1 w3-container">
-            <a id="edit" onclick="document.getElementById('id01').style.display='block'">Edit</a>
+            <a id="edit" class="kill1" onclick="document.getElementById('id01').style.display='block'">Edit</a>
 
             <div id="id01" class="w3-modal">
               <div class="w3-modal-content">
@@ -89,7 +89,7 @@
                   <h3>Access Code Verification</h3>
                   <br>
                   <label id="ver">Enter the access code to edit the measurments:</label><br>
-                  <input type="password" id="accesscode" name="accesscode" required /><br><br>
+                  <input type="password" id="accesscode" name="accesscode" placeholder="Enter the access code" required /><br><br>
                   <button id="veri" class="button" onclick="edit()">Verify</button>
                 </div>
               </div>

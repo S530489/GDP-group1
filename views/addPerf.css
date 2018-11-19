@@ -122,15 +122,18 @@ label {
     float: right;
 }
 
-a:hover
+.kill1 a
 {
-    color: white;
+        color: #FFFFFF;
+        text-decoration: none;
+        cursor: pointer;
 }
 
-a:link
+.kill1 a:hover
 {
-    color:white;
+    color: blue;
 }
+
 
 table, th, td {
     border: 1px solid black;
@@ -196,10 +199,6 @@ th, td {
     cursor: pointer;
     background-color: #ccc;
   }
-#edit:hover{
-cursor: pointer;
-background-color: #ccc;
-}
 
 .marquee {
 height: 50px;	

@@ -240,13 +240,20 @@ function Cancel() {
 
 function edit() {
 
-    if (document.getElementById("accesscode").value == "12345") {
+    var firebaseRef = firebase.database().ref().child("AccessCode");
+    firebaseRef.on('value', function(snapshot){
+        obj = snapshot.val();
+
+    if (document.getElementById("accesscode").value == obj) {
+        swal("You can edit the details of the performer");
         enable();
-        document.getElementById('id01').style.display = 'none'
+        document.getElementById('id01').style.display = 'none';
+        document.getElementById("accesscode").value="";
     }
     else {
         swal("wrong password");
     }
+});
 
 }
 
@@ -385,14 +392,22 @@ function noteditable_function() {
 }
 
 function editMeasurements() {
+    var firebaseRef = firebase.database().ref().child("AccessCode");
+    firebaseRef.on('value', function(snapshot){
+        obj = snapshot.val();
 
-    if (document.getElementById("accesscode").value == "12345") {
+    if (document.getElementById("accesscode").value == obj) {
+        swal("You can edit the performer measurements now");
         enableediting();
-        document.getElementById('id02').style.display = 'none'
+        document.getElementById('id02').style.display = 'none';
+        document.getElementById("accesscode").value = "";
     }
     else {
         swal("wrong password");
     }
+
+});
+
 
 }
 

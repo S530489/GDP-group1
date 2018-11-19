@@ -57,7 +57,7 @@ function addrow(){
 
 }
 else{
-    window.alert("select performer")
+    swal("select performer");
 }
 }
 
