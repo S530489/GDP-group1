@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Costume Designing</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="login.js"></script>
-  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-  <link rel="stylesheet" type="text/css" href="addPerf.css">
-  <script src="css/sweetalert.min.js"></script>
+    <title>Costume Designing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="login.js"></script>
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" type="text/css" href="addPerf.css">
+    <script src="css/sweetalert.min.js"></script>
 
- 
-  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster"> -->
-<style>
-.w3-lobster {
-    font-family: "Lobster", serif;
-}
-</style>
-<script>
-    function startTime() {
-        var today = new Date();
-        var h = today.getHours();
-        var m = today.getMinutes();
-        var s = today.getSeconds();
-        m = checkTime(m);
-        s = checkTime(s);
-        document.getElementById('txt').innerHTML =
-        h + ":" + m + ":" + s;
-        var t = setTimeout(startTime, 500);
-    }
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
 
-    // For making the selected tab in the nav bar active
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster"> -->
+    <style>
+        .w3-lobster {
+            font-family: "Lobster", serif;
+        }
+    </style>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            document.getElementById('clocktxt').innerHTML =
+                h + ":" + m + ":" + s;
+            var t = setTimeout(startTime, 500);
+        }
+        function checkTime(i) {
+            if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+            return i;
+        }
 
-    $(document).ready(function() {
-	var pathname = window.location.pathname;
-	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
-})
+        // For making the selected tab in the nav bar active
+
+        $(document).ready(function () {
+            console.log("time"+startTime());
+            var pathname = window.location.pathname;
+            $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
+        })
     </script>
 </head>
 
 <body onload="startTime()">
-        <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-7">
-        <div class="w3-container w3-lobster">
-            <p  style = "font-family:cursive,Verdana,sans-serif;font-style:italic;margin-bottom: 0px; margin-top: 0px;font-size:48px">&nbsp Stephi's Designing..</p>
-            <!-- <img src="images/jorandby.jpg" alt="Smiley face" height="80" width="70"> -->
+    <div class="container-fluid" onmouseover="startTime()">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-7">
+                <div class="w3-container w3-lobster">
+                    <p style="font-family:cursive,Verdana,sans-serif;font-style:italic;margin-bottom: 0px; margin-top: 0px;font-size:48px">&nbsp
+                        Stephi's Designing..</p>
+                    <!-- <img src="images/jorandby.jpg" alt="Smiley face" height="80" width="70"> -->
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div style=" font-size: 30px;font-family:Times New Roman, Times, serif;text-align: center;margin-bottom: 10px; margin-top: 14px;"
+                    id="clocktxt"></div>
+            </div>
         </div>
-      </div>
-      <div class="col-md-2">
-          <div style = " font-size: 30px;font-family:Times New Roman, Times, serif;text-align: center;margin-bottom: 10px; margin-top: 14px;" id="txt"></div>   
-      </div>
-  </div>
-</div>
-
-<nav class="navbar navbar-inverse" onmouseover="startTime()">
-  <div class="container-fluid">
-    <div class="navbar-header">
     </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/addPerformer">Performer Information</a></li>
-      <li><a href="/designer">Designer Pull list</a></li>
-      <li><a href="/projects">Projects</a></li>
-      <li><a href="/accesscode">Reset Access code</a></li>
-      <li><a href="/contactpage">Contact</a></li>
-      <li><a href="/createaccount">Create New</a></li>
-    </ul>
-    <div class="pull-right">
-        <!-- <button class="btn btn-danger navbar-btn"><a href="/logout" style="color:white;">Logout</a></button> -->
-        <button onclick="location.href = '/logout';" class="btn btn-danger navbar-btn">Logout</button>
+
+    <nav class="navbar navbar-inverse" onmouseover="startTime()">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/addPerformer">Performer Information</a></li>
+                <li><a href="/designer">Designer Pull list</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="/accesscode">Reset Access code</a></li>
+                <li><a href="/contactpage">Contact</a></li>
+                <li><a href="/createaccount">Create New</a></li>
+            </ul>
+            <div class="pull-right">
+                <!-- <button class="btn btn-danger navbar-btn"><a href="/logout" style="color:white;">Logout</a></button> -->
+                <button onclick="location.href = '/logout';" class="btn btn-danger navbar-btn">Logout</button>
+            </div>
         </div>
-  </div>
-</nav>
+    </nav>
