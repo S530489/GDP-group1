@@ -12,7 +12,7 @@ function genPDF(){
             doc.setTextColor(0, 128, 128);
             doc.text( 'SHOP PULL LIST',90,28,null,null);
     
-            doc.addImage(img, 'JPEG', 20,38,);
+            doc.addImage(img, 'JPEG', 17,38);
             doc.save("ShopPullList.pdf");
         }
     });
