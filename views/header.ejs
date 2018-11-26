@@ -84,7 +84,9 @@
                 <li><a href="/projects">Projects</a></li>
                
                 <li><a href="/contactpage">Contact</a></li>
-                
+                <%if (verifyUser(currentUser)) { %>
+                    <li><a href="/accesscode">Reset Access code</a></li>
+                    <% } %>
                 <%if (verifyUser(currentUser)) { %>
                     <li><a href="/createaccount">Create New</a></li>
                     <% } %>
