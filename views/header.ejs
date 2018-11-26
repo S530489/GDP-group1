@@ -37,18 +37,26 @@
             if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
             return i;
         }
-
+        
+        
         // For making the selected tab in the nav bar active
 
         $(document).ready(function () {
-            console.log("time"+startTime());
+
             var pathname = window.location.pathname;
+            
             $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
         })
     </script>
 </head>
 
 <body onload="startTime()">
+    <% var AdminUID = "BjBR6ZyTTzL4nNFQe8YapGspmqv2" %>
+    <% function verifyUser(currentUser){
+        return AdminUID == ""+currentUser.uid
+    }%>
+        
+       
     <div class="container-fluid" onmouseover="startTime()">
         <div class="row">
             <div class="col-md-3"></div>
@@ -74,9 +82,12 @@
                 <li><a href="/addPerformer">Performer Information</a></li>
                 <li><a href="/designer">Designer Pull list</a></li>
                 <li><a href="/projects">Projects</a></li>
-                <li><a href="/accesscode">Reset Access code</a></li>
+               
                 <li><a href="/contactpage">Contact</a></li>
-                <li><a href="/createaccount">Create New</a></li>
+                
+                <%if (verifyUser(currentUser)) { %>
+                    <li><a href="/createaccount">Create New</a></li>
+                    <% } %>
             </ul>
             <div class="pull-right">
                 <!-- <button class="btn btn-danger navbar-btn"><a href="/logout" style="color:white;">Logout</a></button> -->

@@ -1,17 +1,18 @@
 const express = require('express');
 const router = express.Router();
 var firebase = require("firebase");
-
+var loggedInUser;
 
 
 router.get("/addPerformer", function (req, res) {
   console.log("user is " + firebase.auth().currentUser);
   var user = firebase.auth().currentUser;
   if (user) {
+    console.log(user.email);
     var firebaseRef = firebase.database().ref().child("performers");
 
     firebaseRef.once('value', function (snapshot) {
-      res.render('addPerformer.ejs', { performers: snapshot.val() });
+      res.render('addPerformer.ejs', { performers: snapshot.val(), currentUser : loggedInUser });
     })
     user = null;
   }
@@ -43,7 +44,7 @@ router.get("/designer", function (req, res) {
       else {
         shoplist = snapshot.val().ShopPullList;
       }
-      res.render("designerPullList.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers, ShopPullList: shoplist });
+      res.render("designerPullList.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers, ShopPullList: shoplist, currentUser : loggedInUser });
     })
 
     user = null;
@@ -63,7 +64,7 @@ router.get("/designer", function (req, res) {
 router.get("/performer", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("measurementsInfo.ejs");
+    res.render("measurementsInfo.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -79,7 +80,7 @@ router.get("/performer", function (req, res) {
 router.get("/accesscode", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("accesscode.ejs");
+    res.render("accesscode.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -96,7 +97,7 @@ router.get("/viewmeasurement", function (req, res) {
 
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("viewmeasurement.ejs");
+    res.render("viewmeasurement.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -111,7 +112,7 @@ router.get("/viewmeasurement", function (req, res) {
 router.get("/registration", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("registration.ejs");
+    res.render("registration.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -129,7 +130,7 @@ router.get("/createaccount", function (req, res) {
 
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("createaccount.ejs");
+    res.render("createaccount.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -146,7 +147,7 @@ router.all("/projectdetails", function (req, res) {
 
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("projectdetails");
+    res.render("projectdetails",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -162,7 +163,7 @@ router.all("/projectdetails/:id", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
     console.log(req.params.id)
-    res.render("projectdetails");
+    res.render("projectdetails",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -179,7 +180,7 @@ router.all("/projectdetails/:id", function (req, res) {
 router.get("/contact", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render('contact.ejs');
+    res.render('contact.ejs',{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -195,7 +196,7 @@ router.get("/contact", function (req, res) {
 router.get("/contactPage", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render('contactPage.ejs');
+    res.render('contactPage.ejs',{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -211,12 +212,12 @@ router.get("/contactPage", function (req, res) {
 router.all("/forgotpassword", function (req, res) {
 
 
-  res.render('forgotpassword.ejs');
+  res.render('forgotpassword.ejs',{currentUser : loggedInUser});
 });
 router.get("/sendform", function (req, res) {
   var user = firebase.auth().currentUser;
   if (user) {
-    res.render("sendform.ejs");
+    res.render("sendform.ejs",{currentUser : loggedInUser});
     user = null;
   }
   else {
@@ -240,7 +241,7 @@ router.get("/projects", function (req, res) {
       // console.log(snapshot.val().Events);
       // console.log("testing");
       // console.log(snapshot.val().performers);
-      res.render("projects.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers });
+      res.render("projects.ejs", { Events: snapshot.val().Events, performers: snapshot.val().performers , currentUser : loggedInUser});
     })
     user = null;
   }
@@ -265,12 +266,13 @@ router.post("/performersInfo", function (req, res) {
     console.log("user is "+user);
     if (user) {
       if (count == 0) {
-        console.log("logged in");
+        console.log("logged in"+ user.uid);
         count = 1;
         var firebaseRef = firebase.database().ref().child("performers");
 
         firebaseRef.once('value', function (snapshot) {
-          res.render('addPerformer.ejs', { performers: snapshot.val() });
+          loggedInUser = user;
+          res.render('addPerformer.ejs', { performers: snapshot.val(), currentUser : loggedInUser});
         });
         console.log(count);
       }
