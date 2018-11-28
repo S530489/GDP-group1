@@ -68,7 +68,22 @@
        <p id="Eventdesc" contentEditable=false></p>
       </div>
 
-      <button id="editProj" onclick="editProject()">Edit</button>
+      <!-- <button id="editProj" onclick="editProject()">Edit</button> -->
+
+      <button onclick="document.getElementById('id01').style.display='block'" id="editProj1">Edit</button>
+
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+          <!-- <div class="w3-container"> -->
+            <span id="nt" onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span><br>
+            <h3>Access Code Verification</h3>
+            <br>
+            <p>Enter the access code to edit the project details:</p>
+            <input type="password" id="projaccess" placeholder="Enter access code"><br>
+            <button id="editProj" onclick="editProject()" style="float: right;"> Verify </button><br><br>
+          <!-- </div> -->
+        </div>
+      </div>
 
       </div>
       <br><br>
