@@ -40,20 +40,19 @@ input[type=text] {
 }
 
 input[type=email] {
-    width: 300px;
-    box-sizing: border-box;
-    border: 2px solid black;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    color: black;
-    background-position: left top;
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: white;
     font-family: Verdana, sans-serif;
-    margin-left: 20px;
-}
+  }
+  input[type=email]:focus{
+    background-color: white;
+    outline: none;
+    font-family: Verdana, sans-serif;
+  }
 
 input[type=submit] {
     width: 100px;
