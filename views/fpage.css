@@ -4,7 +4,7 @@
 
 p, .text-center
 {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     color: black;
 }
 
@@ -18,7 +18,7 @@ input[type=button] {
     color: white;
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
     padding-left: 10px;
     padding-top: 10px;

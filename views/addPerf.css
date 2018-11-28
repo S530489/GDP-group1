@@ -2,7 +2,7 @@
     background-color: black;
     border: none;
     color: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     padding: 12px 30px;
     text-align: center;
     text-decoration: none;
@@ -15,7 +15,7 @@
 
 
 body {
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     color:black;
     font-size: 16px;
     overflow-x: hidden;
@@ -33,7 +33,7 @@ input[type=text] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
     margin-bottom: 15px;
     margin-top: 10px;
@@ -51,7 +51,7 @@ input[type=email] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
 }
 
@@ -65,7 +65,7 @@ input[type=submit] {
     color: white;
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
     padding-left: 10px;
     padding-top: 10px;
@@ -88,7 +88,7 @@ input[type=password] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
 
 }
@@ -108,7 +108,7 @@ input[type=password] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
 }
 
@@ -190,7 +190,7 @@ th, td {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin-left: 20px;
     float: right;
 } 
@@ -439,7 +439,7 @@ i {
     background-color: black;
     border: none;
     color: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     padding: 12px 30px;
     text-align: center;
     text-decoration: none;
@@ -465,12 +465,12 @@ i {
     display: inline-block;
     border: none;
     background: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   input[type=text]:focus, input[type=password]:focus {
     background-color: white;
     outline: none;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   .btn-group button {
     background-color:black; 
@@ -479,7 +479,7 @@ i {
     padding: 10px 24px; 
     cursor: pointer;
     float: left; 
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   .btn-lgn{
     background-color:black; 
@@ -488,21 +488,21 @@ i {
     padding: 10px 24px; 
     cursor: pointer;
     float: right; 
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   .btn-group:after {
     content: "";
     clear: both;
     display: table;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   .btn-group button:not(:last-child) {
     border-right: none; 
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
   .btn-group button:hover {
     background-color:rgb(99, 96, 96);
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
 
   #imageZoom {
@@ -577,7 +577,7 @@ i {
     cursor: pointer;
     width: 60%;
     font-size: 15px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
  }
 
  #projButton1
@@ -591,7 +591,7 @@ i {
     cursor: pointer;
     width: 250px;
     font-size: 15px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     margin: 10px;
  }
 
@@ -605,7 +605,7 @@ i {
     cursor: pointer;
     width: 80%;
     font-size: 16px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
   }
 
 #projName, #organisers, #designers, #desc, #location, #myDate
@@ -621,7 +621,7 @@ i {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 10px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
 }
 
 #editProj
@@ -630,7 +630,7 @@ i {
     width: 100px;
     border: none;
     color: white;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-family: Verdana, sans-serif;
     text-align: center;
     text-decoration: none;
     display: inline-block;
