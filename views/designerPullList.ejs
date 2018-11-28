@@ -8,6 +8,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
 <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <script src="css/sweetalert.min.js"></script>
+<script src="css/w3.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -248,9 +249,9 @@
 <table name="addHere" id="dplist1" class="dplist1">       
         <tr> 
             <th align="center">Pulled</th>     
-            <th align="center">Production/Play title</th>  
-            <th align="center">Performer Name</th> 
-            <th>Character Name</th>
+            <th align="center" onclick="w3.sortHTML('#dplist1', '.item', 'td:nth-child(2)')" style="cursor:pointer">Production/Play title <i style="border: #fff; float:right;" class="fa fa-fw fa-sort"></i></th>  
+            <th align="center" onclick="w3.sortHTML('#dplist1', '.item', 'td:nth-child(3)')" style="cursor:pointer">Performer Name <i style="border: #fff; float:right;" class="fa fa-fw fa-sort"></i></th> 
+            <th onclick="w3.sortHTML('#dplist1', '.item', 'td:nth-child(4)')" style="cursor:pointer">Character Name <i style="border: #fff; float:right;" class="fa fa-fw fa-sort"></i></th>
             <th>Clothing item</th>
             <th>Color</th>
             <th>Size</th> 
@@ -267,7 +268,7 @@
                                       colorSelected = ShopPullList[key].color_selected,
                                       size = ShopPullList[key].Size,
                                       notes = ShopPullList[key].Add_Notes %>
-          <tr>
+          <tr class="item">
                 <td> </td>
                 <td>
                         <%= playTitle  %>
