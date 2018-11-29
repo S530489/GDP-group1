@@ -297,8 +297,8 @@ function getInfo(key) {
         document.getElementById("last_name").innerHTML = obj.general.Name.Last_Name;
         document.getElementById("age").innerHTML = obj.general.Age;
         document.getElementById("email").innerHTML = obj.general.Email;
-        document.getElementById("pno1").innerHTML = obj.general.Phone[0] + ", ";
-        document.getElementById("pno2").innerHTML = obj.general.Phone[1];
+        document.getElementById("pno1").innerHTML = obj.general.Phone;
+        // document.getElementById("pno2").innerHTML = obj.general.Phone[1];
         document.getElementById("add1").innerHTML = obj.general.Address.Address_line1;
         document.getElementById("add2").innerHTML = obj.general.Address.Address_line2;
         document.getElementById("add3").innerHTML = obj.general.Address.Country;
