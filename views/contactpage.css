@@ -40,9 +40,6 @@ input[type=submit] {
     cursor: pointer;
     float: left;
 }
-.p{
- 
-}
 input[type=submit]:hover {
     background-color: #45a049;
 }

@@ -111,18 +111,18 @@ function addrow()
     var size=document.getElementById("size").innerHTML;
     var notes=document.getElementById("notes").innerHTML;
     
-     c=$('#dplist1 tr').length;
-    var table=document.getElementsByName("addHere")[0];
-    var newrow = table.insertRow(c);
-    var cell1=newrow.insertCell(0);
-    var cell2=newrow.insertCell(1);
-    var cell3=newrow.insertCell(2);
-    var cell4=newrow.insertCell(3);
-    var cell5=newrow.insertCell(4);
-    var cell6=newrow.insertCell(5);
-    var cell7=newrow.insertCell(6);
-    var cell8=newrow.insertCell(7);
-    cell9=newrow.insertCell(8);
+    //  c=$('#dplist1 tr').length;
+    // var table=document.getElementsByName("addHere")[0];
+    // var newrow = table.insertRow(c);
+    // var cell1=newrow.insertCell(0);
+    // var cell2=newrow.insertCell(1);
+    // var cell3=newrow.insertCell(2);
+    // var cell4=newrow.insertCell(3);
+    // var cell5=newrow.insertCell(4);
+    // var cell6=newrow.insertCell(5);
+    // var cell7=newrow.insertCell(6);
+    // var cell8=newrow.insertCell(7);
+    // cell9=newrow.insertCell(8);
 
 
     if(title==""||show==""||clothing==""||charname==""||size==""||notes=="")
@@ -132,6 +132,19 @@ function addrow()
     }
 
     else{
+        c=$('#dplist1 tr').length;
+        var table=document.getElementsByName("addHere")[0];
+        var newrow = table.insertRow(c);
+        var cell1=newrow.insertCell(0);
+        var cell2=newrow.insertCell(1);
+        var cell3=newrow.insertCell(2);
+        var cell4=newrow.insertCell(3);
+        var cell5=newrow.insertCell(4);
+        var cell6=newrow.insertCell(5);
+        var cell7=newrow.insertCell(6);
+        var cell8=newrow.insertCell(7);
+        cell9=newrow.insertCell(8);
+
         cell1.innerHTML=" ";
         cell2.innerHTML=title;
         cell3.innerHTML=show;

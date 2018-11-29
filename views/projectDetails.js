@@ -262,8 +262,25 @@ for(var i = 1; i < table.rows.length; i++)
 
 function editProject()
 {
+    var firebaseRef = firebase.database().ref().child("AccessCode");
+    firebaseRef.on('value', function(snapshot){
+        obj = snapshot.val();
 
-    document.getElementById("editProj").hidden=true;
+    if (document.getElementById("projaccess").value == obj) {
+        swal("You can edit the details of the performer");
+        enableEdit();
+        document.getElementById('id01').style.display = 'none';
+        document.getElementById("projaccess").value="";
+    }
+    else {
+        swal("wrong password");
+    }
+});
+}
+
+function enableEdit(){
+
+    document.getElementById("editProj1").hidden=true;
     document.getElementById("saveButton").hidden=false;
     document.getElementById("cancelButton").hidden=false;
 
@@ -306,7 +323,7 @@ function editProject()
 function cancelFunction()
 {
 
-    document.getElementById("editProj").hidden=false;
+    document.getElementById("editProj1").hidden=false;
     document.getElementById("saveButton").hidden=true;
     document.getElementById("cancelButton").hidden=true;
 

@@ -321,7 +321,7 @@ function getInfo(key) {
         document.getElementById("pants").innerHTML = obj.general.pants;
         document.getElementById("ringS").innerHTML = obj.general.ring;
         document.getElementById("tat").innerHTML = obj.general.tatto;
-        document.getElementById("txtu").innerHTML = obj.general.txtu;
+        document.getElementById("txtu").innerHTML = obj.general.textu;
         disable();
 
         // appendColumn();
