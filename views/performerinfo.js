@@ -1,9 +1,10 @@
-var all_ids = ["heading", "First_name", "last_name", "age", "email", "pno1", "pno2", "add1", "add2", "add3", "cname", "allergy", "eye", "hair", "ware"];
+var all_ids = ["heading", "First_name", "last_name", "age", "email", "pno1", "pno2", "add1", "add2", "add3", "cname", "allergy", "eye", "hair", "ware","sugges", "medi", "han", "shoeSize", "dshoeSize", "fhair", "pier", "opier", "pants", "ringS", "tat", "txtu","height", "weight","shirtSize","han",];
 var global_key;
 var cnt = 0;
 var performers = [];
 var events = [];
 var event_names = [];
+var image_url;
 
 $(document).ready(function () {
 
@@ -186,6 +187,12 @@ function SubmitToFirebase() {
     var ring = document.getElementById("ringS").innerHTML;
     var tatt = document.getElementById("tat").innerHTML;
     var tx = document.getElementById("txtu").innerHTML;
+    var hght = document.getElementById("height").innerHTML;
+    var ha = document.getElementById("han").innerHTML;
+    var wght = document.getElementById("weight").innerHTML;
+    var shirttsize = document.getElementById("shirtSize").innerHTML;
+
+    
 
     // var PerfId = parseInt(global_key)+1;
     // window.alert(PerfId)
@@ -225,7 +232,15 @@ function SubmitToFirebase() {
         pants: pant,
         ring: ring,
         tatto: tatt,
-        txtu: tx
+        textu: tx,
+        ProfileImageUrl: image_url,
+        height:hght,
+        weight:wght,
+        shirtSize:shirttsize,
+        hand:ha
+
+
+
 
 
     });
@@ -290,7 +305,8 @@ function getInfo(key) {
         //console.log(snapshot.val());
         var obj = snapshot.val();
         console.log(obj);
-
+        image_url = obj.general.ProfileImageUrl;
+        console.log(obj.general.ProfileImageUrl)
         document.getElementById("profileImage").src = obj.general.ProfileImageUrl;
         document.getElementById("heading").innerHTML = obj.general.Name.First_Name + "'s " + "Information";
         document.getElementById("First_name").innerHTML = obj.general.Name.First_Name;
