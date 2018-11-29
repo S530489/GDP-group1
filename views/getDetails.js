@@ -66,9 +66,9 @@ function uploadTitleImage(){
 
 
 // Submit form
-function submitForm(e){
-    e.preventDefault();
-    // console.log("test");
+function submitForm(){
+   
+    console.log("test");
 
     var namef = getInputVal('namef');
     var namel = getInputVal('namel');
@@ -155,6 +155,7 @@ function getRadiochecked(id)
 function saveMessage(namef,namel, character, textu,addr1,addr2,country, phone,email,age,hand,
                 weight,height,eyeware,haircolor,facialhair,pierce,otherpiercing,
             tatto,shoeSize,danceshoeSize,shirtsize,pants,ring,bsize,allergy,eyecolor,medi,sugg){
+    
     var perfRef = firebase.database().ref().child("performers").child(newKey)
     perfRef.set(
        
@@ -204,6 +205,7 @@ function saveMessage(namef,namel, character, textu,addr1,addr2,country, phone,em
     perCount.set(newKey);
     document.getElementById('contactForm').reset();
     document.getElementById("uploadeBar").value = 0;
+    swal("your detials succesfully sent to designer")
 });
  }
 
