@@ -14,6 +14,7 @@ var MainImageURL;
 var MulImageURLS = [];
 var projectLocation;
 var cell2;
+var isEditEnabled =false;
 
 document.getElementById("saveButton").hidden=true;
 document.getElementById("cancelButton").hidden=true;
@@ -195,37 +196,41 @@ function getPerformers(){
 }
 
 
-function addrow(){
-    
-    var s = document.getElementsByName("names")[0];
-    if (s.selectedIndex > 0){
-    var text = s.options[s.selectedIndex].text;
-    console.log(s.selectedIndex)
-    selectedperformerIds.unshift(performerIds[s.selectedIndex-1]);
-    selectedperformerNames.unshift(performersNames[s.selectedIndex-1]);
+function addrow() {
+    if (isEditEnabled == true) {
+        var s = document.getElementsByName("names")[0];
+        if (s.selectedIndex > 0) {
+            var text = s.options[s.selectedIndex].text;
+            console.log(s.selectedIndex)
+            selectedperformerIds.unshift(performerIds[s.selectedIndex - 1]);
+            selectedperformerNames.unshift(performersNames[s.selectedIndex - 1]);
 
-    for(i=s.selectedIndex-1;i<performerIds.length-1;i++){
-        performerIds[i] = performerIds[i+1];
-        performersNames[i] = performersNames[i+1];
+            for (i = s.selectedIndex - 1; i < performerIds.length - 1; i++) {
+                performerIds[i] = performerIds[i + 1];
+                performersNames[i] = performersNames[i + 1];
+            }
+            performerIds.pop();
+            performersNames.pop();
+            // console.log(selectedperformerIds);
+            // console.log(selectedperformerNames);
+            var table = document.getElementsByName("addHere")[0];
+            var newrow = table.insertRow(1);
+            var cell1 = newrow.insertCell(0);
+            cell2 = newrow.insertCell(1);
+            cell1.innerHTML = text;
+            cell2.innerHTML = "x" + remove();
+            cell2.style.visibility = "visible";
+            document.getElementById("perfoName").selectedIndex = "0";
+            getPerformers();
+        }
+
+        else {
+            swal("Select performer to be added in the play");
+        }
     }
-    performerIds.pop();
-    performersNames.pop();
-    // console.log(selectedperformerIds);
-    // console.log(selectedperformerNames);
-    var table=document.getElementsByName("addHere")[0];
-    var newrow = table.insertRow(1);
-    var cell1=newrow.insertCell(0);
-    cell2=newrow.insertCell(1);
-    cell1.innerHTML=text;
-    cell2.innerHTML = "x"+remove();
-    cell2.style.visibility="hidden";
-    document.getElementById("perfoName").selectedIndex = "0";
-    getPerformers();
-
-}
-else{
-    swal("Select performer to be added in the play");
-}
+    else{
+        swal("No access to add performer");
+    }
 }
 
 
@@ -271,6 +276,7 @@ function editProject()
         enableEdit();
         document.getElementById('id01').style.display = 'none';
         document.getElementById("projaccess").value="";
+        isEditEnabled = true;
     }
     else {
         swal("wrong password");
@@ -280,6 +286,7 @@ function editProject()
 
 function enableEdit(){
 
+    
     document.getElementById("editProj1").hidden=true;
     document.getElementById("saveButton").hidden=false;
     document.getElementById("cancelButton").hidden=false;
