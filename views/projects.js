@@ -183,7 +183,7 @@ function pageLoad() {
 }
 
 function removeProject(key) {
-
+    console.log(key);
     // var c = confirm("Are you sure you want to delete this project?");
 
     // if(c === true)
@@ -216,7 +216,7 @@ function removeProject(key) {
         if (willDelete) {
             for (i = 0; i < events.length; i++) {
                 if (events[i].Event_Id == key) {
-                    removesStorage(i);
+                    //removesStorage(i);
                     for (j = i; j < events.length - 1; j++) {
                         events[j] = events[j + 1];
                     }
