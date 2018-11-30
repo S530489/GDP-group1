@@ -10,13 +10,13 @@ function recoverPassword() {
 }
 $(document).ready(function () {
 
-  document.getElementById("td1").style.display = "none";
+  document.getElementById("td143").style.display = "none";
 
 })
 
 function logintest() {
   document.getElementById("msgLogin").innerHTML = " Success!!!  User Logged Out";
-  document.getElementById("td1").innerHTML = "&times;";
+  document.getElementById("td143").innerHTML = "&times;";
   document.getElementById('msgAlertLogin').style.backgroundColor = "LightGreen ";
   document.getElementById('msgAlertLogin').style.display = "block";
 
@@ -50,7 +50,7 @@ function createAccount() {
     document.getElementById("msg").innerHTML = " WARNING!!!    Invalid Email Format"
     document.getElementById('msgalert').style.backgroundColor = "Tomato ";
     document.getElementById('msgalert').style.display = "block";
-    document.getElementById("td1").style.display = "block";
+    document.getElementById("td143").style.display = "block";
     document.getElementById("new_emailid").value = "";
     document.getElementById("new_passw").value = "";
     document.getElementById("new_repeatpassw").value = "";
@@ -60,7 +60,7 @@ function createAccount() {
     document.getElementById("msg").innerHTML = " WARNING!!!    Password Missmatch Enter Again"
     document.getElementById('msgalert').style.backgroundColor = "Tomato  ";
     document.getElementById('msgalert').style.display = "block";
-    document.getElementById("td1").style.display = "block";
+    document.getElementById("td143").style.display = "block";
     document.getElementById("new_emailid").value = "";
     document.getElementById("new_passw").value = "";
     document.getElementById("new_repeatpassw").value = "";
@@ -77,7 +77,7 @@ function createAccount() {
       document.getElementById("msg").innerHTML = " Success!!!  User has been created"
       document.getElementById('msgalert').style.backgroundColor = "LightGreen";
       document.getElementById('msgalert').style.display = "block";
-      document.getElementById("td1").style.display = "block";
+      document.getElementById("td143").style.display = "block";
       document.getElementById("new_emailid").value = "";
       document.getElementById("new_passw").value = "";
       document.getElementById("new_repeatpassw").value = "";
