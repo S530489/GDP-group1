@@ -1,23 +1,25 @@
 <% include header %>
 <style>
-#td1:hover{
+  #td1:hover{
     cursor: pointer;
     background-color: #ccc;
   }
 </style>
+
 <body>
-    <div class="container">
-      <div id="msgalert" >
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-5"><p><strong id="msg"></strong></p></div>
-            <div class="col-md-2"><a id="td1" onclick="closeAlert()">&times;</a></div>
-            <div class="col-md-3"></div>
-       </div>
+  <div class="container">
+    <div id="msgalert">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-5">
+          <p><strong id="msg"></strong></p>
+        </div>
+        <div class="col-md-2"><a id="td1" onclick="closeAlert()">&times;</a></div>
+        <div class="col-md-3"></div>
       </div>
     </div>
-    
-<form id="createUser">
+  </div>
+
     <div class="container">
 
       <h1>Create an account</h1>
@@ -25,39 +27,38 @@
       <br>
       <label for="email"><b>Email</b></label>
       <input type="text" id="new_emailid" placeholder="Enter Email" name="email" required><br>
-  
+
       <label for="psw"><b>Password</b></label>
       <input type="password" id="new_passw" placeholder="Enter Password" name="psw" required><br>
-  
+
       <label for="psw-repeat"><b>Repeat Password</b></label>
       <input type="password" id="new_repeatpassw" placeholder="Repeat Password" name="psw-repeat" required><br>
-    
-  </form>
+
   <div class="row">
-      <!-- <div class="col-md-1"></div> -->
-      <div class="col-md-5">
-        <button  class="btn-lgn" style="width:70%"   onclick="createAccount()">Create account</button></div>
-        <div class="col-md-5">
-        <button class="btn-lgn" style="width:50%"  onclick="cancelFunction()">Cancel</button>
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-5">
+      <button class="btn-lgn" style="width:70%" onclick="createAccount()">Create account</button></div>
+    <div class="col-md-5">
+      <!-- <button class="btn-lgn" style="width:50%" onclick="cancelFunction()">Cancel</button> -->
     </div>
     <div class="col-md-1"></div>
- </div>
-</div>
+  </div>
+  
 
-  
-<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
-    authDomain: "costume-designing-system.firebaseapp.com",
-    databaseURL: "https://costume-designing-system.firebaseio.com",
-    projectId: "costume-designing-system",
-    storageBucket: "costume-designing-system.appspot.com",
-    messagingSenderId: "923569045734"
-  };
-  firebase.initializeApp(config);
-  
-</script>
-<script src="./login.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCYsx1EG2B-MqFLy_h9yew6uxb77ZS5aos",
+      authDomain: "costume-designing-system.firebaseapp.com",
+      databaseURL: "https://costume-designing-system.firebaseio.com",
+      projectId: "costume-designing-system",
+      storageBucket: "costume-designing-system.appspot.com",
+      messagingSenderId: "923569045734"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+  <script src="./login.js"></script>
 </body>
