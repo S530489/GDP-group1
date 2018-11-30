@@ -100,6 +100,29 @@ app.post("/sendabc", function(req, res){
   });
 
 
+  app.post('/sendfeed', (req, res) => {
+    console.log("sending mail")
+    var api_key = 'key-770c3cc90056cea80af1cafa3f4079cb';
+  var domain = 'sandbox520a2a03c8ae42dcb83afd7b3e7ffdad.mailgun.org';
+  var mailgun = require('mailgun-js')({ apiKey: api_key, domain: domain });
+  
+    var data = {
+      from: req.body.email,
+      to: 'S530489@nwmissouri.edu',
+      subject: "Mail to Stephie Costume Desinger",
+      text: req.body.comments
+    };
+  
+    mailgun.messages().send(data, function (error, body) {
+      console.log(body);
+      if (!error)
+        res.send("mail sent sucessfully");
+      else
+        res.send("mail not sent");
+  
+    });
+  });
+  
   const routes = require('./routes/index.js');
   app.use('/', routes);
 

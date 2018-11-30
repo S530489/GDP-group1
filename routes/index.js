@@ -331,7 +331,7 @@ router.use(function (req, res) {
 
 
 
-router.post('/sendToDesigner', (req, res) => {
+router.post('/sendfeed', (req, res) => {
   console.log("sending mail")
   var api_key = 'key-770c3cc90056cea80af1cafa3f4079cb';
   var domain = 'sandbox520a2a03c8ae42dcb83afd7b3e7ffdad.mailgun.org';
@@ -339,7 +339,7 @@ router.post('/sendToDesigner', (req, res) => {
 
   var data = {
     from: req.body.email,
-    to: 'S530747@nwmissouri.edu',
+    to: 'uppalasai174@gmail.com',
     subject: "Mail to Stephie Costume Desinger",
     text: req.body.comments
   };
