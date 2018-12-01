@@ -100,7 +100,8 @@ function remove(rowKey) {
                             }
                             performers.pop();
                             firebase.database().ref().child("performers/").set(performers).then(function () {
-                                location.reload();
+                                //location.reload();
+                                event_names = [];
                             });
                           swal("The selected performer has been deleted!", {
                             icon: "success",
@@ -114,6 +115,7 @@ function remove(rowKey) {
             else
             {
                 swal("Cannot delete!!", "Because the performer is acting in the palys: "+event_names);
+                event_names = [];
             }
 
 }
