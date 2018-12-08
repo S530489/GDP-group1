@@ -21,6 +21,9 @@
     "selenium-webdriver": "^4.0.0-alpha.1",
     "sweetalert": "^2.1.2"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "license": "Apache-2.0",
   "devDependencies": {
     "chai": "^4.1.2"
