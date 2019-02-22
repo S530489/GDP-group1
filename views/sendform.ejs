@@ -5,13 +5,13 @@
 </div>
  <form class="container" method="post" action="/sendabc">
     First name:<br>
-    <input type="text" name="firstname" placeholder="Enter first name">
+    <input type="text" name="firstname" placeholder="Enter first name" pattern="[A-Za-z]" title="Enter only alphabets">
     <br>
     Last name:<br>
-    <input type="text" name="lastname" placeholder="Enter last name">
+    <input type="text" name="lastname" placeholder="Enter last name" pattern="[A-Za-z]" title="Enter only alphabets">
     <br>
     Email:<br>
-    <input type="email" name="emailid" placeholder="Enter email"><br/><br/>
+    <input type="email" name="emailid" placeholder="Enter email" pattern=".+@+.com" title="Enter only alphabets"><br/><br/>
     <button type="submit" >Submit</button>
   </form>
 
